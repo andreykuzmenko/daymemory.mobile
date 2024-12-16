@@ -315,6 +315,27 @@ class DmNotebook extends DataClass implements Insertable<DmNotebook> {
         isChanged: isChanged ?? this.isChanged,
         sortingType: sortingType ?? this.sortingType,
       );
+  DmNotebook copyWithCompanion(DmNotebooksCompanion data) {
+    return DmNotebook(
+      id: data.id.present ? data.id.value : this.id,
+      title: data.title.present ? data.title.value : this.title,
+      createdDate:
+          data.createdDate.present ? data.createdDate.value : this.createdDate,
+      modifiedDate: data.modifiedDate.present
+          ? data.modifiedDate.value
+          : this.modifiedDate,
+      orderRank: data.orderRank.present ? data.orderRank.value : this.orderRank,
+      showInReview: data.showInReview.present
+          ? data.showInReview.value
+          : this.showInReview,
+      isDeleted: data.isDeleted.present ? data.isDeleted.value : this.isDeleted,
+      isNew: data.isNew.present ? data.isNew.value : this.isNew,
+      isChanged: data.isChanged.present ? data.isChanged.value : this.isChanged,
+      sortingType:
+          data.sortingType.present ? data.sortingType.value : this.sortingType,
+    );
+  }
+
   @override
   String toString() {
     return (StringBuffer('DmNotebook(')
@@ -687,6 +708,17 @@ class DmLocation extends DataClass implements Insertable<DmLocation> {
         longitude: longitude ?? this.longitude,
         createdDate: createdDate ?? this.createdDate,
       );
+  DmLocation copyWithCompanion(DmLocationsCompanion data) {
+    return DmLocation(
+      id: data.id.present ? data.id.value : this.id,
+      address: data.address.present ? data.address.value : this.address,
+      latitude: data.latitude.present ? data.latitude.value : this.latitude,
+      longitude: data.longitude.present ? data.longitude.value : this.longitude,
+      createdDate:
+          data.createdDate.present ? data.createdDate.value : this.createdDate,
+    );
+  }
+
   @override
   String toString() {
     return (StringBuffer('DmLocation(')
@@ -1129,6 +1161,26 @@ class DmNote extends DataClass implements Insertable<DmNote> {
         isChanged: isChanged ?? this.isChanged,
         isDeleted: isDeleted ?? this.isDeleted,
       );
+  DmNote copyWithCompanion(DmNotesCompanion data) {
+    return DmNote(
+      id: data.id.present ? data.id.value : this.id,
+      notebookId:
+          data.notebookId.present ? data.notebookId.value : this.notebookId,
+      content: data.content.present ? data.content.value : this.content,
+      date: data.date.present ? data.date.value : this.date,
+      locationId:
+          data.locationId.present ? data.locationId.value : this.locationId,
+      createdDate:
+          data.createdDate.present ? data.createdDate.value : this.createdDate,
+      modifiedDate: data.modifiedDate.present
+          ? data.modifiedDate.value
+          : this.modifiedDate,
+      isNew: data.isNew.present ? data.isNew.value : this.isNew,
+      isChanged: data.isChanged.present ? data.isChanged.value : this.isChanged,
+      isDeleted: data.isDeleted.present ? data.isDeleted.value : this.isDeleted,
+    );
+  }
+
   @override
   String toString() {
     return (StringBuffer('DmNote(')
@@ -1583,6 +1635,22 @@ class DmTag extends DataClass implements Insertable<DmTag> {
         isChanged: isChanged ?? this.isChanged,
         isDeleted: isDeleted ?? this.isDeleted,
       );
+  DmTag copyWithCompanion(DmTagsCompanion data) {
+    return DmTag(
+      id: data.id.present ? data.id.value : this.id,
+      content: data.content.present ? data.content.value : this.content,
+      orderRank: data.orderRank.present ? data.orderRank.value : this.orderRank,
+      createdDate:
+          data.createdDate.present ? data.createdDate.value : this.createdDate,
+      modifiedDate: data.modifiedDate.present
+          ? data.modifiedDate.value
+          : this.modifiedDate,
+      isNew: data.isNew.present ? data.isNew.value : this.isNew,
+      isChanged: data.isChanged.present ? data.isChanged.value : this.isChanged,
+      isDeleted: data.isDeleted.present ? data.isDeleted.value : this.isDeleted,
+    );
+  }
+
   @override
   String toString() {
     return (StringBuffer('DmTag(')
@@ -1905,6 +1973,16 @@ class DmNoteTag extends DataClass implements Insertable<DmNoteTag> {
         tagId: tagId ?? this.tagId,
         createdDate: createdDate ?? this.createdDate,
       );
+  DmNoteTag copyWithCompanion(DmNoteTagsCompanion data) {
+    return DmNoteTag(
+      id: data.id.present ? data.id.value : this.id,
+      noteId: data.noteId.present ? data.noteId.value : this.noteId,
+      tagId: data.tagId.present ? data.tagId.value : this.tagId,
+      createdDate:
+          data.createdDate.present ? data.createdDate.value : this.createdDate,
+    );
+  }
+
   @override
   String toString() {
     return (StringBuffer('DmNoteTag(')
@@ -2244,6 +2322,21 @@ class DmQuestionList extends DataClass implements Insertable<DmQuestionList> {
         isChanged: isChanged ?? this.isChanged,
         isDeleted: isDeleted ?? this.isDeleted,
       );
+  DmQuestionList copyWithCompanion(DmQuestionListsCompanion data) {
+    return DmQuestionList(
+      id: data.id.present ? data.id.value : this.id,
+      content: data.content.present ? data.content.value : this.content,
+      orderRank: data.orderRank.present ? data.orderRank.value : this.orderRank,
+      createdDate:
+          data.createdDate.present ? data.createdDate.value : this.createdDate,
+      modifiedDate: data.modifiedDate.present
+          ? data.modifiedDate.value
+          : this.modifiedDate,
+      isChanged: data.isChanged.present ? data.isChanged.value : this.isChanged,
+      isDeleted: data.isDeleted.present ? data.isDeleted.value : this.isDeleted,
+    );
+  }
+
   @override
   String toString() {
     return (StringBuffer('DmQuestionList(')
@@ -2579,6 +2672,19 @@ class DmQuestion extends DataClass implements Insertable<DmQuestion> {
         createdDate: createdDate ?? this.createdDate,
         questionList: questionList ?? this.questionList,
       );
+  DmQuestion copyWithCompanion(DmQuestionsCompanion data) {
+    return DmQuestion(
+      id: data.id.present ? data.id.value : this.id,
+      content: data.content.present ? data.content.value : this.content,
+      orderRank: data.orderRank.present ? data.orderRank.value : this.orderRank,
+      createdDate:
+          data.createdDate.present ? data.createdDate.value : this.createdDate,
+      questionList: data.questionList.present
+          ? data.questionList.value
+          : this.questionList,
+    );
+  }
+
   @override
   String toString() {
     return (StringBuffer('DmQuestion(')
@@ -2978,6 +3084,21 @@ class DmFile extends DataClass implements Insertable<DmFile> {
         orderRank: orderRank ?? this.orderRank,
         createdDate: createdDate ?? this.createdDate,
       );
+  DmFile copyWithCompanion(DmFilesCompanion data) {
+    return DmFile(
+      id: data.id.present ? data.id.value : this.id,
+      fileName: data.fileName.present ? data.fileName.value : this.fileName,
+      fileSize: data.fileSize.present ? data.fileSize.value : this.fileSize,
+      fileType: data.fileType.present ? data.fileType.value : this.fileType,
+      width: data.width.present ? data.width.value : this.width,
+      height: data.height.present ? data.height.value : this.height,
+      noteId: data.noteId.present ? data.noteId.value : this.noteId,
+      orderRank: data.orderRank.present ? data.orderRank.value : this.orderRank,
+      createdDate:
+          data.createdDate.present ? data.createdDate.value : this.createdDate,
+    );
+  }
+
   @override
   String toString() {
     return (StringBuffer('DmFile(')
@@ -3161,6 +3282,7 @@ class DmFilesCompanion extends UpdateCompanion<DmFile> {
 
 abstract class _$DayMemoryDb extends GeneratedDatabase {
   _$DayMemoryDb(QueryExecutor e) : super(e);
+  $DayMemoryDbManager get managers => $DayMemoryDbManager(this);
   late final $DmNotebooksTable dmNotebooks = $DmNotebooksTable(this);
   late final $DmLocationsTable dmLocations = $DmLocationsTable(this);
   late final $DmNotesTable dmNotes = $DmNotesTable(this);
@@ -3184,4 +3306,2694 @@ abstract class _$DayMemoryDb extends GeneratedDatabase {
         dmQuestions,
         dmFiles
       ];
+}
+
+typedef $$DmNotebooksTableCreateCompanionBuilder = DmNotebooksCompanion
+    Function({
+  required String id,
+  required String title,
+  required DateTime createdDate,
+  required DateTime modifiedDate,
+  required int orderRank,
+  required bool showInReview,
+  required bool isDeleted,
+  required bool isNew,
+  required bool isChanged,
+  required int sortingType,
+  Value<int> rowid,
+});
+typedef $$DmNotebooksTableUpdateCompanionBuilder = DmNotebooksCompanion
+    Function({
+  Value<String> id,
+  Value<String> title,
+  Value<DateTime> createdDate,
+  Value<DateTime> modifiedDate,
+  Value<int> orderRank,
+  Value<bool> showInReview,
+  Value<bool> isDeleted,
+  Value<bool> isNew,
+  Value<bool> isChanged,
+  Value<int> sortingType,
+  Value<int> rowid,
+});
+
+final class $$DmNotebooksTableReferences
+    extends BaseReferences<_$DayMemoryDb, $DmNotebooksTable, DmNotebook> {
+  $$DmNotebooksTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static MultiTypedResultKey<$DmNotesTable, List<DmNote>> _dmNotesRefsTable(
+          _$DayMemoryDb db) =>
+      MultiTypedResultKey.fromTable(db.dmNotes,
+          aliasName:
+              $_aliasNameGenerator(db.dmNotebooks.id, db.dmNotes.notebookId));
+
+  $$DmNotesTableProcessedTableManager get dmNotesRefs {
+    final manager = $$DmNotesTableTableManager($_db, $_db.dmNotes)
+        .filter((f) => f.notebookId.id($_item.id));
+
+    final cache = $_typedResult.readTableOrNull(_dmNotesRefsTable($_db));
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: cache));
+  }
+}
+
+class $$DmNotebooksTableFilterComposer
+    extends Composer<_$DayMemoryDb, $DmNotebooksTable> {
+  $$DmNotebooksTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get title => $composableBuilder(
+      column: $table.title, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get orderRank => $composableBuilder(
+      column: $table.orderRank, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get showInReview => $composableBuilder(
+      column: $table.showInReview, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isDeleted => $composableBuilder(
+      column: $table.isDeleted, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isNew => $composableBuilder(
+      column: $table.isNew, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isChanged => $composableBuilder(
+      column: $table.isChanged, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get sortingType => $composableBuilder(
+      column: $table.sortingType, builder: (column) => ColumnFilters(column));
+
+  Expression<bool> dmNotesRefs(
+      Expression<bool> Function($$DmNotesTableFilterComposer f) f) {
+    final $$DmNotesTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmNotes,
+        getReferencedColumn: (t) => t.notebookId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotesTableFilterComposer(
+              $db: $db,
+              $table: $db.dmNotes,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$DmNotebooksTableOrderingComposer
+    extends Composer<_$DayMemoryDb, $DmNotebooksTable> {
+  $$DmNotebooksTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get title => $composableBuilder(
+      column: $table.title, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get orderRank => $composableBuilder(
+      column: $table.orderRank, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get showInReview => $composableBuilder(
+      column: $table.showInReview,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isDeleted => $composableBuilder(
+      column: $table.isDeleted, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isNew => $composableBuilder(
+      column: $table.isNew, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isChanged => $composableBuilder(
+      column: $table.isChanged, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get sortingType => $composableBuilder(
+      column: $table.sortingType, builder: (column) => ColumnOrderings(column));
+}
+
+class $$DmNotebooksTableAnnotationComposer
+    extends Composer<_$DayMemoryDb, $DmNotebooksTable> {
+  $$DmNotebooksTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get title =>
+      $composableBuilder(column: $table.title, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate, builder: (column) => column);
+
+  GeneratedColumn<int> get orderRank =>
+      $composableBuilder(column: $table.orderRank, builder: (column) => column);
+
+  GeneratedColumn<bool> get showInReview => $composableBuilder(
+      column: $table.showInReview, builder: (column) => column);
+
+  GeneratedColumn<bool> get isDeleted =>
+      $composableBuilder(column: $table.isDeleted, builder: (column) => column);
+
+  GeneratedColumn<bool> get isNew =>
+      $composableBuilder(column: $table.isNew, builder: (column) => column);
+
+  GeneratedColumn<bool> get isChanged =>
+      $composableBuilder(column: $table.isChanged, builder: (column) => column);
+
+  GeneratedColumn<int> get sortingType => $composableBuilder(
+      column: $table.sortingType, builder: (column) => column);
+
+  Expression<T> dmNotesRefs<T extends Object>(
+      Expression<T> Function($$DmNotesTableAnnotationComposer a) f) {
+    final $$DmNotesTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmNotes,
+        getReferencedColumn: (t) => t.notebookId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotesTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmNotes,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$DmNotebooksTableTableManager extends RootTableManager<
+    _$DayMemoryDb,
+    $DmNotebooksTable,
+    DmNotebook,
+    $$DmNotebooksTableFilterComposer,
+    $$DmNotebooksTableOrderingComposer,
+    $$DmNotebooksTableAnnotationComposer,
+    $$DmNotebooksTableCreateCompanionBuilder,
+    $$DmNotebooksTableUpdateCompanionBuilder,
+    (DmNotebook, $$DmNotebooksTableReferences),
+    DmNotebook,
+    PrefetchHooks Function({bool dmNotesRefs})> {
+  $$DmNotebooksTableTableManager(_$DayMemoryDb db, $DmNotebooksTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$DmNotebooksTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$DmNotebooksTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$DmNotebooksTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> title = const Value.absent(),
+            Value<DateTime> createdDate = const Value.absent(),
+            Value<DateTime> modifiedDate = const Value.absent(),
+            Value<int> orderRank = const Value.absent(),
+            Value<bool> showInReview = const Value.absent(),
+            Value<bool> isDeleted = const Value.absent(),
+            Value<bool> isNew = const Value.absent(),
+            Value<bool> isChanged = const Value.absent(),
+            Value<int> sortingType = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmNotebooksCompanion(
+            id: id,
+            title: title,
+            createdDate: createdDate,
+            modifiedDate: modifiedDate,
+            orderRank: orderRank,
+            showInReview: showInReview,
+            isDeleted: isDeleted,
+            isNew: isNew,
+            isChanged: isChanged,
+            sortingType: sortingType,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String title,
+            required DateTime createdDate,
+            required DateTime modifiedDate,
+            required int orderRank,
+            required bool showInReview,
+            required bool isDeleted,
+            required bool isNew,
+            required bool isChanged,
+            required int sortingType,
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmNotebooksCompanion.insert(
+            id: id,
+            title: title,
+            createdDate: createdDate,
+            modifiedDate: modifiedDate,
+            orderRank: orderRank,
+            showInReview: showInReview,
+            isDeleted: isDeleted,
+            isNew: isNew,
+            isChanged: isChanged,
+            sortingType: sortingType,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (
+                    e.readTable(table),
+                    $$DmNotebooksTableReferences(db, table, e)
+                  ))
+              .toList(),
+          prefetchHooksCallback: ({dmNotesRefs = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [if (dmNotesRefs) db.dmNotes],
+              addJoins: null,
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (dmNotesRefs)
+                    await $_getPrefetchedData(
+                        currentTable: table,
+                        referencedTable:
+                            $$DmNotebooksTableReferences._dmNotesRefsTable(db),
+                        managerFromTypedResult: (p0) =>
+                            $$DmNotebooksTableReferences(db, table, p0)
+                                .dmNotesRefs,
+                        referencedItemsForCurrentItem:
+                            (item, referencedItems) => referencedItems
+                                .where((e) => e.notebookId == item.id),
+                        typedResults: items)
+                ];
+              },
+            );
+          },
+        ));
+}
+
+typedef $$DmNotebooksTableProcessedTableManager = ProcessedTableManager<
+    _$DayMemoryDb,
+    $DmNotebooksTable,
+    DmNotebook,
+    $$DmNotebooksTableFilterComposer,
+    $$DmNotebooksTableOrderingComposer,
+    $$DmNotebooksTableAnnotationComposer,
+    $$DmNotebooksTableCreateCompanionBuilder,
+    $$DmNotebooksTableUpdateCompanionBuilder,
+    (DmNotebook, $$DmNotebooksTableReferences),
+    DmNotebook,
+    PrefetchHooks Function({bool dmNotesRefs})>;
+typedef $$DmLocationsTableCreateCompanionBuilder = DmLocationsCompanion
+    Function({
+  required String id,
+  required String address,
+  required double latitude,
+  required double longitude,
+  required DateTime createdDate,
+  Value<int> rowid,
+});
+typedef $$DmLocationsTableUpdateCompanionBuilder = DmLocationsCompanion
+    Function({
+  Value<String> id,
+  Value<String> address,
+  Value<double> latitude,
+  Value<double> longitude,
+  Value<DateTime> createdDate,
+  Value<int> rowid,
+});
+
+final class $$DmLocationsTableReferences
+    extends BaseReferences<_$DayMemoryDb, $DmLocationsTable, DmLocation> {
+  $$DmLocationsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static MultiTypedResultKey<$DmNotesTable, List<DmNote>> _dmNotesRefsTable(
+          _$DayMemoryDb db) =>
+      MultiTypedResultKey.fromTable(db.dmNotes,
+          aliasName:
+              $_aliasNameGenerator(db.dmLocations.id, db.dmNotes.locationId));
+
+  $$DmNotesTableProcessedTableManager get dmNotesRefs {
+    final manager = $$DmNotesTableTableManager($_db, $_db.dmNotes)
+        .filter((f) => f.locationId.id($_item.id));
+
+    final cache = $_typedResult.readTableOrNull(_dmNotesRefsTable($_db));
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: cache));
+  }
+}
+
+class $$DmLocationsTableFilterComposer
+    extends Composer<_$DayMemoryDb, $DmLocationsTable> {
+  $$DmLocationsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get address => $composableBuilder(
+      column: $table.address, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<double> get latitude => $composableBuilder(
+      column: $table.latitude, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<double> get longitude => $composableBuilder(
+      column: $table.longitude, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnFilters(column));
+
+  Expression<bool> dmNotesRefs(
+      Expression<bool> Function($$DmNotesTableFilterComposer f) f) {
+    final $$DmNotesTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmNotes,
+        getReferencedColumn: (t) => t.locationId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotesTableFilterComposer(
+              $db: $db,
+              $table: $db.dmNotes,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$DmLocationsTableOrderingComposer
+    extends Composer<_$DayMemoryDb, $DmLocationsTable> {
+  $$DmLocationsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get address => $composableBuilder(
+      column: $table.address, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<double> get latitude => $composableBuilder(
+      column: $table.latitude, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<double> get longitude => $composableBuilder(
+      column: $table.longitude, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnOrderings(column));
+}
+
+class $$DmLocationsTableAnnotationComposer
+    extends Composer<_$DayMemoryDb, $DmLocationsTable> {
+  $$DmLocationsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get address =>
+      $composableBuilder(column: $table.address, builder: (column) => column);
+
+  GeneratedColumn<double> get latitude =>
+      $composableBuilder(column: $table.latitude, builder: (column) => column);
+
+  GeneratedColumn<double> get longitude =>
+      $composableBuilder(column: $table.longitude, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => column);
+
+  Expression<T> dmNotesRefs<T extends Object>(
+      Expression<T> Function($$DmNotesTableAnnotationComposer a) f) {
+    final $$DmNotesTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmNotes,
+        getReferencedColumn: (t) => t.locationId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotesTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmNotes,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$DmLocationsTableTableManager extends RootTableManager<
+    _$DayMemoryDb,
+    $DmLocationsTable,
+    DmLocation,
+    $$DmLocationsTableFilterComposer,
+    $$DmLocationsTableOrderingComposer,
+    $$DmLocationsTableAnnotationComposer,
+    $$DmLocationsTableCreateCompanionBuilder,
+    $$DmLocationsTableUpdateCompanionBuilder,
+    (DmLocation, $$DmLocationsTableReferences),
+    DmLocation,
+    PrefetchHooks Function({bool dmNotesRefs})> {
+  $$DmLocationsTableTableManager(_$DayMemoryDb db, $DmLocationsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$DmLocationsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$DmLocationsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$DmLocationsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> address = const Value.absent(),
+            Value<double> latitude = const Value.absent(),
+            Value<double> longitude = const Value.absent(),
+            Value<DateTime> createdDate = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmLocationsCompanion(
+            id: id,
+            address: address,
+            latitude: latitude,
+            longitude: longitude,
+            createdDate: createdDate,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String address,
+            required double latitude,
+            required double longitude,
+            required DateTime createdDate,
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmLocationsCompanion.insert(
+            id: id,
+            address: address,
+            latitude: latitude,
+            longitude: longitude,
+            createdDate: createdDate,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (
+                    e.readTable(table),
+                    $$DmLocationsTableReferences(db, table, e)
+                  ))
+              .toList(),
+          prefetchHooksCallback: ({dmNotesRefs = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [if (dmNotesRefs) db.dmNotes],
+              addJoins: null,
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (dmNotesRefs)
+                    await $_getPrefetchedData(
+                        currentTable: table,
+                        referencedTable:
+                            $$DmLocationsTableReferences._dmNotesRefsTable(db),
+                        managerFromTypedResult: (p0) =>
+                            $$DmLocationsTableReferences(db, table, p0)
+                                .dmNotesRefs,
+                        referencedItemsForCurrentItem:
+                            (item, referencedItems) => referencedItems
+                                .where((e) => e.locationId == item.id),
+                        typedResults: items)
+                ];
+              },
+            );
+          },
+        ));
+}
+
+typedef $$DmLocationsTableProcessedTableManager = ProcessedTableManager<
+    _$DayMemoryDb,
+    $DmLocationsTable,
+    DmLocation,
+    $$DmLocationsTableFilterComposer,
+    $$DmLocationsTableOrderingComposer,
+    $$DmLocationsTableAnnotationComposer,
+    $$DmLocationsTableCreateCompanionBuilder,
+    $$DmLocationsTableUpdateCompanionBuilder,
+    (DmLocation, $$DmLocationsTableReferences),
+    DmLocation,
+    PrefetchHooks Function({bool dmNotesRefs})>;
+typedef $$DmNotesTableCreateCompanionBuilder = DmNotesCompanion Function({
+  required String id,
+  required String notebookId,
+  required String content,
+  required DateTime date,
+  Value<String?> locationId,
+  required DateTime createdDate,
+  required DateTime modifiedDate,
+  required bool isNew,
+  required bool isChanged,
+  required bool isDeleted,
+  Value<int> rowid,
+});
+typedef $$DmNotesTableUpdateCompanionBuilder = DmNotesCompanion Function({
+  Value<String> id,
+  Value<String> notebookId,
+  Value<String> content,
+  Value<DateTime> date,
+  Value<String?> locationId,
+  Value<DateTime> createdDate,
+  Value<DateTime> modifiedDate,
+  Value<bool> isNew,
+  Value<bool> isChanged,
+  Value<bool> isDeleted,
+  Value<int> rowid,
+});
+
+final class $$DmNotesTableReferences
+    extends BaseReferences<_$DayMemoryDb, $DmNotesTable, DmNote> {
+  $$DmNotesTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $DmNotebooksTable _notebookIdTable(_$DayMemoryDb db) =>
+      db.dmNotebooks.createAlias(
+          $_aliasNameGenerator(db.dmNotes.notebookId, db.dmNotebooks.id));
+
+  $$DmNotebooksTableProcessedTableManager get notebookId {
+    final manager = $$DmNotebooksTableTableManager($_db, $_db.dmNotebooks)
+        .filter((f) => f.id($_item.notebookId!));
+    final item = $_typedResult.readTableOrNull(_notebookIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: [item]));
+  }
+
+  static $DmLocationsTable _locationIdTable(_$DayMemoryDb db) =>
+      db.dmLocations.createAlias(
+          $_aliasNameGenerator(db.dmNotes.locationId, db.dmLocations.id));
+
+  $$DmLocationsTableProcessedTableManager? get locationId {
+    if ($_item.locationId == null) return null;
+    final manager = $$DmLocationsTableTableManager($_db, $_db.dmLocations)
+        .filter((f) => f.id($_item.locationId!));
+    final item = $_typedResult.readTableOrNull(_locationIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: [item]));
+  }
+
+  static MultiTypedResultKey<$DmNoteTagsTable, List<DmNoteTag>>
+      _dmNoteTagsRefsTable(_$DayMemoryDb db) => MultiTypedResultKey.fromTable(
+          db.dmNoteTags,
+          aliasName: $_aliasNameGenerator(db.dmNotes.id, db.dmNoteTags.noteId));
+
+  $$DmNoteTagsTableProcessedTableManager get dmNoteTagsRefs {
+    final manager = $$DmNoteTagsTableTableManager($_db, $_db.dmNoteTags)
+        .filter((f) => f.noteId.id($_item.id));
+
+    final cache = $_typedResult.readTableOrNull(_dmNoteTagsRefsTable($_db));
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: cache));
+  }
+
+  static MultiTypedResultKey<$DmFilesTable, List<DmFile>> _dmFilesRefsTable(
+          _$DayMemoryDb db) =>
+      MultiTypedResultKey.fromTable(db.dmFiles,
+          aliasName: $_aliasNameGenerator(db.dmNotes.id, db.dmFiles.noteId));
+
+  $$DmFilesTableProcessedTableManager get dmFilesRefs {
+    final manager = $$DmFilesTableTableManager($_db, $_db.dmFiles)
+        .filter((f) => f.noteId.id($_item.id));
+
+    final cache = $_typedResult.readTableOrNull(_dmFilesRefsTable($_db));
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: cache));
+  }
+}
+
+class $$DmNotesTableFilterComposer
+    extends Composer<_$DayMemoryDb, $DmNotesTable> {
+  $$DmNotesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get content => $composableBuilder(
+      column: $table.content, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get date => $composableBuilder(
+      column: $table.date, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isNew => $composableBuilder(
+      column: $table.isNew, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isChanged => $composableBuilder(
+      column: $table.isChanged, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isDeleted => $composableBuilder(
+      column: $table.isDeleted, builder: (column) => ColumnFilters(column));
+
+  $$DmNotebooksTableFilterComposer get notebookId {
+    final $$DmNotebooksTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.notebookId,
+        referencedTable: $db.dmNotebooks,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotebooksTableFilterComposer(
+              $db: $db,
+              $table: $db.dmNotebooks,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+
+  $$DmLocationsTableFilterComposer get locationId {
+    final $$DmLocationsTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.locationId,
+        referencedTable: $db.dmLocations,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmLocationsTableFilterComposer(
+              $db: $db,
+              $table: $db.dmLocations,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+
+  Expression<bool> dmNoteTagsRefs(
+      Expression<bool> Function($$DmNoteTagsTableFilterComposer f) f) {
+    final $$DmNoteTagsTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmNoteTags,
+        getReferencedColumn: (t) => t.noteId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNoteTagsTableFilterComposer(
+              $db: $db,
+              $table: $db.dmNoteTags,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+
+  Expression<bool> dmFilesRefs(
+      Expression<bool> Function($$DmFilesTableFilterComposer f) f) {
+    final $$DmFilesTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmFiles,
+        getReferencedColumn: (t) => t.noteId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmFilesTableFilterComposer(
+              $db: $db,
+              $table: $db.dmFiles,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$DmNotesTableOrderingComposer
+    extends Composer<_$DayMemoryDb, $DmNotesTable> {
+  $$DmNotesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get content => $composableBuilder(
+      column: $table.content, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get date => $composableBuilder(
+      column: $table.date, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isNew => $composableBuilder(
+      column: $table.isNew, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isChanged => $composableBuilder(
+      column: $table.isChanged, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isDeleted => $composableBuilder(
+      column: $table.isDeleted, builder: (column) => ColumnOrderings(column));
+
+  $$DmNotebooksTableOrderingComposer get notebookId {
+    final $$DmNotebooksTableOrderingComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.notebookId,
+        referencedTable: $db.dmNotebooks,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotebooksTableOrderingComposer(
+              $db: $db,
+              $table: $db.dmNotebooks,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+
+  $$DmLocationsTableOrderingComposer get locationId {
+    final $$DmLocationsTableOrderingComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.locationId,
+        referencedTable: $db.dmLocations,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmLocationsTableOrderingComposer(
+              $db: $db,
+              $table: $db.dmLocations,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$DmNotesTableAnnotationComposer
+    extends Composer<_$DayMemoryDb, $DmNotesTable> {
+  $$DmNotesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get content =>
+      $composableBuilder(column: $table.content, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get date =>
+      $composableBuilder(column: $table.date, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate, builder: (column) => column);
+
+  GeneratedColumn<bool> get isNew =>
+      $composableBuilder(column: $table.isNew, builder: (column) => column);
+
+  GeneratedColumn<bool> get isChanged =>
+      $composableBuilder(column: $table.isChanged, builder: (column) => column);
+
+  GeneratedColumn<bool> get isDeleted =>
+      $composableBuilder(column: $table.isDeleted, builder: (column) => column);
+
+  $$DmNotebooksTableAnnotationComposer get notebookId {
+    final $$DmNotebooksTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.notebookId,
+        referencedTable: $db.dmNotebooks,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotebooksTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmNotebooks,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+
+  $$DmLocationsTableAnnotationComposer get locationId {
+    final $$DmLocationsTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.locationId,
+        referencedTable: $db.dmLocations,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmLocationsTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmLocations,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+
+  Expression<T> dmNoteTagsRefs<T extends Object>(
+      Expression<T> Function($$DmNoteTagsTableAnnotationComposer a) f) {
+    final $$DmNoteTagsTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmNoteTags,
+        getReferencedColumn: (t) => t.noteId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNoteTagsTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmNoteTags,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+
+  Expression<T> dmFilesRefs<T extends Object>(
+      Expression<T> Function($$DmFilesTableAnnotationComposer a) f) {
+    final $$DmFilesTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmFiles,
+        getReferencedColumn: (t) => t.noteId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmFilesTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmFiles,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$DmNotesTableTableManager extends RootTableManager<
+    _$DayMemoryDb,
+    $DmNotesTable,
+    DmNote,
+    $$DmNotesTableFilterComposer,
+    $$DmNotesTableOrderingComposer,
+    $$DmNotesTableAnnotationComposer,
+    $$DmNotesTableCreateCompanionBuilder,
+    $$DmNotesTableUpdateCompanionBuilder,
+    (DmNote, $$DmNotesTableReferences),
+    DmNote,
+    PrefetchHooks Function(
+        {bool notebookId,
+        bool locationId,
+        bool dmNoteTagsRefs,
+        bool dmFilesRefs})> {
+  $$DmNotesTableTableManager(_$DayMemoryDb db, $DmNotesTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$DmNotesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$DmNotesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$DmNotesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> notebookId = const Value.absent(),
+            Value<String> content = const Value.absent(),
+            Value<DateTime> date = const Value.absent(),
+            Value<String?> locationId = const Value.absent(),
+            Value<DateTime> createdDate = const Value.absent(),
+            Value<DateTime> modifiedDate = const Value.absent(),
+            Value<bool> isNew = const Value.absent(),
+            Value<bool> isChanged = const Value.absent(),
+            Value<bool> isDeleted = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmNotesCompanion(
+            id: id,
+            notebookId: notebookId,
+            content: content,
+            date: date,
+            locationId: locationId,
+            createdDate: createdDate,
+            modifiedDate: modifiedDate,
+            isNew: isNew,
+            isChanged: isChanged,
+            isDeleted: isDeleted,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String notebookId,
+            required String content,
+            required DateTime date,
+            Value<String?> locationId = const Value.absent(),
+            required DateTime createdDate,
+            required DateTime modifiedDate,
+            required bool isNew,
+            required bool isChanged,
+            required bool isDeleted,
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmNotesCompanion.insert(
+            id: id,
+            notebookId: notebookId,
+            content: content,
+            date: date,
+            locationId: locationId,
+            createdDate: createdDate,
+            modifiedDate: modifiedDate,
+            isNew: isNew,
+            isChanged: isChanged,
+            isDeleted: isDeleted,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) =>
+                  (e.readTable(table), $$DmNotesTableReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: (
+              {notebookId = false,
+              locationId = false,
+              dmNoteTagsRefs = false,
+              dmFilesRefs = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [
+                if (dmNoteTagsRefs) db.dmNoteTags,
+                if (dmFilesRefs) db.dmFiles
+              ],
+              addJoins: <
+                  T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic>>(state) {
+                if (notebookId) {
+                  state = state.withJoin(
+                    currentTable: table,
+                    currentColumn: table.notebookId,
+                    referencedTable:
+                        $$DmNotesTableReferences._notebookIdTable(db),
+                    referencedColumn:
+                        $$DmNotesTableReferences._notebookIdTable(db).id,
+                  ) as T;
+                }
+                if (locationId) {
+                  state = state.withJoin(
+                    currentTable: table,
+                    currentColumn: table.locationId,
+                    referencedTable:
+                        $$DmNotesTableReferences._locationIdTable(db),
+                    referencedColumn:
+                        $$DmNotesTableReferences._locationIdTable(db).id,
+                  ) as T;
+                }
+
+                return state;
+              },
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (dmNoteTagsRefs)
+                    await $_getPrefetchedData(
+                        currentTable: table,
+                        referencedTable:
+                            $$DmNotesTableReferences._dmNoteTagsRefsTable(db),
+                        managerFromTypedResult: (p0) =>
+                            $$DmNotesTableReferences(db, table, p0)
+                                .dmNoteTagsRefs,
+                        referencedItemsForCurrentItem: (item,
+                                referencedItems) =>
+                            referencedItems.where((e) => e.noteId == item.id),
+                        typedResults: items),
+                  if (dmFilesRefs)
+                    await $_getPrefetchedData(
+                        currentTable: table,
+                        referencedTable:
+                            $$DmNotesTableReferences._dmFilesRefsTable(db),
+                        managerFromTypedResult: (p0) =>
+                            $$DmNotesTableReferences(db, table, p0).dmFilesRefs,
+                        referencedItemsForCurrentItem: (item,
+                                referencedItems) =>
+                            referencedItems.where((e) => e.noteId == item.id),
+                        typedResults: items)
+                ];
+              },
+            );
+          },
+        ));
+}
+
+typedef $$DmNotesTableProcessedTableManager = ProcessedTableManager<
+    _$DayMemoryDb,
+    $DmNotesTable,
+    DmNote,
+    $$DmNotesTableFilterComposer,
+    $$DmNotesTableOrderingComposer,
+    $$DmNotesTableAnnotationComposer,
+    $$DmNotesTableCreateCompanionBuilder,
+    $$DmNotesTableUpdateCompanionBuilder,
+    (DmNote, $$DmNotesTableReferences),
+    DmNote,
+    PrefetchHooks Function(
+        {bool notebookId,
+        bool locationId,
+        bool dmNoteTagsRefs,
+        bool dmFilesRefs})>;
+typedef $$DmTagsTableCreateCompanionBuilder = DmTagsCompanion Function({
+  required String id,
+  required String content,
+  required int orderRank,
+  required DateTime createdDate,
+  required DateTime modifiedDate,
+  required bool isNew,
+  required bool isChanged,
+  required bool isDeleted,
+  Value<int> rowid,
+});
+typedef $$DmTagsTableUpdateCompanionBuilder = DmTagsCompanion Function({
+  Value<String> id,
+  Value<String> content,
+  Value<int> orderRank,
+  Value<DateTime> createdDate,
+  Value<DateTime> modifiedDate,
+  Value<bool> isNew,
+  Value<bool> isChanged,
+  Value<bool> isDeleted,
+  Value<int> rowid,
+});
+
+final class $$DmTagsTableReferences
+    extends BaseReferences<_$DayMemoryDb, $DmTagsTable, DmTag> {
+  $$DmTagsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static MultiTypedResultKey<$DmNoteTagsTable, List<DmNoteTag>>
+      _dmNoteTagsRefsTable(_$DayMemoryDb db) => MultiTypedResultKey.fromTable(
+          db.dmNoteTags,
+          aliasName: $_aliasNameGenerator(db.dmTags.id, db.dmNoteTags.tagId));
+
+  $$DmNoteTagsTableProcessedTableManager get dmNoteTagsRefs {
+    final manager = $$DmNoteTagsTableTableManager($_db, $_db.dmNoteTags)
+        .filter((f) => f.tagId.id($_item.id));
+
+    final cache = $_typedResult.readTableOrNull(_dmNoteTagsRefsTable($_db));
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: cache));
+  }
+}
+
+class $$DmTagsTableFilterComposer
+    extends Composer<_$DayMemoryDb, $DmTagsTable> {
+  $$DmTagsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get content => $composableBuilder(
+      column: $table.content, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get orderRank => $composableBuilder(
+      column: $table.orderRank, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isNew => $composableBuilder(
+      column: $table.isNew, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isChanged => $composableBuilder(
+      column: $table.isChanged, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isDeleted => $composableBuilder(
+      column: $table.isDeleted, builder: (column) => ColumnFilters(column));
+
+  Expression<bool> dmNoteTagsRefs(
+      Expression<bool> Function($$DmNoteTagsTableFilterComposer f) f) {
+    final $$DmNoteTagsTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmNoteTags,
+        getReferencedColumn: (t) => t.tagId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNoteTagsTableFilterComposer(
+              $db: $db,
+              $table: $db.dmNoteTags,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$DmTagsTableOrderingComposer
+    extends Composer<_$DayMemoryDb, $DmTagsTable> {
+  $$DmTagsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get content => $composableBuilder(
+      column: $table.content, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get orderRank => $composableBuilder(
+      column: $table.orderRank, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isNew => $composableBuilder(
+      column: $table.isNew, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isChanged => $composableBuilder(
+      column: $table.isChanged, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isDeleted => $composableBuilder(
+      column: $table.isDeleted, builder: (column) => ColumnOrderings(column));
+}
+
+class $$DmTagsTableAnnotationComposer
+    extends Composer<_$DayMemoryDb, $DmTagsTable> {
+  $$DmTagsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get content =>
+      $composableBuilder(column: $table.content, builder: (column) => column);
+
+  GeneratedColumn<int> get orderRank =>
+      $composableBuilder(column: $table.orderRank, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate, builder: (column) => column);
+
+  GeneratedColumn<bool> get isNew =>
+      $composableBuilder(column: $table.isNew, builder: (column) => column);
+
+  GeneratedColumn<bool> get isChanged =>
+      $composableBuilder(column: $table.isChanged, builder: (column) => column);
+
+  GeneratedColumn<bool> get isDeleted =>
+      $composableBuilder(column: $table.isDeleted, builder: (column) => column);
+
+  Expression<T> dmNoteTagsRefs<T extends Object>(
+      Expression<T> Function($$DmNoteTagsTableAnnotationComposer a) f) {
+    final $$DmNoteTagsTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmNoteTags,
+        getReferencedColumn: (t) => t.tagId,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNoteTagsTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmNoteTags,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$DmTagsTableTableManager extends RootTableManager<
+    _$DayMemoryDb,
+    $DmTagsTable,
+    DmTag,
+    $$DmTagsTableFilterComposer,
+    $$DmTagsTableOrderingComposer,
+    $$DmTagsTableAnnotationComposer,
+    $$DmTagsTableCreateCompanionBuilder,
+    $$DmTagsTableUpdateCompanionBuilder,
+    (DmTag, $$DmTagsTableReferences),
+    DmTag,
+    PrefetchHooks Function({bool dmNoteTagsRefs})> {
+  $$DmTagsTableTableManager(_$DayMemoryDb db, $DmTagsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$DmTagsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$DmTagsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$DmTagsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> content = const Value.absent(),
+            Value<int> orderRank = const Value.absent(),
+            Value<DateTime> createdDate = const Value.absent(),
+            Value<DateTime> modifiedDate = const Value.absent(),
+            Value<bool> isNew = const Value.absent(),
+            Value<bool> isChanged = const Value.absent(),
+            Value<bool> isDeleted = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmTagsCompanion(
+            id: id,
+            content: content,
+            orderRank: orderRank,
+            createdDate: createdDate,
+            modifiedDate: modifiedDate,
+            isNew: isNew,
+            isChanged: isChanged,
+            isDeleted: isDeleted,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String content,
+            required int orderRank,
+            required DateTime createdDate,
+            required DateTime modifiedDate,
+            required bool isNew,
+            required bool isChanged,
+            required bool isDeleted,
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmTagsCompanion.insert(
+            id: id,
+            content: content,
+            orderRank: orderRank,
+            createdDate: createdDate,
+            modifiedDate: modifiedDate,
+            isNew: isNew,
+            isChanged: isChanged,
+            isDeleted: isDeleted,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) =>
+                  (e.readTable(table), $$DmTagsTableReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: ({dmNoteTagsRefs = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [if (dmNoteTagsRefs) db.dmNoteTags],
+              addJoins: null,
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (dmNoteTagsRefs)
+                    await $_getPrefetchedData(
+                        currentTable: table,
+                        referencedTable:
+                            $$DmTagsTableReferences._dmNoteTagsRefsTable(db),
+                        managerFromTypedResult: (p0) =>
+                            $$DmTagsTableReferences(db, table, p0)
+                                .dmNoteTagsRefs,
+                        referencedItemsForCurrentItem: (item,
+                                referencedItems) =>
+                            referencedItems.where((e) => e.tagId == item.id),
+                        typedResults: items)
+                ];
+              },
+            );
+          },
+        ));
+}
+
+typedef $$DmTagsTableProcessedTableManager = ProcessedTableManager<
+    _$DayMemoryDb,
+    $DmTagsTable,
+    DmTag,
+    $$DmTagsTableFilterComposer,
+    $$DmTagsTableOrderingComposer,
+    $$DmTagsTableAnnotationComposer,
+    $$DmTagsTableCreateCompanionBuilder,
+    $$DmTagsTableUpdateCompanionBuilder,
+    (DmTag, $$DmTagsTableReferences),
+    DmTag,
+    PrefetchHooks Function({bool dmNoteTagsRefs})>;
+typedef $$DmNoteTagsTableCreateCompanionBuilder = DmNoteTagsCompanion Function({
+  required String id,
+  required String noteId,
+  required String tagId,
+  required DateTime createdDate,
+  Value<int> rowid,
+});
+typedef $$DmNoteTagsTableUpdateCompanionBuilder = DmNoteTagsCompanion Function({
+  Value<String> id,
+  Value<String> noteId,
+  Value<String> tagId,
+  Value<DateTime> createdDate,
+  Value<int> rowid,
+});
+
+final class $$DmNoteTagsTableReferences
+    extends BaseReferences<_$DayMemoryDb, $DmNoteTagsTable, DmNoteTag> {
+  $$DmNoteTagsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $DmNotesTable _noteIdTable(_$DayMemoryDb db) => db.dmNotes
+      .createAlias($_aliasNameGenerator(db.dmNoteTags.noteId, db.dmNotes.id));
+
+  $$DmNotesTableProcessedTableManager get noteId {
+    final manager = $$DmNotesTableTableManager($_db, $_db.dmNotes)
+        .filter((f) => f.id($_item.noteId!));
+    final item = $_typedResult.readTableOrNull(_noteIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: [item]));
+  }
+
+  static $DmTagsTable _tagIdTable(_$DayMemoryDb db) => db.dmTags
+      .createAlias($_aliasNameGenerator(db.dmNoteTags.tagId, db.dmTags.id));
+
+  $$DmTagsTableProcessedTableManager get tagId {
+    final manager = $$DmTagsTableTableManager($_db, $_db.dmTags)
+        .filter((f) => f.id($_item.tagId!));
+    final item = $_typedResult.readTableOrNull(_tagIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: [item]));
+  }
+}
+
+class $$DmNoteTagsTableFilterComposer
+    extends Composer<_$DayMemoryDb, $DmNoteTagsTable> {
+  $$DmNoteTagsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnFilters(column));
+
+  $$DmNotesTableFilterComposer get noteId {
+    final $$DmNotesTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.noteId,
+        referencedTable: $db.dmNotes,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotesTableFilterComposer(
+              $db: $db,
+              $table: $db.dmNotes,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+
+  $$DmTagsTableFilterComposer get tagId {
+    final $$DmTagsTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.tagId,
+        referencedTable: $db.dmTags,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmTagsTableFilterComposer(
+              $db: $db,
+              $table: $db.dmTags,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$DmNoteTagsTableOrderingComposer
+    extends Composer<_$DayMemoryDb, $DmNoteTagsTable> {
+  $$DmNoteTagsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnOrderings(column));
+
+  $$DmNotesTableOrderingComposer get noteId {
+    final $$DmNotesTableOrderingComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.noteId,
+        referencedTable: $db.dmNotes,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotesTableOrderingComposer(
+              $db: $db,
+              $table: $db.dmNotes,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+
+  $$DmTagsTableOrderingComposer get tagId {
+    final $$DmTagsTableOrderingComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.tagId,
+        referencedTable: $db.dmTags,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmTagsTableOrderingComposer(
+              $db: $db,
+              $table: $db.dmTags,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$DmNoteTagsTableAnnotationComposer
+    extends Composer<_$DayMemoryDb, $DmNoteTagsTable> {
+  $$DmNoteTagsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => column);
+
+  $$DmNotesTableAnnotationComposer get noteId {
+    final $$DmNotesTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.noteId,
+        referencedTable: $db.dmNotes,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotesTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmNotes,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+
+  $$DmTagsTableAnnotationComposer get tagId {
+    final $$DmTagsTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.tagId,
+        referencedTable: $db.dmTags,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmTagsTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmTags,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$DmNoteTagsTableTableManager extends RootTableManager<
+    _$DayMemoryDb,
+    $DmNoteTagsTable,
+    DmNoteTag,
+    $$DmNoteTagsTableFilterComposer,
+    $$DmNoteTagsTableOrderingComposer,
+    $$DmNoteTagsTableAnnotationComposer,
+    $$DmNoteTagsTableCreateCompanionBuilder,
+    $$DmNoteTagsTableUpdateCompanionBuilder,
+    (DmNoteTag, $$DmNoteTagsTableReferences),
+    DmNoteTag,
+    PrefetchHooks Function({bool noteId, bool tagId})> {
+  $$DmNoteTagsTableTableManager(_$DayMemoryDb db, $DmNoteTagsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$DmNoteTagsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$DmNoteTagsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$DmNoteTagsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> noteId = const Value.absent(),
+            Value<String> tagId = const Value.absent(),
+            Value<DateTime> createdDate = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmNoteTagsCompanion(
+            id: id,
+            noteId: noteId,
+            tagId: tagId,
+            createdDate: createdDate,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String noteId,
+            required String tagId,
+            required DateTime createdDate,
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmNoteTagsCompanion.insert(
+            id: id,
+            noteId: noteId,
+            tagId: tagId,
+            createdDate: createdDate,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (
+                    e.readTable(table),
+                    $$DmNoteTagsTableReferences(db, table, e)
+                  ))
+              .toList(),
+          prefetchHooksCallback: ({noteId = false, tagId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins: <
+                  T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic>>(state) {
+                if (noteId) {
+                  state = state.withJoin(
+                    currentTable: table,
+                    currentColumn: table.noteId,
+                    referencedTable:
+                        $$DmNoteTagsTableReferences._noteIdTable(db),
+                    referencedColumn:
+                        $$DmNoteTagsTableReferences._noteIdTable(db).id,
+                  ) as T;
+                }
+                if (tagId) {
+                  state = state.withJoin(
+                    currentTable: table,
+                    currentColumn: table.tagId,
+                    referencedTable:
+                        $$DmNoteTagsTableReferences._tagIdTable(db),
+                    referencedColumn:
+                        $$DmNoteTagsTableReferences._tagIdTable(db).id,
+                  ) as T;
+                }
+
+                return state;
+              },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ));
+}
+
+typedef $$DmNoteTagsTableProcessedTableManager = ProcessedTableManager<
+    _$DayMemoryDb,
+    $DmNoteTagsTable,
+    DmNoteTag,
+    $$DmNoteTagsTableFilterComposer,
+    $$DmNoteTagsTableOrderingComposer,
+    $$DmNoteTagsTableAnnotationComposer,
+    $$DmNoteTagsTableCreateCompanionBuilder,
+    $$DmNoteTagsTableUpdateCompanionBuilder,
+    (DmNoteTag, $$DmNoteTagsTableReferences),
+    DmNoteTag,
+    PrefetchHooks Function({bool noteId, bool tagId})>;
+typedef $$DmQuestionListsTableCreateCompanionBuilder = DmQuestionListsCompanion
+    Function({
+  required String id,
+  required String content,
+  required int orderRank,
+  required DateTime createdDate,
+  required DateTime modifiedDate,
+  required bool isChanged,
+  required bool isDeleted,
+  Value<int> rowid,
+});
+typedef $$DmQuestionListsTableUpdateCompanionBuilder = DmQuestionListsCompanion
+    Function({
+  Value<String> id,
+  Value<String> content,
+  Value<int> orderRank,
+  Value<DateTime> createdDate,
+  Value<DateTime> modifiedDate,
+  Value<bool> isChanged,
+  Value<bool> isDeleted,
+  Value<int> rowid,
+});
+
+final class $$DmQuestionListsTableReferences extends BaseReferences<
+    _$DayMemoryDb, $DmQuestionListsTable, DmQuestionList> {
+  $$DmQuestionListsTableReferences(
+      super.$_db, super.$_table, super.$_typedResult);
+
+  static MultiTypedResultKey<$DmQuestionsTable, List<DmQuestion>>
+      _dmQuestionsRefsTable(_$DayMemoryDb db) =>
+          MultiTypedResultKey.fromTable(db.dmQuestions,
+              aliasName: $_aliasNameGenerator(
+                  db.dmQuestionLists.id, db.dmQuestions.questionList));
+
+  $$DmQuestionsTableProcessedTableManager get dmQuestionsRefs {
+    final manager = $$DmQuestionsTableTableManager($_db, $_db.dmQuestions)
+        .filter((f) => f.questionList.id($_item.id));
+
+    final cache = $_typedResult.readTableOrNull(_dmQuestionsRefsTable($_db));
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: cache));
+  }
+}
+
+class $$DmQuestionListsTableFilterComposer
+    extends Composer<_$DayMemoryDb, $DmQuestionListsTable> {
+  $$DmQuestionListsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get content => $composableBuilder(
+      column: $table.content, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get orderRank => $composableBuilder(
+      column: $table.orderRank, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isChanged => $composableBuilder(
+      column: $table.isChanged, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<bool> get isDeleted => $composableBuilder(
+      column: $table.isDeleted, builder: (column) => ColumnFilters(column));
+
+  Expression<bool> dmQuestionsRefs(
+      Expression<bool> Function($$DmQuestionsTableFilterComposer f) f) {
+    final $$DmQuestionsTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmQuestions,
+        getReferencedColumn: (t) => t.questionList,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmQuestionsTableFilterComposer(
+              $db: $db,
+              $table: $db.dmQuestions,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$DmQuestionListsTableOrderingComposer
+    extends Composer<_$DayMemoryDb, $DmQuestionListsTable> {
+  $$DmQuestionListsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get content => $composableBuilder(
+      column: $table.content, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get orderRank => $composableBuilder(
+      column: $table.orderRank, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isChanged => $composableBuilder(
+      column: $table.isChanged, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<bool> get isDeleted => $composableBuilder(
+      column: $table.isDeleted, builder: (column) => ColumnOrderings(column));
+}
+
+class $$DmQuestionListsTableAnnotationComposer
+    extends Composer<_$DayMemoryDb, $DmQuestionListsTable> {
+  $$DmQuestionListsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get content =>
+      $composableBuilder(column: $table.content, builder: (column) => column);
+
+  GeneratedColumn<int> get orderRank =>
+      $composableBuilder(column: $table.orderRank, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get modifiedDate => $composableBuilder(
+      column: $table.modifiedDate, builder: (column) => column);
+
+  GeneratedColumn<bool> get isChanged =>
+      $composableBuilder(column: $table.isChanged, builder: (column) => column);
+
+  GeneratedColumn<bool> get isDeleted =>
+      $composableBuilder(column: $table.isDeleted, builder: (column) => column);
+
+  Expression<T> dmQuestionsRefs<T extends Object>(
+      Expression<T> Function($$DmQuestionsTableAnnotationComposer a) f) {
+    final $$DmQuestionsTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.id,
+        referencedTable: $db.dmQuestions,
+        getReferencedColumn: (t) => t.questionList,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmQuestionsTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmQuestions,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return f(composer);
+  }
+}
+
+class $$DmQuestionListsTableTableManager extends RootTableManager<
+    _$DayMemoryDb,
+    $DmQuestionListsTable,
+    DmQuestionList,
+    $$DmQuestionListsTableFilterComposer,
+    $$DmQuestionListsTableOrderingComposer,
+    $$DmQuestionListsTableAnnotationComposer,
+    $$DmQuestionListsTableCreateCompanionBuilder,
+    $$DmQuestionListsTableUpdateCompanionBuilder,
+    (DmQuestionList, $$DmQuestionListsTableReferences),
+    DmQuestionList,
+    PrefetchHooks Function({bool dmQuestionsRefs})> {
+  $$DmQuestionListsTableTableManager(
+      _$DayMemoryDb db, $DmQuestionListsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$DmQuestionListsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$DmQuestionListsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$DmQuestionListsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> content = const Value.absent(),
+            Value<int> orderRank = const Value.absent(),
+            Value<DateTime> createdDate = const Value.absent(),
+            Value<DateTime> modifiedDate = const Value.absent(),
+            Value<bool> isChanged = const Value.absent(),
+            Value<bool> isDeleted = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmQuestionListsCompanion(
+            id: id,
+            content: content,
+            orderRank: orderRank,
+            createdDate: createdDate,
+            modifiedDate: modifiedDate,
+            isChanged: isChanged,
+            isDeleted: isDeleted,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String content,
+            required int orderRank,
+            required DateTime createdDate,
+            required DateTime modifiedDate,
+            required bool isChanged,
+            required bool isDeleted,
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmQuestionListsCompanion.insert(
+            id: id,
+            content: content,
+            orderRank: orderRank,
+            createdDate: createdDate,
+            modifiedDate: modifiedDate,
+            isChanged: isChanged,
+            isDeleted: isDeleted,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (
+                    e.readTable(table),
+                    $$DmQuestionListsTableReferences(db, table, e)
+                  ))
+              .toList(),
+          prefetchHooksCallback: ({dmQuestionsRefs = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [if (dmQuestionsRefs) db.dmQuestions],
+              addJoins: null,
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (dmQuestionsRefs)
+                    await $_getPrefetchedData(
+                        currentTable: table,
+                        referencedTable: $$DmQuestionListsTableReferences
+                            ._dmQuestionsRefsTable(db),
+                        managerFromTypedResult: (p0) =>
+                            $$DmQuestionListsTableReferences(db, table, p0)
+                                .dmQuestionsRefs,
+                        referencedItemsForCurrentItem:
+                            (item, referencedItems) => referencedItems
+                                .where((e) => e.questionList == item.id),
+                        typedResults: items)
+                ];
+              },
+            );
+          },
+        ));
+}
+
+typedef $$DmQuestionListsTableProcessedTableManager = ProcessedTableManager<
+    _$DayMemoryDb,
+    $DmQuestionListsTable,
+    DmQuestionList,
+    $$DmQuestionListsTableFilterComposer,
+    $$DmQuestionListsTableOrderingComposer,
+    $$DmQuestionListsTableAnnotationComposer,
+    $$DmQuestionListsTableCreateCompanionBuilder,
+    $$DmQuestionListsTableUpdateCompanionBuilder,
+    (DmQuestionList, $$DmQuestionListsTableReferences),
+    DmQuestionList,
+    PrefetchHooks Function({bool dmQuestionsRefs})>;
+typedef $$DmQuestionsTableCreateCompanionBuilder = DmQuestionsCompanion
+    Function({
+  required String id,
+  required String content,
+  required int orderRank,
+  required DateTime createdDate,
+  required String questionList,
+  Value<int> rowid,
+});
+typedef $$DmQuestionsTableUpdateCompanionBuilder = DmQuestionsCompanion
+    Function({
+  Value<String> id,
+  Value<String> content,
+  Value<int> orderRank,
+  Value<DateTime> createdDate,
+  Value<String> questionList,
+  Value<int> rowid,
+});
+
+final class $$DmQuestionsTableReferences
+    extends BaseReferences<_$DayMemoryDb, $DmQuestionsTable, DmQuestion> {
+  $$DmQuestionsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $DmQuestionListsTable _questionListTable(_$DayMemoryDb db) =>
+      db.dmQuestionLists.createAlias($_aliasNameGenerator(
+          db.dmQuestions.questionList, db.dmQuestionLists.id));
+
+  $$DmQuestionListsTableProcessedTableManager get questionList {
+    final manager =
+        $$DmQuestionListsTableTableManager($_db, $_db.dmQuestionLists)
+            .filter((f) => f.id($_item.questionList!));
+    final item = $_typedResult.readTableOrNull(_questionListTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: [item]));
+  }
+}
+
+class $$DmQuestionsTableFilterComposer
+    extends Composer<_$DayMemoryDb, $DmQuestionsTable> {
+  $$DmQuestionsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get content => $composableBuilder(
+      column: $table.content, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get orderRank => $composableBuilder(
+      column: $table.orderRank, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnFilters(column));
+
+  $$DmQuestionListsTableFilterComposer get questionList {
+    final $$DmQuestionListsTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.questionList,
+        referencedTable: $db.dmQuestionLists,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmQuestionListsTableFilterComposer(
+              $db: $db,
+              $table: $db.dmQuestionLists,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$DmQuestionsTableOrderingComposer
+    extends Composer<_$DayMemoryDb, $DmQuestionsTable> {
+  $$DmQuestionsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get content => $composableBuilder(
+      column: $table.content, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get orderRank => $composableBuilder(
+      column: $table.orderRank, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnOrderings(column));
+
+  $$DmQuestionListsTableOrderingComposer get questionList {
+    final $$DmQuestionListsTableOrderingComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.questionList,
+        referencedTable: $db.dmQuestionLists,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmQuestionListsTableOrderingComposer(
+              $db: $db,
+              $table: $db.dmQuestionLists,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$DmQuestionsTableAnnotationComposer
+    extends Composer<_$DayMemoryDb, $DmQuestionsTable> {
+  $$DmQuestionsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get content =>
+      $composableBuilder(column: $table.content, builder: (column) => column);
+
+  GeneratedColumn<int> get orderRank =>
+      $composableBuilder(column: $table.orderRank, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => column);
+
+  $$DmQuestionListsTableAnnotationComposer get questionList {
+    final $$DmQuestionListsTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.questionList,
+        referencedTable: $db.dmQuestionLists,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmQuestionListsTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmQuestionLists,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$DmQuestionsTableTableManager extends RootTableManager<
+    _$DayMemoryDb,
+    $DmQuestionsTable,
+    DmQuestion,
+    $$DmQuestionsTableFilterComposer,
+    $$DmQuestionsTableOrderingComposer,
+    $$DmQuestionsTableAnnotationComposer,
+    $$DmQuestionsTableCreateCompanionBuilder,
+    $$DmQuestionsTableUpdateCompanionBuilder,
+    (DmQuestion, $$DmQuestionsTableReferences),
+    DmQuestion,
+    PrefetchHooks Function({bool questionList})> {
+  $$DmQuestionsTableTableManager(_$DayMemoryDb db, $DmQuestionsTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$DmQuestionsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$DmQuestionsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$DmQuestionsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> content = const Value.absent(),
+            Value<int> orderRank = const Value.absent(),
+            Value<DateTime> createdDate = const Value.absent(),
+            Value<String> questionList = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmQuestionsCompanion(
+            id: id,
+            content: content,
+            orderRank: orderRank,
+            createdDate: createdDate,
+            questionList: questionList,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String content,
+            required int orderRank,
+            required DateTime createdDate,
+            required String questionList,
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmQuestionsCompanion.insert(
+            id: id,
+            content: content,
+            orderRank: orderRank,
+            createdDate: createdDate,
+            questionList: questionList,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (
+                    e.readTable(table),
+                    $$DmQuestionsTableReferences(db, table, e)
+                  ))
+              .toList(),
+          prefetchHooksCallback: ({questionList = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins: <
+                  T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic>>(state) {
+                if (questionList) {
+                  state = state.withJoin(
+                    currentTable: table,
+                    currentColumn: table.questionList,
+                    referencedTable:
+                        $$DmQuestionsTableReferences._questionListTable(db),
+                    referencedColumn:
+                        $$DmQuestionsTableReferences._questionListTable(db).id,
+                  ) as T;
+                }
+
+                return state;
+              },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ));
+}
+
+typedef $$DmQuestionsTableProcessedTableManager = ProcessedTableManager<
+    _$DayMemoryDb,
+    $DmQuestionsTable,
+    DmQuestion,
+    $$DmQuestionsTableFilterComposer,
+    $$DmQuestionsTableOrderingComposer,
+    $$DmQuestionsTableAnnotationComposer,
+    $$DmQuestionsTableCreateCompanionBuilder,
+    $$DmQuestionsTableUpdateCompanionBuilder,
+    (DmQuestion, $$DmQuestionsTableReferences),
+    DmQuestion,
+    PrefetchHooks Function({bool questionList})>;
+typedef $$DmFilesTableCreateCompanionBuilder = DmFilesCompanion Function({
+  required String id,
+  required String fileName,
+  required int fileSize,
+  required int fileType,
+  required int width,
+  required int height,
+  Value<String?> noteId,
+  required int orderRank,
+  required DateTime createdDate,
+  Value<int> rowid,
+});
+typedef $$DmFilesTableUpdateCompanionBuilder = DmFilesCompanion Function({
+  Value<String> id,
+  Value<String> fileName,
+  Value<int> fileSize,
+  Value<int> fileType,
+  Value<int> width,
+  Value<int> height,
+  Value<String?> noteId,
+  Value<int> orderRank,
+  Value<DateTime> createdDate,
+  Value<int> rowid,
+});
+
+final class $$DmFilesTableReferences
+    extends BaseReferences<_$DayMemoryDb, $DmFilesTable, DmFile> {
+  $$DmFilesTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $DmNotesTable _noteIdTable(_$DayMemoryDb db) => db.dmNotes
+      .createAlias($_aliasNameGenerator(db.dmFiles.noteId, db.dmNotes.id));
+
+  $$DmNotesTableProcessedTableManager? get noteId {
+    if ($_item.noteId == null) return null;
+    final manager = $$DmNotesTableTableManager($_db, $_db.dmNotes)
+        .filter((f) => f.id($_item.noteId!));
+    final item = $_typedResult.readTableOrNull(_noteIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+        manager.$state.copyWith(prefetchedData: [item]));
+  }
+}
+
+class $$DmFilesTableFilterComposer
+    extends Composer<_$DayMemoryDb, $DmFilesTable> {
+  $$DmFilesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get fileName => $composableBuilder(
+      column: $table.fileName, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get fileSize => $composableBuilder(
+      column: $table.fileSize, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get fileType => $composableBuilder(
+      column: $table.fileType, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get width => $composableBuilder(
+      column: $table.width, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get height => $composableBuilder(
+      column: $table.height, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get orderRank => $composableBuilder(
+      column: $table.orderRank, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnFilters(column));
+
+  $$DmNotesTableFilterComposer get noteId {
+    final $$DmNotesTableFilterComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.noteId,
+        referencedTable: $db.dmNotes,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotesTableFilterComposer(
+              $db: $db,
+              $table: $db.dmNotes,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$DmFilesTableOrderingComposer
+    extends Composer<_$DayMemoryDb, $DmFilesTable> {
+  $$DmFilesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get fileName => $composableBuilder(
+      column: $table.fileName, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get fileSize => $composableBuilder(
+      column: $table.fileSize, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get fileType => $composableBuilder(
+      column: $table.fileType, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get width => $composableBuilder(
+      column: $table.width, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get height => $composableBuilder(
+      column: $table.height, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get orderRank => $composableBuilder(
+      column: $table.orderRank, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => ColumnOrderings(column));
+
+  $$DmNotesTableOrderingComposer get noteId {
+    final $$DmNotesTableOrderingComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.noteId,
+        referencedTable: $db.dmNotes,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotesTableOrderingComposer(
+              $db: $db,
+              $table: $db.dmNotes,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$DmFilesTableAnnotationComposer
+    extends Composer<_$DayMemoryDb, $DmFilesTable> {
+  $$DmFilesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get fileName =>
+      $composableBuilder(column: $table.fileName, builder: (column) => column);
+
+  GeneratedColumn<int> get fileSize =>
+      $composableBuilder(column: $table.fileSize, builder: (column) => column);
+
+  GeneratedColumn<int> get fileType =>
+      $composableBuilder(column: $table.fileType, builder: (column) => column);
+
+  GeneratedColumn<int> get width =>
+      $composableBuilder(column: $table.width, builder: (column) => column);
+
+  GeneratedColumn<int> get height =>
+      $composableBuilder(column: $table.height, builder: (column) => column);
+
+  GeneratedColumn<int> get orderRank =>
+      $composableBuilder(column: $table.orderRank, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdDate => $composableBuilder(
+      column: $table.createdDate, builder: (column) => column);
+
+  $$DmNotesTableAnnotationComposer get noteId {
+    final $$DmNotesTableAnnotationComposer composer = $composerBuilder(
+        composer: this,
+        getCurrentColumn: (t) => t.noteId,
+        referencedTable: $db.dmNotes,
+        getReferencedColumn: (t) => t.id,
+        builder: (joinBuilder,
+                {$addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer}) =>
+            $$DmNotesTableAnnotationComposer(
+              $db: $db,
+              $table: $db.dmNotes,
+              $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+              joinBuilder: joinBuilder,
+              $removeJoinBuilderFromRootComposer:
+                  $removeJoinBuilderFromRootComposer,
+            ));
+    return composer;
+  }
+}
+
+class $$DmFilesTableTableManager extends RootTableManager<
+    _$DayMemoryDb,
+    $DmFilesTable,
+    DmFile,
+    $$DmFilesTableFilterComposer,
+    $$DmFilesTableOrderingComposer,
+    $$DmFilesTableAnnotationComposer,
+    $$DmFilesTableCreateCompanionBuilder,
+    $$DmFilesTableUpdateCompanionBuilder,
+    (DmFile, $$DmFilesTableReferences),
+    DmFile,
+    PrefetchHooks Function({bool noteId})> {
+  $$DmFilesTableTableManager(_$DayMemoryDb db, $DmFilesTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$DmFilesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$DmFilesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$DmFilesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<String> id = const Value.absent(),
+            Value<String> fileName = const Value.absent(),
+            Value<int> fileSize = const Value.absent(),
+            Value<int> fileType = const Value.absent(),
+            Value<int> width = const Value.absent(),
+            Value<int> height = const Value.absent(),
+            Value<String?> noteId = const Value.absent(),
+            Value<int> orderRank = const Value.absent(),
+            Value<DateTime> createdDate = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmFilesCompanion(
+            id: id,
+            fileName: fileName,
+            fileSize: fileSize,
+            fileType: fileType,
+            width: width,
+            height: height,
+            noteId: noteId,
+            orderRank: orderRank,
+            createdDate: createdDate,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String id,
+            required String fileName,
+            required int fileSize,
+            required int fileType,
+            required int width,
+            required int height,
+            Value<String?> noteId = const Value.absent(),
+            required int orderRank,
+            required DateTime createdDate,
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              DmFilesCompanion.insert(
+            id: id,
+            fileName: fileName,
+            fileSize: fileSize,
+            fileType: fileType,
+            width: width,
+            height: height,
+            noteId: noteId,
+            orderRank: orderRank,
+            createdDate: createdDate,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) =>
+                  (e.readTable(table), $$DmFilesTableReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: ({noteId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins: <
+                  T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic>>(state) {
+                if (noteId) {
+                  state = state.withJoin(
+                    currentTable: table,
+                    currentColumn: table.noteId,
+                    referencedTable: $$DmFilesTableReferences._noteIdTable(db),
+                    referencedColumn:
+                        $$DmFilesTableReferences._noteIdTable(db).id,
+                  ) as T;
+                }
+
+                return state;
+              },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ));
+}
+
+typedef $$DmFilesTableProcessedTableManager = ProcessedTableManager<
+    _$DayMemoryDb,
+    $DmFilesTable,
+    DmFile,
+    $$DmFilesTableFilterComposer,
+    $$DmFilesTableOrderingComposer,
+    $$DmFilesTableAnnotationComposer,
+    $$DmFilesTableCreateCompanionBuilder,
+    $$DmFilesTableUpdateCompanionBuilder,
+    (DmFile, $$DmFilesTableReferences),
+    DmFile,
+    PrefetchHooks Function({bool noteId})>;
+
+class $DayMemoryDbManager {
+  final _$DayMemoryDb _db;
+  $DayMemoryDbManager(this._db);
+  $$DmNotebooksTableTableManager get dmNotebooks =>
+      $$DmNotebooksTableTableManager(_db, _db.dmNotebooks);
+  $$DmLocationsTableTableManager get dmLocations =>
+      $$DmLocationsTableTableManager(_db, _db.dmLocations);
+  $$DmNotesTableTableManager get dmNotes =>
+      $$DmNotesTableTableManager(_db, _db.dmNotes);
+  $$DmTagsTableTableManager get dmTags =>
+      $$DmTagsTableTableManager(_db, _db.dmTags);
+  $$DmNoteTagsTableTableManager get dmNoteTags =>
+      $$DmNoteTagsTableTableManager(_db, _db.dmNoteTags);
+  $$DmQuestionListsTableTableManager get dmQuestionLists =>
+      $$DmQuestionListsTableTableManager(_db, _db.dmQuestionLists);
+  $$DmQuestionsTableTableManager get dmQuestions =>
+      $$DmQuestionsTableTableManager(_db, _db.dmQuestions);
+  $$DmFilesTableTableManager get dmFiles =>
+      $$DmFilesTableTableManager(_db, _db.dmFiles);
 }
