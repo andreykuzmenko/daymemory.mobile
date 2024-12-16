@@ -151,8 +151,8 @@ class _EditFormState extends State<EditNoteForm> {
     return QuillEditor(
       focusNode: _nodeText,
       scrollController: _scrollController,
-      configurations: QuillEditorConfigurations(
-        controller: _quillController,
+      controller: _quillController,
+      config: QuillEditorConfig(
         placeholder: widget.viewModel.textPlaceholder,
         padding: const EdgeInsets.all(0),
         scrollable: false,

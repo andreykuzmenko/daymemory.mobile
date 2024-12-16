@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:media_kit/media_kit.dart';
 import 'package:daymemory/common/custom_http_overrides.dart';
 import 'package:daymemory/configuration/settings/configuration_settings.dart';
@@ -119,9 +120,13 @@ class DesktopApp extends StatelessWidget {
           final lightTheme = DefaultThemeInitializer(settings: settings, brightness: Brightness.light, themeColorOptions: appSettingsProvider.lightThemeColors);
           var routeType = deviceType == DeviceType.phone ? RouteType.mobile : RouteType.generic;
 
+          var locDelegates = AppLocalizations.localizationsDelegates.toList();
+          //add FlutterQuillLocalizations.delegate
+          locDelegates.add(FlutterQuillLocalizations.delegate);
+
           return MaterialApp(
             locale: appSettingsProvider.locale,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            localizationsDelegates: locDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             builder: EasyLoading.init(),
             theme: lightTheme.getTheme(),

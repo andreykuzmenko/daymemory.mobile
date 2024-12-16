@@ -18,6 +18,7 @@ import 'package:daymemory/widget/theme/theme_initializer.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
@@ -100,9 +101,13 @@ class DayMemoryApp extends StatelessWidget {
           final lightTheme = DefaultThemeInitializer(settings: settings, brightness: Brightness.light, themeColorOptions: appSettingsProvider.lightThemeColors);
           var routeType = deviceType == DeviceType.phone ? RouteType.mobile : RouteType.generic;
 
+          var locDelegates = AppLocalizations.localizationsDelegates.toList();
+          //add FlutterQuillLocalizations.delegate
+          locDelegates.add(FlutterQuillLocalizations.delegate);
+
           return MaterialApp(
             locale: appSettingsProvider.locale,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            localizationsDelegates: locDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             builder: EasyLoading.init(),
             theme: lightTheme.getTheme(),

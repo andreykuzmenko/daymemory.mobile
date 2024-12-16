@@ -60,63 +60,8 @@ class _ToolbarState extends State<Toolbar> {
             primary: Theme.of(context).extension<ThemeColors>()!.accentColor,
           ),
         ),
-        child: QuillToolbar(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Wrap(
-              children: [
-                QuillToolbarToggleStyleButton(
-                  attribute: Attribute.h3,
-                  controller: widget.quillController,
-                  options: QuillToolbarToggleStyleButtonOptions(
-                    tooltip: "",
-                    iconData: Icons.title,
-                    //fillColor: HexColor.fromHex("#D9D9D9"),
-                  ),
-                ),
-                const SizedBox(width: 5),
-                QuillToolbarToggleStyleButton(
-                  attribute: Attribute.bold,
-                  controller: widget.quillController,
-                  options: const QuillToolbarToggleStyleButtonOptions(
-                    tooltip: "",
-                    iconData: Icons.format_bold,
-                    //fillColor: HexColor.fromHex("#D9D9D9"),
-                  ),
-                ),
-                const SizedBox(width: 5),
-                QuillToolbarToggleStyleButton(
-                  attribute: Attribute.italic,
-                  controller: widget.quillController,
-                  options: const QuillToolbarToggleStyleButtonOptions(
-                    tooltip: "",
-                    iconData: Icons.format_italic,
-                    //fillColor: HexColor.fromHex("#D9D9D9"),
-                  ),
-                ),
-                const SizedBox(width: 5),
-                QuillToolbarToggleStyleButton(
-                  attribute: Attribute.ul,
-                  controller: widget.quillController,
-                  options: const QuillToolbarToggleStyleButtonOptions(
-                    tooltip: "",
-                    iconData: Icons.format_list_bulleted_outlined,
-                    //fillColor: HexColor.fromHex("#D9D9D9"),
-                  ),
-                ),
-                const SizedBox(width: 5),
-                QuillToolbarToggleStyleButton(
-                  attribute: Attribute.ol,
-                  controller: widget.quillController,
-                  options: const QuillToolbarToggleStyleButtonOptions(
-                    tooltip: "",
-                    iconData: Icons.format_list_numbered,
-                    //fillColor: HexColor.fromHex("#D9D9D9"),
-                  ),
-                ),
-              ],
-            ),
-          ),
+        child: CustomToolbar(
+          controller: widget.quillController,
         ),
       ),
     );
@@ -267,6 +212,69 @@ class _ToolbarState extends State<Toolbar> {
         // ),
         Center(child: _createToolbar()),
       ],
+    );
+  }
+}
+
+class CustomToolbar extends StatelessWidget {
+  const CustomToolbar({super.key, required this.controller});
+
+  final QuillController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Wrap(
+        children: [
+          QuillToolbarToggleStyleButton(
+            attribute: Attribute.h3,
+            controller: controller,
+            options: QuillToolbarToggleStyleButtonOptions(
+              tooltip: "",
+              iconData: Icons.title,
+              //fillColor: HexColor.fromHex("#D9D9D9"),
+            ),
+          ),
+          const VerticalDivider(
+            width: 5,
+          ),
+          QuillToolbarToggleStyleButton(
+            options: const QuillToolbarToggleStyleButtonOptions(),
+            controller: controller,
+            attribute: Attribute.bold,
+          ),
+          const VerticalDivider(
+            width: 5,
+          ),
+          QuillToolbarToggleStyleButton(
+            options: const QuillToolbarToggleStyleButtonOptions(),
+            controller: controller,
+            attribute: Attribute.italic,
+          ),
+          const VerticalDivider(
+            width: 5,
+          ),
+          QuillToolbarToggleStyleButton(
+            controller: controller,
+            attribute: Attribute.underline,
+          ),
+          const VerticalDivider(
+            width: 5,
+          ),
+          QuillToolbarToggleStyleButton(
+            controller: controller,
+            attribute: Attribute.ol,
+          ),
+          const VerticalDivider(
+            width: 5,
+          ),
+          QuillToolbarToggleStyleButton(
+            controller: controller,
+            attribute: Attribute.ul,
+          ),
+        ],
+      ),
     );
   }
 }
