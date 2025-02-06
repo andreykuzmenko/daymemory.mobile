@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:page_view_indicators/circle_page_indicator.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
+import 'package:daymemory/widget/theme/theme_colors_extensions.dart';
 
 class GalleryPhoto extends StatefulWidget {
   const GalleryPhoto({
@@ -102,7 +103,7 @@ class _GalleryPhotoState extends State<GalleryPhoto> {
                       itemCount: widget.galleryItems.length,
                       currentPageNotifier: _currentPageNotifier,
                       dotColor: Colors.white, //Theme.of(context).colorScheme.primary,
-                      selectedDotColor: Theme.of(context).primaryColor, //Theme.of(context).colorScheme.secondary,
+                      selectedDotColor: Theme.of(context).extension<ThemeColors>()!.accentColor, //Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                 ),
