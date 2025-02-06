@@ -14,7 +14,7 @@ jobs:
   steps:
     - task: JavaToolInstaller@0
       inputs:
-        versionSpec: '11'
+        versionSpec: '17'
         jdkArchitectureOption: 'x64'
         jdkSourceOption: 'PreInstalled'
       displayName: 'Installing Java'
@@ -105,6 +105,7 @@ jobs:
         # flutter channel stable
         flutter doctor
         # flutter upgrade
+        flutter doctor -v
       displayName: Configure flutter SDK
 
     - task: UseRubyVersion@0
@@ -115,7 +116,7 @@ jobs:
     - bash: |
         cd android && \
         bundle install && \
-        bundle update fastlane && \
+        # bundle update fastlane && \
         cd .. && \
         cd ios && \
         bundle install && \
