@@ -109,7 +109,7 @@ jobs:
 
     - task: UseRubyVersion@0
       inputs:
-        versionSpec: '>= 2.4'
+        versionSpec: ">= 3.1"
       displayName: 'Installing Ruby'
 
     - bash: |
