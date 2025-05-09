@@ -9,7 +9,7 @@ jobs:
 - job: Deployment
   timeoutInMinutes: 60
   pool:
-    vmImage: 'macos-14'
+    vmImage: 'macos-15'
 
   steps:
     - task: JavaToolInstaller@0
