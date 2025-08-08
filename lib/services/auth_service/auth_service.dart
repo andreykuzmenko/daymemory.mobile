@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:daymemory/services/auth_service/auth_result.dart';
 import 'package:daymemory/services/auth_service/auth_user_data.dart';
 import 'package:daymemory/services/logging/logging_service.dart';
+import 'package:daymemory/services/network/errors/signin_cancelled_exception.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
@@ -12,9 +13,9 @@ import 'package:crypto/crypto.dart';
 abstract class IAuthService {
   Future<AuthResult> signInWitFacebook();
 
-  Future<AuthResult> signInWithGoogle();
+  Future<String?> signInWithGoogle();
 
-  Future<AuthResult> signInWithApple();
+  Future<String?> signInWithApple();
 }
 
 class AuthService implements IAuthService {
@@ -61,45 +62,50 @@ class AuthService implements IAuthService {
   }
 
   @override
-  Future<AuthResult> signInWithGoogle() async {
-    final GoogleSignInAccount? googleUser = await GoogleSignIn(scopes: <String>["email", "https://www.googleapis.com/auth/userinfo.profile"]).signIn();
+  Future<String?> signInWithGoogle() async {
+    try {
+      GoogleSignIn.instance.initialize(
+        //clientId:
+        //  "533652169284-m7959aojvek4dj92ulchunopjoopvs34.apps.googleusercontent.com",
+        serverClientId: "533652169284-0h9vctbr5m6gh1v21qoq7agdrr2a0pdd.apps.googleusercontent.com",
+      );
 
-    if (googleUser == null) {
-      throw Exception("Google user is null");
+      final GoogleSignInAccount googleUser = await GoogleSignIn.instance.authenticate(
+        scopeHint: [
+          'email',
+          'profile',
+          'openid',
+        ],
+      );
+
+      return googleUser.authentication.idToken;
+    } on GoogleSignInException catch (e) {
+      if (e.code == GoogleSignInExceptionCode.canceled) {
+        throw SigninCancelledException();
+      } else {
+        rethrow;
+      }
     }
-
-    return AuthResult(
-        isSuccessfull: true,
-        provider: "Google",
-        userData: AuthUserData(
-          id: googleUser.id,
-          email: googleUser.email,
-          firstName: googleUser.displayName,
-          lastName: "",
-          imageUrl: googleUser.photoUrl,
-        ));
   }
 
   @override
-  Future<AuthResult> signInWithApple() async {
-    final appleCredential = await SignInWithApple.getAppleIDCredential(
-      scopes: [
-        AppleIDAuthorizationScopes.email,
-        AppleIDAuthorizationScopes.fullName,
-      ],
-    );
+  Future<String?> signInWithApple() async {
+    try {
+      final appleCredential = await SignInWithApple.getAppleIDCredential(
+        scopes: [
+          AppleIDAuthorizationScopes.email,
+          AppleIDAuthorizationScopes.fullName,
+        ],
+      );
 
-    var res = AuthResult(
-        isSuccessfull: true,
-        provider: "Apple Id",
-        userData: AuthUserData(
-          id: appleCredential.userIdentifier!,
-          email: appleCredential.email ?? "",
-          firstName: appleCredential.givenName ?? "No name",
-          lastName: appleCredential.familyName ?? "No last name",
-        ));
-
-    return res;
+      return appleCredential.identityToken;
+    } on SignInWithAppleAuthorizationException catch (e) {
+      if (e.code == AuthorizationErrorCode.canceled) {
+        throw SigninCancelledException();
+      } else {
+        rethrow;
+      }
+    }
   }
 
   String generateNonce([int length = 32]) {

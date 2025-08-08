@@ -63,7 +63,7 @@ class _$AppState extends AppState {
   final BuiltList<DialogState>? dialogsState;
 
   factory _$AppState([void Function(AppStateBuilder)? updates]) =>
-      (new AppStateBuilder()..update(updates))._build();
+      (AppStateBuilder()..update(updates))._build();
 
   _$AppState._(
       {required this.screenBlockingState,
@@ -93,63 +93,13 @@ class _$AppState extends AppState {
       required this.accountState,
       required this.jailbreakType,
       this.dialogsState})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        screenBlockingState, r'AppState', 'screenBlockingState');
-    BuiltValueNullFieldError.checkNotNull(
-        onBoardingState, r'AppState', 'onBoardingState');
-    BuiltValueNullFieldError.checkNotNull(
-        deviceState, r'AppState', 'deviceState');
-    BuiltValueNullFieldError.checkNotNull(
-        sideMenuState, r'AppState', 'sideMenuState');
-    BuiltValueNullFieldError.checkNotNull(
-        notesState, r'AppState', 'notesState');
-    BuiltValueNullFieldError.checkNotNull(
-        noteImageGalleryState, r'AppState', 'noteImageGalleryState');
-    BuiltValueNullFieldError.checkNotNull(
-        notebooksState, r'AppState', 'notebooksState');
-    BuiltValueNullFieldError.checkNotNull(
-        editNotebookState, r'AppState', 'editNotebookState');
-    BuiltValueNullFieldError.checkNotNull(
-        editTagState, r'AppState', 'editTagState');
-    BuiltValueNullFieldError.checkNotNull(
-        selectedMenuItemState, r'AppState', 'selectedMenuItemState');
-    BuiltValueNullFieldError.checkNotNull(
-        reviewsState, r'AppState', 'reviewsState');
-    BuiltValueNullFieldError.checkNotNull(
-        questionListsState, r'AppState', 'questionListsState');
-    BuiltValueNullFieldError.checkNotNull(
-        questionListState, r'AppState', 'questionListState');
-    BuiltValueNullFieldError.checkNotNull(
-        answerQuestionState, r'AppState', 'answerQuestionState');
-    BuiltValueNullFieldError.checkNotNull(noteState, r'AppState', 'noteState');
-    BuiltValueNullFieldError.checkNotNull(tagsState, r'AppState', 'tagsState');
-    BuiltValueNullFieldError.checkNotNull(
-        createPinState, r'AppState', 'createPinState');
-    BuiltValueNullFieldError.checkNotNull(
-        enterPinState, r'AppState', 'enterPinState');
-    BuiltValueNullFieldError.checkNotNull(
-        biometricsState, r'AppState', 'biometricsState');
-    BuiltValueNullFieldError.checkNotNull(
-        settingsState, r'AppState', 'settingsState');
-    BuiltValueNullFieldError.checkNotNull(syncState, r'AppState', 'syncState');
-    BuiltValueNullFieldError.checkNotNull(
-        loginState, r'AppState', 'loginState');
-    BuiltValueNullFieldError.checkNotNull(tabsState, r'AppState', 'tabsState');
-    BuiltValueNullFieldError.checkNotNull(
-        editTagsState, r'AppState', 'editTagsState');
-    BuiltValueNullFieldError.checkNotNull(
-        accountState, r'AppState', 'accountState');
-    BuiltValueNullFieldError.checkNotNull(
-        jailbreakType, r'AppState', 'jailbreakType');
-  }
-
+      : super._();
   @override
   AppState rebuild(void Function(AppStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
+  AppStateBuilder toBuilder() => AppStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -257,149 +207,145 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
 
   ScreenBlockingStateBuilder? _screenBlockingState;
   ScreenBlockingStateBuilder get screenBlockingState =>
-      _$this._screenBlockingState ??= new ScreenBlockingStateBuilder();
+      _$this._screenBlockingState ??= ScreenBlockingStateBuilder();
   set screenBlockingState(ScreenBlockingStateBuilder? screenBlockingState) =>
       _$this._screenBlockingState = screenBlockingState;
 
   OnBoardingStateBuilder? _onBoardingState;
   OnBoardingStateBuilder get onBoardingState =>
-      _$this._onBoardingState ??= new OnBoardingStateBuilder();
+      _$this._onBoardingState ??= OnBoardingStateBuilder();
   set onBoardingState(OnBoardingStateBuilder? onBoardingState) =>
       _$this._onBoardingState = onBoardingState;
 
   DeviceStateBuilder? _deviceState;
   DeviceStateBuilder get deviceState =>
-      _$this._deviceState ??= new DeviceStateBuilder();
+      _$this._deviceState ??= DeviceStateBuilder();
   set deviceState(DeviceStateBuilder? deviceState) =>
       _$this._deviceState = deviceState;
 
   SideMenuStateBuilder? _sideMenuState;
   SideMenuStateBuilder get sideMenuState =>
-      _$this._sideMenuState ??= new SideMenuStateBuilder();
+      _$this._sideMenuState ??= SideMenuStateBuilder();
   set sideMenuState(SideMenuStateBuilder? sideMenuState) =>
       _$this._sideMenuState = sideMenuState;
 
   NotesStateBuilder? _notesState;
   NotesStateBuilder get notesState =>
-      _$this._notesState ??= new NotesStateBuilder();
+      _$this._notesState ??= NotesStateBuilder();
   set notesState(NotesStateBuilder? notesState) =>
       _$this._notesState = notesState;
 
   NoteImageGalleryStateBuilder? _noteImageGalleryState;
   NoteImageGalleryStateBuilder get noteImageGalleryState =>
-      _$this._noteImageGalleryState ??= new NoteImageGalleryStateBuilder();
+      _$this._noteImageGalleryState ??= NoteImageGalleryStateBuilder();
   set noteImageGalleryState(
           NoteImageGalleryStateBuilder? noteImageGalleryState) =>
       _$this._noteImageGalleryState = noteImageGalleryState;
 
   NotebooksStateBuilder? _notebooksState;
   NotebooksStateBuilder get notebooksState =>
-      _$this._notebooksState ??= new NotebooksStateBuilder();
+      _$this._notebooksState ??= NotebooksStateBuilder();
   set notebooksState(NotebooksStateBuilder? notebooksState) =>
       _$this._notebooksState = notebooksState;
 
   EditNotebookStateBuilder? _editNotebookState;
   EditNotebookStateBuilder get editNotebookState =>
-      _$this._editNotebookState ??= new EditNotebookStateBuilder();
+      _$this._editNotebookState ??= EditNotebookStateBuilder();
   set editNotebookState(EditNotebookStateBuilder? editNotebookState) =>
       _$this._editNotebookState = editNotebookState;
 
   EditTagStateBuilder? _editTagState;
   EditTagStateBuilder get editTagState =>
-      _$this._editTagState ??= new EditTagStateBuilder();
+      _$this._editTagState ??= EditTagStateBuilder();
   set editTagState(EditTagStateBuilder? editTagState) =>
       _$this._editTagState = editTagState;
 
   SelectedMenuItemStateBuilder? _selectedMenuItemState;
   SelectedMenuItemStateBuilder get selectedMenuItemState =>
-      _$this._selectedMenuItemState ??= new SelectedMenuItemStateBuilder();
+      _$this._selectedMenuItemState ??= SelectedMenuItemStateBuilder();
   set selectedMenuItemState(
           SelectedMenuItemStateBuilder? selectedMenuItemState) =>
       _$this._selectedMenuItemState = selectedMenuItemState;
 
   ReviewsStateBuilder? _reviewsState;
   ReviewsStateBuilder get reviewsState =>
-      _$this._reviewsState ??= new ReviewsStateBuilder();
+      _$this._reviewsState ??= ReviewsStateBuilder();
   set reviewsState(ReviewsStateBuilder? reviewsState) =>
       _$this._reviewsState = reviewsState;
 
   QuestionListsStateBuilder? _questionListsState;
   QuestionListsStateBuilder get questionListsState =>
-      _$this._questionListsState ??= new QuestionListsStateBuilder();
+      _$this._questionListsState ??= QuestionListsStateBuilder();
   set questionListsState(QuestionListsStateBuilder? questionListsState) =>
       _$this._questionListsState = questionListsState;
 
   QuestionListStateBuilder? _questionListState;
   QuestionListStateBuilder get questionListState =>
-      _$this._questionListState ??= new QuestionListStateBuilder();
+      _$this._questionListState ??= QuestionListStateBuilder();
   set questionListState(QuestionListStateBuilder? questionListState) =>
       _$this._questionListState = questionListState;
 
   AnswerQuestionStateBuilder? _answerQuestionState;
   AnswerQuestionStateBuilder get answerQuestionState =>
-      _$this._answerQuestionState ??= new AnswerQuestionStateBuilder();
+      _$this._answerQuestionState ??= AnswerQuestionStateBuilder();
   set answerQuestionState(AnswerQuestionStateBuilder? answerQuestionState) =>
       _$this._answerQuestionState = answerQuestionState;
 
   NoteStateBuilder? _noteState;
-  NoteStateBuilder get noteState =>
-      _$this._noteState ??= new NoteStateBuilder();
+  NoteStateBuilder get noteState => _$this._noteState ??= NoteStateBuilder();
   set noteState(NoteStateBuilder? noteState) => _$this._noteState = noteState;
 
   TagsStateBuilder? _tagsState;
-  TagsStateBuilder get tagsState =>
-      _$this._tagsState ??= new TagsStateBuilder();
+  TagsStateBuilder get tagsState => _$this._tagsState ??= TagsStateBuilder();
   set tagsState(TagsStateBuilder? tagsState) => _$this._tagsState = tagsState;
 
   CreatePinStateBuilder? _createPinState;
   CreatePinStateBuilder get createPinState =>
-      _$this._createPinState ??= new CreatePinStateBuilder();
+      _$this._createPinState ??= CreatePinStateBuilder();
   set createPinState(CreatePinStateBuilder? createPinState) =>
       _$this._createPinState = createPinState;
 
   EnterPinStateBuilder? _enterPinState;
   EnterPinStateBuilder get enterPinState =>
-      _$this._enterPinState ??= new EnterPinStateBuilder();
+      _$this._enterPinState ??= EnterPinStateBuilder();
   set enterPinState(EnterPinStateBuilder? enterPinState) =>
       _$this._enterPinState = enterPinState;
 
   BiometricAuthStateBuilder? _biometricsState;
   BiometricAuthStateBuilder get biometricsState =>
-      _$this._biometricsState ??= new BiometricAuthStateBuilder();
+      _$this._biometricsState ??= BiometricAuthStateBuilder();
   set biometricsState(BiometricAuthStateBuilder? biometricsState) =>
       _$this._biometricsState = biometricsState;
 
   SettingsStateBuilder? _settingsState;
   SettingsStateBuilder get settingsState =>
-      _$this._settingsState ??= new SettingsStateBuilder();
+      _$this._settingsState ??= SettingsStateBuilder();
   set settingsState(SettingsStateBuilder? settingsState) =>
       _$this._settingsState = settingsState;
 
   SyncStateBuilder? _syncState;
-  SyncStateBuilder get syncState =>
-      _$this._syncState ??= new SyncStateBuilder();
+  SyncStateBuilder get syncState => _$this._syncState ??= SyncStateBuilder();
   set syncState(SyncStateBuilder? syncState) => _$this._syncState = syncState;
 
   LoginStateBuilder? _loginState;
   LoginStateBuilder get loginState =>
-      _$this._loginState ??= new LoginStateBuilder();
+      _$this._loginState ??= LoginStateBuilder();
   set loginState(LoginStateBuilder? loginState) =>
       _$this._loginState = loginState;
 
   TabsStateBuilder? _tabsState;
-  TabsStateBuilder get tabsState =>
-      _$this._tabsState ??= new TabsStateBuilder();
+  TabsStateBuilder get tabsState => _$this._tabsState ??= TabsStateBuilder();
   set tabsState(TabsStateBuilder? tabsState) => _$this._tabsState = tabsState;
 
   EditTagsStateBuilder? _editTagsState;
   EditTagsStateBuilder get editTagsState =>
-      _$this._editTagsState ??= new EditTagsStateBuilder();
+      _$this._editTagsState ??= EditTagsStateBuilder();
   set editTagsState(EditTagsStateBuilder? editTagsState) =>
       _$this._editTagsState = editTagsState;
 
   AccountStateBuilder? _accountState;
   AccountStateBuilder get accountState =>
-      _$this._accountState ??= new AccountStateBuilder();
+      _$this._accountState ??= AccountStateBuilder();
   set accountState(AccountStateBuilder? accountState) =>
       _$this._accountState = accountState;
 
@@ -410,7 +356,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
 
   ListBuilder<DialogState>? _dialogsState;
   ListBuilder<DialogState> get dialogsState =>
-      _$this._dialogsState ??= new ListBuilder<DialogState>();
+      _$this._dialogsState ??= ListBuilder<DialogState>();
   set dialogsState(ListBuilder<DialogState>? dialogsState) =>
       _$this._dialogsState = dialogsState;
 
@@ -453,7 +399,6 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
 
   @override
   void replace(AppState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppState;
   }
 
@@ -469,35 +414,36 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
     _$AppState _$result;
     try {
       _$result = _$v ??
-          new _$AppState._(
-              screenBlockingState: screenBlockingState.build(),
-              onBoardingState: onBoardingState.build(),
-              deviceState: deviceState.build(),
-              sideMenuState: sideMenuState.build(),
-              notesState: notesState.build(),
-              noteImageGalleryState: noteImageGalleryState.build(),
-              notebooksState: notebooksState.build(),
-              editNotebookState: editNotebookState.build(),
-              editTagState: editTagState.build(),
-              selectedMenuItemState: selectedMenuItemState.build(),
-              reviewsState: reviewsState.build(),
-              questionListsState: questionListsState.build(),
-              questionListState: questionListState.build(),
-              answerQuestionState: answerQuestionState.build(),
-              noteState: noteState.build(),
-              tagsState: tagsState.build(),
-              createPinState: createPinState.build(),
-              enterPinState: enterPinState.build(),
-              biometricsState: biometricsState.build(),
-              settingsState: settingsState.build(),
-              syncState: syncState.build(),
-              loginState: loginState.build(),
-              tabsState: tabsState.build(),
-              editTagsState: editTagsState.build(),
-              accountState: accountState.build(),
-              jailbreakType: BuiltValueNullFieldError.checkNotNull(
-                  jailbreakType, r'AppState', 'jailbreakType'),
-              dialogsState: _dialogsState?.build());
+          _$AppState._(
+            screenBlockingState: screenBlockingState.build(),
+            onBoardingState: onBoardingState.build(),
+            deviceState: deviceState.build(),
+            sideMenuState: sideMenuState.build(),
+            notesState: notesState.build(),
+            noteImageGalleryState: noteImageGalleryState.build(),
+            notebooksState: notebooksState.build(),
+            editNotebookState: editNotebookState.build(),
+            editTagState: editTagState.build(),
+            selectedMenuItemState: selectedMenuItemState.build(),
+            reviewsState: reviewsState.build(),
+            questionListsState: questionListsState.build(),
+            questionListState: questionListState.build(),
+            answerQuestionState: answerQuestionState.build(),
+            noteState: noteState.build(),
+            tagsState: tagsState.build(),
+            createPinState: createPinState.build(),
+            enterPinState: enterPinState.build(),
+            biometricsState: biometricsState.build(),
+            settingsState: settingsState.build(),
+            syncState: syncState.build(),
+            loginState: loginState.build(),
+            tabsState: tabsState.build(),
+            editTagsState: editTagsState.build(),
+            accountState: accountState.build(),
+            jailbreakType: BuiltValueNullFieldError.checkNotNull(
+                jailbreakType, r'AppState', 'jailbreakType'),
+            dialogsState: _dialogsState?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -555,7 +501,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         _$failedField = 'dialogsState';
         _dialogsState?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AppState', _$failedField, e.toString());
       }
       rethrow;

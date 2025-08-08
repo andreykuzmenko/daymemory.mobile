@@ -17,27 +17,20 @@ class _$EditTagState extends EditTagState {
   final bool isSaving;
 
   factory _$EditTagState([void Function(EditTagStateBuilder)? updates]) =>
-      (new EditTagStateBuilder()..update(updates))._build();
+      (EditTagStateBuilder()..update(updates))._build();
 
   _$EditTagState._(
       {this.tagId,
       required this.title,
       required this.orderRank,
       required this.isSaving})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, r'EditTagState', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        orderRank, r'EditTagState', 'orderRank');
-    BuiltValueNullFieldError.checkNotNull(
-        isSaving, r'EditTagState', 'isSaving');
-  }
-
+      : super._();
   @override
   EditTagState rebuild(void Function(EditTagStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  EditTagStateBuilder toBuilder() => new EditTagStateBuilder()..replace(this);
+  EditTagStateBuilder toBuilder() => EditTagStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -107,7 +100,6 @@ class EditTagStateBuilder
 
   @override
   void replace(EditTagState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$EditTagState;
   }
 
@@ -121,14 +113,15 @@ class EditTagStateBuilder
 
   _$EditTagState _build() {
     final _$result = _$v ??
-        new _$EditTagState._(
-            tagId: tagId,
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'EditTagState', 'title'),
-            orderRank: BuiltValueNullFieldError.checkNotNull(
-                orderRank, r'EditTagState', 'orderRank'),
-            isSaving: BuiltValueNullFieldError.checkNotNull(
-                isSaving, r'EditTagState', 'isSaving'));
+        _$EditTagState._(
+          tagId: tagId,
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'EditTagState', 'title'),
+          orderRank: BuiltValueNullFieldError.checkNotNull(
+              orderRank, r'EditTagState', 'orderRank'),
+          isSaving: BuiltValueNullFieldError.checkNotNull(
+              isSaving, r'EditTagState', 'isSaving'),
+        );
     replace(_$result);
     return _$result;
   }

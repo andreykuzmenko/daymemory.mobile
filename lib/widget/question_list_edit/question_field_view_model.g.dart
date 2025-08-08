@@ -20,7 +20,7 @@ class _$QuestionFieldViewModel extends QuestionFieldViewModel {
 
   factory _$QuestionFieldViewModel(
           [void Function(QuestionFieldViewModelBuilder)? updates]) =>
-      (new QuestionFieldViewModelBuilder()..update(updates))._build();
+      (QuestionFieldViewModelBuilder()..update(updates))._build();
 
   _$QuestionFieldViewModel._(
       {required this.fieldId,
@@ -28,17 +28,7 @@ class _$QuestionFieldViewModel extends QuestionFieldViewModel {
       required this.placeholder,
       this.deleteCommand,
       required this.textChangedCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        fieldId, r'QuestionFieldViewModel', 'fieldId');
-    BuiltValueNullFieldError.checkNotNull(
-        text, r'QuestionFieldViewModel', 'text');
-    BuiltValueNullFieldError.checkNotNull(
-        placeholder, r'QuestionFieldViewModel', 'placeholder');
-    BuiltValueNullFieldError.checkNotNull(
-        textChangedCommand, r'QuestionFieldViewModel', 'textChangedCommand');
-  }
-
+      : super._();
   @override
   QuestionFieldViewModel rebuild(
           void Function(QuestionFieldViewModelBuilder) updates) =>
@@ -46,7 +36,7 @@ class _$QuestionFieldViewModel extends QuestionFieldViewModel {
 
   @override
   QuestionFieldViewModelBuilder toBuilder() =>
-      new QuestionFieldViewModelBuilder()..replace(this);
+      QuestionFieldViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -127,7 +117,6 @@ class QuestionFieldViewModelBuilder
 
   @override
   void replace(QuestionFieldViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$QuestionFieldViewModel;
   }
 
@@ -141,18 +130,19 @@ class QuestionFieldViewModelBuilder
 
   _$QuestionFieldViewModel _build() {
     final _$result = _$v ??
-        new _$QuestionFieldViewModel._(
-            fieldId: BuiltValueNullFieldError.checkNotNull(
-                fieldId, r'QuestionFieldViewModel', 'fieldId'),
-            text: BuiltValueNullFieldError.checkNotNull(
-                text, r'QuestionFieldViewModel', 'text'),
-            placeholder: BuiltValueNullFieldError.checkNotNull(
-                placeholder, r'QuestionFieldViewModel', 'placeholder'),
-            deleteCommand: deleteCommand,
-            textChangedCommand: BuiltValueNullFieldError.checkNotNull(
-                textChangedCommand,
-                r'QuestionFieldViewModel',
-                'textChangedCommand'));
+        _$QuestionFieldViewModel._(
+          fieldId: BuiltValueNullFieldError.checkNotNull(
+              fieldId, r'QuestionFieldViewModel', 'fieldId'),
+          text: BuiltValueNullFieldError.checkNotNull(
+              text, r'QuestionFieldViewModel', 'text'),
+          placeholder: BuiltValueNullFieldError.checkNotNull(
+              placeholder, r'QuestionFieldViewModel', 'placeholder'),
+          deleteCommand: deleteCommand,
+          textChangedCommand: BuiltValueNullFieldError.checkNotNull(
+              textChangedCommand,
+              r'QuestionFieldViewModel',
+              'textChangedCommand'),
+        );
     replace(_$result);
     return _$result;
   }

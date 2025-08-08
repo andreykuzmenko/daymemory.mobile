@@ -46,7 +46,7 @@ class _$NoteOptionsViewModel extends NoteOptionsViewModel {
 
   factory _$NoteOptionsViewModel(
           [void Function(NoteOptionsViewModelBuilder)? updates]) =>
-      (new NoteOptionsViewModelBuilder()..update(updates))._build();
+      (NoteOptionsViewModelBuilder()..update(updates))._build();
 
   _$NoteOptionsViewModel._(
       {this.notebookTitle,
@@ -67,39 +67,7 @@ class _$NoteOptionsViewModel extends NoteOptionsViewModel {
       required this.changeDateCommand,
       required this.selectNotebookCommand,
       required this.selectTagsCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        notebookLabel, r'NoteOptionsViewModel', 'notebookLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        tagsLabel, r'NoteOptionsViewModel', 'tagsLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        tagsValue, r'NoteOptionsViewModel', 'tagsValue');
-    BuiltValueNullFieldError.checkNotNull(
-        dateLabel, r'NoteOptionsViewModel', 'dateLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        locationLabel, r'NoteOptionsViewModel', 'locationLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        nolocationText, r'NoteOptionsViewModel', 'nolocationText');
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'NoteOptionsViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        notebooks, r'NoteOptionsViewModel', 'notebooks');
-    BuiltValueNullFieldError.checkNotNull(
-        tags, r'NoteOptionsViewModel', 'tags');
-    BuiltValueNullFieldError.checkNotNull(
-        date, r'NoteOptionsViewModel', 'date');
-    BuiltValueNullFieldError.checkNotNull(
-        formatedDate, r'NoteOptionsViewModel', 'formatedDate');
-    BuiltValueNullFieldError.checkNotNull(
-        closeCommand, r'NoteOptionsViewModel', 'closeCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        changeDateCommand, r'NoteOptionsViewModel', 'changeDateCommand');
-    BuiltValueNullFieldError.checkNotNull(selectNotebookCommand,
-        r'NoteOptionsViewModel', 'selectNotebookCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        selectTagsCommand, r'NoteOptionsViewModel', 'selectTagsCommand');
-  }
-
+      : super._();
   @override
   NoteOptionsViewModel rebuild(
           void Function(NoteOptionsViewModelBuilder) updates) =>
@@ -107,7 +75,7 @@ class _$NoteOptionsViewModel extends NoteOptionsViewModel {
 
   @override
   NoteOptionsViewModelBuilder toBuilder() =>
-      new NoteOptionsViewModelBuilder()..replace(this);
+      NoteOptionsViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -233,7 +201,7 @@ class NoteOptionsViewModelBuilder
 
   ListBuilder<NotebookDto>? _notebooks;
   ListBuilder<NotebookDto> get notebooks =>
-      _$this._notebooks ??= new ListBuilder<NotebookDto>();
+      _$this._notebooks ??= ListBuilder<NotebookDto>();
   set notebooks(ListBuilder<NotebookDto>? notebooks) =>
       _$this._notebooks = notebooks;
 
@@ -300,7 +268,6 @@ class NoteOptionsViewModelBuilder
 
   @override
   void replace(NoteOptionsViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$NoteOptionsViewModel;
   }
 
@@ -316,40 +283,53 @@ class NoteOptionsViewModelBuilder
     _$NoteOptionsViewModel _$result;
     try {
       _$result = _$v ??
-          new _$NoteOptionsViewModel._(
-              notebookTitle: notebookTitle,
-              notebookId: notebookId,
-              notebookLabel: BuiltValueNullFieldError.checkNotNull(
-                  notebookLabel, r'NoteOptionsViewModel', 'notebookLabel'),
-              tagsLabel: BuiltValueNullFieldError.checkNotNull(
-                  tagsLabel, r'NoteOptionsViewModel', 'tagsLabel'),
-              tagsValue: BuiltValueNullFieldError.checkNotNull(
-                  tagsValue, r'NoteOptionsViewModel', 'tagsValue'),
-              dateLabel: BuiltValueNullFieldError.checkNotNull(
-                  dateLabel, r'NoteOptionsViewModel', 'dateLabel'),
-              locationLabel: BuiltValueNullFieldError.checkNotNull(
-                  locationLabel, r'NoteOptionsViewModel', 'locationLabel'),
-              nolocationText: BuiltValueNullFieldError.checkNotNull(
-                  nolocationText, r'NoteOptionsViewModel', 'nolocationText'),
-              title: BuiltValueNullFieldError.checkNotNull(
-                  title, r'NoteOptionsViewModel', 'title'),
-              location: location,
-              notebooks: notebooks.build(),
-              tags: BuiltValueNullFieldError.checkNotNull(
-                  tags, r'NoteOptionsViewModel', 'tags'),
-              date: BuiltValueNullFieldError.checkNotNull(date, r'NoteOptionsViewModel', 'date'),
-              formatedDate: BuiltValueNullFieldError.checkNotNull(formatedDate, r'NoteOptionsViewModel', 'formatedDate'),
-              closeCommand: BuiltValueNullFieldError.checkNotNull(closeCommand, r'NoteOptionsViewModel', 'closeCommand'),
-              changeDateCommand: BuiltValueNullFieldError.checkNotNull(changeDateCommand, r'NoteOptionsViewModel', 'changeDateCommand'),
-              selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(selectNotebookCommand, r'NoteOptionsViewModel', 'selectNotebookCommand'),
-              selectTagsCommand: BuiltValueNullFieldError.checkNotNull(selectTagsCommand, r'NoteOptionsViewModel', 'selectTagsCommand'));
+          _$NoteOptionsViewModel._(
+            notebookTitle: notebookTitle,
+            notebookId: notebookId,
+            notebookLabel: BuiltValueNullFieldError.checkNotNull(
+                notebookLabel, r'NoteOptionsViewModel', 'notebookLabel'),
+            tagsLabel: BuiltValueNullFieldError.checkNotNull(
+                tagsLabel, r'NoteOptionsViewModel', 'tagsLabel'),
+            tagsValue: BuiltValueNullFieldError.checkNotNull(
+                tagsValue, r'NoteOptionsViewModel', 'tagsValue'),
+            dateLabel: BuiltValueNullFieldError.checkNotNull(
+                dateLabel, r'NoteOptionsViewModel', 'dateLabel'),
+            locationLabel: BuiltValueNullFieldError.checkNotNull(
+                locationLabel, r'NoteOptionsViewModel', 'locationLabel'),
+            nolocationText: BuiltValueNullFieldError.checkNotNull(
+                nolocationText, r'NoteOptionsViewModel', 'nolocationText'),
+            title: BuiltValueNullFieldError.checkNotNull(
+                title, r'NoteOptionsViewModel', 'title'),
+            location: location,
+            notebooks: notebooks.build(),
+            tags: BuiltValueNullFieldError.checkNotNull(
+                tags, r'NoteOptionsViewModel', 'tags'),
+            date: BuiltValueNullFieldError.checkNotNull(
+                date, r'NoteOptionsViewModel', 'date'),
+            formatedDate: BuiltValueNullFieldError.checkNotNull(
+                formatedDate, r'NoteOptionsViewModel', 'formatedDate'),
+            closeCommand: BuiltValueNullFieldError.checkNotNull(
+                closeCommand, r'NoteOptionsViewModel', 'closeCommand'),
+            changeDateCommand: BuiltValueNullFieldError.checkNotNull(
+                changeDateCommand,
+                r'NoteOptionsViewModel',
+                'changeDateCommand'),
+            selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(
+                selectNotebookCommand,
+                r'NoteOptionsViewModel',
+                'selectNotebookCommand'),
+            selectTagsCommand: BuiltValueNullFieldError.checkNotNull(
+                selectTagsCommand,
+                r'NoteOptionsViewModel',
+                'selectTagsCommand'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'notebooks';
         notebooks.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'NoteOptionsViewModel', _$failedField, e.toString());
       }
       rethrow;

@@ -3,7 +3,7 @@ import 'package:daymemory/widget/question_list_edit/question_list_view.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class EditQuestionWidget extends StatefulWidget {
   const EditQuestionWidget({super.key, required this.viewModel});

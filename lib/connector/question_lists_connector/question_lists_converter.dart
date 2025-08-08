@@ -8,7 +8,7 @@ import 'package:daymemory/redux/action/actions.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
 import 'package:daymemory/widget/question-lists/question_list_view_model.dart';
 import 'package:daymemory/widget/question-lists/question_lists_view_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class QuestionListsConverter extends ViewModelConverter<QuestionListsViewModel> {
   final AppLocalizations loc;

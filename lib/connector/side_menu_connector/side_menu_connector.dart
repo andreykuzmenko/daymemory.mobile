@@ -5,7 +5,7 @@ import 'package:daymemory/services/device_info_service/device_info_service.dart'
 import 'package:daymemory/widget/side_menu/side_menu_view_model/side_menu_view_model.dart';
 import 'package:daymemory/widget/side_menu/side_menu_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class SideMenuConnector extends PageConnector<SideMenuViewModel, SideMenuConverter> {
   const SideMenuConnector({super.key});

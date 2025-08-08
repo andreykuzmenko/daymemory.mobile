@@ -36,7 +36,7 @@ class _$ConfigurationSettings extends ConfigurationSettings {
 
   factory _$ConfigurationSettings(
           [void Function(ConfigurationSettingsBuilder)? updates]) =>
-      (new ConfigurationSettingsBuilder()..update(updates))._build();
+      (ConfigurationSettingsBuilder()..update(updates))._build();
 
   _$ConfigurationSettings._(
       {required this.type,
@@ -52,35 +52,7 @@ class _$ConfigurationSettings extends ConfigurationSettings {
       required this.devContactEmail,
       required this.encryptedText,
       required this.mixPanelKey})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        type, r'ConfigurationSettings', 'type');
-    BuiltValueNullFieldError.checkNotNull(
-        appName, r'ConfigurationSettings', 'appName');
-    BuiltValueNullFieldError.checkNotNull(
-        apiUrl, r'ConfigurationSettings', 'apiUrl');
-    BuiltValueNullFieldError.checkNotNull(
-        privacyPolicyUrl, r'ConfigurationSettings', 'privacyPolicyUrl');
-    BuiltValueNullFieldError.checkNotNull(
-        termsOfUseUrl, r'ConfigurationSettings', 'termsOfUseUrl');
-    BuiltValueNullFieldError.checkNotNull(
-        defaultFont, r'ConfigurationSettings', 'defaultFont');
-    BuiltValueNullFieldError.checkNotNull(syncDataIntervalSeconds,
-        r'ConfigurationSettings', 'syncDataIntervalSeconds');
-    BuiltValueNullFieldError.checkNotNull(
-        fullscreenMinWidth, r'ConfigurationSettings', 'fullscreenMinWidth');
-    BuiltValueNullFieldError.checkNotNull(
-        sideMenuWidth, r'ConfigurationSettings', 'sideMenuWidth');
-    BuiltValueNullFieldError.checkNotNull(
-        emailValidator, r'ConfigurationSettings', 'emailValidator');
-    BuiltValueNullFieldError.checkNotNull(
-        devContactEmail, r'ConfigurationSettings', 'devContactEmail');
-    BuiltValueNullFieldError.checkNotNull(
-        encryptedText, r'ConfigurationSettings', 'encryptedText');
-    BuiltValueNullFieldError.checkNotNull(
-        mixPanelKey, r'ConfigurationSettings', 'mixPanelKey');
-  }
-
+      : super._();
   @override
   ConfigurationSettings rebuild(
           void Function(ConfigurationSettingsBuilder) updates) =>
@@ -88,7 +60,7 @@ class _$ConfigurationSettings extends ConfigurationSettings {
 
   @override
   ConfigurationSettingsBuilder toBuilder() =>
-      new ConfigurationSettingsBuilder()..replace(this);
+      ConfigurationSettingsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -238,7 +210,6 @@ class ConfigurationSettingsBuilder
 
   @override
   void replace(ConfigurationSettings other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ConfigurationSettings;
   }
 
@@ -252,28 +223,38 @@ class ConfigurationSettingsBuilder
 
   _$ConfigurationSettings _build() {
     final _$result = _$v ??
-        new _$ConfigurationSettings._(
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ConfigurationSettings', 'type'),
-            appName: BuiltValueNullFieldError.checkNotNull(
-                appName, r'ConfigurationSettings', 'appName'),
-            apiUrl: BuiltValueNullFieldError.checkNotNull(
-                apiUrl, r'ConfigurationSettings', 'apiUrl'),
-            privacyPolicyUrl: BuiltValueNullFieldError.checkNotNull(
-                privacyPolicyUrl, r'ConfigurationSettings', 'privacyPolicyUrl'),
-            termsOfUseUrl: BuiltValueNullFieldError.checkNotNull(
-                termsOfUseUrl, r'ConfigurationSettings', 'termsOfUseUrl'),
-            defaultFont: BuiltValueNullFieldError.checkNotNull(
-                defaultFont, r'ConfigurationSettings', 'defaultFont'),
-            syncDataIntervalSeconds: BuiltValueNullFieldError.checkNotNull(
-                syncDataIntervalSeconds, r'ConfigurationSettings', 'syncDataIntervalSeconds'),
-            fullscreenMinWidth: BuiltValueNullFieldError.checkNotNull(
-                fullscreenMinWidth, r'ConfigurationSettings', 'fullscreenMinWidth'),
-            sideMenuWidth: BuiltValueNullFieldError.checkNotNull(sideMenuWidth, r'ConfigurationSettings', 'sideMenuWidth'),
-            emailValidator: BuiltValueNullFieldError.checkNotNull(emailValidator, r'ConfigurationSettings', 'emailValidator'),
-            devContactEmail: BuiltValueNullFieldError.checkNotNull(devContactEmail, r'ConfigurationSettings', 'devContactEmail'),
-            encryptedText: BuiltValueNullFieldError.checkNotNull(encryptedText, r'ConfigurationSettings', 'encryptedText'),
-            mixPanelKey: BuiltValueNullFieldError.checkNotNull(mixPanelKey, r'ConfigurationSettings', 'mixPanelKey'));
+        _$ConfigurationSettings._(
+          type: BuiltValueNullFieldError.checkNotNull(
+              type, r'ConfigurationSettings', 'type'),
+          appName: BuiltValueNullFieldError.checkNotNull(
+              appName, r'ConfigurationSettings', 'appName'),
+          apiUrl: BuiltValueNullFieldError.checkNotNull(
+              apiUrl, r'ConfigurationSettings', 'apiUrl'),
+          privacyPolicyUrl: BuiltValueNullFieldError.checkNotNull(
+              privacyPolicyUrl, r'ConfigurationSettings', 'privacyPolicyUrl'),
+          termsOfUseUrl: BuiltValueNullFieldError.checkNotNull(
+              termsOfUseUrl, r'ConfigurationSettings', 'termsOfUseUrl'),
+          defaultFont: BuiltValueNullFieldError.checkNotNull(
+              defaultFont, r'ConfigurationSettings', 'defaultFont'),
+          syncDataIntervalSeconds: BuiltValueNullFieldError.checkNotNull(
+              syncDataIntervalSeconds,
+              r'ConfigurationSettings',
+              'syncDataIntervalSeconds'),
+          fullscreenMinWidth: BuiltValueNullFieldError.checkNotNull(
+              fullscreenMinWidth,
+              r'ConfigurationSettings',
+              'fullscreenMinWidth'),
+          sideMenuWidth: BuiltValueNullFieldError.checkNotNull(
+              sideMenuWidth, r'ConfigurationSettings', 'sideMenuWidth'),
+          emailValidator: BuiltValueNullFieldError.checkNotNull(
+              emailValidator, r'ConfigurationSettings', 'emailValidator'),
+          devContactEmail: BuiltValueNullFieldError.checkNotNull(
+              devContactEmail, r'ConfigurationSettings', 'devContactEmail'),
+          encryptedText: BuiltValueNullFieldError.checkNotNull(
+              encryptedText, r'ConfigurationSettings', 'encryptedText'),
+          mixPanelKey: BuiltValueNullFieldError.checkNotNull(
+              mixPanelKey, r'ConfigurationSettings', 'mixPanelKey'),
+        );
     replace(_$result);
     return _$result;
   }

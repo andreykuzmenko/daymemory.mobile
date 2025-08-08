@@ -17,29 +17,20 @@ class _$EnterPinState extends EnterPinState {
   final bool isRetry;
 
   factory _$EnterPinState([void Function(EnterPinStateBuilder)? updates]) =>
-      (new EnterPinStateBuilder()..update(updates))._build();
+      (EnterPinStateBuilder()..update(updates))._build();
 
   _$EnterPinState._(
       {required this.enteredPin,
       required this.selectedEnteredIndicators,
       required this.pinEnterAttempts,
       required this.isRetry})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        enteredPin, r'EnterPinState', 'enteredPin');
-    BuiltValueNullFieldError.checkNotNull(selectedEnteredIndicators,
-        r'EnterPinState', 'selectedEnteredIndicators');
-    BuiltValueNullFieldError.checkNotNull(
-        pinEnterAttempts, r'EnterPinState', 'pinEnterAttempts');
-    BuiltValueNullFieldError.checkNotNull(isRetry, r'EnterPinState', 'isRetry');
-  }
-
+      : super._();
   @override
   EnterPinState rebuild(void Function(EnterPinStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  EnterPinStateBuilder toBuilder() => new EnterPinStateBuilder()..replace(this);
+  EnterPinStateBuilder toBuilder() => EnterPinStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -111,7 +102,6 @@ class EnterPinStateBuilder
 
   @override
   void replace(EnterPinState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$EnterPinState;
   }
 
@@ -125,17 +115,18 @@ class EnterPinStateBuilder
 
   _$EnterPinState _build() {
     final _$result = _$v ??
-        new _$EnterPinState._(
-            enteredPin: BuiltValueNullFieldError.checkNotNull(
-                enteredPin, r'EnterPinState', 'enteredPin'),
-            selectedEnteredIndicators: BuiltValueNullFieldError.checkNotNull(
-                selectedEnteredIndicators,
-                r'EnterPinState',
-                'selectedEnteredIndicators'),
-            pinEnterAttempts: BuiltValueNullFieldError.checkNotNull(
-                pinEnterAttempts, r'EnterPinState', 'pinEnterAttempts'),
-            isRetry: BuiltValueNullFieldError.checkNotNull(
-                isRetry, r'EnterPinState', 'isRetry'));
+        _$EnterPinState._(
+          enteredPin: BuiltValueNullFieldError.checkNotNull(
+              enteredPin, r'EnterPinState', 'enteredPin'),
+          selectedEnteredIndicators: BuiltValueNullFieldError.checkNotNull(
+              selectedEnteredIndicators,
+              r'EnterPinState',
+              'selectedEnteredIndicators'),
+          pinEnterAttempts: BuiltValueNullFieldError.checkNotNull(
+              pinEnterAttempts, r'EnterPinState', 'pinEnterAttempts'),
+          isRetry: BuiltValueNullFieldError.checkNotNull(
+              isRetry, r'EnterPinState', 'isRetry'),
+        );
     replace(_$result);
     return _$result;
   }

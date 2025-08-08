@@ -29,7 +29,7 @@ class _$NoteState extends NoteState {
   final DateTime date;
 
   factory _$NoteState([void Function(NoteStateBuilder)? updates]) =>
-      (new NoteStateBuilder()..update(updates))._build();
+      (NoteStateBuilder()..update(updates))._build();
 
   _$NoteState._(
       {this.noteId,
@@ -42,24 +42,13 @@ class _$NoteState extends NoteState {
       required this.hasChanged,
       required this.isSaving,
       required this.date})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        mediaFiles, r'NoteState', 'mediaFiles');
-    BuiltValueNullFieldError.checkNotNull(tags, r'NoteState', 'tags');
-    BuiltValueNullFieldError.checkNotNull(
-        isImageDateUsed, r'NoteState', 'isImageDateUsed');
-    BuiltValueNullFieldError.checkNotNull(
-        hasChanged, r'NoteState', 'hasChanged');
-    BuiltValueNullFieldError.checkNotNull(isSaving, r'NoteState', 'isSaving');
-    BuiltValueNullFieldError.checkNotNull(date, r'NoteState', 'date');
-  }
-
+      : super._();
   @override
   NoteState rebuild(void Function(NoteStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  NoteStateBuilder toBuilder() => new NoteStateBuilder()..replace(this);
+  NoteStateBuilder toBuilder() => NoteStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -132,12 +121,12 @@ class NoteStateBuilder implements Builder<NoteState, NoteStateBuilder> {
 
   ListBuilder<FileDto>? _mediaFiles;
   ListBuilder<FileDto> get mediaFiles =>
-      _$this._mediaFiles ??= new ListBuilder<FileDto>();
+      _$this._mediaFiles ??= ListBuilder<FileDto>();
   set mediaFiles(ListBuilder<FileDto>? mediaFiles) =>
       _$this._mediaFiles = mediaFiles;
 
   ListBuilder<String>? _tags;
-  ListBuilder<String> get tags => _$this._tags ??= new ListBuilder<String>();
+  ListBuilder<String> get tags => _$this._tags ??= ListBuilder<String>();
   set tags(ListBuilder<String>? tags) => _$this._tags = tags;
 
   bool? _isImageDateUsed;
@@ -179,7 +168,6 @@ class NoteStateBuilder implements Builder<NoteState, NoteStateBuilder> {
 
   @override
   void replace(NoteState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$NoteState;
   }
 
@@ -195,21 +183,22 @@ class NoteStateBuilder implements Builder<NoteState, NoteStateBuilder> {
     _$NoteState _$result;
     try {
       _$result = _$v ??
-          new _$NoteState._(
-              noteId: noteId,
-              notebookId: notebookId,
-              text: text,
-              location: location,
-              mediaFiles: mediaFiles.build(),
-              tags: tags.build(),
-              isImageDateUsed: BuiltValueNullFieldError.checkNotNull(
-                  isImageDateUsed, r'NoteState', 'isImageDateUsed'),
-              hasChanged: BuiltValueNullFieldError.checkNotNull(
-                  hasChanged, r'NoteState', 'hasChanged'),
-              isSaving: BuiltValueNullFieldError.checkNotNull(
-                  isSaving, r'NoteState', 'isSaving'),
-              date: BuiltValueNullFieldError.checkNotNull(
-                  date, r'NoteState', 'date'));
+          _$NoteState._(
+            noteId: noteId,
+            notebookId: notebookId,
+            text: text,
+            location: location,
+            mediaFiles: mediaFiles.build(),
+            tags: tags.build(),
+            isImageDateUsed: BuiltValueNullFieldError.checkNotNull(
+                isImageDateUsed, r'NoteState', 'isImageDateUsed'),
+            hasChanged: BuiltValueNullFieldError.checkNotNull(
+                hasChanged, r'NoteState', 'hasChanged'),
+            isSaving: BuiltValueNullFieldError.checkNotNull(
+                isSaving, r'NoteState', 'isSaving'),
+            date: BuiltValueNullFieldError.checkNotNull(
+                date, r'NoteState', 'date'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -218,7 +207,7 @@ class NoteStateBuilder implements Builder<NoteState, NoteStateBuilder> {
         _$failedField = 'tags';
         tags.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'NoteState', _$failedField, e.toString());
       }
       rethrow;

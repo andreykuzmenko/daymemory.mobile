@@ -91,9 +91,16 @@ class NotificationService {
   Future<void> scheduleNotification(int id, String title, String text, DateTime dateTime) async {
     var time = tz.TZDateTime.fromMillisecondsSinceEpoch(tz.local, dateTime.millisecondsSinceEpoch);
 
-    await flutterLocalNotificationsPlugin.zonedSchedule(id, title, text, time, NotificationDetails(android: _androidNotificationDetails),
+    await flutterLocalNotificationsPlugin.zonedSchedule(
+        id,
+        title,
+        text,
+        time,
+        NotificationDetails(
+          android: _androidNotificationDetails,
+        ),
         androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-        uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+        //uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
         matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime);
   }
 

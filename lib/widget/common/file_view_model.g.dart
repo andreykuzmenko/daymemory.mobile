@@ -19,7 +19,7 @@ class _$FileViewModel extends FileViewModel {
   final int width;
 
   factory _$FileViewModel([void Function(FileViewModelBuilder)? updates]) =>
-      (new FileViewModelBuilder()..update(updates))._build();
+      (FileViewModelBuilder()..update(updates))._build();
 
   _$FileViewModel._(
       {required this.id,
@@ -27,22 +27,13 @@ class _$FileViewModel extends FileViewModel {
       required this.fileType,
       required this.height,
       required this.width})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'FileViewModel', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        filePath, r'FileViewModel', 'filePath');
-    BuiltValueNullFieldError.checkNotNull(
-        fileType, r'FileViewModel', 'fileType');
-    BuiltValueNullFieldError.checkNotNull(height, r'FileViewModel', 'height');
-    BuiltValueNullFieldError.checkNotNull(width, r'FileViewModel', 'width');
-  }
-
+      : super._();
   @override
   FileViewModel rebuild(void Function(FileViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  FileViewModelBuilder toBuilder() => new FileViewModelBuilder()..replace(this);
+  FileViewModelBuilder toBuilder() => FileViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -120,7 +111,6 @@ class FileViewModelBuilder
 
   @override
   void replace(FileViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$FileViewModel;
   }
 
@@ -134,17 +124,17 @@ class FileViewModelBuilder
 
   _$FileViewModel _build() {
     final _$result = _$v ??
-        new _$FileViewModel._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'FileViewModel', 'id'),
-            filePath: BuiltValueNullFieldError.checkNotNull(
-                filePath, r'FileViewModel', 'filePath'),
-            fileType: BuiltValueNullFieldError.checkNotNull(
-                fileType, r'FileViewModel', 'fileType'),
-            height: BuiltValueNullFieldError.checkNotNull(
-                height, r'FileViewModel', 'height'),
-            width: BuiltValueNullFieldError.checkNotNull(
-                width, r'FileViewModel', 'width'));
+        _$FileViewModel._(
+          id: BuiltValueNullFieldError.checkNotNull(id, r'FileViewModel', 'id'),
+          filePath: BuiltValueNullFieldError.checkNotNull(
+              filePath, r'FileViewModel', 'filePath'),
+          fileType: BuiltValueNullFieldError.checkNotNull(
+              fileType, r'FileViewModel', 'fileType'),
+          height: BuiltValueNullFieldError.checkNotNull(
+              height, r'FileViewModel', 'height'),
+          width: BuiltValueNullFieldError.checkNotNull(
+              width, r'FileViewModel', 'width'),
+        );
     replace(_$result);
     return _$result;
   }

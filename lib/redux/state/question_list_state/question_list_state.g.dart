@@ -20,7 +20,7 @@ class _$QuestionListState extends QuestionListState {
 
   factory _$QuestionListState(
           [void Function(QuestionListStateBuilder)? updates]) =>
-      (new QuestionListStateBuilder()..update(updates))._build();
+      (QuestionListStateBuilder()..update(updates))._build();
 
   _$QuestionListState._(
       {this.questionListId,
@@ -28,23 +28,14 @@ class _$QuestionListState extends QuestionListState {
       required this.orderRank,
       required this.questions,
       required this.isSaving})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(text, r'QuestionListState', 'text');
-    BuiltValueNullFieldError.checkNotNull(
-        orderRank, r'QuestionListState', 'orderRank');
-    BuiltValueNullFieldError.checkNotNull(
-        questions, r'QuestionListState', 'questions');
-    BuiltValueNullFieldError.checkNotNull(
-        isSaving, r'QuestionListState', 'isSaving');
-  }
-
+      : super._();
   @override
   QuestionListState rebuild(void Function(QuestionListStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   QuestionListStateBuilder toBuilder() =>
-      new QuestionListStateBuilder()..replace(this);
+      QuestionListStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -123,7 +114,6 @@ class QuestionListStateBuilder
 
   @override
   void replace(QuestionListState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$QuestionListState;
   }
 
@@ -137,16 +127,17 @@ class QuestionListStateBuilder
 
   _$QuestionListState _build() {
     final _$result = _$v ??
-        new _$QuestionListState._(
-            questionListId: questionListId,
-            text: BuiltValueNullFieldError.checkNotNull(
-                text, r'QuestionListState', 'text'),
-            orderRank: BuiltValueNullFieldError.checkNotNull(
-                orderRank, r'QuestionListState', 'orderRank'),
-            questions: BuiltValueNullFieldError.checkNotNull(
-                questions, r'QuestionListState', 'questions'),
-            isSaving: BuiltValueNullFieldError.checkNotNull(
-                isSaving, r'QuestionListState', 'isSaving'));
+        _$QuestionListState._(
+          questionListId: questionListId,
+          text: BuiltValueNullFieldError.checkNotNull(
+              text, r'QuestionListState', 'text'),
+          orderRank: BuiltValueNullFieldError.checkNotNull(
+              orderRank, r'QuestionListState', 'orderRank'),
+          questions: BuiltValueNullFieldError.checkNotNull(
+              questions, r'QuestionListState', 'questions'),
+          isSaving: BuiltValueNullFieldError.checkNotNull(
+              isSaving, r'QuestionListState', 'isSaving'),
+        );
     replace(_$result);
     return _$result;
   }

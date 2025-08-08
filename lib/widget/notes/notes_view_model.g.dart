@@ -41,7 +41,7 @@ class _$NotesViewModel extends NotesViewModel {
   final FunctionHolder? backCommand;
 
   factory _$NotesViewModel([void Function(NotesViewModelBuilder)? updates]) =>
-      (new NotesViewModelBuilder()..update(updates))._build();
+      (NotesViewModelBuilder()..update(updates))._build();
 
   _$NotesViewModel._(
       {required this.isLoading,
@@ -60,37 +60,13 @@ class _$NotesViewModel extends NotesViewModel {
       this.newNoteCommand,
       this.editNotebookCommand,
       this.backCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        isLoading, r'NotesViewModel', 'isLoading');
-    BuiltValueNullFieldError.checkNotNull(
-        isLoadingMore, r'NotesViewModel', 'isLoadingMore');
-    BuiltValueNullFieldError.checkNotNull(
-        isAllItemsLoaded, r'NotesViewModel', 'isAllItemsLoaded');
-    BuiltValueNullFieldError.checkNotNull(
-        showDrawerMenu, r'NotesViewModel', 'showDrawerMenu');
-    BuiltValueNullFieldError.checkNotNull(
-        isScrollToTopEnabled, r'NotesViewModel', 'isScrollToTopEnabled');
-    BuiltValueNullFieldError.checkNotNull(title, r'NotesViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        loadingTitle, r'NotesViewModel', 'loadingTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        noteList, r'NotesViewModel', 'noteList');
-    BuiltValueNullFieldError.checkNotNull(
-        noNotes, r'NotesViewModel', 'noNotes');
-    BuiltValueNullFieldError.checkNotNull(
-        loadMoreCommand, r'NotesViewModel', 'loadMoreCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        refreshCommand, r'NotesViewModel', 'refreshCommand');
-  }
-
+      : super._();
   @override
   NotesViewModel rebuild(void Function(NotesViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  NotesViewModelBuilder toBuilder() =>
-      new NotesViewModelBuilder()..replace(this);
+  NotesViewModelBuilder toBuilder() => NotesViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -207,7 +183,7 @@ class NotesViewModelBuilder
 
   ListBuilder<NoteViewModel>? _noteList;
   ListBuilder<NoteViewModel> get noteList =>
-      _$this._noteList ??= new ListBuilder<NoteViewModel>();
+      _$this._noteList ??= ListBuilder<NoteViewModel>();
   set noteList(ListBuilder<NoteViewModel>? noteList) =>
       _$this._noteList = noteList;
 
@@ -268,7 +244,6 @@ class NotesViewModelBuilder
 
   @override
   void replace(NotesViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$NotesViewModel;
   }
 
@@ -284,38 +259,43 @@ class NotesViewModelBuilder
     _$NotesViewModel _$result;
     try {
       _$result = _$v ??
-          new _$NotesViewModel._(
-              isLoading: BuiltValueNullFieldError.checkNotNull(
-                  isLoading, r'NotesViewModel', 'isLoading'),
-              isLoadingMore: BuiltValueNullFieldError.checkNotNull(
-                  isLoadingMore, r'NotesViewModel', 'isLoadingMore'),
-              isAllItemsLoaded: BuiltValueNullFieldError.checkNotNull(
-                  isAllItemsLoaded, r'NotesViewModel', 'isAllItemsLoaded'),
-              showDrawerMenu: BuiltValueNullFieldError.checkNotNull(
-                  showDrawerMenu, r'NotesViewModel', 'showDrawerMenu'),
-              updatedDataCommand: updatedDataCommand,
-              isScrollToTopEnabled: BuiltValueNullFieldError.checkNotNull(
-                  isScrollToTopEnabled, r'NotesViewModel', 'isScrollToTopEnabled'),
-              title: BuiltValueNullFieldError.checkNotNull(
-                  title, r'NotesViewModel', 'title'),
-              loadingTitle: BuiltValueNullFieldError.checkNotNull(
-                  loadingTitle, r'NotesViewModel', 'loadingTitle'),
-              notebookId: notebookId,
-              noteList: noteList.build(),
-              noNotes:
-                  BuiltValueNullFieldError.checkNotNull(noNotes, r'NotesViewModel', 'noNotes'),
-              loadMoreCommand: BuiltValueNullFieldError.checkNotNull(loadMoreCommand, r'NotesViewModel', 'loadMoreCommand'),
-              refreshCommand: BuiltValueNullFieldError.checkNotNull(refreshCommand, r'NotesViewModel', 'refreshCommand'),
-              newNoteCommand: newNoteCommand,
-              editNotebookCommand: editNotebookCommand,
-              backCommand: backCommand);
+          _$NotesViewModel._(
+            isLoading: BuiltValueNullFieldError.checkNotNull(
+                isLoading, r'NotesViewModel', 'isLoading'),
+            isLoadingMore: BuiltValueNullFieldError.checkNotNull(
+                isLoadingMore, r'NotesViewModel', 'isLoadingMore'),
+            isAllItemsLoaded: BuiltValueNullFieldError.checkNotNull(
+                isAllItemsLoaded, r'NotesViewModel', 'isAllItemsLoaded'),
+            showDrawerMenu: BuiltValueNullFieldError.checkNotNull(
+                showDrawerMenu, r'NotesViewModel', 'showDrawerMenu'),
+            updatedDataCommand: updatedDataCommand,
+            isScrollToTopEnabled: BuiltValueNullFieldError.checkNotNull(
+                isScrollToTopEnabled,
+                r'NotesViewModel',
+                'isScrollToTopEnabled'),
+            title: BuiltValueNullFieldError.checkNotNull(
+                title, r'NotesViewModel', 'title'),
+            loadingTitle: BuiltValueNullFieldError.checkNotNull(
+                loadingTitle, r'NotesViewModel', 'loadingTitle'),
+            notebookId: notebookId,
+            noteList: noteList.build(),
+            noNotes: BuiltValueNullFieldError.checkNotNull(
+                noNotes, r'NotesViewModel', 'noNotes'),
+            loadMoreCommand: BuiltValueNullFieldError.checkNotNull(
+                loadMoreCommand, r'NotesViewModel', 'loadMoreCommand'),
+            refreshCommand: BuiltValueNullFieldError.checkNotNull(
+                refreshCommand, r'NotesViewModel', 'refreshCommand'),
+            newNoteCommand: newNoteCommand,
+            editNotebookCommand: editNotebookCommand,
+            backCommand: backCommand,
+          );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'noteList';
         noteList.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'NotesViewModel', _$failedField, e.toString());
       }
       rethrow;

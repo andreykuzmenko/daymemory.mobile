@@ -22,7 +22,7 @@ import 'package:flutter_quill/flutter_quill.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void runAppWithConfiguration(ConfigurationSettings settings) async {

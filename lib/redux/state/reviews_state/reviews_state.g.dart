@@ -15,22 +15,17 @@ class _$ReviewsState extends ReviewsState {
   final DateTime? lastLoadDate;
 
   factory _$ReviewsState([void Function(ReviewsStateBuilder)? updates]) =>
-      (new ReviewsStateBuilder()..update(updates))._build();
+      (ReviewsStateBuilder()..update(updates))._build();
 
   _$ReviewsState._(
       {required this.items, required this.isLoading, this.lastLoadDate})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(items, r'ReviewsState', 'items');
-    BuiltValueNullFieldError.checkNotNull(
-        isLoading, r'ReviewsState', 'isLoading');
-  }
-
+      : super._();
   @override
   ReviewsState rebuild(void Function(ReviewsStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ReviewsStateBuilder toBuilder() => new ReviewsStateBuilder()..replace(this);
+  ReviewsStateBuilder toBuilder() => ReviewsStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -93,7 +88,6 @@ class ReviewsStateBuilder
 
   @override
   void replace(ReviewsState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ReviewsState;
   }
 
@@ -107,12 +101,13 @@ class ReviewsStateBuilder
 
   _$ReviewsState _build() {
     final _$result = _$v ??
-        new _$ReviewsState._(
-            items: BuiltValueNullFieldError.checkNotNull(
-                items, r'ReviewsState', 'items'),
-            isLoading: BuiltValueNullFieldError.checkNotNull(
-                isLoading, r'ReviewsState', 'isLoading'),
-            lastLoadDate: lastLoadDate);
+        _$ReviewsState._(
+          items: BuiltValueNullFieldError.checkNotNull(
+              items, r'ReviewsState', 'items'),
+          isLoading: BuiltValueNullFieldError.checkNotNull(
+              isLoading, r'ReviewsState', 'isLoading'),
+          lastLoadDate: lastLoadDate,
+        );
     replace(_$result);
     return _$result;
   }

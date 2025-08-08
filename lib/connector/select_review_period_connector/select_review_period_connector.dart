@@ -3,7 +3,7 @@ import 'package:daymemory/connector/select_review_period_connector/select_review
 import 'package:daymemory/widget/settings/select_review_period_view_model.dart';
 import 'package:daymemory/widget/settings/select_review_period_view_model_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import '../../redux/state/states.dart';
 
 class SelectReviewPeriodConnector extends PageConnector<SelectReviewPeriodViewModel, SelectReviewPeriodConverter> {

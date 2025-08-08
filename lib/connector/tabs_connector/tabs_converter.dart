@@ -3,7 +3,7 @@ import 'package:daymemory/connector/view_model_converter.dart';
 import 'package:daymemory/redux/action/tabs_action.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
 import 'package:daymemory/widget/tabs/tabs_view_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class TabsConverter extends ViewModelConverter<TabsViewModel> {
   final AppLocalizations loc;

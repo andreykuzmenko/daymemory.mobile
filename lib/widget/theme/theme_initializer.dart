@@ -93,13 +93,13 @@ class DefaultThemeInitializer implements ITheme {
         //   fontWeight: FontWeight.w400,
         // ),
       ),
-      tabBarTheme: TabBarTheme(
+      tabBarTheme: TabBarThemeData(
         labelColor: themeColorOptions.textSecondaryColor,
         indicatorColor: themeColorOptions.textSecondaryColor,
         indicatorSize: TabBarIndicatorSize.tab,
-        overlayColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.hovered)) return Colors.transparent;
+        overlayColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.hovered)) return Colors.transparent;
             return Colors.transparent;
           },
         ),

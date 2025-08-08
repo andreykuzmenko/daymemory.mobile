@@ -14,7 +14,7 @@ import 'package:flutter_quill/flutter_quill.dart';
 import 'package:flutter_quill/quill_delta.dart';
 import 'package:get_it/get_it.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 // ignore: implementation_imports, library_prefixes
 import 'package:flutter/src/widgets/text.dart' as Text;
 // ignore: implementation_imports

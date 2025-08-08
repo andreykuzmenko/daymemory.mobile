@@ -16,7 +16,7 @@ import 'package:daymemory/services/settings_service/settings_service.dart';
 import 'package:daymemory/services/settings_service/storage_user_info.dart';
 // ignore: depend_on_referenced_packages
 import 'package:redux/redux.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import 'package:uuid/uuid.dart';
 
 class AuthMiddleware implements MiddlewareClass<AppState> {
@@ -154,8 +154,8 @@ class AuthMiddleware implements MiddlewareClass<AppState> {
   Future<void> _loginGoogleId(Function(dynamic action) dispatch, dynamic action) async {
     dispatch(const LoginIsLoadingAction(isSending: true));
     try {
-      var result = await authService.signInWithGoogle();
-      dispatch(SignupThirdPartyAction(result));
+      //var result = await authService.signInWithGoogle();
+      //dispatch(SignupThirdPartyAction(result));
     } catch (e) {
       loggingService.logError(e);
       dispatch(dialogService.prepareSomethingWentWrongDialogAction(dispatch));
@@ -181,8 +181,15 @@ class AuthMiddleware implements MiddlewareClass<AppState> {
     dispatch(const LoginIsLoadingAction(isSending: true));
 
     try {
-      var result = await authService.signInWithApple();
-      dispatch(SignupThirdPartyAction(result));
+      var token = await authService.signInWithApple();
+      if (token == null) {
+        //toastService.showError(_locale!.somethingWrong, Alignment.topCenter);
+        dispatch(const LoginIsLoadingAction(isSending: false));
+        return;
+      }
+      // var result = await networkUserService.loginWithApple(token);
+      // dispatch(loginInstruction(result, result.isNewAccount));
+      // dispatch(SignupThirdPartyAction(result));
     } catch (e) {
       loggingService.logError(e);
       dispatch(dialogService.prepareSomethingWentWrongDialogAction(dispatch));

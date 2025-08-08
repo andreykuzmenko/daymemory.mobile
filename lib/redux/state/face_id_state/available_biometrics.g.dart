@@ -17,12 +17,12 @@ AvailableBiometrics _$availableBiometricsValueOf(String name) {
     case 'unknown':
       return _$unknown;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<AvailableBiometrics> _$availableBiometricsValues =
-    new BuiltSet<AvailableBiometrics>(const <AvailableBiometrics>[
+    BuiltSet<AvailableBiometrics>(const <AvailableBiometrics>[
   _$faceAndFinger,
   _$unknown,
 ]);

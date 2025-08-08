@@ -9,7 +9,7 @@ import 'package:daymemory/services/settings_service/settings_service.dart';
 import 'package:permission_handler/permission_handler.dart';
 // ignore: depend_on_referenced_packages
 import 'package:redux/redux.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import '../action/face_id_action.dart';
 
 class BiometricMiddleware implements MiddlewareClass<AppState> {

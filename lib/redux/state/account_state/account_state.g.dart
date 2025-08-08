@@ -21,7 +21,7 @@ class _$AccountState extends AccountState {
   final String? encryptedText;
 
   factory _$AccountState([void Function(AccountStateBuilder)? updates]) =>
-      (new AccountStateBuilder()..update(updates))._build();
+      (AccountStateBuilder()..update(updates))._build();
 
   _$AccountState._(
       {required this.isAuthenticated,
@@ -30,19 +30,13 @@ class _$AccountState extends AccountState {
       this.firstName,
       this.lastName,
       this.encryptedText})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        isAuthenticated, r'AccountState', 'isAuthenticated');
-    BuiltValueNullFieldError.checkNotNull(
-        isEncryptionEnabled, r'AccountState', 'isEncryptionEnabled');
-  }
-
+      : super._();
   @override
   AccountState rebuild(void Function(AccountStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AccountStateBuilder toBuilder() => new AccountStateBuilder()..replace(this);
+  AccountStateBuilder toBuilder() => AccountStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -131,7 +125,6 @@ class AccountStateBuilder
 
   @override
   void replace(AccountState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AccountState;
   }
 
@@ -145,15 +138,16 @@ class AccountStateBuilder
 
   _$AccountState _build() {
     final _$result = _$v ??
-        new _$AccountState._(
-            isAuthenticated: BuiltValueNullFieldError.checkNotNull(
-                isAuthenticated, r'AccountState', 'isAuthenticated'),
-            isEncryptionEnabled: BuiltValueNullFieldError.checkNotNull(
-                isEncryptionEnabled, r'AccountState', 'isEncryptionEnabled'),
-            userEmail: userEmail,
-            firstName: firstName,
-            lastName: lastName,
-            encryptedText: encryptedText);
+        _$AccountState._(
+          isAuthenticated: BuiltValueNullFieldError.checkNotNull(
+              isAuthenticated, r'AccountState', 'isAuthenticated'),
+          isEncryptionEnabled: BuiltValueNullFieldError.checkNotNull(
+              isEncryptionEnabled, r'AccountState', 'isEncryptionEnabled'),
+          userEmail: userEmail,
+          firstName: firstName,
+          lastName: lastName,
+          encryptedText: encryptedText,
+        );
     replace(_$result);
     return _$result;
   }

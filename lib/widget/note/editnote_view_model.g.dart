@@ -60,7 +60,7 @@ class _$EditNoteViewModel extends EditNoteViewModel {
 
   factory _$EditNoteViewModel(
           [void Function(EditNoteViewModelBuilder)? updates]) =>
-      (new EditNoteViewModelBuilder()..update(updates))._build();
+      (EditNoteViewModelBuilder()..update(updates))._build();
 
   _$EditNoteViewModel._(
       {this.noteId,
@@ -88,50 +88,14 @@ class _$EditNoteViewModel extends EditNoteViewModel {
       required this.selectNotebookCommand,
       required this.textChangedCommand,
       required this.dateChangedCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        notebookTitle, r'EditNoteViewModel', 'notebookTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        notebookId, r'EditNoteViewModel', 'notebookId');
-    BuiltValueNullFieldError.checkNotNull(
-        textPlaceholder, r'EditNoteViewModel', 'textPlaceholder');
-    BuiltValueNullFieldError.checkNotNull(
-        doneButtonText, r'EditNoteViewModel', 'doneButtonText');
-    BuiltValueNullFieldError.checkNotNull(
-        isSaving, r'EditNoteViewModel', 'isSaving');
-    BuiltValueNullFieldError.checkNotNull(
-        hasChanged, r'EditNoteViewModel', 'hasChanged');
-    BuiltValueNullFieldError.checkNotNull(
-        mediaFiles, r'EditNoteViewModel', 'mediaFiles');
-    BuiltValueNullFieldError.checkNotNull(tags, r'EditNoteViewModel', 'tags');
-    BuiltValueNullFieldError.checkNotNull(date, r'EditNoteViewModel', 'date');
-    BuiltValueNullFieldError.checkNotNull(
-        showToolbarOnTop, r'EditNoteViewModel', 'showToolbarOnTop');
-    BuiltValueNullFieldError.checkNotNull(
-        isVideoSupported, r'EditNoteViewModel', 'isVideoSupported');
-    BuiltValueNullFieldError.checkNotNull(
-        saveCommand, r'EditNoteViewModel', 'saveCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        reorderCommand, r'EditNoteViewModel', 'reorderCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        optionsCommand, r'EditNoteViewModel', 'optionsCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        closeCommand, r'EditNoteViewModel', 'closeCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        selectNotebookCommand, r'EditNoteViewModel', 'selectNotebookCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        textChangedCommand, r'EditNoteViewModel', 'textChangedCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        dateChangedCommand, r'EditNoteViewModel', 'dateChangedCommand');
-  }
-
+      : super._();
   @override
   EditNoteViewModel rebuild(void Function(EditNoteViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   EditNoteViewModelBuilder toBuilder() =>
-      new EditNoteViewModelBuilder()..replace(this);
+      EditNoteViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -277,7 +241,7 @@ class EditNoteViewModelBuilder
 
   ListBuilder<FileViewModel>? _mediaFiles;
   ListBuilder<FileViewModel> get mediaFiles =>
-      _$this._mediaFiles ??= new ListBuilder<FileViewModel>();
+      _$this._mediaFiles ??= ListBuilder<FileViewModel>();
   set mediaFiles(ListBuilder<FileViewModel>? mediaFiles) =>
       _$this._mediaFiles = mediaFiles;
 
@@ -390,7 +354,6 @@ class EditNoteViewModelBuilder
 
   @override
   void replace(EditNoteViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$EditNoteViewModel;
   }
 
@@ -406,47 +369,59 @@ class EditNoteViewModelBuilder
     _$EditNoteViewModel _$result;
     try {
       _$result = _$v ??
-          new _$EditNoteViewModel._(
-              noteId: noteId,
-              text: text,
-              notebookTitle: BuiltValueNullFieldError.checkNotNull(
-                  notebookTitle, r'EditNoteViewModel', 'notebookTitle'),
-              notebookId: BuiltValueNullFieldError.checkNotNull(
-                  notebookId, r'EditNoteViewModel', 'notebookId'),
-              questionText: questionText,
-              textPlaceholder: BuiltValueNullFieldError.checkNotNull(
-                  textPlaceholder, r'EditNoteViewModel', 'textPlaceholder'),
-              doneButtonText: BuiltValueNullFieldError.checkNotNull(
-                  doneButtonText, r'EditNoteViewModel', 'doneButtonText'),
-              isSaving: BuiltValueNullFieldError.checkNotNull(
-                  isSaving, r'EditNoteViewModel', 'isSaving'),
-              hasChanged: BuiltValueNullFieldError.checkNotNull(
-                  hasChanged, r'EditNoteViewModel', 'hasChanged'),
-              location: location,
-              mediaFiles: mediaFiles.build(),
-              tags: BuiltValueNullFieldError.checkNotNull(
-                  tags, r'EditNoteViewModel', 'tags'),
-              date:
-                  BuiltValueNullFieldError.checkNotNull(date, r'EditNoteViewModel', 'date'),
-              showToolbarOnTop: BuiltValueNullFieldError.checkNotNull(showToolbarOnTop, r'EditNoteViewModel', 'showToolbarOnTop'),
-              isVideoSupported: BuiltValueNullFieldError.checkNotNull(isVideoSupported, r'EditNoteViewModel', 'isVideoSupported'),
-              saveCommand: BuiltValueNullFieldError.checkNotNull(saveCommand, r'EditNoteViewModel', 'saveCommand'),
-              reorderCommand: BuiltValueNullFieldError.checkNotNull(reorderCommand, r'EditNoteViewModel', 'reorderCommand'),
-              optionsCommand: BuiltValueNullFieldError.checkNotNull(optionsCommand, r'EditNoteViewModel', 'optionsCommand'),
-              closeCommand: BuiltValueNullFieldError.checkNotNull(closeCommand, r'EditNoteViewModel', 'closeCommand'),
-              deleteImageCommand: deleteImageCommand,
-              selectImagesCommand: selectImagesCommand,
-              selectVideoCommand: selectVideoCommand,
-              selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(selectNotebookCommand, r'EditNoteViewModel', 'selectNotebookCommand'),
-              textChangedCommand: BuiltValueNullFieldError.checkNotNull(textChangedCommand, r'EditNoteViewModel', 'textChangedCommand'),
-              dateChangedCommand: BuiltValueNullFieldError.checkNotNull(dateChangedCommand, r'EditNoteViewModel', 'dateChangedCommand'));
+          _$EditNoteViewModel._(
+            noteId: noteId,
+            text: text,
+            notebookTitle: BuiltValueNullFieldError.checkNotNull(
+                notebookTitle, r'EditNoteViewModel', 'notebookTitle'),
+            notebookId: BuiltValueNullFieldError.checkNotNull(
+                notebookId, r'EditNoteViewModel', 'notebookId'),
+            questionText: questionText,
+            textPlaceholder: BuiltValueNullFieldError.checkNotNull(
+                textPlaceholder, r'EditNoteViewModel', 'textPlaceholder'),
+            doneButtonText: BuiltValueNullFieldError.checkNotNull(
+                doneButtonText, r'EditNoteViewModel', 'doneButtonText'),
+            isSaving: BuiltValueNullFieldError.checkNotNull(
+                isSaving, r'EditNoteViewModel', 'isSaving'),
+            hasChanged: BuiltValueNullFieldError.checkNotNull(
+                hasChanged, r'EditNoteViewModel', 'hasChanged'),
+            location: location,
+            mediaFiles: mediaFiles.build(),
+            tags: BuiltValueNullFieldError.checkNotNull(
+                tags, r'EditNoteViewModel', 'tags'),
+            date: BuiltValueNullFieldError.checkNotNull(
+                date, r'EditNoteViewModel', 'date'),
+            showToolbarOnTop: BuiltValueNullFieldError.checkNotNull(
+                showToolbarOnTop, r'EditNoteViewModel', 'showToolbarOnTop'),
+            isVideoSupported: BuiltValueNullFieldError.checkNotNull(
+                isVideoSupported, r'EditNoteViewModel', 'isVideoSupported'),
+            saveCommand: BuiltValueNullFieldError.checkNotNull(
+                saveCommand, r'EditNoteViewModel', 'saveCommand'),
+            reorderCommand: BuiltValueNullFieldError.checkNotNull(
+                reorderCommand, r'EditNoteViewModel', 'reorderCommand'),
+            optionsCommand: BuiltValueNullFieldError.checkNotNull(
+                optionsCommand, r'EditNoteViewModel', 'optionsCommand'),
+            closeCommand: BuiltValueNullFieldError.checkNotNull(
+                closeCommand, r'EditNoteViewModel', 'closeCommand'),
+            deleteImageCommand: deleteImageCommand,
+            selectImagesCommand: selectImagesCommand,
+            selectVideoCommand: selectVideoCommand,
+            selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(
+                selectNotebookCommand,
+                r'EditNoteViewModel',
+                'selectNotebookCommand'),
+            textChangedCommand: BuiltValueNullFieldError.checkNotNull(
+                textChangedCommand, r'EditNoteViewModel', 'textChangedCommand'),
+            dateChangedCommand: BuiltValueNullFieldError.checkNotNull(
+                dateChangedCommand, r'EditNoteViewModel', 'dateChangedCommand'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'mediaFiles';
         mediaFiles.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'EditNoteViewModel', _$failedField, e.toString());
       }
       rethrow;

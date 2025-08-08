@@ -27,7 +27,7 @@ class _$TagsViewModel extends TagsViewModel {
   final FunctionHolder closeCommand;
 
   factory _$TagsViewModel([void Function(TagsViewModelBuilder)? updates]) =>
-      (new TagsViewModelBuilder()..update(updates))._build();
+      (TagsViewModelBuilder()..update(updates))._build();
 
   _$TagsViewModel._(
       {this.tagId,
@@ -39,29 +39,13 @@ class _$TagsViewModel extends TagsViewModel {
       required this.reorderCommand,
       required this.saveCommand,
       required this.closeCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        isSaving, r'TagsViewModel', 'isSaving');
-    BuiltValueNullFieldError.checkNotNull(title, r'TagsViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        addTagButton, r'TagsViewModel', 'addTagButton');
-    BuiltValueNullFieldError.checkNotNull(items, r'TagsViewModel', 'items');
-    BuiltValueNullFieldError.checkNotNull(
-        addTagCommand, r'TagsViewModel', 'addTagCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        reorderCommand, r'TagsViewModel', 'reorderCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        saveCommand, r'TagsViewModel', 'saveCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        closeCommand, r'TagsViewModel', 'closeCommand');
-  }
-
+      : super._();
   @override
   TagsViewModel rebuild(void Function(TagsViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TagsViewModelBuilder toBuilder() => new TagsViewModelBuilder()..replace(this);
+  TagsViewModelBuilder toBuilder() => TagsViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -132,7 +116,7 @@ class TagsViewModelBuilder
 
   ListBuilder<TagFieldViewModel>? _items;
   ListBuilder<TagFieldViewModel> get items =>
-      _$this._items ??= new ListBuilder<TagFieldViewModel>();
+      _$this._items ??= ListBuilder<TagFieldViewModel>();
   set items(ListBuilder<TagFieldViewModel>? items) => _$this._items = items;
 
   FunctionHolder? _addTagCommand;
@@ -177,7 +161,6 @@ class TagsViewModelBuilder
 
   @override
   void replace(TagsViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagsViewModel;
   }
 
@@ -193,30 +176,31 @@ class TagsViewModelBuilder
     _$TagsViewModel _$result;
     try {
       _$result = _$v ??
-          new _$TagsViewModel._(
-              tagId: tagId,
-              isSaving: BuiltValueNullFieldError.checkNotNull(
-                  isSaving, r'TagsViewModel', 'isSaving'),
-              title: BuiltValueNullFieldError.checkNotNull(
-                  title, r'TagsViewModel', 'title'),
-              addTagButton: BuiltValueNullFieldError.checkNotNull(
-                  addTagButton, r'TagsViewModel', 'addTagButton'),
-              items: items.build(),
-              addTagCommand: BuiltValueNullFieldError.checkNotNull(
-                  addTagCommand, r'TagsViewModel', 'addTagCommand'),
-              reorderCommand: BuiltValueNullFieldError.checkNotNull(
-                  reorderCommand, r'TagsViewModel', 'reorderCommand'),
-              saveCommand: BuiltValueNullFieldError.checkNotNull(
-                  saveCommand, r'TagsViewModel', 'saveCommand'),
-              closeCommand: BuiltValueNullFieldError.checkNotNull(
-                  closeCommand, r'TagsViewModel', 'closeCommand'));
+          _$TagsViewModel._(
+            tagId: tagId,
+            isSaving: BuiltValueNullFieldError.checkNotNull(
+                isSaving, r'TagsViewModel', 'isSaving'),
+            title: BuiltValueNullFieldError.checkNotNull(
+                title, r'TagsViewModel', 'title'),
+            addTagButton: BuiltValueNullFieldError.checkNotNull(
+                addTagButton, r'TagsViewModel', 'addTagButton'),
+            items: items.build(),
+            addTagCommand: BuiltValueNullFieldError.checkNotNull(
+                addTagCommand, r'TagsViewModel', 'addTagCommand'),
+            reorderCommand: BuiltValueNullFieldError.checkNotNull(
+                reorderCommand, r'TagsViewModel', 'reorderCommand'),
+            saveCommand: BuiltValueNullFieldError.checkNotNull(
+                saveCommand, r'TagsViewModel', 'saveCommand'),
+            closeCommand: BuiltValueNullFieldError.checkNotNull(
+                closeCommand, r'TagsViewModel', 'closeCommand'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'items';
         items.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'TagsViewModel', _$failedField, e.toString());
       }
       rethrow;

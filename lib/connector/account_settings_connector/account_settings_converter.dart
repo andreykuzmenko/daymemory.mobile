@@ -4,7 +4,7 @@ import 'package:daymemory/connector/view_model_converter.dart';
 import 'package:daymemory/redux/action/actions.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
 import 'package:daymemory/widget/settings/account_settings_view_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class AccountSettingsConverter extends ViewModelConverter<AccountSettingsViewModel> {
   final AppLocalizations locale;

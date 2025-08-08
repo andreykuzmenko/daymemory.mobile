@@ -7,7 +7,7 @@ import 'package:daymemory/redux/action/tags_edit_action.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
 import 'package:daymemory/widget/tags/tag_field_view_model.dart';
 import 'package:daymemory/widget/tags/tags_view_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class EditTagsConverter extends ViewModelConverter<TagsViewModel> {
   final Function(dynamic) dispatch;

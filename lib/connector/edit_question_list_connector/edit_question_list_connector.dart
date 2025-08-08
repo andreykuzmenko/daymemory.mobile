@@ -4,7 +4,7 @@ import 'package:daymemory/redux/action/actions.dart';
 import 'package:daymemory/widget/question_list_edit/edit_question_widget.dart';
 import 'package:daymemory/widget/question_list_edit/question_list_edit_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import '../../redux/state/states.dart';
 
 class EditQuestionListConnector extends PageConnector<QuestionListEditViewModel, EditQuestionListConverter> {

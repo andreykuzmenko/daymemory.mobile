@@ -1,7 +1,7 @@
 import 'package:daymemory/connector/view_model_converter.dart';
 import 'package:daymemory/redux/state/face_id_state/available_biometrics.dart';
 import 'package:daymemory/widget/biometric_auth/biometric_auth_view_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 import '../../redux/action/face_id_action.dart';
 import '../../widget/common/function_holder.dart';

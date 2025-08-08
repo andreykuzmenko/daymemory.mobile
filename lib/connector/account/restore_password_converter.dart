@@ -3,7 +3,7 @@ import 'package:daymemory/redux/action/login_action.dart';
 import 'package:daymemory/redux/action/navigation_action.dart';
 import 'package:daymemory/widget/account/restore_password/restore_password_view_model.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class RestorePasswordConverter extends ViewModelConverter<RestorePasswordViewModel> {
   final AppLocalizations locale;

@@ -16,18 +16,11 @@ class _$ReviewCategoryViewModel extends ReviewCategoryViewModel {
 
   factory _$ReviewCategoryViewModel(
           [void Function(ReviewCategoryViewModelBuilder)? updates]) =>
-      (new ReviewCategoryViewModelBuilder()..update(updates))._build();
+      (ReviewCategoryViewModelBuilder()..update(updates))._build();
 
   _$ReviewCategoryViewModel._(
       {required this.id, required this.title, required this.notes})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'ReviewCategoryViewModel', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'ReviewCategoryViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        notes, r'ReviewCategoryViewModel', 'notes');
-  }
-
+      : super._();
   @override
   ReviewCategoryViewModel rebuild(
           void Function(ReviewCategoryViewModelBuilder) updates) =>
@@ -35,7 +28,7 @@ class _$ReviewCategoryViewModel extends ReviewCategoryViewModel {
 
   @override
   ReviewCategoryViewModelBuilder toBuilder() =>
-      new ReviewCategoryViewModelBuilder()..replace(this);
+      ReviewCategoryViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -98,7 +91,6 @@ class ReviewCategoryViewModelBuilder
 
   @override
   void replace(ReviewCategoryViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ReviewCategoryViewModel;
   }
 
@@ -112,13 +104,14 @@ class ReviewCategoryViewModelBuilder
 
   _$ReviewCategoryViewModel _build() {
     final _$result = _$v ??
-        new _$ReviewCategoryViewModel._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ReviewCategoryViewModel', 'id'),
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ReviewCategoryViewModel', 'title'),
-            notes: BuiltValueNullFieldError.checkNotNull(
-                notes, r'ReviewCategoryViewModel', 'notes'));
+        _$ReviewCategoryViewModel._(
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'ReviewCategoryViewModel', 'id'),
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'ReviewCategoryViewModel', 'title'),
+          notes: BuiltValueNullFieldError.checkNotNull(
+              notes, r'ReviewCategoryViewModel', 'notes'),
+        );
     replace(_$result);
     return _$result;
   }

@@ -35,7 +35,7 @@ import 'package:redux/redux.dart' show MiddlewareClass, NextDispatcher, Store;
 // ignore: depend_on_referenced_packages
 import 'package:async/async.dart';
 import '../../services/settings_service/settings_service.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class SyncMiddleware implements MiddlewareClass<AppState> {
   final ISettingsService settingsService;

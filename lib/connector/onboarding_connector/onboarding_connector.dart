@@ -5,7 +5,7 @@ import 'package:daymemory/widget/onboarding/onboarding_view_model.dart';
 import 'package:daymemory/widget/onboarding/onboarding_widget.dart';
 import 'package:daymemory/widget/theme/app_configuration_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class OnboardingConnector extends PageConnector<OnboardingViewModel, OnboardingConverter> {
   const OnboardingConnector({super.key});

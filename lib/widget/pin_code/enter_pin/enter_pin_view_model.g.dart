@@ -28,7 +28,7 @@ class _$EnterPinViewModel extends EnterPinViewModel {
 
   factory _$EnterPinViewModel(
           [void Function(EnterPinViewModelBuilder)? updates]) =>
-      (new EnterPinViewModelBuilder()..update(updates))._build();
+      (EnterPinViewModelBuilder()..update(updates))._build();
 
   _$EnterPinViewModel._(
       {required this.selectedEnteredIndicators,
@@ -40,34 +40,14 @@ class _$EnterPinViewModel extends EnterPinViewModel {
       required this.biometricCommand,
       required this.isRetry,
       required this.isBiometricsEnabled})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(selectedEnteredIndicators,
-        r'EnterPinViewModel', 'selectedEnteredIndicators');
-    BuiltValueNullFieldError.checkNotNull(
-        enteredPin, r'EnterPinViewModel', 'enteredPin');
-    BuiltValueNullFieldError.checkNotNull(
-        enteredPinTitle, r'EnterPinViewModel', 'enteredPinTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        typingCommand, r'EnterPinViewModel', 'typingCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        clearCommand, r'EnterPinViewModel', 'clearCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        forgotPinCommand, r'EnterPinViewModel', 'forgotPinCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        biometricCommand, r'EnterPinViewModel', 'biometricCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        isRetry, r'EnterPinViewModel', 'isRetry');
-    BuiltValueNullFieldError.checkNotNull(
-        isBiometricsEnabled, r'EnterPinViewModel', 'isBiometricsEnabled');
-  }
-
+      : super._();
   @override
   EnterPinViewModel rebuild(void Function(EnterPinViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   EnterPinViewModelBuilder toBuilder() =>
-      new EnterPinViewModelBuilder()..replace(this);
+      EnterPinViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -184,7 +164,6 @@ class EnterPinViewModelBuilder
 
   @override
   void replace(EnterPinViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$EnterPinViewModel;
   }
 
@@ -198,25 +177,28 @@ class EnterPinViewModelBuilder
 
   _$EnterPinViewModel _build() {
     final _$result = _$v ??
-        new _$EnterPinViewModel._(
-            selectedEnteredIndicators: BuiltValueNullFieldError.checkNotNull(
-                selectedEnteredIndicators,
-                r'EnterPinViewModel',
-                'selectedEnteredIndicators'),
-            enteredPin: BuiltValueNullFieldError.checkNotNull(
-                enteredPin, r'EnterPinViewModel', 'enteredPin'),
-            enteredPinTitle: BuiltValueNullFieldError.checkNotNull(
-                enteredPinTitle, r'EnterPinViewModel', 'enteredPinTitle'),
-            typingCommand: BuiltValueNullFieldError.checkNotNull(
-                typingCommand, r'EnterPinViewModel', 'typingCommand'),
-            clearCommand: BuiltValueNullFieldError.checkNotNull(
-                clearCommand, r'EnterPinViewModel', 'clearCommand'),
-            forgotPinCommand: BuiltValueNullFieldError.checkNotNull(
-                forgotPinCommand, r'EnterPinViewModel', 'forgotPinCommand'),
-            biometricCommand: BuiltValueNullFieldError.checkNotNull(
-                biometricCommand, r'EnterPinViewModel', 'biometricCommand'),
-            isRetry: BuiltValueNullFieldError.checkNotNull(isRetry, r'EnterPinViewModel', 'isRetry'),
-            isBiometricsEnabled: BuiltValueNullFieldError.checkNotNull(isBiometricsEnabled, r'EnterPinViewModel', 'isBiometricsEnabled'));
+        _$EnterPinViewModel._(
+          selectedEnteredIndicators: BuiltValueNullFieldError.checkNotNull(
+              selectedEnteredIndicators,
+              r'EnterPinViewModel',
+              'selectedEnteredIndicators'),
+          enteredPin: BuiltValueNullFieldError.checkNotNull(
+              enteredPin, r'EnterPinViewModel', 'enteredPin'),
+          enteredPinTitle: BuiltValueNullFieldError.checkNotNull(
+              enteredPinTitle, r'EnterPinViewModel', 'enteredPinTitle'),
+          typingCommand: BuiltValueNullFieldError.checkNotNull(
+              typingCommand, r'EnterPinViewModel', 'typingCommand'),
+          clearCommand: BuiltValueNullFieldError.checkNotNull(
+              clearCommand, r'EnterPinViewModel', 'clearCommand'),
+          forgotPinCommand: BuiltValueNullFieldError.checkNotNull(
+              forgotPinCommand, r'EnterPinViewModel', 'forgotPinCommand'),
+          biometricCommand: BuiltValueNullFieldError.checkNotNull(
+              biometricCommand, r'EnterPinViewModel', 'biometricCommand'),
+          isRetry: BuiltValueNullFieldError.checkNotNull(
+              isRetry, r'EnterPinViewModel', 'isRetry'),
+          isBiometricsEnabled: BuiltValueNullFieldError.checkNotNull(
+              isBiometricsEnabled, r'EnterPinViewModel', 'isBiometricsEnabled'),
+        );
     replace(_$result);
     return _$result;
   }

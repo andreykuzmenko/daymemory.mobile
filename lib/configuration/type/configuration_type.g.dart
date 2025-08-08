@@ -18,12 +18,12 @@ ConfigurationType _$configurationTypeValueOf(String name) {
     case 'daymemoryDesktop':
       return _$daymemoryDesktop;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<ConfigurationType> _$configurationTypeValues =
-    new BuiltSet<ConfigurationType>(const <ConfigurationType>[
+    BuiltSet<ConfigurationType>(const <ConfigurationType>[
   _$daymemoryProd,
   _$daymemoryDesktop,
 ]);

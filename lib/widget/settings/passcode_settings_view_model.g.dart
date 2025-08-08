@@ -38,7 +38,7 @@ class _$PasscodeSettingsViewModel extends PasscodeSettingsViewModel {
 
   factory _$PasscodeSettingsViewModel(
           [void Function(PasscodeSettingsViewModelBuilder)? updates]) =>
-      (new PasscodeSettingsViewModelBuilder()..update(updates))._build();
+      (PasscodeSettingsViewModelBuilder()..update(updates))._build();
 
   _$PasscodeSettingsViewModel._(
       {required this.title,
@@ -55,37 +55,7 @@ class _$PasscodeSettingsViewModel extends PasscodeSettingsViewModel {
       required this.requireAfterOptionTitle,
       required this.requireAfterOptionValue,
       required this.requireAfterCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'PasscodeSettingsViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(isScreenBlockingEnabled,
-        r'PasscodeSettingsViewModel', 'isScreenBlockingEnabled');
-    BuiltValueNullFieldError.checkNotNull(isBiometricAvailable,
-        r'PasscodeSettingsViewModel', 'isBiometricAvailable');
-    BuiltValueNullFieldError.checkNotNull(screenBlockingOptionTitle,
-        r'PasscodeSettingsViewModel', 'screenBlockingOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(screenBlockingToogleCommand,
-        r'PasscodeSettingsViewModel', 'screenBlockingToogleCommand');
-    BuiltValueNullFieldError.checkNotNull(screenBlockingExplanation,
-        r'PasscodeSettingsViewModel', 'screenBlockingExplanation');
-    BuiltValueNullFieldError.checkNotNull(
-        isBiometricEnabled, r'PasscodeSettingsViewModel', 'isBiometricEnabled');
-    BuiltValueNullFieldError.checkNotNull(
-        isBiometricActive, r'PasscodeSettingsViewModel', 'isBiometricActive');
-    BuiltValueNullFieldError.checkNotNull(biometricOptionTitle,
-        r'PasscodeSettingsViewModel', 'biometricOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(biometricToogleCommand,
-        r'PasscodeSettingsViewModel', 'biometricToogleCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        backCommand, r'PasscodeSettingsViewModel', 'backCommand');
-    BuiltValueNullFieldError.checkNotNull(requireAfterOptionTitle,
-        r'PasscodeSettingsViewModel', 'requireAfterOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(requireAfterOptionValue,
-        r'PasscodeSettingsViewModel', 'requireAfterOptionValue');
-    BuiltValueNullFieldError.checkNotNull(requireAfterCommand,
-        r'PasscodeSettingsViewModel', 'requireAfterCommand');
-  }
-
+      : super._();
   @override
   PasscodeSettingsViewModel rebuild(
           void Function(PasscodeSettingsViewModelBuilder) updates) =>
@@ -93,7 +63,7 @@ class _$PasscodeSettingsViewModel extends PasscodeSettingsViewModel {
 
   @override
   PasscodeSettingsViewModelBuilder toBuilder() =>
-      new PasscodeSettingsViewModelBuilder()..replace(this);
+      PasscodeSettingsViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -259,7 +229,6 @@ class PasscodeSettingsViewModelBuilder
 
   @override
   void replace(PasscodeSettingsViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$PasscodeSettingsViewModel;
   }
 
@@ -273,28 +242,60 @@ class PasscodeSettingsViewModelBuilder
 
   _$PasscodeSettingsViewModel _build() {
     final _$result = _$v ??
-        new _$PasscodeSettingsViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'PasscodeSettingsViewModel', 'title'),
-            isScreenBlockingEnabled: BuiltValueNullFieldError.checkNotNull(
-                isScreenBlockingEnabled, r'PasscodeSettingsViewModel', 'isScreenBlockingEnabled'),
-            isBiometricAvailable: BuiltValueNullFieldError.checkNotNull(
-                isBiometricAvailable, r'PasscodeSettingsViewModel', 'isBiometricAvailable'),
-            screenBlockingOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                screenBlockingOptionTitle, r'PasscodeSettingsViewModel', 'screenBlockingOptionTitle'),
-            screenBlockingToogleCommand: BuiltValueNullFieldError.checkNotNull(
-                screenBlockingToogleCommand, r'PasscodeSettingsViewModel', 'screenBlockingToogleCommand'),
-            screenBlockingExplanation: BuiltValueNullFieldError.checkNotNull(
-                screenBlockingExplanation, r'PasscodeSettingsViewModel', 'screenBlockingExplanation'),
-            isBiometricEnabled: BuiltValueNullFieldError.checkNotNull(
-                isBiometricEnabled, r'PasscodeSettingsViewModel', 'isBiometricEnabled'),
-            isBiometricActive: BuiltValueNullFieldError.checkNotNull(isBiometricActive, r'PasscodeSettingsViewModel', 'isBiometricActive'),
-            biometricOptionTitle: BuiltValueNullFieldError.checkNotNull(biometricOptionTitle, r'PasscodeSettingsViewModel', 'biometricOptionTitle'),
-            biometricToogleCommand: BuiltValueNullFieldError.checkNotNull(biometricToogleCommand, r'PasscodeSettingsViewModel', 'biometricToogleCommand'),
-            backCommand: BuiltValueNullFieldError.checkNotNull(backCommand, r'PasscodeSettingsViewModel', 'backCommand'),
-            requireAfterOptionTitle: BuiltValueNullFieldError.checkNotNull(requireAfterOptionTitle, r'PasscodeSettingsViewModel', 'requireAfterOptionTitle'),
-            requireAfterOptionValue: BuiltValueNullFieldError.checkNotNull(requireAfterOptionValue, r'PasscodeSettingsViewModel', 'requireAfterOptionValue'),
-            requireAfterCommand: BuiltValueNullFieldError.checkNotNull(requireAfterCommand, r'PasscodeSettingsViewModel', 'requireAfterCommand'));
+        _$PasscodeSettingsViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'PasscodeSettingsViewModel', 'title'),
+          isScreenBlockingEnabled: BuiltValueNullFieldError.checkNotNull(
+              isScreenBlockingEnabled,
+              r'PasscodeSettingsViewModel',
+              'isScreenBlockingEnabled'),
+          isBiometricAvailable: BuiltValueNullFieldError.checkNotNull(
+              isBiometricAvailable,
+              r'PasscodeSettingsViewModel',
+              'isBiometricAvailable'),
+          screenBlockingOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              screenBlockingOptionTitle,
+              r'PasscodeSettingsViewModel',
+              'screenBlockingOptionTitle'),
+          screenBlockingToogleCommand: BuiltValueNullFieldError.checkNotNull(
+              screenBlockingToogleCommand,
+              r'PasscodeSettingsViewModel',
+              'screenBlockingToogleCommand'),
+          screenBlockingExplanation: BuiltValueNullFieldError.checkNotNull(
+              screenBlockingExplanation,
+              r'PasscodeSettingsViewModel',
+              'screenBlockingExplanation'),
+          isBiometricEnabled: BuiltValueNullFieldError.checkNotNull(
+              isBiometricEnabled,
+              r'PasscodeSettingsViewModel',
+              'isBiometricEnabled'),
+          isBiometricActive: BuiltValueNullFieldError.checkNotNull(
+              isBiometricActive,
+              r'PasscodeSettingsViewModel',
+              'isBiometricActive'),
+          biometricOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              biometricOptionTitle,
+              r'PasscodeSettingsViewModel',
+              'biometricOptionTitle'),
+          biometricToogleCommand: BuiltValueNullFieldError.checkNotNull(
+              biometricToogleCommand,
+              r'PasscodeSettingsViewModel',
+              'biometricToogleCommand'),
+          backCommand: BuiltValueNullFieldError.checkNotNull(
+              backCommand, r'PasscodeSettingsViewModel', 'backCommand'),
+          requireAfterOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              requireAfterOptionTitle,
+              r'PasscodeSettingsViewModel',
+              'requireAfterOptionTitle'),
+          requireAfterOptionValue: BuiltValueNullFieldError.checkNotNull(
+              requireAfterOptionValue,
+              r'PasscodeSettingsViewModel',
+              'requireAfterOptionValue'),
+          requireAfterCommand: BuiltValueNullFieldError.checkNotNull(
+              requireAfterCommand,
+              r'PasscodeSettingsViewModel',
+              'requireAfterCommand'),
+        );
     replace(_$result);
     return _$result;
   }

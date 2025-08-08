@@ -15,24 +15,17 @@ class _$EditTagsState extends EditTagsState {
   final List<TagDto> tags;
 
   factory _$EditTagsState([void Function(EditTagsStateBuilder)? updates]) =>
-      (new EditTagsStateBuilder()..update(updates))._build();
+      (EditTagsStateBuilder()..update(updates))._build();
 
   _$EditTagsState._(
       {required this.isLoading, required this.isSaving, required this.tags})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        isLoading, r'EditTagsState', 'isLoading');
-    BuiltValueNullFieldError.checkNotNull(
-        isSaving, r'EditTagsState', 'isSaving');
-    BuiltValueNullFieldError.checkNotNull(tags, r'EditTagsState', 'tags');
-  }
-
+      : super._();
   @override
   EditTagsState rebuild(void Function(EditTagsStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  EditTagsStateBuilder toBuilder() => new EditTagsStateBuilder()..replace(this);
+  EditTagsStateBuilder toBuilder() => EditTagsStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -94,7 +87,6 @@ class EditTagsStateBuilder
 
   @override
   void replace(EditTagsState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$EditTagsState;
   }
 
@@ -108,13 +100,14 @@ class EditTagsStateBuilder
 
   _$EditTagsState _build() {
     final _$result = _$v ??
-        new _$EditTagsState._(
-            isLoading: BuiltValueNullFieldError.checkNotNull(
-                isLoading, r'EditTagsState', 'isLoading'),
-            isSaving: BuiltValueNullFieldError.checkNotNull(
-                isSaving, r'EditTagsState', 'isSaving'),
-            tags: BuiltValueNullFieldError.checkNotNull(
-                tags, r'EditTagsState', 'tags'));
+        _$EditTagsState._(
+          isLoading: BuiltValueNullFieldError.checkNotNull(
+              isLoading, r'EditTagsState', 'isLoading'),
+          isSaving: BuiltValueNullFieldError.checkNotNull(
+              isSaving, r'EditTagsState', 'isSaving'),
+          tags: BuiltValueNullFieldError.checkNotNull(
+              tags, r'EditTagsState', 'tags'),
+        );
     replace(_$result);
     return _$result;
   }

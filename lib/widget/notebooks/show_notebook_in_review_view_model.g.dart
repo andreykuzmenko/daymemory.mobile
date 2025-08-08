@@ -18,24 +18,14 @@ class _$ShowNotebookInReviewViewModel extends ShowNotebookInReviewViewModel {
 
   factory _$ShowNotebookInReviewViewModel(
           [void Function(ShowNotebookInReviewViewModelBuilder)? updates]) =>
-      (new ShowNotebookInReviewViewModelBuilder()..update(updates))._build();
+      (ShowNotebookInReviewViewModelBuilder()..update(updates))._build();
 
   _$ShowNotebookInReviewViewModel._(
       {required this.switchShowInReviewCommand,
       required this.notebookId,
       required this.notebookTitle,
       required this.isEnabled})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(switchShowInReviewCommand,
-        r'ShowNotebookInReviewViewModel', 'switchShowInReviewCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        notebookId, r'ShowNotebookInReviewViewModel', 'notebookId');
-    BuiltValueNullFieldError.checkNotNull(
-        notebookTitle, r'ShowNotebookInReviewViewModel', 'notebookTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        isEnabled, r'ShowNotebookInReviewViewModel', 'isEnabled');
-  }
-
+      : super._();
   @override
   ShowNotebookInReviewViewModel rebuild(
           void Function(ShowNotebookInReviewViewModelBuilder) updates) =>
@@ -43,7 +33,7 @@ class _$ShowNotebookInReviewViewModel extends ShowNotebookInReviewViewModel {
 
   @override
   ShowNotebookInReviewViewModelBuilder toBuilder() =>
-      new ShowNotebookInReviewViewModelBuilder()..replace(this);
+      ShowNotebookInReviewViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -119,7 +109,6 @@ class ShowNotebookInReviewViewModelBuilder
 
   @override
   void replace(ShowNotebookInReviewViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ShowNotebookInReviewViewModel;
   }
 
@@ -133,17 +122,18 @@ class ShowNotebookInReviewViewModelBuilder
 
   _$ShowNotebookInReviewViewModel _build() {
     final _$result = _$v ??
-        new _$ShowNotebookInReviewViewModel._(
-            switchShowInReviewCommand: BuiltValueNullFieldError.checkNotNull(
-                switchShowInReviewCommand,
-                r'ShowNotebookInReviewViewModel',
-                'switchShowInReviewCommand'),
-            notebookId: BuiltValueNullFieldError.checkNotNull(
-                notebookId, r'ShowNotebookInReviewViewModel', 'notebookId'),
-            notebookTitle: BuiltValueNullFieldError.checkNotNull(notebookTitle,
-                r'ShowNotebookInReviewViewModel', 'notebookTitle'),
-            isEnabled: BuiltValueNullFieldError.checkNotNull(
-                isEnabled, r'ShowNotebookInReviewViewModel', 'isEnabled'));
+        _$ShowNotebookInReviewViewModel._(
+          switchShowInReviewCommand: BuiltValueNullFieldError.checkNotNull(
+              switchShowInReviewCommand,
+              r'ShowNotebookInReviewViewModel',
+              'switchShowInReviewCommand'),
+          notebookId: BuiltValueNullFieldError.checkNotNull(
+              notebookId, r'ShowNotebookInReviewViewModel', 'notebookId'),
+          notebookTitle: BuiltValueNullFieldError.checkNotNull(
+              notebookTitle, r'ShowNotebookInReviewViewModel', 'notebookTitle'),
+          isEnabled: BuiltValueNullFieldError.checkNotNull(
+              isEnabled, r'ShowNotebookInReviewViewModel', 'isEnabled'),
+        );
     replace(_$result);
     return _$result;
   }

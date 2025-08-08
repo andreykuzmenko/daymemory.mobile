@@ -4,7 +4,7 @@ import 'package:daymemory/services/device_info_service/device_info_service.dart'
 import 'package:daymemory/widget/notebooks/show_notebooks_in_review_view_model.dart';
 import 'package:daymemory/widget/notebooks/show_notebooks_in_review_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import '../../redux/state/states.dart';
 
 class ShowNotebooksInReviewConnector extends PageConnector<ShowNotebooksInReviewViewModel, ShowNotebooksInReviewConverter> {

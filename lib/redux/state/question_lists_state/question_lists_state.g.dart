@@ -14,16 +14,10 @@ class _$QuestionListsState extends QuestionListsState {
 
   factory _$QuestionListsState(
           [void Function(QuestionListsStateBuilder)? updates]) =>
-      (new QuestionListsStateBuilder()..update(updates))._build();
+      (QuestionListsStateBuilder()..update(updates))._build();
 
   _$QuestionListsState._({required this.isLoading, required this.questionLists})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        isLoading, r'QuestionListsState', 'isLoading');
-    BuiltValueNullFieldError.checkNotNull(
-        questionLists, r'QuestionListsState', 'questionLists');
-  }
-
+      : super._();
   @override
   QuestionListsState rebuild(
           void Function(QuestionListsStateBuilder) updates) =>
@@ -31,7 +25,7 @@ class _$QuestionListsState extends QuestionListsState {
 
   @override
   QuestionListsStateBuilder toBuilder() =>
-      new QuestionListsStateBuilder()..replace(this);
+      QuestionListsStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -86,7 +80,6 @@ class QuestionListsStateBuilder
 
   @override
   void replace(QuestionListsState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$QuestionListsState;
   }
 
@@ -100,11 +93,12 @@ class QuestionListsStateBuilder
 
   _$QuestionListsState _build() {
     final _$result = _$v ??
-        new _$QuestionListsState._(
-            isLoading: BuiltValueNullFieldError.checkNotNull(
-                isLoading, r'QuestionListsState', 'isLoading'),
-            questionLists: BuiltValueNullFieldError.checkNotNull(
-                questionLists, r'QuestionListsState', 'questionLists'));
+        _$QuestionListsState._(
+          isLoading: BuiltValueNullFieldError.checkNotNull(
+              isLoading, r'QuestionListsState', 'isLoading'),
+          questionLists: BuiltValueNullFieldError.checkNotNull(
+              questionLists, r'QuestionListsState', 'questionLists'),
+        );
     replace(_$result);
     return _$result;
   }

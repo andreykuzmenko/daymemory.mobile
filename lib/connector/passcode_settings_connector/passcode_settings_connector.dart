@@ -7,7 +7,7 @@ import 'package:daymemory/widget/settings/passcode_settings_view_model.dart';
 import 'package:daymemory/widget/settings/passcode_settings_widget.dart';
 import 'package:daymemory/widget/theme/app_configuration_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class PasscodeSettingsConnector extends PageConnector<PasscodeSettingsViewModel, PasscodeSettingsConverter> {
   const PasscodeSettingsConnector({super.key});

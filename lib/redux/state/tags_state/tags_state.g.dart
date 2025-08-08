@@ -11,18 +11,15 @@ class _$TagsState extends TagsState {
   final List<TagDto> tags;
 
   factory _$TagsState([void Function(TagsStateBuilder)? updates]) =>
-      (new TagsStateBuilder()..update(updates))._build();
+      (TagsStateBuilder()..update(updates))._build();
 
-  _$TagsState._({required this.tags}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(tags, r'TagsState', 'tags');
-  }
-
+  _$TagsState._({required this.tags}) : super._();
   @override
   TagsState rebuild(void Function(TagsStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TagsStateBuilder toBuilder() => new TagsStateBuilder()..replace(this);
+  TagsStateBuilder toBuilder() => TagsStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -65,7 +62,6 @@ class TagsStateBuilder implements Builder<TagsState, TagsStateBuilder> {
 
   @override
   void replace(TagsState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagsState;
   }
 
@@ -79,9 +75,10 @@ class TagsStateBuilder implements Builder<TagsState, TagsStateBuilder> {
 
   _$TagsState _build() {
     final _$result = _$v ??
-        new _$TagsState._(
-            tags: BuiltValueNullFieldError.checkNotNull(
-                tags, r'TagsState', 'tags'));
+        _$TagsState._(
+          tags:
+              BuiltValueNullFieldError.checkNotNull(tags, r'TagsState', 'tags'),
+        );
     replace(_$result);
     return _$result;
   }

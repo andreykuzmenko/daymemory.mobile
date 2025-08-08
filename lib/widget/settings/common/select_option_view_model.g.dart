@@ -24,7 +24,7 @@ class _$SelectOptionViewModel extends SelectOptionViewModel {
 
   factory _$SelectOptionViewModel(
           [void Function(SelectOptionViewModelBuilder)? updates]) =>
-      (new SelectOptionViewModelBuilder()..update(updates))._build();
+      (SelectOptionViewModelBuilder()..update(updates))._build();
 
   _$SelectOptionViewModel._(
       {required this.title,
@@ -34,21 +34,7 @@ class _$SelectOptionViewModel extends SelectOptionViewModel {
       required this.options,
       required this.optionSelectorCommand,
       required this.backCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'SelectOptionViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        selectedOptionId, r'SelectOptionViewModel', 'selectedOptionId');
-    BuiltValueNullFieldError.checkNotNull(
-        navType, r'SelectOptionViewModel', 'navType');
-    BuiltValueNullFieldError.checkNotNull(
-        options, r'SelectOptionViewModel', 'options');
-    BuiltValueNullFieldError.checkNotNull(optionSelectorCommand,
-        r'SelectOptionViewModel', 'optionSelectorCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        backCommand, r'SelectOptionViewModel', 'backCommand');
-  }
-
+      : super._();
   @override
   SelectOptionViewModel rebuild(
           void Function(SelectOptionViewModelBuilder) updates) =>
@@ -56,7 +42,7 @@ class _$SelectOptionViewModel extends SelectOptionViewModel {
 
   @override
   SelectOptionViewModelBuilder toBuilder() =>
-      new SelectOptionViewModelBuilder()..replace(this);
+      SelectOptionViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -155,7 +141,6 @@ class SelectOptionViewModelBuilder
 
   @override
   void replace(SelectOptionViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SelectOptionViewModel;
   }
 
@@ -169,22 +154,23 @@ class SelectOptionViewModelBuilder
 
   _$SelectOptionViewModel _build() {
     final _$result = _$v ??
-        new _$SelectOptionViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SelectOptionViewModel', 'title'),
-            selectedOptionId: BuiltValueNullFieldError.checkNotNull(
-                selectedOptionId, r'SelectOptionViewModel', 'selectedOptionId'),
-            explanation: explanation,
-            navType: BuiltValueNullFieldError.checkNotNull(
-                navType, r'SelectOptionViewModel', 'navType'),
-            options: BuiltValueNullFieldError.checkNotNull(
-                options, r'SelectOptionViewModel', 'options'),
-            optionSelectorCommand: BuiltValueNullFieldError.checkNotNull(
-                optionSelectorCommand,
-                r'SelectOptionViewModel',
-                'optionSelectorCommand'),
-            backCommand: BuiltValueNullFieldError.checkNotNull(
-                backCommand, r'SelectOptionViewModel', 'backCommand'));
+        _$SelectOptionViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'SelectOptionViewModel', 'title'),
+          selectedOptionId: BuiltValueNullFieldError.checkNotNull(
+              selectedOptionId, r'SelectOptionViewModel', 'selectedOptionId'),
+          explanation: explanation,
+          navType: BuiltValueNullFieldError.checkNotNull(
+              navType, r'SelectOptionViewModel', 'navType'),
+          options: BuiltValueNullFieldError.checkNotNull(
+              options, r'SelectOptionViewModel', 'options'),
+          optionSelectorCommand: BuiltValueNullFieldError.checkNotNull(
+              optionSelectorCommand,
+              r'SelectOptionViewModel',
+              'optionSelectorCommand'),
+          backCommand: BuiltValueNullFieldError.checkNotNull(
+              backCommand, r'SelectOptionViewModel', 'backCommand'),
+        );
     replace(_$result);
     return _$result;
   }

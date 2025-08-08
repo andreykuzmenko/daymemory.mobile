@@ -21,7 +21,7 @@ class _$ReviewViewModel extends ReviewViewModel {
   final bool showDrawerMenu;
 
   factory _$ReviewViewModel([void Function(ReviewViewModelBuilder)? updates]) =>
-      (new ReviewViewModelBuilder()..update(updates))._build();
+      (ReviewViewModelBuilder()..update(updates))._build();
 
   _$ReviewViewModel._(
       {required this.isLoading,
@@ -30,26 +30,13 @@ class _$ReviewViewModel extends ReviewViewModel {
       required this.noItems,
       required this.items,
       required this.showDrawerMenu})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        isLoading, r'ReviewViewModel', 'isLoading');
-    BuiltValueNullFieldError.checkNotNull(title, r'ReviewViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        loadingTitle, r'ReviewViewModel', 'loadingTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        noItems, r'ReviewViewModel', 'noItems');
-    BuiltValueNullFieldError.checkNotNull(items, r'ReviewViewModel', 'items');
-    BuiltValueNullFieldError.checkNotNull(
-        showDrawerMenu, r'ReviewViewModel', 'showDrawerMenu');
-  }
-
+      : super._();
   @override
   ReviewViewModel rebuild(void Function(ReviewViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ReviewViewModelBuilder toBuilder() =>
-      new ReviewViewModelBuilder()..replace(this);
+  ReviewViewModelBuilder toBuilder() => ReviewViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -136,7 +123,6 @@ class ReviewViewModelBuilder
 
   @override
   void replace(ReviewViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ReviewViewModel;
   }
 
@@ -150,19 +136,20 @@ class ReviewViewModelBuilder
 
   _$ReviewViewModel _build() {
     final _$result = _$v ??
-        new _$ReviewViewModel._(
-            isLoading: BuiltValueNullFieldError.checkNotNull(
-                isLoading, r'ReviewViewModel', 'isLoading'),
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ReviewViewModel', 'title'),
-            loadingTitle: BuiltValueNullFieldError.checkNotNull(
-                loadingTitle, r'ReviewViewModel', 'loadingTitle'),
-            noItems: BuiltValueNullFieldError.checkNotNull(
-                noItems, r'ReviewViewModel', 'noItems'),
-            items: BuiltValueNullFieldError.checkNotNull(
-                items, r'ReviewViewModel', 'items'),
-            showDrawerMenu: BuiltValueNullFieldError.checkNotNull(
-                showDrawerMenu, r'ReviewViewModel', 'showDrawerMenu'));
+        _$ReviewViewModel._(
+          isLoading: BuiltValueNullFieldError.checkNotNull(
+              isLoading, r'ReviewViewModel', 'isLoading'),
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'ReviewViewModel', 'title'),
+          loadingTitle: BuiltValueNullFieldError.checkNotNull(
+              loadingTitle, r'ReviewViewModel', 'loadingTitle'),
+          noItems: BuiltValueNullFieldError.checkNotNull(
+              noItems, r'ReviewViewModel', 'noItems'),
+          items: BuiltValueNullFieldError.checkNotNull(
+              items, r'ReviewViewModel', 'items'),
+          showDrawerMenu: BuiltValueNullFieldError.checkNotNull(
+              showDrawerMenu, r'ReviewViewModel', 'showDrawerMenu'),
+        );
     replace(_$result);
     return _$result;
   }

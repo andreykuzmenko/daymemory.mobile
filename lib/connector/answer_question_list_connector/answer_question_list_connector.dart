@@ -4,7 +4,7 @@ import 'package:daymemory/redux/action/actions.dart';
 import 'package:daymemory/widget/answer_question_list/answer_question_list_widget.dart';
 import 'package:daymemory/widget/answer_question_list/answer_question_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import '../../redux/state/states.dart';
 
 class AnswerQuestionListConnector extends PageConnector<AnswerQuestionViewModel, AnswerQuestionListConverter> {

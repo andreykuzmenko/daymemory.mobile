@@ -2,7 +2,7 @@ import 'package:daymemory/connector/view_model_converter.dart';
 import 'package:daymemory/redux/action/actions.dart';
 import 'package:daymemory/redux/state/create_pin_state/create_pin_type.dart';
 import 'package:daymemory/redux/state/face_id_state/available_biometrics.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import '../../widget/common/function_holder.dart';
 import '../../widget/pin_code/create_pin/create_pin_view_model.dart';
 

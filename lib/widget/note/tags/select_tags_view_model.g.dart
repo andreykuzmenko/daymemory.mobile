@@ -24,7 +24,7 @@ class _$SelectTagsViewModel extends SelectTagsViewModel {
 
   factory _$SelectTagsViewModel(
           [void Function(SelectTagsViewModelBuilder)? updates]) =>
-      (new SelectTagsViewModelBuilder()..update(updates))._build();
+      (SelectTagsViewModelBuilder()..update(updates))._build();
 
   _$SelectTagsViewModel._(
       {required this.selectedTags,
@@ -34,22 +34,7 @@ class _$SelectTagsViewModel extends SelectTagsViewModel {
       required this.closeCommand,
       required this.newTagCommand,
       required this.toogleTagCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        selectedTags, r'SelectTagsViewModel', 'selectedTags');
-    BuiltValueNullFieldError.checkNotNull(
-        newTagMenuOption, r'SelectTagsViewModel', 'newTagMenuOption');
-    BuiltValueNullFieldError.checkNotNull(tags, r'SelectTagsViewModel', 'tags');
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'SelectTagsViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        closeCommand, r'SelectTagsViewModel', 'closeCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        newTagCommand, r'SelectTagsViewModel', 'newTagCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        toogleTagCommand, r'SelectTagsViewModel', 'toogleTagCommand');
-  }
-
+      : super._();
   @override
   SelectTagsViewModel rebuild(
           void Function(SelectTagsViewModelBuilder) updates) =>
@@ -57,7 +42,7 @@ class _$SelectTagsViewModel extends SelectTagsViewModel {
 
   @override
   SelectTagsViewModelBuilder toBuilder() =>
-      new SelectTagsViewModelBuilder()..replace(this);
+      SelectTagsViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -115,7 +100,7 @@ class SelectTagsViewModelBuilder
       _$this._newTagMenuOption = newTagMenuOption;
 
   ListBuilder<TagDto>? _tags;
-  ListBuilder<TagDto> get tags => _$this._tags ??= new ListBuilder<TagDto>();
+  ListBuilder<TagDto> get tags => _$this._tags ??= ListBuilder<TagDto>();
   set tags(ListBuilder<TagDto>? tags) => _$this._tags = tags;
 
   String? _title;
@@ -156,7 +141,6 @@ class SelectTagsViewModelBuilder
 
   @override
   void replace(SelectTagsViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SelectTagsViewModel;
   }
 
@@ -172,29 +156,28 @@ class SelectTagsViewModelBuilder
     _$SelectTagsViewModel _$result;
     try {
       _$result = _$v ??
-          new _$SelectTagsViewModel._(
-              selectedTags: BuiltValueNullFieldError.checkNotNull(
-                  selectedTags, r'SelectTagsViewModel', 'selectedTags'),
-              newTagMenuOption: BuiltValueNullFieldError.checkNotNull(
-                  newTagMenuOption, r'SelectTagsViewModel', 'newTagMenuOption'),
-              tags: tags.build(),
-              title: BuiltValueNullFieldError.checkNotNull(
-                  title, r'SelectTagsViewModel', 'title'),
-              closeCommand: BuiltValueNullFieldError.checkNotNull(
-                  closeCommand, r'SelectTagsViewModel', 'closeCommand'),
-              newTagCommand: BuiltValueNullFieldError.checkNotNull(
-                  newTagCommand, r'SelectTagsViewModel', 'newTagCommand'),
-              toogleTagCommand: BuiltValueNullFieldError.checkNotNull(
-                  toogleTagCommand,
-                  r'SelectTagsViewModel',
-                  'toogleTagCommand'));
+          _$SelectTagsViewModel._(
+            selectedTags: BuiltValueNullFieldError.checkNotNull(
+                selectedTags, r'SelectTagsViewModel', 'selectedTags'),
+            newTagMenuOption: BuiltValueNullFieldError.checkNotNull(
+                newTagMenuOption, r'SelectTagsViewModel', 'newTagMenuOption'),
+            tags: tags.build(),
+            title: BuiltValueNullFieldError.checkNotNull(
+                title, r'SelectTagsViewModel', 'title'),
+            closeCommand: BuiltValueNullFieldError.checkNotNull(
+                closeCommand, r'SelectTagsViewModel', 'closeCommand'),
+            newTagCommand: BuiltValueNullFieldError.checkNotNull(
+                newTagCommand, r'SelectTagsViewModel', 'newTagCommand'),
+            toogleTagCommand: BuiltValueNullFieldError.checkNotNull(
+                toogleTagCommand, r'SelectTagsViewModel', 'toogleTagCommand'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'tags';
         tags.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'SelectTagsViewModel', _$failedField, e.toString());
       }
       rethrow;

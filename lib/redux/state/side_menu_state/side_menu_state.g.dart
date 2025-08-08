@@ -11,16 +11,15 @@ class _$SideMenuState extends SideMenuState {
   final String? selectedTag;
 
   factory _$SideMenuState([void Function(SideMenuStateBuilder)? updates]) =>
-      (new SideMenuStateBuilder()..update(updates))._build();
+      (SideMenuStateBuilder()..update(updates))._build();
 
   _$SideMenuState._({this.selectedTag}) : super._();
-
   @override
   SideMenuState rebuild(void Function(SideMenuStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SideMenuStateBuilder toBuilder() => new SideMenuStateBuilder()..replace(this);
+  SideMenuStateBuilder toBuilder() => SideMenuStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -65,7 +64,6 @@ class SideMenuStateBuilder
 
   @override
   void replace(SideMenuState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SideMenuState;
   }
 
@@ -78,7 +76,10 @@ class SideMenuStateBuilder
   SideMenuState build() => _build();
 
   _$SideMenuState _build() {
-    final _$result = _$v ?? new _$SideMenuState._(selectedTag: selectedTag);
+    final _$result = _$v ??
+        _$SideMenuState._(
+          selectedTag: selectedTag,
+        );
     replace(_$result);
     return _$result;
   }

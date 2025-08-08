@@ -3349,7 +3349,7 @@ final class $$DmNotebooksTableReferences
 
   $$DmNotesTableProcessedTableManager get dmNotesRefs {
     final manager = $$DmNotesTableTableManager($_db, $_db.dmNotes)
-        .filter((f) => f.notebookId.id($_item.id));
+        .filter((f) => f.notebookId.id.sqlEquals($_itemColumn<String>('id')!));
 
     final cache = $_typedResult.readTableOrNull(_dmNotesRefsTable($_db));
     return ProcessedTableManager(
@@ -3609,7 +3609,8 @@ class $$DmNotebooksTableTableManager extends RootTableManager<
               getPrefetchedDataCallback: (items) async {
                 return [
                   if (dmNotesRefs)
-                    await $_getPrefetchedData(
+                    await $_getPrefetchedData<DmNotebook, $DmNotebooksTable,
+                            DmNote>(
                         currentTable: table,
                         referencedTable:
                             $$DmNotebooksTableReferences._dmNotesRefsTable(db),
@@ -3670,7 +3671,7 @@ final class $$DmLocationsTableReferences
 
   $$DmNotesTableProcessedTableManager get dmNotesRefs {
     final manager = $$DmNotesTableTableManager($_db, $_db.dmNotes)
-        .filter((f) => f.locationId.id($_item.id));
+        .filter((f) => f.locationId.id.sqlEquals($_itemColumn<String>('id')!));
 
     final cache = $_typedResult.readTableOrNull(_dmNotesRefsTable($_db));
     return ProcessedTableManager(
@@ -3863,7 +3864,8 @@ class $$DmLocationsTableTableManager extends RootTableManager<
               getPrefetchedDataCallback: (items) async {
                 return [
                   if (dmNotesRefs)
-                    await $_getPrefetchedData(
+                    await $_getPrefetchedData<DmLocation, $DmLocationsTable,
+                            DmNote>(
                         currentTable: table,
                         referencedTable:
                             $$DmLocationsTableReferences._dmNotesRefsTable(db),
@@ -3929,8 +3931,10 @@ final class $$DmNotesTableReferences
           $_aliasNameGenerator(db.dmNotes.notebookId, db.dmNotebooks.id));
 
   $$DmNotebooksTableProcessedTableManager get notebookId {
+    final $_column = $_itemColumn<String>('notebook_id')!;
+
     final manager = $$DmNotebooksTableTableManager($_db, $_db.dmNotebooks)
-        .filter((f) => f.id($_item.notebookId!));
+        .filter((f) => f.id.sqlEquals($_column));
     final item = $_typedResult.readTableOrNull(_notebookIdTable($_db));
     if (item == null) return manager;
     return ProcessedTableManager(
@@ -3942,9 +3946,10 @@ final class $$DmNotesTableReferences
           $_aliasNameGenerator(db.dmNotes.locationId, db.dmLocations.id));
 
   $$DmLocationsTableProcessedTableManager? get locationId {
-    if ($_item.locationId == null) return null;
+    final $_column = $_itemColumn<String>('location_id');
+    if ($_column == null) return null;
     final manager = $$DmLocationsTableTableManager($_db, $_db.dmLocations)
-        .filter((f) => f.id($_item.locationId!));
+        .filter((f) => f.id.sqlEquals($_column));
     final item = $_typedResult.readTableOrNull(_locationIdTable($_db));
     if (item == null) return manager;
     return ProcessedTableManager(
@@ -3958,7 +3963,7 @@ final class $$DmNotesTableReferences
 
   $$DmNoteTagsTableProcessedTableManager get dmNoteTagsRefs {
     final manager = $$DmNoteTagsTableTableManager($_db, $_db.dmNoteTags)
-        .filter((f) => f.noteId.id($_item.id));
+        .filter((f) => f.noteId.id.sqlEquals($_itemColumn<String>('id')!));
 
     final cache = $_typedResult.readTableOrNull(_dmNoteTagsRefsTable($_db));
     return ProcessedTableManager(
@@ -3972,7 +3977,7 @@ final class $$DmNotesTableReferences
 
   $$DmFilesTableProcessedTableManager get dmFilesRefs {
     final manager = $$DmFilesTableTableManager($_db, $_db.dmFiles)
-        .filter((f) => f.noteId.id($_item.id));
+        .filter((f) => f.noteId.id.sqlEquals($_itemColumn<String>('id')!));
 
     final cache = $_typedResult.readTableOrNull(_dmFilesRefsTable($_db));
     return ProcessedTableManager(
@@ -4419,7 +4424,7 @@ class $$DmNotesTableTableManager extends RootTableManager<
               getPrefetchedDataCallback: (items) async {
                 return [
                   if (dmNoteTagsRefs)
-                    await $_getPrefetchedData(
+                    await $_getPrefetchedData<DmNote, $DmNotesTable, DmNoteTag>(
                         currentTable: table,
                         referencedTable:
                             $$DmNotesTableReferences._dmNoteTagsRefsTable(db),
@@ -4431,7 +4436,7 @@ class $$DmNotesTableTableManager extends RootTableManager<
                             referencedItems.where((e) => e.noteId == item.id),
                         typedResults: items),
                   if (dmFilesRefs)
-                    await $_getPrefetchedData(
+                    await $_getPrefetchedData<DmNote, $DmNotesTable, DmFile>(
                         currentTable: table,
                         referencedTable:
                             $$DmNotesTableReferences._dmFilesRefsTable(db),
@@ -4498,7 +4503,7 @@ final class $$DmTagsTableReferences
 
   $$DmNoteTagsTableProcessedTableManager get dmNoteTagsRefs {
     final manager = $$DmNoteTagsTableTableManager($_db, $_db.dmNoteTags)
-        .filter((f) => f.tagId.id($_item.id));
+        .filter((f) => f.tagId.id.sqlEquals($_itemColumn<String>('id')!));
 
     final cache = $_typedResult.readTableOrNull(_dmNoteTagsRefsTable($_db));
     return ProcessedTableManager(
@@ -4729,7 +4734,7 @@ class $$DmTagsTableTableManager extends RootTableManager<
               getPrefetchedDataCallback: (items) async {
                 return [
                   if (dmNoteTagsRefs)
-                    await $_getPrefetchedData(
+                    await $_getPrefetchedData<DmTag, $DmTagsTable, DmNoteTag>(
                         currentTable: table,
                         referencedTable:
                             $$DmTagsTableReferences._dmNoteTagsRefsTable(db),
@@ -4782,8 +4787,10 @@ final class $$DmNoteTagsTableReferences
       .createAlias($_aliasNameGenerator(db.dmNoteTags.noteId, db.dmNotes.id));
 
   $$DmNotesTableProcessedTableManager get noteId {
+    final $_column = $_itemColumn<String>('note_id')!;
+
     final manager = $$DmNotesTableTableManager($_db, $_db.dmNotes)
-        .filter((f) => f.id($_item.noteId!));
+        .filter((f) => f.id.sqlEquals($_column));
     final item = $_typedResult.readTableOrNull(_noteIdTable($_db));
     if (item == null) return manager;
     return ProcessedTableManager(
@@ -4794,8 +4801,10 @@ final class $$DmNoteTagsTableReferences
       .createAlias($_aliasNameGenerator(db.dmNoteTags.tagId, db.dmTags.id));
 
   $$DmTagsTableProcessedTableManager get tagId {
+    final $_column = $_itemColumn<String>('tag_id')!;
+
     final manager = $$DmTagsTableTableManager($_db, $_db.dmTags)
-        .filter((f) => f.id($_item.tagId!));
+        .filter((f) => f.id.sqlEquals($_column));
     final item = $_typedResult.readTableOrNull(_tagIdTable($_db));
     if (item == null) return manager;
     return ProcessedTableManager(
@@ -5123,7 +5132,8 @@ final class $$DmQuestionListsTableReferences extends BaseReferences<
 
   $$DmQuestionsTableProcessedTableManager get dmQuestionsRefs {
     final manager = $$DmQuestionsTableTableManager($_db, $_db.dmQuestions)
-        .filter((f) => f.questionList.id($_item.id));
+        .filter(
+            (f) => f.questionList.id.sqlEquals($_itemColumn<String>('id')!));
 
     final cache = $_typedResult.readTableOrNull(_dmQuestionsRefsTable($_db));
     return ProcessedTableManager(
@@ -5344,7 +5354,8 @@ class $$DmQuestionListsTableTableManager extends RootTableManager<
               getPrefetchedDataCallback: (items) async {
                 return [
                   if (dmQuestionsRefs)
-                    await $_getPrefetchedData(
+                    await $_getPrefetchedData<DmQuestionList, $DmQuestionListsTable,
+                            DmQuestion>(
                         currentTable: table,
                         referencedTable: $$DmQuestionListsTableReferences
                             ._dmQuestionsRefsTable(db),
@@ -5402,9 +5413,11 @@ final class $$DmQuestionsTableReferences
           db.dmQuestions.questionList, db.dmQuestionLists.id));
 
   $$DmQuestionListsTableProcessedTableManager get questionList {
+    final $_column = $_itemColumn<String>('question_list')!;
+
     final manager =
         $$DmQuestionListsTableTableManager($_db, $_db.dmQuestionLists)
-            .filter((f) => f.id($_item.questionList!));
+            .filter((f) => f.id.sqlEquals($_column));
     final item = $_typedResult.readTableOrNull(_questionListTable($_db));
     if (item == null) return manager;
     return ProcessedTableManager(
@@ -5681,9 +5694,10 @@ final class $$DmFilesTableReferences
       .createAlias($_aliasNameGenerator(db.dmFiles.noteId, db.dmNotes.id));
 
   $$DmNotesTableProcessedTableManager? get noteId {
-    if ($_item.noteId == null) return null;
+    final $_column = $_itemColumn<String>('note_id');
+    if ($_column == null) return null;
     final manager = $$DmNotesTableTableManager($_db, $_db.dmNotes)
-        .filter((f) => f.id($_item.noteId!));
+        .filter((f) => f.id.sqlEquals($_column));
     final item = $_typedResult.readTableOrNull(_noteIdTable($_db));
     if (item == null) return manager;
     return ProcessedTableManager(

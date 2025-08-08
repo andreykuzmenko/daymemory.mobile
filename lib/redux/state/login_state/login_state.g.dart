@@ -13,19 +13,15 @@ class _$LoginState extends LoginState {
   final bool isSending;
 
   factory _$LoginState([void Function(LoginStateBuilder)? updates]) =>
-      (new LoginStateBuilder()..update(updates))._build();
+      (LoginStateBuilder()..update(updates))._build();
 
-  _$LoginState._({this.email, required this.isSending}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        isSending, r'LoginState', 'isSending');
-  }
-
+  _$LoginState._({this.email, required this.isSending}) : super._();
   @override
   LoginState rebuild(void Function(LoginStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LoginStateBuilder toBuilder() => new LoginStateBuilder()..replace(this);
+  LoginStateBuilder toBuilder() => LoginStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -78,7 +74,6 @@ class LoginStateBuilder implements Builder<LoginState, LoginStateBuilder> {
 
   @override
   void replace(LoginState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LoginState;
   }
 
@@ -92,10 +87,11 @@ class LoginStateBuilder implements Builder<LoginState, LoginStateBuilder> {
 
   _$LoginState _build() {
     final _$result = _$v ??
-        new _$LoginState._(
-            email: email,
-            isSending: BuiltValueNullFieldError.checkNotNull(
-                isSending, r'LoginState', 'isSending'));
+        _$LoginState._(
+          email: email,
+          isSending: BuiltValueNullFieldError.checkNotNull(
+              isSending, r'LoginState', 'isSending'),
+        );
     replace(_$result);
     return _$result;
   }

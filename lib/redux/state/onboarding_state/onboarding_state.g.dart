@@ -11,20 +11,15 @@ class _$OnBoardingState extends OnBoardingState {
   final int currentPage;
 
   factory _$OnBoardingState([void Function(OnBoardingStateBuilder)? updates]) =>
-      (new OnBoardingStateBuilder()..update(updates))._build();
+      (OnBoardingStateBuilder()..update(updates))._build();
 
-  _$OnBoardingState._({required this.currentPage}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        currentPage, r'OnBoardingState', 'currentPage');
-  }
-
+  _$OnBoardingState._({required this.currentPage}) : super._();
   @override
   OnBoardingState rebuild(void Function(OnBoardingStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  OnBoardingStateBuilder toBuilder() =>
-      new OnBoardingStateBuilder()..replace(this);
+  OnBoardingStateBuilder toBuilder() => OnBoardingStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -69,7 +64,6 @@ class OnBoardingStateBuilder
 
   @override
   void replace(OnBoardingState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$OnBoardingState;
   }
 
@@ -83,9 +77,10 @@ class OnBoardingStateBuilder
 
   _$OnBoardingState _build() {
     final _$result = _$v ??
-        new _$OnBoardingState._(
-            currentPage: BuiltValueNullFieldError.checkNotNull(
-                currentPage, r'OnBoardingState', 'currentPage'));
+        _$OnBoardingState._(
+          currentPage: BuiltValueNullFieldError.checkNotNull(
+              currentPage, r'OnBoardingState', 'currentPage'),
+        );
     replace(_$result);
     return _$result;
   }

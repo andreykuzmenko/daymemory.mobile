@@ -18,22 +18,14 @@ class _$ScreenBlockingState extends ScreenBlockingState {
 
   factory _$ScreenBlockingState(
           [void Function(ScreenBlockingStateBuilder)? updates]) =>
-      (new ScreenBlockingStateBuilder()..update(updates))._build();
+      (ScreenBlockingStateBuilder()..update(updates))._build();
 
   _$ScreenBlockingState._(
       {required this.isScreenBlockingActive,
       required this.isTimerBlocking,
       required this.isAppActive,
       this.pausedDatetime})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(isScreenBlockingActive,
-        r'ScreenBlockingState', 'isScreenBlockingActive');
-    BuiltValueNullFieldError.checkNotNull(
-        isTimerBlocking, r'ScreenBlockingState', 'isTimerBlocking');
-    BuiltValueNullFieldError.checkNotNull(
-        isAppActive, r'ScreenBlockingState', 'isAppActive');
-  }
-
+      : super._();
   @override
   ScreenBlockingState rebuild(
           void Function(ScreenBlockingStateBuilder) updates) =>
@@ -41,7 +33,7 @@ class _$ScreenBlockingState extends ScreenBlockingState {
 
   @override
   ScreenBlockingStateBuilder toBuilder() =>
-      new ScreenBlockingStateBuilder()..replace(this);
+      ScreenBlockingStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -114,7 +106,6 @@ class ScreenBlockingStateBuilder
 
   @override
   void replace(ScreenBlockingState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ScreenBlockingState;
   }
 
@@ -128,16 +119,17 @@ class ScreenBlockingStateBuilder
 
   _$ScreenBlockingState _build() {
     final _$result = _$v ??
-        new _$ScreenBlockingState._(
-            isScreenBlockingActive: BuiltValueNullFieldError.checkNotNull(
-                isScreenBlockingActive,
-                r'ScreenBlockingState',
-                'isScreenBlockingActive'),
-            isTimerBlocking: BuiltValueNullFieldError.checkNotNull(
-                isTimerBlocking, r'ScreenBlockingState', 'isTimerBlocking'),
-            isAppActive: BuiltValueNullFieldError.checkNotNull(
-                isAppActive, r'ScreenBlockingState', 'isAppActive'),
-            pausedDatetime: pausedDatetime);
+        _$ScreenBlockingState._(
+          isScreenBlockingActive: BuiltValueNullFieldError.checkNotNull(
+              isScreenBlockingActive,
+              r'ScreenBlockingState',
+              'isScreenBlockingActive'),
+          isTimerBlocking: BuiltValueNullFieldError.checkNotNull(
+              isTimerBlocking, r'ScreenBlockingState', 'isTimerBlocking'),
+          isAppActive: BuiltValueNullFieldError.checkNotNull(
+              isAppActive, r'ScreenBlockingState', 'isAppActive'),
+          pausedDatetime: pausedDatetime,
+        );
     replace(_$result);
     return _$result;
   }

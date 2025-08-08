@@ -28,7 +28,7 @@ class _$AccountSettingsViewModel extends AccountSettingsViewModel {
 
   factory _$AccountSettingsViewModel(
           [void Function(AccountSettingsViewModelBuilder)? updates]) =>
-      (new AccountSettingsViewModelBuilder()..update(updates))._build();
+      (AccountSettingsViewModelBuilder()..update(updates))._build();
 
   _$AccountSettingsViewModel._(
       {required this.title,
@@ -40,27 +40,7 @@ class _$AccountSettingsViewModel extends AccountSettingsViewModel {
       required this.accountExplanation,
       required this.logoutCommand,
       required this.backCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'AccountSettingsViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        nameOptionTitle, r'AccountSettingsViewModel', 'nameOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        nameOptionValue, r'AccountSettingsViewModel', 'nameOptionValue');
-    BuiltValueNullFieldError.checkNotNull(
-        emailOptionTitle, r'AccountSettingsViewModel', 'emailOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        emailOptionValue, r'AccountSettingsViewModel', 'emailOptionValue');
-    BuiltValueNullFieldError.checkNotNull(
-        logoutOptionTitle, r'AccountSettingsViewModel', 'logoutOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        accountExplanation, r'AccountSettingsViewModel', 'accountExplanation');
-    BuiltValueNullFieldError.checkNotNull(
-        logoutCommand, r'AccountSettingsViewModel', 'logoutCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        backCommand, r'AccountSettingsViewModel', 'backCommand');
-  }
-
+      : super._();
   @override
   AccountSettingsViewModel rebuild(
           void Function(AccountSettingsViewModelBuilder) updates) =>
@@ -68,7 +48,7 @@ class _$AccountSettingsViewModel extends AccountSettingsViewModel {
 
   @override
   AccountSettingsViewModelBuilder toBuilder() =>
-      new AccountSettingsViewModelBuilder()..replace(this);
+      AccountSettingsViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -187,7 +167,6 @@ class AccountSettingsViewModelBuilder
 
   @override
   void replace(AccountSettingsViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AccountSettingsViewModel;
   }
 
@@ -201,24 +180,34 @@ class AccountSettingsViewModelBuilder
 
   _$AccountSettingsViewModel _build() {
     final _$result = _$v ??
-        new _$AccountSettingsViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'AccountSettingsViewModel', 'title'),
-            nameOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                nameOptionTitle, r'AccountSettingsViewModel', 'nameOptionTitle'),
-            nameOptionValue: BuiltValueNullFieldError.checkNotNull(
-                nameOptionValue, r'AccountSettingsViewModel', 'nameOptionValue'),
-            emailOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                emailOptionTitle, r'AccountSettingsViewModel', 'emailOptionTitle'),
-            emailOptionValue: BuiltValueNullFieldError.checkNotNull(
-                emailOptionValue, r'AccountSettingsViewModel', 'emailOptionValue'),
-            logoutOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                logoutOptionTitle, r'AccountSettingsViewModel', 'logoutOptionTitle'),
-            accountExplanation: BuiltValueNullFieldError.checkNotNull(
-                accountExplanation, r'AccountSettingsViewModel', 'accountExplanation'),
-            logoutCommand:
-                BuiltValueNullFieldError.checkNotNull(logoutCommand, r'AccountSettingsViewModel', 'logoutCommand'),
-            backCommand: BuiltValueNullFieldError.checkNotNull(backCommand, r'AccountSettingsViewModel', 'backCommand'));
+        _$AccountSettingsViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'AccountSettingsViewModel', 'title'),
+          nameOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              nameOptionTitle, r'AccountSettingsViewModel', 'nameOptionTitle'),
+          nameOptionValue: BuiltValueNullFieldError.checkNotNull(
+              nameOptionValue, r'AccountSettingsViewModel', 'nameOptionValue'),
+          emailOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              emailOptionTitle,
+              r'AccountSettingsViewModel',
+              'emailOptionTitle'),
+          emailOptionValue: BuiltValueNullFieldError.checkNotNull(
+              emailOptionValue,
+              r'AccountSettingsViewModel',
+              'emailOptionValue'),
+          logoutOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              logoutOptionTitle,
+              r'AccountSettingsViewModel',
+              'logoutOptionTitle'),
+          accountExplanation: BuiltValueNullFieldError.checkNotNull(
+              accountExplanation,
+              r'AccountSettingsViewModel',
+              'accountExplanation'),
+          logoutCommand: BuiltValueNullFieldError.checkNotNull(
+              logoutCommand, r'AccountSettingsViewModel', 'logoutCommand'),
+          backCommand: BuiltValueNullFieldError.checkNotNull(
+              backCommand, r'AccountSettingsViewModel', 'backCommand'),
+        );
     replace(_$result);
     return _$result;
   }

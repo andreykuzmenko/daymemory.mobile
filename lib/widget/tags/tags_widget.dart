@@ -6,7 +6,7 @@ import 'package:daymemory/widget/tags/tag_field_view_model.dart';
 import 'package:daymemory/widget/tags/tags_view_model.dart';
 import 'package:daymemory/widget/theme/theme_colors_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class TagsWidget extends StatefulWidget {
   const TagsWidget({super.key, required this.viewModel});

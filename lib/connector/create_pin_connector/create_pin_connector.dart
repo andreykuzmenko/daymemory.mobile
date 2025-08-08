@@ -2,7 +2,7 @@ import 'package:daymemory/connector/create_pin_connector/create_pin_converter.da
 import 'package:daymemory/connector/page_connector.dart';
 import 'package:daymemory/redux/state/app_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 import '../../widget/pin_code/create_pin/create_pin_view_model.dart';
 import '../../widget/pin_code/create_pin/create_pin_widget.dart';

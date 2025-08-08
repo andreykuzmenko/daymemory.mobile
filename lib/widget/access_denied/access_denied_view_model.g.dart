@@ -18,20 +18,14 @@ class _$AccessDeniedViewModel extends AccessDeniedViewModel {
 
   factory _$AccessDeniedViewModel(
           [void Function(AccessDeniedViewModelBuilder)? updates]) =>
-      (new AccessDeniedViewModelBuilder()..update(updates))._build();
+      (AccessDeniedViewModelBuilder()..update(updates))._build();
 
   _$AccessDeniedViewModel._(
       {required this.title,
       required this.message,
       this.buttonTitle,
       this.buttonCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'AccessDeniedViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        message, r'AccessDeniedViewModel', 'message');
-  }
-
+      : super._();
   @override
   AccessDeniedViewModel rebuild(
           void Function(AccessDeniedViewModelBuilder) updates) =>
@@ -39,7 +33,7 @@ class _$AccessDeniedViewModel extends AccessDeniedViewModel {
 
   @override
   AccessDeniedViewModelBuilder toBuilder() =>
-      new AccessDeniedViewModelBuilder()..replace(this);
+      AccessDeniedViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -110,7 +104,6 @@ class AccessDeniedViewModelBuilder
 
   @override
   void replace(AccessDeniedViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AccessDeniedViewModel;
   }
 
@@ -124,13 +117,14 @@ class AccessDeniedViewModelBuilder
 
   _$AccessDeniedViewModel _build() {
     final _$result = _$v ??
-        new _$AccessDeniedViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'AccessDeniedViewModel', 'title'),
-            message: BuiltValueNullFieldError.checkNotNull(
-                message, r'AccessDeniedViewModel', 'message'),
-            buttonTitle: buttonTitle,
-            buttonCommand: buttonCommand);
+        _$AccessDeniedViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'AccessDeniedViewModel', 'title'),
+          message: BuiltValueNullFieldError.checkNotNull(
+              message, r'AccessDeniedViewModel', 'message'),
+          buttonTitle: buttonTitle,
+          buttonCommand: buttonCommand,
+        );
     replace(_$result);
     return _$result;
   }

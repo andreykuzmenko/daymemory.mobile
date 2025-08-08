@@ -36,7 +36,7 @@ class _$ForgotPasswordViewModel extends ForgotPasswordViewModel {
 
   factory _$ForgotPasswordViewModel(
           [void Function(ForgotPasswordViewModelBuilder)? updates]) =>
-      (new ForgotPasswordViewModelBuilder()..update(updates))._build();
+      (ForgotPasswordViewModelBuilder()..update(updates))._build();
 
   _$ForgotPasswordViewModel._(
       {required this.title,
@@ -52,31 +52,7 @@ class _$ForgotPasswordViewModel extends ForgotPasswordViewModel {
       required this.backCommand,
       this.forgotPassword,
       required this.isLoading})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'ForgotPasswordViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(forgotPasswordButtonText,
-        r'ForgotPasswordViewModel', 'forgotPasswordButtonText');
-    BuiltValueNullFieldError.checkNotNull(
-        instructionText, r'ForgotPasswordViewModel', 'instructionText');
-    BuiltValueNullFieldError.checkNotNull(
-        emailLabel, r'ForgotPasswordViewModel', 'emailLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        emailPlaceholder, r'ForgotPasswordViewModel', 'emailPlaceholder');
-    BuiltValueNullFieldError.checkNotNull(requiredFiledValidator,
-        r'ForgotPasswordViewModel', 'requiredFiledValidator');
-    BuiltValueNullFieldError.checkNotNull(invalidEmailValidator,
-        r'ForgotPasswordViewModel', 'invalidEmailValidator');
-    BuiltValueNullFieldError.checkNotNull(
-        emailRegex, r'ForgotPasswordViewModel', 'emailRegex');
-    BuiltValueNullFieldError.checkNotNull(
-        loadingMessage, r'ForgotPasswordViewModel', 'loadingMessage');
-    BuiltValueNullFieldError.checkNotNull(
-        backCommand, r'ForgotPasswordViewModel', 'backCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        isLoading, r'ForgotPasswordViewModel', 'isLoading');
-  }
-
+      : super._();
   @override
   ForgotPasswordViewModel rebuild(
           void Function(ForgotPasswordViewModelBuilder) updates) =>
@@ -84,7 +60,7 @@ class _$ForgotPasswordViewModel extends ForgotPasswordViewModel {
 
   @override
   ForgotPasswordViewModelBuilder toBuilder() =>
-      new ForgotPasswordViewModelBuilder()..replace(this);
+      ForgotPasswordViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -235,7 +211,6 @@ class ForgotPasswordViewModelBuilder
 
   @override
   void replace(ForgotPasswordViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ForgotPasswordViewModel;
   }
 
@@ -249,27 +224,38 @@ class ForgotPasswordViewModelBuilder
 
   _$ForgotPasswordViewModel _build() {
     final _$result = _$v ??
-        new _$ForgotPasswordViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ForgotPasswordViewModel', 'title'),
-            forgotPasswordButtonText: BuiltValueNullFieldError.checkNotNull(
-                forgotPasswordButtonText, r'ForgotPasswordViewModel', 'forgotPasswordButtonText'),
-            instructionText: BuiltValueNullFieldError.checkNotNull(
-                instructionText, r'ForgotPasswordViewModel', 'instructionText'),
-            email: email,
-            emailLabel: BuiltValueNullFieldError.checkNotNull(
-                emailLabel, r'ForgotPasswordViewModel', 'emailLabel'),
-            emailPlaceholder: BuiltValueNullFieldError.checkNotNull(
-                emailPlaceholder, r'ForgotPasswordViewModel', 'emailPlaceholder'),
-            requiredFiledValidator: BuiltValueNullFieldError.checkNotNull(
-                requiredFiledValidator, r'ForgotPasswordViewModel', 'requiredFiledValidator'),
-            invalidEmailValidator: BuiltValueNullFieldError.checkNotNull(
-                invalidEmailValidator, r'ForgotPasswordViewModel', 'invalidEmailValidator'),
-            emailRegex: BuiltValueNullFieldError.checkNotNull(emailRegex, r'ForgotPasswordViewModel', 'emailRegex'),
-            loadingMessage: BuiltValueNullFieldError.checkNotNull(loadingMessage, r'ForgotPasswordViewModel', 'loadingMessage'),
-            backCommand: BuiltValueNullFieldError.checkNotNull(backCommand, r'ForgotPasswordViewModel', 'backCommand'),
-            forgotPassword: forgotPassword,
-            isLoading: BuiltValueNullFieldError.checkNotNull(isLoading, r'ForgotPasswordViewModel', 'isLoading'));
+        _$ForgotPasswordViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'ForgotPasswordViewModel', 'title'),
+          forgotPasswordButtonText: BuiltValueNullFieldError.checkNotNull(
+              forgotPasswordButtonText,
+              r'ForgotPasswordViewModel',
+              'forgotPasswordButtonText'),
+          instructionText: BuiltValueNullFieldError.checkNotNull(
+              instructionText, r'ForgotPasswordViewModel', 'instructionText'),
+          email: email,
+          emailLabel: BuiltValueNullFieldError.checkNotNull(
+              emailLabel, r'ForgotPasswordViewModel', 'emailLabel'),
+          emailPlaceholder: BuiltValueNullFieldError.checkNotNull(
+              emailPlaceholder, r'ForgotPasswordViewModel', 'emailPlaceholder'),
+          requiredFiledValidator: BuiltValueNullFieldError.checkNotNull(
+              requiredFiledValidator,
+              r'ForgotPasswordViewModel',
+              'requiredFiledValidator'),
+          invalidEmailValidator: BuiltValueNullFieldError.checkNotNull(
+              invalidEmailValidator,
+              r'ForgotPasswordViewModel',
+              'invalidEmailValidator'),
+          emailRegex: BuiltValueNullFieldError.checkNotNull(
+              emailRegex, r'ForgotPasswordViewModel', 'emailRegex'),
+          loadingMessage: BuiltValueNullFieldError.checkNotNull(
+              loadingMessage, r'ForgotPasswordViewModel', 'loadingMessage'),
+          backCommand: BuiltValueNullFieldError.checkNotNull(
+              backCommand, r'ForgotPasswordViewModel', 'backCommand'),
+          forgotPassword: forgotPassword,
+          isLoading: BuiltValueNullFieldError.checkNotNull(
+              isLoading, r'ForgotPasswordViewModel', 'isLoading'),
+        );
     replace(_$result);
     return _$result;
   }

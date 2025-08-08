@@ -6,7 +6,7 @@ import 'package:daymemory/data/dtos/note_dto.dart';
 import 'package:daymemory/redux/action/actions.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
 import 'package:daymemory/widget/note/note_options_view_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
 class NoteOptionsConverter extends ViewModelConverter<NoteOptionsViewModel> {

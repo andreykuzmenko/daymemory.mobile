@@ -20,7 +20,7 @@ class _$BiometricAuthViewModel extends BiometricAuthViewModel {
 
   factory _$BiometricAuthViewModel(
           [void Function(BiometricAuthViewModelBuilder)? updates]) =>
-      (new BiometricAuthViewModelBuilder()..update(updates))._build();
+      (BiometricAuthViewModelBuilder()..update(updates))._build();
 
   _$BiometricAuthViewModel._(
       {required this.allowCommand,
@@ -28,19 +28,7 @@ class _$BiometricAuthViewModel extends BiometricAuthViewModel {
       required this.allowBiometricAuthTitle,
       required this.skipTitle,
       required this.subTitle})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        allowCommand, r'BiometricAuthViewModel', 'allowCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        skipCommand, r'BiometricAuthViewModel', 'skipCommand');
-    BuiltValueNullFieldError.checkNotNull(allowBiometricAuthTitle,
-        r'BiometricAuthViewModel', 'allowBiometricAuthTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        skipTitle, r'BiometricAuthViewModel', 'skipTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        subTitle, r'BiometricAuthViewModel', 'subTitle');
-  }
-
+      : super._();
   @override
   BiometricAuthViewModel rebuild(
           void Function(BiometricAuthViewModelBuilder) updates) =>
@@ -48,7 +36,7 @@ class _$BiometricAuthViewModel extends BiometricAuthViewModel {
 
   @override
   BiometricAuthViewModelBuilder toBuilder() =>
-      new BiometricAuthViewModelBuilder()..replace(this);
+      BiometricAuthViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -129,7 +117,6 @@ class BiometricAuthViewModelBuilder
 
   @override
   void replace(BiometricAuthViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$BiometricAuthViewModel;
   }
 
@@ -143,19 +130,20 @@ class BiometricAuthViewModelBuilder
 
   _$BiometricAuthViewModel _build() {
     final _$result = _$v ??
-        new _$BiometricAuthViewModel._(
-            allowCommand: BuiltValueNullFieldError.checkNotNull(
-                allowCommand, r'BiometricAuthViewModel', 'allowCommand'),
-            skipCommand: BuiltValueNullFieldError.checkNotNull(
-                skipCommand, r'BiometricAuthViewModel', 'skipCommand'),
-            allowBiometricAuthTitle: BuiltValueNullFieldError.checkNotNull(
-                allowBiometricAuthTitle,
-                r'BiometricAuthViewModel',
-                'allowBiometricAuthTitle'),
-            skipTitle: BuiltValueNullFieldError.checkNotNull(
-                skipTitle, r'BiometricAuthViewModel', 'skipTitle'),
-            subTitle: BuiltValueNullFieldError.checkNotNull(
-                subTitle, r'BiometricAuthViewModel', 'subTitle'));
+        _$BiometricAuthViewModel._(
+          allowCommand: BuiltValueNullFieldError.checkNotNull(
+              allowCommand, r'BiometricAuthViewModel', 'allowCommand'),
+          skipCommand: BuiltValueNullFieldError.checkNotNull(
+              skipCommand, r'BiometricAuthViewModel', 'skipCommand'),
+          allowBiometricAuthTitle: BuiltValueNullFieldError.checkNotNull(
+              allowBiometricAuthTitle,
+              r'BiometricAuthViewModel',
+              'allowBiometricAuthTitle'),
+          skipTitle: BuiltValueNullFieldError.checkNotNull(
+              skipTitle, r'BiometricAuthViewModel', 'skipTitle'),
+          subTitle: BuiltValueNullFieldError.checkNotNull(
+              subTitle, r'BiometricAuthViewModel', 'subTitle'),
+        );
     replace(_$result);
     return _$result;
   }

@@ -36,7 +36,7 @@ class _$SideMenuViewModel extends SideMenuViewModel {
 
   factory _$SideMenuViewModel(
           [void Function(SideMenuViewModelBuilder)? updates]) =>
-      (new SideMenuViewModelBuilder()..update(updates))._build();
+      (SideMenuViewModelBuilder()..update(updates))._build();
 
   _$SideMenuViewModel._(
       {required this.selectNotebookCommand,
@@ -52,39 +52,14 @@ class _$SideMenuViewModel extends SideMenuViewModel {
       required this.settingsMenuCommand,
       required this.reviewMemoriesCommand,
       required this.sortNotebooksCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        selectNotebookCommand, r'SideMenuViewModel', 'selectNotebookCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        newNotebookCommand, r'SideMenuViewModel', 'newNotebookCommand');
-    BuiltValueNullFieldError.checkNotNull(items, r'SideMenuViewModel', 'items');
-    BuiltValueNullFieldError.checkNotNull(
-        isDesktop, r'SideMenuViewModel', 'isDesktop');
-    BuiltValueNullFieldError.checkNotNull(
-        hasError, r'SideMenuViewModel', 'hasError');
-    BuiltValueNullFieldError.checkNotNull(
-        settingsMenuOption, r'SideMenuViewModel', 'settingsMenuOption');
-    BuiltValueNullFieldError.checkNotNull(
-        newNotebookMenuOption, r'SideMenuViewModel', 'newNotebookMenuOption');
-    BuiltValueNullFieldError.checkNotNull(reviewMemoriesMenuOption,
-        r'SideMenuViewModel', 'reviewMemoriesMenuOption');
-    BuiltValueNullFieldError.checkNotNull(
-        notebooksMenuOption, r'SideMenuViewModel', 'notebooksMenuOption');
-    BuiltValueNullFieldError.checkNotNull(
-        settingsMenuCommand, r'SideMenuViewModel', 'settingsMenuCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        reviewMemoriesCommand, r'SideMenuViewModel', 'reviewMemoriesCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        sortNotebooksCommand, r'SideMenuViewModel', 'sortNotebooksCommand');
-  }
-
+      : super._();
   @override
   SideMenuViewModel rebuild(void Function(SideMenuViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   SideMenuViewModelBuilder toBuilder() =>
-      new SideMenuViewModelBuilder()..replace(this);
+      SideMenuViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -238,7 +213,6 @@ class SideMenuViewModelBuilder
 
   @override
   void replace(SideMenuViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SideMenuViewModel;
   }
 
@@ -252,28 +226,43 @@ class SideMenuViewModelBuilder
 
   _$SideMenuViewModel _build() {
     final _$result = _$v ??
-        new _$SideMenuViewModel._(
-            selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(
-                selectNotebookCommand, r'SideMenuViewModel', 'selectNotebookCommand'),
-            newNotebookCommand: BuiltValueNullFieldError.checkNotNull(
-                newNotebookCommand, r'SideMenuViewModel', 'newNotebookCommand'),
-            selectedNotebookId: selectedNotebookId,
-            items: BuiltValueNullFieldError.checkNotNull(
-                items, r'SideMenuViewModel', 'items'),
-            isDesktop: BuiltValueNullFieldError.checkNotNull(
-                isDesktop, r'SideMenuViewModel', 'isDesktop'),
-            hasError: BuiltValueNullFieldError.checkNotNull(
-                hasError, r'SideMenuViewModel', 'hasError'),
-            settingsMenuOption: BuiltValueNullFieldError.checkNotNull(
-                settingsMenuOption, r'SideMenuViewModel', 'settingsMenuOption'),
-            newNotebookMenuOption: BuiltValueNullFieldError.checkNotNull(
-                newNotebookMenuOption, r'SideMenuViewModel', 'newNotebookMenuOption'),
-            reviewMemoriesMenuOption:
-                BuiltValueNullFieldError.checkNotNull(reviewMemoriesMenuOption, r'SideMenuViewModel', 'reviewMemoriesMenuOption'),
-            notebooksMenuOption: BuiltValueNullFieldError.checkNotNull(notebooksMenuOption, r'SideMenuViewModel', 'notebooksMenuOption'),
-            settingsMenuCommand: BuiltValueNullFieldError.checkNotNull(settingsMenuCommand, r'SideMenuViewModel', 'settingsMenuCommand'),
-            reviewMemoriesCommand: BuiltValueNullFieldError.checkNotNull(reviewMemoriesCommand, r'SideMenuViewModel', 'reviewMemoriesCommand'),
-            sortNotebooksCommand: BuiltValueNullFieldError.checkNotNull(sortNotebooksCommand, r'SideMenuViewModel', 'sortNotebooksCommand'));
+        _$SideMenuViewModel._(
+          selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(
+              selectNotebookCommand,
+              r'SideMenuViewModel',
+              'selectNotebookCommand'),
+          newNotebookCommand: BuiltValueNullFieldError.checkNotNull(
+              newNotebookCommand, r'SideMenuViewModel', 'newNotebookCommand'),
+          selectedNotebookId: selectedNotebookId,
+          items: BuiltValueNullFieldError.checkNotNull(
+              items, r'SideMenuViewModel', 'items'),
+          isDesktop: BuiltValueNullFieldError.checkNotNull(
+              isDesktop, r'SideMenuViewModel', 'isDesktop'),
+          hasError: BuiltValueNullFieldError.checkNotNull(
+              hasError, r'SideMenuViewModel', 'hasError'),
+          settingsMenuOption: BuiltValueNullFieldError.checkNotNull(
+              settingsMenuOption, r'SideMenuViewModel', 'settingsMenuOption'),
+          newNotebookMenuOption: BuiltValueNullFieldError.checkNotNull(
+              newNotebookMenuOption,
+              r'SideMenuViewModel',
+              'newNotebookMenuOption'),
+          reviewMemoriesMenuOption: BuiltValueNullFieldError.checkNotNull(
+              reviewMemoriesMenuOption,
+              r'SideMenuViewModel',
+              'reviewMemoriesMenuOption'),
+          notebooksMenuOption: BuiltValueNullFieldError.checkNotNull(
+              notebooksMenuOption, r'SideMenuViewModel', 'notebooksMenuOption'),
+          settingsMenuCommand: BuiltValueNullFieldError.checkNotNull(
+              settingsMenuCommand, r'SideMenuViewModel', 'settingsMenuCommand'),
+          reviewMemoriesCommand: BuiltValueNullFieldError.checkNotNull(
+              reviewMemoriesCommand,
+              r'SideMenuViewModel',
+              'reviewMemoriesCommand'),
+          sortNotebooksCommand: BuiltValueNullFieldError.checkNotNull(
+              sortNotebooksCommand,
+              r'SideMenuViewModel',
+              'sortNotebooksCommand'),
+        );
     replace(_$result);
     return _$result;
   }

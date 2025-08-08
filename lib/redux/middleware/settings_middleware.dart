@@ -22,7 +22,7 @@ import 'package:daymemory/services/storage/interfaces/interface_storage_service.
 import 'package:permission_handler/permission_handler.dart';
 // ignore: depend_on_referenced_packages
 import 'package:redux/redux.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import 'package:video_compress/video_compress.dart';
 
 class SettingsMiddleware implements MiddlewareClass<AppState> {

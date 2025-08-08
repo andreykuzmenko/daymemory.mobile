@@ -1,6 +1,6 @@
 import 'package:daymemory/services/settings_service/settings_service.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class TextLocalization {
   static List<PasscodeRequireAfterOption> getPasscodeRequireAfterOptions(BuildContext context) {

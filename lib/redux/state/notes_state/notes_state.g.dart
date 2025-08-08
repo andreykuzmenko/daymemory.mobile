@@ -25,7 +25,7 @@ class _$NotesState extends NotesState {
   final String? tag;
 
   factory _$NotesState([void Function(NotesStateBuilder)? updates]) =>
-      (new NotesStateBuilder()..update(updates))._build();
+      (NotesStateBuilder()..update(updates))._build();
 
   _$NotesState._(
       {required this.isLoading,
@@ -36,24 +36,13 @@ class _$NotesState extends NotesState {
       required this.notes,
       this.notebookId,
       this.tag})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        isLoading, r'NotesState', 'isLoading');
-    BuiltValueNullFieldError.checkNotNull(
-        hasLoadedAll, r'NotesState', 'hasLoadedAll');
-    BuiltValueNullFieldError.checkNotNull(
-        isLoadingMore, r'NotesState', 'isLoadingMore');
-    BuiltValueNullFieldError.checkNotNull(
-        sortingType, r'NotesState', 'sortingType');
-    BuiltValueNullFieldError.checkNotNull(notes, r'NotesState', 'notes');
-  }
-
+      : super._();
   @override
   NotesState rebuild(void Function(NotesStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  NotesStateBuilder toBuilder() => new NotesStateBuilder()..replace(this);
+  NotesStateBuilder toBuilder() => NotesStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -157,7 +146,6 @@ class NotesStateBuilder implements Builder<NotesState, NotesStateBuilder> {
 
   @override
   void replace(NotesState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$NotesState;
   }
 
@@ -171,20 +159,21 @@ class NotesStateBuilder implements Builder<NotesState, NotesStateBuilder> {
 
   _$NotesState _build() {
     final _$result = _$v ??
-        new _$NotesState._(
-            isLoading: BuiltValueNullFieldError.checkNotNull(
-                isLoading, r'NotesState', 'isLoading'),
-            hasLoadedAll: BuiltValueNullFieldError.checkNotNull(
-                hasLoadedAll, r'NotesState', 'hasLoadedAll'),
-            isLoadingMore: BuiltValueNullFieldError.checkNotNull(
-                isLoadingMore, r'NotesState', 'isLoadingMore'),
-            lastItemDateTime: lastItemDateTime,
-            sortingType: BuiltValueNullFieldError.checkNotNull(
-                sortingType, r'NotesState', 'sortingType'),
-            notes: BuiltValueNullFieldError.checkNotNull(
-                notes, r'NotesState', 'notes'),
-            notebookId: notebookId,
-            tag: tag);
+        _$NotesState._(
+          isLoading: BuiltValueNullFieldError.checkNotNull(
+              isLoading, r'NotesState', 'isLoading'),
+          hasLoadedAll: BuiltValueNullFieldError.checkNotNull(
+              hasLoadedAll, r'NotesState', 'hasLoadedAll'),
+          isLoadingMore: BuiltValueNullFieldError.checkNotNull(
+              isLoadingMore, r'NotesState', 'isLoadingMore'),
+          lastItemDateTime: lastItemDateTime,
+          sortingType: BuiltValueNullFieldError.checkNotNull(
+              sortingType, r'NotesState', 'sortingType'),
+          notes: BuiltValueNullFieldError.checkNotNull(
+              notes, r'NotesState', 'notes'),
+          notebookId: notebookId,
+          tag: tag,
+        );
     replace(_$result);
     return _$result;
   }

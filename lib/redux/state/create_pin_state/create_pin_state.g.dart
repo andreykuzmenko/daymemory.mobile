@@ -19,7 +19,7 @@ class _$CreatePinState extends CreatePinState {
   final int selectedConfirmedIndicators;
 
   factory _$CreatePinState([void Function(CreatePinStateBuilder)? updates]) =>
-      (new CreatePinStateBuilder()..update(updates))._build();
+      (CreatePinStateBuilder()..update(updates))._build();
 
   _$CreatePinState._(
       {required this.enteredPin,
@@ -27,26 +27,13 @@ class _$CreatePinState extends CreatePinState {
       required this.isRetryPin,
       required this.selectedEnteredIndicators,
       required this.selectedConfirmedIndicators})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        enteredPin, r'CreatePinState', 'enteredPin');
-    BuiltValueNullFieldError.checkNotNull(
-        confirmedPin, r'CreatePinState', 'confirmedPin');
-    BuiltValueNullFieldError.checkNotNull(
-        isRetryPin, r'CreatePinState', 'isRetryPin');
-    BuiltValueNullFieldError.checkNotNull(selectedEnteredIndicators,
-        r'CreatePinState', 'selectedEnteredIndicators');
-    BuiltValueNullFieldError.checkNotNull(selectedConfirmedIndicators,
-        r'CreatePinState', 'selectedConfirmedIndicators');
-  }
-
+      : super._();
   @override
   CreatePinState rebuild(void Function(CreatePinStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CreatePinStateBuilder toBuilder() =>
-      new CreatePinStateBuilder()..replace(this);
+  CreatePinStateBuilder toBuilder() => CreatePinStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -126,7 +113,6 @@ class CreatePinStateBuilder
 
   @override
   void replace(CreatePinState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$CreatePinState;
   }
 
@@ -140,21 +126,22 @@ class CreatePinStateBuilder
 
   _$CreatePinState _build() {
     final _$result = _$v ??
-        new _$CreatePinState._(
-            enteredPin: BuiltValueNullFieldError.checkNotNull(
-                enteredPin, r'CreatePinState', 'enteredPin'),
-            confirmedPin: BuiltValueNullFieldError.checkNotNull(
-                confirmedPin, r'CreatePinState', 'confirmedPin'),
-            isRetryPin: BuiltValueNullFieldError.checkNotNull(
-                isRetryPin, r'CreatePinState', 'isRetryPin'),
-            selectedEnteredIndicators: BuiltValueNullFieldError.checkNotNull(
-                selectedEnteredIndicators,
-                r'CreatePinState',
-                'selectedEnteredIndicators'),
-            selectedConfirmedIndicators: BuiltValueNullFieldError.checkNotNull(
-                selectedConfirmedIndicators,
-                r'CreatePinState',
-                'selectedConfirmedIndicators'));
+        _$CreatePinState._(
+          enteredPin: BuiltValueNullFieldError.checkNotNull(
+              enteredPin, r'CreatePinState', 'enteredPin'),
+          confirmedPin: BuiltValueNullFieldError.checkNotNull(
+              confirmedPin, r'CreatePinState', 'confirmedPin'),
+          isRetryPin: BuiltValueNullFieldError.checkNotNull(
+              isRetryPin, r'CreatePinState', 'isRetryPin'),
+          selectedEnteredIndicators: BuiltValueNullFieldError.checkNotNull(
+              selectedEnteredIndicators,
+              r'CreatePinState',
+              'selectedEnteredIndicators'),
+          selectedConfirmedIndicators: BuiltValueNullFieldError.checkNotNull(
+              selectedConfirmedIndicators,
+              r'CreatePinState',
+              'selectedConfirmedIndicators'),
+        );
     replace(_$result);
     return _$result;
   }

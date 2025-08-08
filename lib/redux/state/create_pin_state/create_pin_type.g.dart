@@ -28,12 +28,12 @@ CreatePinType _$createPinTypeValueOf(String name) {
     case 'noMatch':
       return _$noMatch;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<CreatePinType> _$createPinTypeValues =
-    new BuiltSet<CreatePinType>(const <CreatePinType>[
+    BuiltSet<CreatePinType>(const <CreatePinType>[
   _$create,
   _$confirm,
   _$openCreate,

@@ -4,7 +4,7 @@ import 'package:daymemory/redux/action/settings_action.dart';
 import 'package:daymemory/services/settings_service/storage_review_settings.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
 import 'package:daymemory/widget/settings/select_review_period_view_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class SelectReviewPeriodConverter extends ViewModelConverter<SelectReviewPeriodViewModel> {
   final Function(dynamic) dispatch;

@@ -26,7 +26,7 @@ import 'package:provider/provider.dart';
 import 'package:system_theme/system_theme.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 void runAppWithConfiguration(ConfigurationSettings settings) async {
   WidgetsFlutterBinding.ensureInitialized();

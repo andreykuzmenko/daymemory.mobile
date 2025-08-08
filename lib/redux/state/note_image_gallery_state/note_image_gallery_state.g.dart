@@ -14,16 +14,10 @@ class _$NoteImageGalleryState extends NoteImageGalleryState {
 
   factory _$NoteImageGalleryState(
           [void Function(NoteImageGalleryStateBuilder)? updates]) =>
-      (new NoteImageGalleryStateBuilder()..update(updates))._build();
+      (NoteImageGalleryStateBuilder()..update(updates))._build();
 
   _$NoteImageGalleryState._({required this.index, required this.images})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        index, r'NoteImageGalleryState', 'index');
-    BuiltValueNullFieldError.checkNotNull(
-        images, r'NoteImageGalleryState', 'images');
-  }
-
+      : super._();
   @override
   NoteImageGalleryState rebuild(
           void Function(NoteImageGalleryStateBuilder) updates) =>
@@ -31,7 +25,7 @@ class _$NoteImageGalleryState extends NoteImageGalleryState {
 
   @override
   NoteImageGalleryStateBuilder toBuilder() =>
-      new NoteImageGalleryStateBuilder()..replace(this);
+      NoteImageGalleryStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -85,7 +79,6 @@ class NoteImageGalleryStateBuilder
 
   @override
   void replace(NoteImageGalleryState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$NoteImageGalleryState;
   }
 
@@ -99,11 +92,12 @@ class NoteImageGalleryStateBuilder
 
   _$NoteImageGalleryState _build() {
     final _$result = _$v ??
-        new _$NoteImageGalleryState._(
-            index: BuiltValueNullFieldError.checkNotNull(
-                index, r'NoteImageGalleryState', 'index'),
-            images: BuiltValueNullFieldError.checkNotNull(
-                images, r'NoteImageGalleryState', 'images'));
+        _$NoteImageGalleryState._(
+          index: BuiltValueNullFieldError.checkNotNull(
+              index, r'NoteImageGalleryState', 'index'),
+          images: BuiltValueNullFieldError.checkNotNull(
+              images, r'NoteImageGalleryState', 'images'),
+        );
     replace(_$result);
     return _$result;
   }

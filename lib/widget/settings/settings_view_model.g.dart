@@ -94,7 +94,7 @@ class _$SettingsViewModel extends SettingsViewModel {
 
   factory _$SettingsViewModel(
           [void Function(SettingsViewModelBuilder)? updates]) =>
-      (new SettingsViewModelBuilder()..update(updates))._build();
+      (SettingsViewModelBuilder()..update(updates))._build();
 
   _$SettingsViewModel._(
       {required this.title,
@@ -139,97 +139,14 @@ class _$SettingsViewModel extends SettingsViewModel {
       required this.clearCacheOptionTitle,
       required this.clearCacheCommand,
       required this.backCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, r'SettingsViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        appVersion, r'SettingsViewModel', 'appVersion');
-    BuiltValueNullFieldError.checkNotNull(
-        selectedLanguage, r'SettingsViewModel', 'selectedLanguage');
-    BuiltValueNullFieldError.checkNotNull(selectLanguageOptionTitle,
-        r'SettingsViewModel', 'selectLanguageOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(showInReviewOptionTitle,
-        r'SettingsViewModel', 'showInReviewOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(reviewPeriodOptionTitle,
-        r'SettingsViewModel', 'reviewPeriodOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        reviewPeriodCommand, r'SettingsViewModel', 'reviewPeriodCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        themeModeValue, r'SettingsViewModel', 'themeModeValue');
-    BuiltValueNullFieldError.checkNotNull(selectThemeTypeOptionTitle,
-        r'SettingsViewModel', 'selectThemeTypeOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(themeTypeSelectorCommand,
-        r'SettingsViewModel', 'themeTypeSelectorCommand');
-    BuiltValueNullFieldError.checkNotNull(languageSelectorCommand,
-        r'SettingsViewModel', 'languageSelectorCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        showInReviewCommand, r'SettingsViewModel', 'showInReviewCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        tagsOptionTitle, r'SettingsViewModel', 'tagsOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        tagsCommand, r'SettingsViewModel', 'tagsCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        privacyPolicyUrl, r'SettingsViewModel', 'privacyPolicyUrl');
-    BuiltValueNullFieldError.checkNotNull(privacyPolicyOptionTitle,
-        r'SettingsViewModel', 'privacyPolicyOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        introOptionTitle, r'SettingsViewModel', 'introOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(sendEmailToDevelopersTitle,
-        r'SettingsViewModel', 'sendEmailToDevelopersTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        introCommand, r'SettingsViewModel', 'introCommand');
-    BuiltValueNullFieldError.checkNotNull(sendEmailToDevelopersCommand,
-        r'SettingsViewModel', 'sendEmailToDevelopersCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        isAuthenticated, r'SettingsViewModel', 'isAuthenticated');
-    BuiltValueNullFieldError.checkNotNull(
-        signinOptionTitle, r'SettingsViewModel', 'signinOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        accountCommand, r'SettingsViewModel', 'accountCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        syncOptionTitle, r'SettingsViewModel', 'syncOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        syncStatus, r'SettingsViewModel', 'syncStatus');
-    BuiltValueNullFieldError.checkNotNull(
-        hasSyncFailed, r'SettingsViewModel', 'hasSyncFailed');
-    BuiltValueNullFieldError.checkNotNull(
-        syncCommand, r'SettingsViewModel', 'syncCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        locationOptionTitle, r'SettingsViewModel', 'locationOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        locationToogleCommand, r'SettingsViewModel', 'locationToogleCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        isLocationEnabled, r'SettingsViewModel', 'isLocationEnabled');
-    BuiltValueNullFieldError.checkNotNull(
-        isLocationVisible, r'SettingsViewModel', 'isLocationVisible');
-    BuiltValueNullFieldError.checkNotNull(
-        passcodeOptionTitle, r'SettingsViewModel', 'passcodeOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        passcodeCommand, r'SettingsViewModel', 'passcodeCommand');
-    BuiltValueNullFieldError.checkNotNull(screenBlockingExplanation,
-        r'SettingsViewModel', 'screenBlockingExplanation');
-    BuiltValueNullFieldError.checkNotNull(showInReviewExplanation,
-        r'SettingsViewModel', 'showInReviewExplanation');
-    BuiltValueNullFieldError.checkNotNull(
-        clearDataOptionTitle, r'SettingsViewModel', 'clearDataOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        clearDataCommand, r'SettingsViewModel', 'clearDataCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        clearDataExplanation, r'SettingsViewModel', 'clearDataExplanation');
-    BuiltValueNullFieldError.checkNotNull(
-        clearCacheOptionTitle, r'SettingsViewModel', 'clearCacheOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        clearCacheCommand, r'SettingsViewModel', 'clearCacheCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        backCommand, r'SettingsViewModel', 'backCommand');
-  }
-
+      : super._();
   @override
   SettingsViewModel rebuild(void Function(SettingsViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   SettingsViewModelBuilder toBuilder() =>
-      new SettingsViewModelBuilder()..replace(this);
+      SettingsViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -645,7 +562,6 @@ class SettingsViewModelBuilder
 
   @override
   void replace(SettingsViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SettingsViewModel;
   }
 
@@ -659,56 +575,121 @@ class SettingsViewModelBuilder
 
   _$SettingsViewModel _build() {
     final _$result = _$v ??
-        new _$SettingsViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SettingsViewModel', 'title'),
-            appVersion: BuiltValueNullFieldError.checkNotNull(
-                appVersion, r'SettingsViewModel', 'appVersion'),
-            selectedLanguage: BuiltValueNullFieldError.checkNotNull(
-                selectedLanguage, r'SettingsViewModel', 'selectedLanguage'),
-            selectLanguageOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                selectLanguageOptionTitle, r'SettingsViewModel', 'selectLanguageOptionTitle'),
-            showInReviewOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                showInReviewOptionTitle, r'SettingsViewModel', 'showInReviewOptionTitle'),
-            reviewPeriodOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                reviewPeriodOptionTitle, r'SettingsViewModel', 'reviewPeriodOptionTitle'),
-            reviewPeriodCommand: BuiltValueNullFieldError.checkNotNull(
-                reviewPeriodCommand, r'SettingsViewModel', 'reviewPeriodCommand'),
-            themeModeValue: BuiltValueNullFieldError.checkNotNull(themeModeValue, r'SettingsViewModel', 'themeModeValue'),
-            selectThemeTypeOptionTitle: BuiltValueNullFieldError.checkNotNull(selectThemeTypeOptionTitle, r'SettingsViewModel', 'selectThemeTypeOptionTitle'),
-            themeTypeSelectorCommand: BuiltValueNullFieldError.checkNotNull(themeTypeSelectorCommand, r'SettingsViewModel', 'themeTypeSelectorCommand'),
-            languageSelectorCommand: BuiltValueNullFieldError.checkNotNull(languageSelectorCommand, r'SettingsViewModel', 'languageSelectorCommand'),
-            showInReviewCommand: BuiltValueNullFieldError.checkNotNull(showInReviewCommand, r'SettingsViewModel', 'showInReviewCommand'),
-            tagsOptionTitle: BuiltValueNullFieldError.checkNotNull(tagsOptionTitle, r'SettingsViewModel', 'tagsOptionTitle'),
-            tagsCommand: BuiltValueNullFieldError.checkNotNull(tagsCommand, r'SettingsViewModel', 'tagsCommand'),
-            privacyPolicyUrl: BuiltValueNullFieldError.checkNotNull(privacyPolicyUrl, r'SettingsViewModel', 'privacyPolicyUrl'),
-            privacyPolicyOptionTitle: BuiltValueNullFieldError.checkNotNull(privacyPolicyOptionTitle, r'SettingsViewModel', 'privacyPolicyOptionTitle'),
-            introOptionTitle: BuiltValueNullFieldError.checkNotNull(introOptionTitle, r'SettingsViewModel', 'introOptionTitle'),
-            sendEmailToDevelopersTitle: BuiltValueNullFieldError.checkNotNull(sendEmailToDevelopersTitle, r'SettingsViewModel', 'sendEmailToDevelopersTitle'),
-            introCommand: BuiltValueNullFieldError.checkNotNull(introCommand, r'SettingsViewModel', 'introCommand'),
-            sendEmailToDevelopersCommand: BuiltValueNullFieldError.checkNotNull(sendEmailToDevelopersCommand, r'SettingsViewModel', 'sendEmailToDevelopersCommand'),
-            isAuthenticated: BuiltValueNullFieldError.checkNotNull(isAuthenticated, r'SettingsViewModel', 'isAuthenticated'),
-            userName: userName,
-            signinOptionTitle: BuiltValueNullFieldError.checkNotNull(signinOptionTitle, r'SettingsViewModel', 'signinOptionTitle'),
-            accountCommand: BuiltValueNullFieldError.checkNotNull(accountCommand, r'SettingsViewModel', 'accountCommand'),
-            syncOptionTitle: BuiltValueNullFieldError.checkNotNull(syncOptionTitle, r'SettingsViewModel', 'syncOptionTitle'),
-            syncStatus: BuiltValueNullFieldError.checkNotNull(syncStatus, r'SettingsViewModel', 'syncStatus'),
-            hasSyncFailed: BuiltValueNullFieldError.checkNotNull(hasSyncFailed, r'SettingsViewModel', 'hasSyncFailed'),
-            syncCommand: BuiltValueNullFieldError.checkNotNull(syncCommand, r'SettingsViewModel', 'syncCommand'),
-            locationOptionTitle: BuiltValueNullFieldError.checkNotNull(locationOptionTitle, r'SettingsViewModel', 'locationOptionTitle'),
-            locationToogleCommand: BuiltValueNullFieldError.checkNotNull(locationToogleCommand, r'SettingsViewModel', 'locationToogleCommand'),
-            isLocationEnabled: BuiltValueNullFieldError.checkNotNull(isLocationEnabled, r'SettingsViewModel', 'isLocationEnabled'),
-            isLocationVisible: BuiltValueNullFieldError.checkNotNull(isLocationVisible, r'SettingsViewModel', 'isLocationVisible'),
-            passcodeOptionTitle: BuiltValueNullFieldError.checkNotNull(passcodeOptionTitle, r'SettingsViewModel', 'passcodeOptionTitle'),
-            passcodeCommand: BuiltValueNullFieldError.checkNotNull(passcodeCommand, r'SettingsViewModel', 'passcodeCommand'),
-            screenBlockingExplanation: BuiltValueNullFieldError.checkNotNull(screenBlockingExplanation, r'SettingsViewModel', 'screenBlockingExplanation'),
-            showInReviewExplanation: BuiltValueNullFieldError.checkNotNull(showInReviewExplanation, r'SettingsViewModel', 'showInReviewExplanation'),
-            clearDataOptionTitle: BuiltValueNullFieldError.checkNotNull(clearDataOptionTitle, r'SettingsViewModel', 'clearDataOptionTitle'),
-            clearDataCommand: BuiltValueNullFieldError.checkNotNull(clearDataCommand, r'SettingsViewModel', 'clearDataCommand'),
-            clearDataExplanation: BuiltValueNullFieldError.checkNotNull(clearDataExplanation, r'SettingsViewModel', 'clearDataExplanation'),
-            clearCacheOptionTitle: BuiltValueNullFieldError.checkNotNull(clearCacheOptionTitle, r'SettingsViewModel', 'clearCacheOptionTitle'),
-            clearCacheCommand: BuiltValueNullFieldError.checkNotNull(clearCacheCommand, r'SettingsViewModel', 'clearCacheCommand'),
-            backCommand: BuiltValueNullFieldError.checkNotNull(backCommand, r'SettingsViewModel', 'backCommand'));
+        _$SettingsViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'SettingsViewModel', 'title'),
+          appVersion: BuiltValueNullFieldError.checkNotNull(
+              appVersion, r'SettingsViewModel', 'appVersion'),
+          selectedLanguage: BuiltValueNullFieldError.checkNotNull(
+              selectedLanguage, r'SettingsViewModel', 'selectedLanguage'),
+          selectLanguageOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              selectLanguageOptionTitle,
+              r'SettingsViewModel',
+              'selectLanguageOptionTitle'),
+          showInReviewOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              showInReviewOptionTitle,
+              r'SettingsViewModel',
+              'showInReviewOptionTitle'),
+          reviewPeriodOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              reviewPeriodOptionTitle,
+              r'SettingsViewModel',
+              'reviewPeriodOptionTitle'),
+          reviewPeriodCommand: BuiltValueNullFieldError.checkNotNull(
+              reviewPeriodCommand, r'SettingsViewModel', 'reviewPeriodCommand'),
+          themeModeValue: BuiltValueNullFieldError.checkNotNull(
+              themeModeValue, r'SettingsViewModel', 'themeModeValue'),
+          selectThemeTypeOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              selectThemeTypeOptionTitle,
+              r'SettingsViewModel',
+              'selectThemeTypeOptionTitle'),
+          themeTypeSelectorCommand: BuiltValueNullFieldError.checkNotNull(
+              themeTypeSelectorCommand,
+              r'SettingsViewModel',
+              'themeTypeSelectorCommand'),
+          languageSelectorCommand: BuiltValueNullFieldError.checkNotNull(
+              languageSelectorCommand,
+              r'SettingsViewModel',
+              'languageSelectorCommand'),
+          showInReviewCommand: BuiltValueNullFieldError.checkNotNull(
+              showInReviewCommand, r'SettingsViewModel', 'showInReviewCommand'),
+          tagsOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              tagsOptionTitle, r'SettingsViewModel', 'tagsOptionTitle'),
+          tagsCommand: BuiltValueNullFieldError.checkNotNull(
+              tagsCommand, r'SettingsViewModel', 'tagsCommand'),
+          privacyPolicyUrl: BuiltValueNullFieldError.checkNotNull(
+              privacyPolicyUrl, r'SettingsViewModel', 'privacyPolicyUrl'),
+          privacyPolicyOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              privacyPolicyOptionTitle,
+              r'SettingsViewModel',
+              'privacyPolicyOptionTitle'),
+          introOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              introOptionTitle, r'SettingsViewModel', 'introOptionTitle'),
+          sendEmailToDevelopersTitle: BuiltValueNullFieldError.checkNotNull(
+              sendEmailToDevelopersTitle,
+              r'SettingsViewModel',
+              'sendEmailToDevelopersTitle'),
+          introCommand: BuiltValueNullFieldError.checkNotNull(
+              introCommand, r'SettingsViewModel', 'introCommand'),
+          sendEmailToDevelopersCommand: BuiltValueNullFieldError.checkNotNull(
+              sendEmailToDevelopersCommand,
+              r'SettingsViewModel',
+              'sendEmailToDevelopersCommand'),
+          isAuthenticated: BuiltValueNullFieldError.checkNotNull(
+              isAuthenticated, r'SettingsViewModel', 'isAuthenticated'),
+          userName: userName,
+          signinOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              signinOptionTitle, r'SettingsViewModel', 'signinOptionTitle'),
+          accountCommand: BuiltValueNullFieldError.checkNotNull(
+              accountCommand, r'SettingsViewModel', 'accountCommand'),
+          syncOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              syncOptionTitle, r'SettingsViewModel', 'syncOptionTitle'),
+          syncStatus: BuiltValueNullFieldError.checkNotNull(
+              syncStatus, r'SettingsViewModel', 'syncStatus'),
+          hasSyncFailed: BuiltValueNullFieldError.checkNotNull(
+              hasSyncFailed, r'SettingsViewModel', 'hasSyncFailed'),
+          syncCommand: BuiltValueNullFieldError.checkNotNull(
+              syncCommand, r'SettingsViewModel', 'syncCommand'),
+          locationOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              locationOptionTitle, r'SettingsViewModel', 'locationOptionTitle'),
+          locationToogleCommand: BuiltValueNullFieldError.checkNotNull(
+              locationToogleCommand,
+              r'SettingsViewModel',
+              'locationToogleCommand'),
+          isLocationEnabled: BuiltValueNullFieldError.checkNotNull(
+              isLocationEnabled, r'SettingsViewModel', 'isLocationEnabled'),
+          isLocationVisible: BuiltValueNullFieldError.checkNotNull(
+              isLocationVisible, r'SettingsViewModel', 'isLocationVisible'),
+          passcodeOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              passcodeOptionTitle, r'SettingsViewModel', 'passcodeOptionTitle'),
+          passcodeCommand: BuiltValueNullFieldError.checkNotNull(
+              passcodeCommand, r'SettingsViewModel', 'passcodeCommand'),
+          screenBlockingExplanation: BuiltValueNullFieldError.checkNotNull(
+              screenBlockingExplanation,
+              r'SettingsViewModel',
+              'screenBlockingExplanation'),
+          showInReviewExplanation: BuiltValueNullFieldError.checkNotNull(
+              showInReviewExplanation,
+              r'SettingsViewModel',
+              'showInReviewExplanation'),
+          clearDataOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              clearDataOptionTitle,
+              r'SettingsViewModel',
+              'clearDataOptionTitle'),
+          clearDataCommand: BuiltValueNullFieldError.checkNotNull(
+              clearDataCommand, r'SettingsViewModel', 'clearDataCommand'),
+          clearDataExplanation: BuiltValueNullFieldError.checkNotNull(
+              clearDataExplanation,
+              r'SettingsViewModel',
+              'clearDataExplanation'),
+          clearCacheOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              clearCacheOptionTitle,
+              r'SettingsViewModel',
+              'clearCacheOptionTitle'),
+          clearCacheCommand: BuiltValueNullFieldError.checkNotNull(
+              clearCacheCommand, r'SettingsViewModel', 'clearCacheCommand'),
+          backCommand: BuiltValueNullFieldError.checkNotNull(
+              backCommand, r'SettingsViewModel', 'backCommand'),
+        );
     replace(_$result);
     return _$result;
   }

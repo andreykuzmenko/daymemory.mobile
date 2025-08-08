@@ -20,7 +20,7 @@ class _$AnswerQuestionViewModel extends AnswerQuestionViewModel {
 
   factory _$AnswerQuestionViewModel(
           [void Function(AnswerQuestionViewModelBuilder)? updates]) =>
-      (new AnswerQuestionViewModelBuilder()..update(updates))._build();
+      (AnswerQuestionViewModelBuilder()..update(updates))._build();
 
   _$AnswerQuestionViewModel._(
       {required this.title,
@@ -28,19 +28,7 @@ class _$AnswerQuestionViewModel extends AnswerQuestionViewModel {
       required this.editViewModel,
       required this.nextCommand,
       required this.closeCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'AnswerQuestionViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        isSaving, r'AnswerQuestionViewModel', 'isSaving');
-    BuiltValueNullFieldError.checkNotNull(
-        editViewModel, r'AnswerQuestionViewModel', 'editViewModel');
-    BuiltValueNullFieldError.checkNotNull(
-        nextCommand, r'AnswerQuestionViewModel', 'nextCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        closeCommand, r'AnswerQuestionViewModel', 'closeCommand');
-  }
-
+      : super._();
   @override
   AnswerQuestionViewModel rebuild(
           void Function(AnswerQuestionViewModelBuilder) updates) =>
@@ -48,7 +36,7 @@ class _$AnswerQuestionViewModel extends AnswerQuestionViewModel {
 
   @override
   AnswerQuestionViewModelBuilder toBuilder() =>
-      new AnswerQuestionViewModelBuilder()..replace(this);
+      AnswerQuestionViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -100,7 +88,7 @@ class AnswerQuestionViewModelBuilder
 
   EditNoteViewModelBuilder? _editViewModel;
   EditNoteViewModelBuilder get editViewModel =>
-      _$this._editViewModel ??= new EditNoteViewModelBuilder();
+      _$this._editViewModel ??= EditNoteViewModelBuilder();
   set editViewModel(EditNoteViewModelBuilder? editViewModel) =>
       _$this._editViewModel = editViewModel;
 
@@ -131,7 +119,6 @@ class AnswerQuestionViewModelBuilder
 
   @override
   void replace(AnswerQuestionViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AnswerQuestionViewModel;
   }
 
@@ -147,23 +134,24 @@ class AnswerQuestionViewModelBuilder
     _$AnswerQuestionViewModel _$result;
     try {
       _$result = _$v ??
-          new _$AnswerQuestionViewModel._(
-              title: BuiltValueNullFieldError.checkNotNull(
-                  title, r'AnswerQuestionViewModel', 'title'),
-              isSaving: BuiltValueNullFieldError.checkNotNull(
-                  isSaving, r'AnswerQuestionViewModel', 'isSaving'),
-              editViewModel: editViewModel.build(),
-              nextCommand: BuiltValueNullFieldError.checkNotNull(
-                  nextCommand, r'AnswerQuestionViewModel', 'nextCommand'),
-              closeCommand: BuiltValueNullFieldError.checkNotNull(
-                  closeCommand, r'AnswerQuestionViewModel', 'closeCommand'));
+          _$AnswerQuestionViewModel._(
+            title: BuiltValueNullFieldError.checkNotNull(
+                title, r'AnswerQuestionViewModel', 'title'),
+            isSaving: BuiltValueNullFieldError.checkNotNull(
+                isSaving, r'AnswerQuestionViewModel', 'isSaving'),
+            editViewModel: editViewModel.build(),
+            nextCommand: BuiltValueNullFieldError.checkNotNull(
+                nextCommand, r'AnswerQuestionViewModel', 'nextCommand'),
+            closeCommand: BuiltValueNullFieldError.checkNotNull(
+                closeCommand, r'AnswerQuestionViewModel', 'closeCommand'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'editViewModel';
         editViewModel.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AnswerQuestionViewModel', _$failedField, e.toString());
       }
       rethrow;

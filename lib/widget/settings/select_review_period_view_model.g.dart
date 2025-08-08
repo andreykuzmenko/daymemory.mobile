@@ -30,7 +30,7 @@ class _$SelectReviewPeriodViewModel extends SelectReviewPeriodViewModel {
 
   factory _$SelectReviewPeriodViewModel(
           [void Function(SelectReviewPeriodViewModelBuilder)? updates]) =>
-      (new SelectReviewPeriodViewModelBuilder()..update(updates))._build();
+      (SelectReviewPeriodViewModelBuilder()..update(updates))._build();
 
   _$SelectReviewPeriodViewModel._(
       {required this.title,
@@ -43,27 +43,7 @@ class _$SelectReviewPeriodViewModel extends SelectReviewPeriodViewModel {
       required this.yearlyOptionTitle,
       this.backCommand,
       required this.periodSelectorCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'SelectReviewPeriodViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        reviewSettings, r'SelectReviewPeriodViewModel', 'reviewSettings');
-    BuiltValueNullFieldError.checkNotNull(sevenDaysOptionTitle,
-        r'SelectReviewPeriodViewModel', 'sevenDaysOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(tenDaysOptionTitle,
-        r'SelectReviewPeriodViewModel', 'tenDaysOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(oneMonthOptionTitle,
-        r'SelectReviewPeriodViewModel', 'oneMonthOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(threeMonthsOptionTitle,
-        r'SelectReviewPeriodViewModel', 'threeMonthsOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(sixMonthsOptionTitle,
-        r'SelectReviewPeriodViewModel', 'sixMonthsOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        yearlyOptionTitle, r'SelectReviewPeriodViewModel', 'yearlyOptionTitle');
-    BuiltValueNullFieldError.checkNotNull(periodSelectorCommand,
-        r'SelectReviewPeriodViewModel', 'periodSelectorCommand');
-  }
-
+      : super._();
   @override
   SelectReviewPeriodViewModel rebuild(
           void Function(SelectReviewPeriodViewModelBuilder) updates) =>
@@ -71,7 +51,7 @@ class _$SelectReviewPeriodViewModel extends SelectReviewPeriodViewModel {
 
   @override
   SelectReviewPeriodViewModelBuilder toBuilder() =>
-      new SelectReviewPeriodViewModelBuilder()..replace(this);
+      SelectReviewPeriodViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -202,7 +182,6 @@ class SelectReviewPeriodViewModelBuilder
 
   @override
   void replace(SelectReviewPeriodViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SelectReviewPeriodViewModel;
   }
 
@@ -216,24 +195,41 @@ class SelectReviewPeriodViewModelBuilder
 
   _$SelectReviewPeriodViewModel _build() {
     final _$result = _$v ??
-        new _$SelectReviewPeriodViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SelectReviewPeriodViewModel', 'title'),
-            reviewSettings: BuiltValueNullFieldError.checkNotNull(
-                reviewSettings, r'SelectReviewPeriodViewModel', 'reviewSettings'),
-            sevenDaysOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                sevenDaysOptionTitle, r'SelectReviewPeriodViewModel', 'sevenDaysOptionTitle'),
-            tenDaysOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                tenDaysOptionTitle, r'SelectReviewPeriodViewModel', 'tenDaysOptionTitle'),
-            oneMonthOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                oneMonthOptionTitle, r'SelectReviewPeriodViewModel', 'oneMonthOptionTitle'),
-            threeMonthsOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                threeMonthsOptionTitle, r'SelectReviewPeriodViewModel', 'threeMonthsOptionTitle'),
-            sixMonthsOptionTitle: BuiltValueNullFieldError.checkNotNull(
-                sixMonthsOptionTitle, r'SelectReviewPeriodViewModel', 'sixMonthsOptionTitle'),
-            yearlyOptionTitle: BuiltValueNullFieldError.checkNotNull(yearlyOptionTitle, r'SelectReviewPeriodViewModel', 'yearlyOptionTitle'),
-            backCommand: backCommand,
-            periodSelectorCommand: BuiltValueNullFieldError.checkNotNull(periodSelectorCommand, r'SelectReviewPeriodViewModel', 'periodSelectorCommand'));
+        _$SelectReviewPeriodViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'SelectReviewPeriodViewModel', 'title'),
+          reviewSettings: BuiltValueNullFieldError.checkNotNull(
+              reviewSettings, r'SelectReviewPeriodViewModel', 'reviewSettings'),
+          sevenDaysOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              sevenDaysOptionTitle,
+              r'SelectReviewPeriodViewModel',
+              'sevenDaysOptionTitle'),
+          tenDaysOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              tenDaysOptionTitle,
+              r'SelectReviewPeriodViewModel',
+              'tenDaysOptionTitle'),
+          oneMonthOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              oneMonthOptionTitle,
+              r'SelectReviewPeriodViewModel',
+              'oneMonthOptionTitle'),
+          threeMonthsOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              threeMonthsOptionTitle,
+              r'SelectReviewPeriodViewModel',
+              'threeMonthsOptionTitle'),
+          sixMonthsOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              sixMonthsOptionTitle,
+              r'SelectReviewPeriodViewModel',
+              'sixMonthsOptionTitle'),
+          yearlyOptionTitle: BuiltValueNullFieldError.checkNotNull(
+              yearlyOptionTitle,
+              r'SelectReviewPeriodViewModel',
+              'yearlyOptionTitle'),
+          backCommand: backCommand,
+          periodSelectorCommand: BuiltValueNullFieldError.checkNotNull(
+              periodSelectorCommand,
+              r'SelectReviewPeriodViewModel',
+              'periodSelectorCommand'),
+        );
     replace(_$result);
     return _$result;
   }

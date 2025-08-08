@@ -24,7 +24,7 @@ class _$SortNotebooksViewModel extends SortNotebooksViewModel {
 
   factory _$SortNotebooksViewModel(
           [void Function(SortNotebooksViewModelBuilder)? updates]) =>
-      (new SortNotebooksViewModelBuilder()..update(updates))._build();
+      (SortNotebooksViewModelBuilder()..update(updates))._build();
 
   _$SortNotebooksViewModel._(
       {required this.title,
@@ -34,21 +34,7 @@ class _$SortNotebooksViewModel extends SortNotebooksViewModel {
       required this.showDragIcon,
       this.backCommand,
       required this.reorderCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'SortNotebooksViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        loadingTitle, r'SortNotebooksViewModel', 'loadingTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        notebooks, r'SortNotebooksViewModel', 'notebooks');
-    BuiltValueNullFieldError.checkNotNull(
-        noNotebooks, r'SortNotebooksViewModel', 'noNotebooks');
-    BuiltValueNullFieldError.checkNotNull(
-        showDragIcon, r'SortNotebooksViewModel', 'showDragIcon');
-    BuiltValueNullFieldError.checkNotNull(
-        reorderCommand, r'SortNotebooksViewModel', 'reorderCommand');
-  }
-
+      : super._();
   @override
   SortNotebooksViewModel rebuild(
           void Function(SortNotebooksViewModelBuilder) updates) =>
@@ -56,7 +42,7 @@ class _$SortNotebooksViewModel extends SortNotebooksViewModel {
 
   @override
   SortNotebooksViewModelBuilder toBuilder() =>
-      new SortNotebooksViewModelBuilder()..replace(this);
+      SortNotebooksViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -153,7 +139,6 @@ class SortNotebooksViewModelBuilder
 
   @override
   void replace(SortNotebooksViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SortNotebooksViewModel;
   }
 
@@ -167,20 +152,21 @@ class SortNotebooksViewModelBuilder
 
   _$SortNotebooksViewModel _build() {
     final _$result = _$v ??
-        new _$SortNotebooksViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SortNotebooksViewModel', 'title'),
-            loadingTitle: BuiltValueNullFieldError.checkNotNull(
-                loadingTitle, r'SortNotebooksViewModel', 'loadingTitle'),
-            notebooks: BuiltValueNullFieldError.checkNotNull(
-                notebooks, r'SortNotebooksViewModel', 'notebooks'),
-            noNotebooks: BuiltValueNullFieldError.checkNotNull(
-                noNotebooks, r'SortNotebooksViewModel', 'noNotebooks'),
-            showDragIcon: BuiltValueNullFieldError.checkNotNull(
-                showDragIcon, r'SortNotebooksViewModel', 'showDragIcon'),
-            backCommand: backCommand,
-            reorderCommand: BuiltValueNullFieldError.checkNotNull(
-                reorderCommand, r'SortNotebooksViewModel', 'reorderCommand'));
+        _$SortNotebooksViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'SortNotebooksViewModel', 'title'),
+          loadingTitle: BuiltValueNullFieldError.checkNotNull(
+              loadingTitle, r'SortNotebooksViewModel', 'loadingTitle'),
+          notebooks: BuiltValueNullFieldError.checkNotNull(
+              notebooks, r'SortNotebooksViewModel', 'notebooks'),
+          noNotebooks: BuiltValueNullFieldError.checkNotNull(
+              noNotebooks, r'SortNotebooksViewModel', 'noNotebooks'),
+          showDragIcon: BuiltValueNullFieldError.checkNotNull(
+              showDragIcon, r'SortNotebooksViewModel', 'showDragIcon'),
+          backCommand: backCommand,
+          reorderCommand: BuiltValueNullFieldError.checkNotNull(
+              reorderCommand, r'SortNotebooksViewModel', 'reorderCommand'),
+        );
     replace(_$result);
     return _$result;
   }

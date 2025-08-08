@@ -4,7 +4,7 @@ import 'package:daymemory/redux/state/app_state.dart';
 import 'package:daymemory/widget/question-lists/question_lists_view_model.dart';
 import 'package:daymemory/widget/question-lists/question_lists_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 import '../../redux/action/question_lists_action.dart';
 

@@ -19,7 +19,7 @@ class _$TabsViewModel extends TabsViewModel {
   final bool isActiveTabClicked;
 
   factory _$TabsViewModel([void Function(TabsViewModelBuilder)? updates]) =>
-      (new TabsViewModelBuilder()..update(updates))._build();
+      (TabsViewModelBuilder()..update(updates))._build();
 
   _$TabsViewModel._(
       {required this.tabSelectCommand,
@@ -27,25 +27,13 @@ class _$TabsViewModel extends TabsViewModel {
       required this.tabTimeline,
       required this.tabQuestions,
       required this.isActiveTabClicked})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        tabSelectCommand, r'TabsViewModel', 'tabSelectCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        selectedTabIndex, r'TabsViewModel', 'selectedTabIndex');
-    BuiltValueNullFieldError.checkNotNull(
-        tabTimeline, r'TabsViewModel', 'tabTimeline');
-    BuiltValueNullFieldError.checkNotNull(
-        tabQuestions, r'TabsViewModel', 'tabQuestions');
-    BuiltValueNullFieldError.checkNotNull(
-        isActiveTabClicked, r'TabsViewModel', 'isActiveTabClicked');
-  }
-
+      : super._();
   @override
   TabsViewModel rebuild(void Function(TabsViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TabsViewModelBuilder toBuilder() => new TabsViewModelBuilder()..replace(this);
+  TabsViewModelBuilder toBuilder() => TabsViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -126,7 +114,6 @@ class TabsViewModelBuilder
 
   @override
   void replace(TabsViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TabsViewModel;
   }
 
@@ -140,17 +127,18 @@ class TabsViewModelBuilder
 
   _$TabsViewModel _build() {
     final _$result = _$v ??
-        new _$TabsViewModel._(
-            tabSelectCommand: BuiltValueNullFieldError.checkNotNull(
-                tabSelectCommand, r'TabsViewModel', 'tabSelectCommand'),
-            selectedTabIndex: BuiltValueNullFieldError.checkNotNull(
-                selectedTabIndex, r'TabsViewModel', 'selectedTabIndex'),
-            tabTimeline: BuiltValueNullFieldError.checkNotNull(
-                tabTimeline, r'TabsViewModel', 'tabTimeline'),
-            tabQuestions: BuiltValueNullFieldError.checkNotNull(
-                tabQuestions, r'TabsViewModel', 'tabQuestions'),
-            isActiveTabClicked: BuiltValueNullFieldError.checkNotNull(
-                isActiveTabClicked, r'TabsViewModel', 'isActiveTabClicked'));
+        _$TabsViewModel._(
+          tabSelectCommand: BuiltValueNullFieldError.checkNotNull(
+              tabSelectCommand, r'TabsViewModel', 'tabSelectCommand'),
+          selectedTabIndex: BuiltValueNullFieldError.checkNotNull(
+              selectedTabIndex, r'TabsViewModel', 'selectedTabIndex'),
+          tabTimeline: BuiltValueNullFieldError.checkNotNull(
+              tabTimeline, r'TabsViewModel', 'tabTimeline'),
+          tabQuestions: BuiltValueNullFieldError.checkNotNull(
+              tabQuestions, r'TabsViewModel', 'tabQuestions'),
+          isActiveTabClicked: BuiltValueNullFieldError.checkNotNull(
+              isActiveTabClicked, r'TabsViewModel', 'isActiveTabClicked'),
+        );
     replace(_$result);
     return _$result;
   }

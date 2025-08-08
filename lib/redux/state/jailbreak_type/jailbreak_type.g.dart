@@ -19,12 +19,12 @@ JailbreakType _$jailbreakTypeValueOf(String name) {
     case 'unknown':
       return _$unknown;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<JailbreakType> _$jailbreakTypeValues =
-    new BuiltSet<JailbreakType>(const <JailbreakType>[
+    BuiltSet<JailbreakType>(const <JailbreakType>[
   _$validPhone,
   _$invalidPhone,
   _$unknown,

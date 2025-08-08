@@ -18,24 +18,14 @@ class _$NoteImageGalleryViewModel extends NoteImageGalleryViewModel {
 
   factory _$NoteImageGalleryViewModel(
           [void Function(NoteImageGalleryViewModelBuilder)? updates]) =>
-      (new NoteImageGalleryViewModelBuilder()..update(updates))._build();
+      (NoteImageGalleryViewModelBuilder()..update(updates))._build();
 
   _$NoteImageGalleryViewModel._(
       {required this.images,
       required this.index,
       required this.showImageNavigation,
       required this.closeCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        images, r'NoteImageGalleryViewModel', 'images');
-    BuiltValueNullFieldError.checkNotNull(
-        index, r'NoteImageGalleryViewModel', 'index');
-    BuiltValueNullFieldError.checkNotNull(showImageNavigation,
-        r'NoteImageGalleryViewModel', 'showImageNavigation');
-    BuiltValueNullFieldError.checkNotNull(
-        closeCommand, r'NoteImageGalleryViewModel', 'closeCommand');
-  }
-
+      : super._();
   @override
   NoteImageGalleryViewModel rebuild(
           void Function(NoteImageGalleryViewModelBuilder) updates) =>
@@ -43,7 +33,7 @@ class _$NoteImageGalleryViewModel extends NoteImageGalleryViewModel {
 
   @override
   NoteImageGalleryViewModelBuilder toBuilder() =>
-      new NoteImageGalleryViewModelBuilder()..replace(this);
+      NoteImageGalleryViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -116,7 +106,6 @@ class NoteImageGalleryViewModelBuilder
 
   @override
   void replace(NoteImageGalleryViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$NoteImageGalleryViewModel;
   }
 
@@ -130,17 +119,18 @@ class NoteImageGalleryViewModelBuilder
 
   _$NoteImageGalleryViewModel _build() {
     final _$result = _$v ??
-        new _$NoteImageGalleryViewModel._(
-            images: BuiltValueNullFieldError.checkNotNull(
-                images, r'NoteImageGalleryViewModel', 'images'),
-            index: BuiltValueNullFieldError.checkNotNull(
-                index, r'NoteImageGalleryViewModel', 'index'),
-            showImageNavigation: BuiltValueNullFieldError.checkNotNull(
-                showImageNavigation,
-                r'NoteImageGalleryViewModel',
-                'showImageNavigation'),
-            closeCommand: BuiltValueNullFieldError.checkNotNull(
-                closeCommand, r'NoteImageGalleryViewModel', 'closeCommand'));
+        _$NoteImageGalleryViewModel._(
+          images: BuiltValueNullFieldError.checkNotNull(
+              images, r'NoteImageGalleryViewModel', 'images'),
+          index: BuiltValueNullFieldError.checkNotNull(
+              index, r'NoteImageGalleryViewModel', 'index'),
+          showImageNavigation: BuiltValueNullFieldError.checkNotNull(
+              showImageNavigation,
+              r'NoteImageGalleryViewModel',
+              'showImageNavigation'),
+          closeCommand: BuiltValueNullFieldError.checkNotNull(
+              closeCommand, r'NoteImageGalleryViewModel', 'closeCommand'),
+        );
     replace(_$result);
     return _$result;
   }

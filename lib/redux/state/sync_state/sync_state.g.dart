@@ -17,23 +17,20 @@ class _$SyncState extends SyncState {
   final String? syncStatus;
 
   factory _$SyncState([void Function(SyncStateBuilder)? updates]) =>
-      (new SyncStateBuilder()..update(updates))._build();
+      (SyncStateBuilder()..update(updates))._build();
 
   _$SyncState._(
       {required this.isSyncing,
       this.lastSyncDate,
       this.hasLastSyncSucceeded,
       this.syncStatus})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(isSyncing, r'SyncState', 'isSyncing');
-  }
-
+      : super._();
   @override
   SyncState rebuild(void Function(SyncStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SyncStateBuilder toBuilder() => new SyncStateBuilder()..replace(this);
+  SyncStateBuilder toBuilder() => SyncStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -104,7 +101,6 @@ class SyncStateBuilder implements Builder<SyncState, SyncStateBuilder> {
 
   @override
   void replace(SyncState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SyncState;
   }
 
@@ -118,12 +114,13 @@ class SyncStateBuilder implements Builder<SyncState, SyncStateBuilder> {
 
   _$SyncState _build() {
     final _$result = _$v ??
-        new _$SyncState._(
-            isSyncing: BuiltValueNullFieldError.checkNotNull(
-                isSyncing, r'SyncState', 'isSyncing'),
-            lastSyncDate: lastSyncDate,
-            hasLastSyncSucceeded: hasLastSyncSucceeded,
-            syncStatus: syncStatus);
+        _$SyncState._(
+          isSyncing: BuiltValueNullFieldError.checkNotNull(
+              isSyncing, r'SyncState', 'isSyncing'),
+          lastSyncDate: lastSyncDate,
+          hasLastSyncSucceeded: hasLastSyncSucceeded,
+          syncStatus: syncStatus,
+        );
     replace(_$result);
     return _$result;
   }

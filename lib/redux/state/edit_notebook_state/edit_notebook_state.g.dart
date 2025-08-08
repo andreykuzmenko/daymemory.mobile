@@ -22,7 +22,7 @@ class _$EditNotebookState extends EditNotebookState {
 
   factory _$EditNotebookState(
           [void Function(EditNotebookStateBuilder)? updates]) =>
-      (new EditNotebookStateBuilder()..update(updates))._build();
+      (EditNotebookStateBuilder()..update(updates))._build();
 
   _$EditNotebookState._(
       {this.notebookId,
@@ -31,25 +31,14 @@ class _$EditNotebookState extends EditNotebookState {
       required this.orderRank,
       required this.sortingType,
       required this.isSaving})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, r'EditNotebookState', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        showInReview, r'EditNotebookState', 'showInReview');
-    BuiltValueNullFieldError.checkNotNull(
-        orderRank, r'EditNotebookState', 'orderRank');
-    BuiltValueNullFieldError.checkNotNull(
-        sortingType, r'EditNotebookState', 'sortingType');
-    BuiltValueNullFieldError.checkNotNull(
-        isSaving, r'EditNotebookState', 'isSaving');
-  }
-
+      : super._();
   @override
   EditNotebookState rebuild(void Function(EditNotebookStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   EditNotebookStateBuilder toBuilder() =>
-      new EditNotebookStateBuilder()..replace(this);
+      EditNotebookStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -136,7 +125,6 @@ class EditNotebookStateBuilder
 
   @override
   void replace(EditNotebookState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$EditNotebookState;
   }
 
@@ -150,18 +138,19 @@ class EditNotebookStateBuilder
 
   _$EditNotebookState _build() {
     final _$result = _$v ??
-        new _$EditNotebookState._(
-            notebookId: notebookId,
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'EditNotebookState', 'title'),
-            showInReview: BuiltValueNullFieldError.checkNotNull(
-                showInReview, r'EditNotebookState', 'showInReview'),
-            orderRank: BuiltValueNullFieldError.checkNotNull(
-                orderRank, r'EditNotebookState', 'orderRank'),
-            sortingType: BuiltValueNullFieldError.checkNotNull(
-                sortingType, r'EditNotebookState', 'sortingType'),
-            isSaving: BuiltValueNullFieldError.checkNotNull(
-                isSaving, r'EditNotebookState', 'isSaving'));
+        _$EditNotebookState._(
+          notebookId: notebookId,
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'EditNotebookState', 'title'),
+          showInReview: BuiltValueNullFieldError.checkNotNull(
+              showInReview, r'EditNotebookState', 'showInReview'),
+          orderRank: BuiltValueNullFieldError.checkNotNull(
+              orderRank, r'EditNotebookState', 'orderRank'),
+          sortingType: BuiltValueNullFieldError.checkNotNull(
+              sortingType, r'EditNotebookState', 'sortingType'),
+          isSaving: BuiltValueNullFieldError.checkNotNull(
+              isSaving, r'EditNotebookState', 'isSaving'),
+        );
     replace(_$result);
     return _$result;
   }

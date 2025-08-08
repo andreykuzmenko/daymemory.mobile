@@ -5,7 +5,7 @@ import 'package:daymemory/redux/action/notebook_action.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
 import 'package:daymemory/widget/side_menu/side_menu_view_model/side_menu_item_view_model.dart';
 import 'package:daymemory/widget/side_menu/side_menu_view_model/side_menu_view_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 import '../../redux/action/actions.dart';
 

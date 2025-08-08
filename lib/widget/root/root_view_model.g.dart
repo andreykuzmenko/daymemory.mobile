@@ -39,7 +39,7 @@ class _$RootViewModel extends RootViewModel {
   final FunctionHolder dialogDismiss;
 
   factory _$RootViewModel([void Function(RootViewModelBuilder)? updates]) =>
-      (new RootViewModelBuilder()..update(updates))._build();
+      (RootViewModelBuilder()..update(updates))._build();
 
   _$RootViewModel._(
       {required this.initialized,
@@ -57,40 +57,13 @@ class _$RootViewModel extends RootViewModel {
       required this.isAppActive,
       this.dialog,
       required this.dialogDismiss})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        initialized, r'RootViewModel', 'initialized');
-    BuiltValueNullFieldError.checkNotNull(resumed, r'RootViewModel', 'resumed');
-    BuiltValueNullFieldError.checkNotNull(paused, r'RootViewModel', 'paused');
-    BuiltValueNullFieldError.checkNotNull(
-        sizeChanged, r'RootViewModel', 'sizeChanged');
-    BuiltValueNullFieldError.checkNotNull(
-        willPopCommand, r'RootViewModel', 'willPopCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        isPasscodeEnabled, r'RootViewModel', 'isPasscodeEnabled');
-    BuiltValueNullFieldError.checkNotNull(
-        showSideMenu, r'RootViewModel', 'showSideMenu');
-    BuiltValueNullFieldError.checkNotNull(size, r'RootViewModel', 'size');
-    BuiltValueNullFieldError.checkNotNull(
-        routeType, r'RootViewModel', 'routeType');
-    BuiltValueNullFieldError.checkNotNull(
-        fullscreenMinWidth, r'RootViewModel', 'fullscreenMinWidth');
-    BuiltValueNullFieldError.checkNotNull(
-        sideMenuWidth, r'RootViewModel', 'sideMenuWidth');
-    BuiltValueNullFieldError.checkNotNull(
-        isSideMenuSupported, r'RootViewModel', 'isSideMenuSupported');
-    BuiltValueNullFieldError.checkNotNull(
-        isAppActive, r'RootViewModel', 'isAppActive');
-    BuiltValueNullFieldError.checkNotNull(
-        dialogDismiss, r'RootViewModel', 'dialogDismiss');
-  }
-
+      : super._();
   @override
   RootViewModel rebuild(void Function(RootViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  RootViewModelBuilder toBuilder() => new RootViewModelBuilder()..replace(this);
+  RootViewModelBuilder toBuilder() => RootViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -222,7 +195,7 @@ class RootViewModelBuilder
 
   DialogViewModelBuilder? _dialog;
   DialogViewModelBuilder get dialog =>
-      _$this._dialog ??= new DialogViewModelBuilder();
+      _$this._dialog ??= DialogViewModelBuilder();
   set dialog(DialogViewModelBuilder? dialog) => _$this._dialog = dialog;
 
   FunctionHolder? _dialogDismiss;
@@ -257,7 +230,6 @@ class RootViewModelBuilder
 
   @override
   void replace(RootViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$RootViewModel;
   }
 
@@ -273,37 +245,44 @@ class RootViewModelBuilder
     _$RootViewModel _$result;
     try {
       _$result = _$v ??
-          new _$RootViewModel._(
-              initialized: BuiltValueNullFieldError.checkNotNull(
-                  initialized, r'RootViewModel', 'initialized'),
-              resumed: BuiltValueNullFieldError.checkNotNull(
-                  resumed, r'RootViewModel', 'resumed'),
-              paused: BuiltValueNullFieldError.checkNotNull(
-                  paused, r'RootViewModel', 'paused'),
-              sizeChanged: BuiltValueNullFieldError.checkNotNull(
-                  sizeChanged, r'RootViewModel', 'sizeChanged'),
-              willPopCommand: BuiltValueNullFieldError.checkNotNull(
-                  willPopCommand, r'RootViewModel', 'willPopCommand'),
-              isPasscodeEnabled: BuiltValueNullFieldError.checkNotNull(
-                  isPasscodeEnabled, r'RootViewModel', 'isPasscodeEnabled'),
-              showSideMenu: BuiltValueNullFieldError.checkNotNull(
-                  showSideMenu, r'RootViewModel', 'showSideMenu'),
-              size: BuiltValueNullFieldError.checkNotNull(
-                  size, r'RootViewModel', 'size'),
-              routeType: BuiltValueNullFieldError.checkNotNull(routeType, r'RootViewModel', 'routeType'),
-              fullscreenMinWidth: BuiltValueNullFieldError.checkNotNull(fullscreenMinWidth, r'RootViewModel', 'fullscreenMinWidth'),
-              sideMenuWidth: BuiltValueNullFieldError.checkNotNull(sideMenuWidth, r'RootViewModel', 'sideMenuWidth'),
-              isSideMenuSupported: BuiltValueNullFieldError.checkNotNull(isSideMenuSupported, r'RootViewModel', 'isSideMenuSupported'),
-              isAppActive: BuiltValueNullFieldError.checkNotNull(isAppActive, r'RootViewModel', 'isAppActive'),
-              dialog: _dialog?.build(),
-              dialogDismiss: BuiltValueNullFieldError.checkNotNull(dialogDismiss, r'RootViewModel', 'dialogDismiss'));
+          _$RootViewModel._(
+            initialized: BuiltValueNullFieldError.checkNotNull(
+                initialized, r'RootViewModel', 'initialized'),
+            resumed: BuiltValueNullFieldError.checkNotNull(
+                resumed, r'RootViewModel', 'resumed'),
+            paused: BuiltValueNullFieldError.checkNotNull(
+                paused, r'RootViewModel', 'paused'),
+            sizeChanged: BuiltValueNullFieldError.checkNotNull(
+                sizeChanged, r'RootViewModel', 'sizeChanged'),
+            willPopCommand: BuiltValueNullFieldError.checkNotNull(
+                willPopCommand, r'RootViewModel', 'willPopCommand'),
+            isPasscodeEnabled: BuiltValueNullFieldError.checkNotNull(
+                isPasscodeEnabled, r'RootViewModel', 'isPasscodeEnabled'),
+            showSideMenu: BuiltValueNullFieldError.checkNotNull(
+                showSideMenu, r'RootViewModel', 'showSideMenu'),
+            size: BuiltValueNullFieldError.checkNotNull(
+                size, r'RootViewModel', 'size'),
+            routeType: BuiltValueNullFieldError.checkNotNull(
+                routeType, r'RootViewModel', 'routeType'),
+            fullscreenMinWidth: BuiltValueNullFieldError.checkNotNull(
+                fullscreenMinWidth, r'RootViewModel', 'fullscreenMinWidth'),
+            sideMenuWidth: BuiltValueNullFieldError.checkNotNull(
+                sideMenuWidth, r'RootViewModel', 'sideMenuWidth'),
+            isSideMenuSupported: BuiltValueNullFieldError.checkNotNull(
+                isSideMenuSupported, r'RootViewModel', 'isSideMenuSupported'),
+            isAppActive: BuiltValueNullFieldError.checkNotNull(
+                isAppActive, r'RootViewModel', 'isAppActive'),
+            dialog: _dialog?.build(),
+            dialogDismiss: BuiltValueNullFieldError.checkNotNull(
+                dialogDismiss, r'RootViewModel', 'dialogDismiss'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'dialog';
         _dialog?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'RootViewModel', _$failedField, e.toString());
       }
       rethrow;

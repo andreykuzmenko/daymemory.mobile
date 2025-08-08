@@ -21,7 +21,7 @@ import 'package:flutter/widgets.dart';
 // ignore: depend_on_referenced_packages
 import 'package:redux/redux.dart';
 import 'package:uuid/uuid.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class NoteMiddleware implements MiddlewareClass<AppState> {
   final INoteService noteService;

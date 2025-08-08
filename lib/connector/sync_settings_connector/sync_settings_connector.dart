@@ -4,7 +4,7 @@ import 'package:daymemory/redux/state/app_state.dart';
 import 'package:daymemory/widget/settings/sync_settings_view_model.dart';
 import 'package:daymemory/widget/settings/sync_settings_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class SyncSettingsConnector extends PageConnector<SyncSettingsViewModel, SyncSettingsConverter> {
   const SyncSettingsConnector({super.key});

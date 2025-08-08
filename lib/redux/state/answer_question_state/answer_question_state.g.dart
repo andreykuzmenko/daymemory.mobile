@@ -18,24 +18,14 @@ class _$AnswerQuestionState extends AnswerQuestionState {
 
   factory _$AnswerQuestionState(
           [void Function(AnswerQuestionStateBuilder)? updates]) =>
-      (new AnswerQuestionStateBuilder()..update(updates))._build();
+      (AnswerQuestionStateBuilder()..update(updates))._build();
 
   _$AnswerQuestionState._(
       {required this.answers,
       required this.questions,
       required this.questionListTitle,
       required this.currentIndex})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        answers, r'AnswerQuestionState', 'answers');
-    BuiltValueNullFieldError.checkNotNull(
-        questions, r'AnswerQuestionState', 'questions');
-    BuiltValueNullFieldError.checkNotNull(
-        questionListTitle, r'AnswerQuestionState', 'questionListTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        currentIndex, r'AnswerQuestionState', 'currentIndex');
-  }
-
+      : super._();
   @override
   AnswerQuestionState rebuild(
           void Function(AnswerQuestionStateBuilder) updates) =>
@@ -43,7 +33,7 @@ class _$AnswerQuestionState extends AnswerQuestionState {
 
   @override
   AnswerQuestionStateBuilder toBuilder() =>
-      new AnswerQuestionStateBuilder()..replace(this);
+      AnswerQuestionStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -114,7 +104,6 @@ class AnswerQuestionStateBuilder
 
   @override
   void replace(AnswerQuestionState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AnswerQuestionState;
   }
 
@@ -128,15 +117,16 @@ class AnswerQuestionStateBuilder
 
   _$AnswerQuestionState _build() {
     final _$result = _$v ??
-        new _$AnswerQuestionState._(
-            answers: BuiltValueNullFieldError.checkNotNull(
-                answers, r'AnswerQuestionState', 'answers'),
-            questions: BuiltValueNullFieldError.checkNotNull(
-                questions, r'AnswerQuestionState', 'questions'),
-            questionListTitle: BuiltValueNullFieldError.checkNotNull(
-                questionListTitle, r'AnswerQuestionState', 'questionListTitle'),
-            currentIndex: BuiltValueNullFieldError.checkNotNull(
-                currentIndex, r'AnswerQuestionState', 'currentIndex'));
+        _$AnswerQuestionState._(
+          answers: BuiltValueNullFieldError.checkNotNull(
+              answers, r'AnswerQuestionState', 'answers'),
+          questions: BuiltValueNullFieldError.checkNotNull(
+              questions, r'AnswerQuestionState', 'questions'),
+          questionListTitle: BuiltValueNullFieldError.checkNotNull(
+              questionListTitle, r'AnswerQuestionState', 'questionListTitle'),
+          currentIndex: BuiltValueNullFieldError.checkNotNull(
+              currentIndex, r'AnswerQuestionState', 'currentIndex'),
+        );
     replace(_$result);
     return _$result;
   }

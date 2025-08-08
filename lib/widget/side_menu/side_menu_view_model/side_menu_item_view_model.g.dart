@@ -20,7 +20,7 @@ class _$SideMenuItemViewModel extends SideMenuItemViewModel {
 
   factory _$SideMenuItemViewModel(
           [void Function(SideMenuItemViewModelBuilder)? updates]) =>
-      (new SideMenuItemViewModelBuilder()..update(updates))._build();
+      (SideMenuItemViewModelBuilder()..update(updates))._build();
 
   _$SideMenuItemViewModel._(
       {required this.selectItemCommand,
@@ -28,18 +28,7 @@ class _$SideMenuItemViewModel extends SideMenuItemViewModel {
       required this.title,
       required this.notesCount,
       required this.isSelected})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        selectItemCommand, r'SideMenuItemViewModel', 'selectItemCommand');
-    BuiltValueNullFieldError.checkNotNull(id, r'SideMenuItemViewModel', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'SideMenuItemViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        notesCount, r'SideMenuItemViewModel', 'notesCount');
-    BuiltValueNullFieldError.checkNotNull(
-        isSelected, r'SideMenuItemViewModel', 'isSelected');
-  }
-
+      : super._();
   @override
   SideMenuItemViewModel rebuild(
           void Function(SideMenuItemViewModelBuilder) updates) =>
@@ -47,7 +36,7 @@ class _$SideMenuItemViewModel extends SideMenuItemViewModel {
 
   @override
   SideMenuItemViewModelBuilder toBuilder() =>
-      new SideMenuItemViewModelBuilder()..replace(this);
+      SideMenuItemViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -126,7 +115,6 @@ class SideMenuItemViewModelBuilder
 
   @override
   void replace(SideMenuItemViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SideMenuItemViewModel;
   }
 
@@ -140,19 +128,18 @@ class SideMenuItemViewModelBuilder
 
   _$SideMenuItemViewModel _build() {
     final _$result = _$v ??
-        new _$SideMenuItemViewModel._(
-            selectItemCommand: BuiltValueNullFieldError.checkNotNull(
-                selectItemCommand,
-                r'SideMenuItemViewModel',
-                'selectItemCommand'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'SideMenuItemViewModel', 'id'),
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SideMenuItemViewModel', 'title'),
-            notesCount: BuiltValueNullFieldError.checkNotNull(
-                notesCount, r'SideMenuItemViewModel', 'notesCount'),
-            isSelected: BuiltValueNullFieldError.checkNotNull(
-                isSelected, r'SideMenuItemViewModel', 'isSelected'));
+        _$SideMenuItemViewModel._(
+          selectItemCommand: BuiltValueNullFieldError.checkNotNull(
+              selectItemCommand, r'SideMenuItemViewModel', 'selectItemCommand'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'SideMenuItemViewModel', 'id'),
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'SideMenuItemViewModel', 'title'),
+          notesCount: BuiltValueNullFieldError.checkNotNull(
+              notesCount, r'SideMenuItemViewModel', 'notesCount'),
+          isSelected: BuiltValueNullFieldError.checkNotNull(
+              isSelected, r'SideMenuItemViewModel', 'isSelected'),
+        );
     replace(_$result);
     return _$result;
   }

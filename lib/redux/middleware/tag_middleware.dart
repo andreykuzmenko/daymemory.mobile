@@ -10,7 +10,7 @@ import 'package:daymemory/services/storage/interfaces/interface_tag_service.dart
 // ignore: depend_on_referenced_packages
 import 'package:redux/redux.dart';
 import 'package:uuid/uuid.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 // ignore: depend_on_referenced_packages
 
 class TagMiddleware implements MiddlewareClass<AppState> {

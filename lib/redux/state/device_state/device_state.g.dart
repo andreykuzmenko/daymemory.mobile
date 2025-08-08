@@ -15,26 +15,19 @@ class _$DeviceState extends DeviceState {
   final DeviceWidthType deviceWidthType;
 
   factory _$DeviceState([void Function(DeviceStateBuilder)? updates]) =>
-      (new DeviceStateBuilder()..update(updates))._build();
+      (DeviceStateBuilder()..update(updates))._build();
 
   _$DeviceState._(
       {required this.deviceType,
       required this.size,
       required this.deviceWidthType})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        deviceType, r'DeviceState', 'deviceType');
-    BuiltValueNullFieldError.checkNotNull(size, r'DeviceState', 'size');
-    BuiltValueNullFieldError.checkNotNull(
-        deviceWidthType, r'DeviceState', 'deviceWidthType');
-  }
-
+      : super._();
   @override
   DeviceState rebuild(void Function(DeviceStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DeviceStateBuilder toBuilder() => new DeviceStateBuilder()..replace(this);
+  DeviceStateBuilder toBuilder() => DeviceStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -96,7 +89,6 @@ class DeviceStateBuilder implements Builder<DeviceState, DeviceStateBuilder> {
 
   @override
   void replace(DeviceState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$DeviceState;
   }
 
@@ -110,13 +102,14 @@ class DeviceStateBuilder implements Builder<DeviceState, DeviceStateBuilder> {
 
   _$DeviceState _build() {
     final _$result = _$v ??
-        new _$DeviceState._(
-            deviceType: BuiltValueNullFieldError.checkNotNull(
-                deviceType, r'DeviceState', 'deviceType'),
-            size: BuiltValueNullFieldError.checkNotNull(
-                size, r'DeviceState', 'size'),
-            deviceWidthType: BuiltValueNullFieldError.checkNotNull(
-                deviceWidthType, r'DeviceState', 'deviceWidthType'));
+        _$DeviceState._(
+          deviceType: BuiltValueNullFieldError.checkNotNull(
+              deviceType, r'DeviceState', 'deviceType'),
+          size: BuiltValueNullFieldError.checkNotNull(
+              size, r'DeviceState', 'size'),
+          deviceWidthType: BuiltValueNullFieldError.checkNotNull(
+              deviceWidthType, r'DeviceState', 'deviceWidthType'),
+        );
     replace(_$result);
     return _$result;
   }

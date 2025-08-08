@@ -20,7 +20,7 @@ class _$TagFieldViewModel extends TagFieldViewModel {
 
   factory _$TagFieldViewModel(
           [void Function(TagFieldViewModelBuilder)? updates]) =>
-      (new TagFieldViewModelBuilder()..update(updates))._build();
+      (TagFieldViewModelBuilder()..update(updates))._build();
 
   _$TagFieldViewModel._(
       {required this.fieldId,
@@ -28,23 +28,14 @@ class _$TagFieldViewModel extends TagFieldViewModel {
       required this.placeholder,
       this.deleteCommand,
       required this.textChangedCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        fieldId, r'TagFieldViewModel', 'fieldId');
-    BuiltValueNullFieldError.checkNotNull(text, r'TagFieldViewModel', 'text');
-    BuiltValueNullFieldError.checkNotNull(
-        placeholder, r'TagFieldViewModel', 'placeholder');
-    BuiltValueNullFieldError.checkNotNull(
-        textChangedCommand, r'TagFieldViewModel', 'textChangedCommand');
-  }
-
+      : super._();
   @override
   TagFieldViewModel rebuild(void Function(TagFieldViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   TagFieldViewModelBuilder toBuilder() =>
-      new TagFieldViewModelBuilder()..replace(this);
+      TagFieldViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -125,7 +116,6 @@ class TagFieldViewModelBuilder
 
   @override
   void replace(TagFieldViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TagFieldViewModel;
   }
 
@@ -139,18 +129,17 @@ class TagFieldViewModelBuilder
 
   _$TagFieldViewModel _build() {
     final _$result = _$v ??
-        new _$TagFieldViewModel._(
-            fieldId: BuiltValueNullFieldError.checkNotNull(
-                fieldId, r'TagFieldViewModel', 'fieldId'),
-            text: BuiltValueNullFieldError.checkNotNull(
-                text, r'TagFieldViewModel', 'text'),
-            placeholder: BuiltValueNullFieldError.checkNotNull(
-                placeholder, r'TagFieldViewModel', 'placeholder'),
-            deleteCommand: deleteCommand,
-            textChangedCommand: BuiltValueNullFieldError.checkNotNull(
-                textChangedCommand,
-                r'TagFieldViewModel',
-                'textChangedCommand'));
+        _$TagFieldViewModel._(
+          fieldId: BuiltValueNullFieldError.checkNotNull(
+              fieldId, r'TagFieldViewModel', 'fieldId'),
+          text: BuiltValueNullFieldError.checkNotNull(
+              text, r'TagFieldViewModel', 'text'),
+          placeholder: BuiltValueNullFieldError.checkNotNull(
+              placeholder, r'TagFieldViewModel', 'placeholder'),
+          deleteCommand: deleteCommand,
+          textChangedCommand: BuiltValueNullFieldError.checkNotNull(
+              textChangedCommand, r'TagFieldViewModel', 'textChangedCommand'),
+        );
     replace(_$result);
     return _$result;
   }

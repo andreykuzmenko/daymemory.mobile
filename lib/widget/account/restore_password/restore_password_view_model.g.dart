@@ -34,7 +34,7 @@ class _$RestorePasswordViewModel extends RestorePasswordViewModel {
 
   factory _$RestorePasswordViewModel(
           [void Function(RestorePasswordViewModelBuilder)? updates]) =>
-      (new RestorePasswordViewModelBuilder()..update(updates))._build();
+      (RestorePasswordViewModelBuilder()..update(updates))._build();
 
   _$RestorePasswordViewModel._(
       {required this.title,
@@ -49,31 +49,7 @@ class _$RestorePasswordViewModel extends RestorePasswordViewModel {
       required this.backCommand,
       this.changePassword,
       required this.isLoading})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'RestorePasswordViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(changePasswordButtonText,
-        r'RestorePasswordViewModel', 'changePasswordButtonText');
-    BuiltValueNullFieldError.checkNotNull(
-        instructionText, r'RestorePasswordViewModel', 'instructionText');
-    BuiltValueNullFieldError.checkNotNull(
-        passwordLabel, r'RestorePasswordViewModel', 'passwordLabel');
-    BuiltValueNullFieldError.checkNotNull(passwordPlaceholder,
-        r'RestorePasswordViewModel', 'passwordPlaceholder');
-    BuiltValueNullFieldError.checkNotNull(
-        codeLabel, r'RestorePasswordViewModel', 'codeLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        codePlaceholder, r'RestorePasswordViewModel', 'codePlaceholder');
-    BuiltValueNullFieldError.checkNotNull(requiredFiledValidator,
-        r'RestorePasswordViewModel', 'requiredFiledValidator');
-    BuiltValueNullFieldError.checkNotNull(
-        loadingMessage, r'RestorePasswordViewModel', 'loadingMessage');
-    BuiltValueNullFieldError.checkNotNull(
-        backCommand, r'RestorePasswordViewModel', 'backCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        isLoading, r'RestorePasswordViewModel', 'isLoading');
-  }
-
+      : super._();
   @override
   RestorePasswordViewModel rebuild(
           void Function(RestorePasswordViewModelBuilder) updates) =>
@@ -81,7 +57,7 @@ class _$RestorePasswordViewModel extends RestorePasswordViewModel {
 
   @override
   RestorePasswordViewModelBuilder toBuilder() =>
-      new RestorePasswordViewModelBuilder()..replace(this);
+      RestorePasswordViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -227,7 +203,6 @@ class RestorePasswordViewModelBuilder
 
   @override
   void replace(RestorePasswordViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$RestorePasswordViewModel;
   }
 
@@ -241,26 +216,37 @@ class RestorePasswordViewModelBuilder
 
   _$RestorePasswordViewModel _build() {
     final _$result = _$v ??
-        new _$RestorePasswordViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'RestorePasswordViewModel', 'title'),
-            changePasswordButtonText: BuiltValueNullFieldError.checkNotNull(
-                changePasswordButtonText, r'RestorePasswordViewModel', 'changePasswordButtonText'),
-            instructionText: BuiltValueNullFieldError.checkNotNull(
-                instructionText, r'RestorePasswordViewModel', 'instructionText'),
-            passwordLabel: BuiltValueNullFieldError.checkNotNull(
-                passwordLabel, r'RestorePasswordViewModel', 'passwordLabel'),
-            passwordPlaceholder: BuiltValueNullFieldError.checkNotNull(
-                passwordPlaceholder, r'RestorePasswordViewModel', 'passwordPlaceholder'),
-            codeLabel: BuiltValueNullFieldError.checkNotNull(
-                codeLabel, r'RestorePasswordViewModel', 'codeLabel'),
-            codePlaceholder: BuiltValueNullFieldError.checkNotNull(
-                codePlaceholder, r'RestorePasswordViewModel', 'codePlaceholder'),
-            requiredFiledValidator: BuiltValueNullFieldError.checkNotNull(requiredFiledValidator, r'RestorePasswordViewModel', 'requiredFiledValidator'),
-            loadingMessage: BuiltValueNullFieldError.checkNotNull(loadingMessage, r'RestorePasswordViewModel', 'loadingMessage'),
-            backCommand: BuiltValueNullFieldError.checkNotNull(backCommand, r'RestorePasswordViewModel', 'backCommand'),
-            changePassword: changePassword,
-            isLoading: BuiltValueNullFieldError.checkNotNull(isLoading, r'RestorePasswordViewModel', 'isLoading'));
+        _$RestorePasswordViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'RestorePasswordViewModel', 'title'),
+          changePasswordButtonText: BuiltValueNullFieldError.checkNotNull(
+              changePasswordButtonText,
+              r'RestorePasswordViewModel',
+              'changePasswordButtonText'),
+          instructionText: BuiltValueNullFieldError.checkNotNull(
+              instructionText, r'RestorePasswordViewModel', 'instructionText'),
+          passwordLabel: BuiltValueNullFieldError.checkNotNull(
+              passwordLabel, r'RestorePasswordViewModel', 'passwordLabel'),
+          passwordPlaceholder: BuiltValueNullFieldError.checkNotNull(
+              passwordPlaceholder,
+              r'RestorePasswordViewModel',
+              'passwordPlaceholder'),
+          codeLabel: BuiltValueNullFieldError.checkNotNull(
+              codeLabel, r'RestorePasswordViewModel', 'codeLabel'),
+          codePlaceholder: BuiltValueNullFieldError.checkNotNull(
+              codePlaceholder, r'RestorePasswordViewModel', 'codePlaceholder'),
+          requiredFiledValidator: BuiltValueNullFieldError.checkNotNull(
+              requiredFiledValidator,
+              r'RestorePasswordViewModel',
+              'requiredFiledValidator'),
+          loadingMessage: BuiltValueNullFieldError.checkNotNull(
+              loadingMessage, r'RestorePasswordViewModel', 'loadingMessage'),
+          backCommand: BuiltValueNullFieldError.checkNotNull(
+              backCommand, r'RestorePasswordViewModel', 'backCommand'),
+          changePassword: changePassword,
+          isLoading: BuiltValueNullFieldError.checkNotNull(
+              isLoading, r'RestorePasswordViewModel', 'isLoading'),
+        );
     replace(_$result);
     return _$result;
   }

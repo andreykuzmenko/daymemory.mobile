@@ -14,10 +14,9 @@ class _$SelectedMenuItemState extends SelectedMenuItemState {
 
   factory _$SelectedMenuItemState(
           [void Function(SelectedMenuItemStateBuilder)? updates]) =>
-      (new SelectedMenuItemStateBuilder()..update(updates))._build();
+      (SelectedMenuItemStateBuilder()..update(updates))._build();
 
   _$SelectedMenuItemState._({this.itemId, this.title}) : super._();
-
   @override
   SelectedMenuItemState rebuild(
           void Function(SelectedMenuItemStateBuilder) updates) =>
@@ -25,7 +24,7 @@ class _$SelectedMenuItemState extends SelectedMenuItemState {
 
   @override
   SelectedMenuItemStateBuilder toBuilder() =>
-      new SelectedMenuItemStateBuilder()..replace(this);
+      SelectedMenuItemStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -79,7 +78,6 @@ class SelectedMenuItemStateBuilder
 
   @override
   void replace(SelectedMenuItemState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SelectedMenuItemState;
   }
 
@@ -92,8 +90,11 @@ class SelectedMenuItemStateBuilder
   SelectedMenuItemState build() => _build();
 
   _$SelectedMenuItemState _build() {
-    final _$result =
-        _$v ?? new _$SelectedMenuItemState._(itemId: itemId, title: title);
+    final _$result = _$v ??
+        _$SelectedMenuItemState._(
+          itemId: itemId,
+          title: title,
+        );
     replace(_$result);
     return _$result;
   }

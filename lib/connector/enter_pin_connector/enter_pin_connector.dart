@@ -2,7 +2,7 @@ import 'package:daymemory/connector/page_connector.dart';
 import 'package:daymemory/redux/action/enter_pin_action.dart';
 import 'package:daymemory/redux/state/app_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 import '../../redux/action/screen_blocking_action.dart';
 import '../../widget/pin_code/enter_pin/enter_pin_view_model.dart';

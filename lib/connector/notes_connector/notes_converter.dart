@@ -13,7 +13,7 @@ import 'package:daymemory/widget/common/file_view_model.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
 import 'package:daymemory/widget/notes/note_view_model.dart';
 import 'package:daymemory/widget/notes/notes_view_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
 class NotesConverter extends ViewModelConverter<NotesViewModel> {

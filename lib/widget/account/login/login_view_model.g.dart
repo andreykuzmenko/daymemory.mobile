@@ -67,7 +67,7 @@ class _$LoginViewModel extends LoginViewModel {
   final bool isLoading;
 
   factory _$LoginViewModel([void Function(LoginViewModelBuilder)? updates]) =>
-      (new LoginViewModelBuilder()..update(updates))._build();
+      (LoginViewModelBuilder()..update(updates))._build();
 
   _$LoginViewModel._(
       {required this.title,
@@ -99,61 +99,13 @@ class _$LoginViewModel extends LoginViewModel {
       this.loginWithFacebook,
       this.loginWithCredentials,
       required this.isLoading})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, r'LoginViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        loginWithEmailText, r'LoginViewModel', 'loginWithEmailText');
-    BuiltValueNullFieldError.checkNotNull(
-        privacyPolicyLink, r'LoginViewModel', 'privacyPolicyLink');
-    BuiltValueNullFieldError.checkNotNull(
-        termsOfUseLink, r'LoginViewModel', 'termsOfUseLink');
-    BuiltValueNullFieldError.checkNotNull(
-        showAppleIdButton, r'LoginViewModel', 'showAppleIdButton');
-    BuiltValueNullFieldError.checkNotNull(
-        emailLabel, r'LoginViewModel', 'emailLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        emailPlaceholder, r'LoginViewModel', 'emailPlaceholder');
-    BuiltValueNullFieldError.checkNotNull(
-        passwordLabel, r'LoginViewModel', 'passwordLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        passwordPlaceholder, r'LoginViewModel', 'passwordPlaceholder');
-    BuiltValueNullFieldError.checkNotNull(
-        requiredFieldValidator, r'LoginViewModel', 'requiredFieldValidator');
-    BuiltValueNullFieldError.checkNotNull(
-        invalidEmailValidator, r'LoginViewModel', 'invalidEmailValidator');
-    BuiltValueNullFieldError.checkNotNull(
-        emailRegex, r'LoginViewModel', 'emailRegex');
-    BuiltValueNullFieldError.checkNotNull(
-        termsOfUseLabel, r'LoginViewModel', 'termsOfUseLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        privacyPolicyLabel, r'LoginViewModel', 'privacyPolicyLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        andSeparatorLabel, r'LoginViewModel', 'andSeparatorLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        forgotPasswordLabel, r'LoginViewModel', 'forgotPasswordLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        createAccountLabel, r'LoginViewModel', 'createAccountLabel');
-    BuiltValueNullFieldError.checkNotNull(
-        loadingMessage, r'LoginViewModel', 'loadingMessage');
-    BuiltValueNullFieldError.checkNotNull(
-        showSocialButtons, r'LoginViewModel', 'showSocialButtons');
-    BuiltValueNullFieldError.checkNotNull(
-        backCommand, r'LoginViewModel', 'backCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        forgotPassword, r'LoginViewModel', 'forgotPassword');
-    BuiltValueNullFieldError.checkNotNull(
-        createAccount, r'LoginViewModel', 'createAccount');
-    BuiltValueNullFieldError.checkNotNull(
-        isLoading, r'LoginViewModel', 'isLoading');
-  }
-
+      : super._();
   @override
   LoginViewModel rebuild(void Function(LoginViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LoginViewModelBuilder toBuilder() =>
-      new LoginViewModelBuilder()..replace(this);
+  LoginViewModelBuilder toBuilder() => LoginViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -448,7 +400,6 @@ class LoginViewModelBuilder
 
   @override
   void replace(LoginViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LoginViewModel;
   }
 
@@ -462,43 +413,64 @@ class LoginViewModelBuilder
 
   _$LoginViewModel _build() {
     final _$result = _$v ??
-        new _$LoginViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'LoginViewModel', 'title'),
-            loginWithEmailText: BuiltValueNullFieldError.checkNotNull(
-                loginWithEmailText, r'LoginViewModel', 'loginWithEmailText'),
-            privacyPolicyLink: BuiltValueNullFieldError.checkNotNull(
-                privacyPolicyLink, r'LoginViewModel', 'privacyPolicyLink'),
-            termsOfUseLink: BuiltValueNullFieldError.checkNotNull(
-                termsOfUseLink, r'LoginViewModel', 'termsOfUseLink'),
-            showAppleIdButton: BuiltValueNullFieldError.checkNotNull(
-                showAppleIdButton, r'LoginViewModel', 'showAppleIdButton'),
-            emailLabel: BuiltValueNullFieldError.checkNotNull(
-                emailLabel, r'LoginViewModel', 'emailLabel'),
-            emailPlaceholder: BuiltValueNullFieldError.checkNotNull(
-                emailPlaceholder, r'LoginViewModel', 'emailPlaceholder'),
-            passwordLabel: BuiltValueNullFieldError.checkNotNull(passwordLabel, r'LoginViewModel', 'passwordLabel'),
-            passwordPlaceholder: BuiltValueNullFieldError.checkNotNull(passwordPlaceholder, r'LoginViewModel', 'passwordPlaceholder'),
-            requiredFieldValidator: BuiltValueNullFieldError.checkNotNull(requiredFieldValidator, r'LoginViewModel', 'requiredFieldValidator'),
-            invalidEmailValidator: BuiltValueNullFieldError.checkNotNull(invalidEmailValidator, r'LoginViewModel', 'invalidEmailValidator'),
-            emailRegex: BuiltValueNullFieldError.checkNotNull(emailRegex, r'LoginViewModel', 'emailRegex'),
-            email: email,
-            password: password,
-            termsOfUseLabel: BuiltValueNullFieldError.checkNotNull(termsOfUseLabel, r'LoginViewModel', 'termsOfUseLabel'),
-            privacyPolicyLabel: BuiltValueNullFieldError.checkNotNull(privacyPolicyLabel, r'LoginViewModel', 'privacyPolicyLabel'),
-            andSeparatorLabel: BuiltValueNullFieldError.checkNotNull(andSeparatorLabel, r'LoginViewModel', 'andSeparatorLabel'),
-            forgotPasswordLabel: BuiltValueNullFieldError.checkNotNull(forgotPasswordLabel, r'LoginViewModel', 'forgotPasswordLabel'),
-            createAccountLabel: BuiltValueNullFieldError.checkNotNull(createAccountLabel, r'LoginViewModel', 'createAccountLabel'),
-            loadingMessage: BuiltValueNullFieldError.checkNotNull(loadingMessage, r'LoginViewModel', 'loadingMessage'),
-            showSocialButtons: BuiltValueNullFieldError.checkNotNull(showSocialButtons, r'LoginViewModel', 'showSocialButtons'),
-            backCommand: BuiltValueNullFieldError.checkNotNull(backCommand, r'LoginViewModel', 'backCommand'),
-            forgotPassword: BuiltValueNullFieldError.checkNotNull(forgotPassword, r'LoginViewModel', 'forgotPassword'),
-            createAccount: BuiltValueNullFieldError.checkNotNull(createAccount, r'LoginViewModel', 'createAccount'),
-            loginWithApple: loginWithApple,
-            loginWithGoogle: loginWithGoogle,
-            loginWithFacebook: loginWithFacebook,
-            loginWithCredentials: loginWithCredentials,
-            isLoading: BuiltValueNullFieldError.checkNotNull(isLoading, r'LoginViewModel', 'isLoading'));
+        _$LoginViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'LoginViewModel', 'title'),
+          loginWithEmailText: BuiltValueNullFieldError.checkNotNull(
+              loginWithEmailText, r'LoginViewModel', 'loginWithEmailText'),
+          privacyPolicyLink: BuiltValueNullFieldError.checkNotNull(
+              privacyPolicyLink, r'LoginViewModel', 'privacyPolicyLink'),
+          termsOfUseLink: BuiltValueNullFieldError.checkNotNull(
+              termsOfUseLink, r'LoginViewModel', 'termsOfUseLink'),
+          showAppleIdButton: BuiltValueNullFieldError.checkNotNull(
+              showAppleIdButton, r'LoginViewModel', 'showAppleIdButton'),
+          emailLabel: BuiltValueNullFieldError.checkNotNull(
+              emailLabel, r'LoginViewModel', 'emailLabel'),
+          emailPlaceholder: BuiltValueNullFieldError.checkNotNull(
+              emailPlaceholder, r'LoginViewModel', 'emailPlaceholder'),
+          passwordLabel: BuiltValueNullFieldError.checkNotNull(
+              passwordLabel, r'LoginViewModel', 'passwordLabel'),
+          passwordPlaceholder: BuiltValueNullFieldError.checkNotNull(
+              passwordPlaceholder, r'LoginViewModel', 'passwordPlaceholder'),
+          requiredFieldValidator: BuiltValueNullFieldError.checkNotNull(
+              requiredFieldValidator,
+              r'LoginViewModel',
+              'requiredFieldValidator'),
+          invalidEmailValidator: BuiltValueNullFieldError.checkNotNull(
+              invalidEmailValidator,
+              r'LoginViewModel',
+              'invalidEmailValidator'),
+          emailRegex: BuiltValueNullFieldError.checkNotNull(
+              emailRegex, r'LoginViewModel', 'emailRegex'),
+          email: email,
+          password: password,
+          termsOfUseLabel: BuiltValueNullFieldError.checkNotNull(
+              termsOfUseLabel, r'LoginViewModel', 'termsOfUseLabel'),
+          privacyPolicyLabel: BuiltValueNullFieldError.checkNotNull(
+              privacyPolicyLabel, r'LoginViewModel', 'privacyPolicyLabel'),
+          andSeparatorLabel: BuiltValueNullFieldError.checkNotNull(
+              andSeparatorLabel, r'LoginViewModel', 'andSeparatorLabel'),
+          forgotPasswordLabel: BuiltValueNullFieldError.checkNotNull(
+              forgotPasswordLabel, r'LoginViewModel', 'forgotPasswordLabel'),
+          createAccountLabel: BuiltValueNullFieldError.checkNotNull(
+              createAccountLabel, r'LoginViewModel', 'createAccountLabel'),
+          loadingMessage: BuiltValueNullFieldError.checkNotNull(
+              loadingMessage, r'LoginViewModel', 'loadingMessage'),
+          showSocialButtons: BuiltValueNullFieldError.checkNotNull(
+              showSocialButtons, r'LoginViewModel', 'showSocialButtons'),
+          backCommand: BuiltValueNullFieldError.checkNotNull(
+              backCommand, r'LoginViewModel', 'backCommand'),
+          forgotPassword: BuiltValueNullFieldError.checkNotNull(
+              forgotPassword, r'LoginViewModel', 'forgotPassword'),
+          createAccount: BuiltValueNullFieldError.checkNotNull(
+              createAccount, r'LoginViewModel', 'createAccount'),
+          loginWithApple: loginWithApple,
+          loginWithGoogle: loginWithGoogle,
+          loginWithFacebook: loginWithFacebook,
+          loginWithCredentials: loginWithCredentials,
+          isLoading: BuiltValueNullFieldError.checkNotNull(
+              isLoading, r'LoginViewModel', 'isLoading'),
+        );
     replace(_$result);
     return _$result;
   }

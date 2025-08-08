@@ -23,7 +23,7 @@ class _$DialogState extends DialogState {
   final bool reverseButtons;
 
   factory _$DialogState([void Function(DialogStateBuilder)? updates]) =>
-      (new DialogStateBuilder()..update(updates))._build();
+      (DialogStateBuilder()..update(updates))._build();
 
   _$DialogState._(
       {required this.title,
@@ -33,20 +33,13 @@ class _$DialogState extends DialogState {
       this.negative,
       this.negativeTitle,
       required this.reverseButtons})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, r'DialogState', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'DialogState', 'description');
-    BuiltValueNullFieldError.checkNotNull(
-        reverseButtons, r'DialogState', 'reverseButtons');
-  }
-
+      : super._();
   @override
   DialogState rebuild(void Function(DialogStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DialogStateBuilder toBuilder() => new DialogStateBuilder()..replace(this);
+  DialogStateBuilder toBuilder() => DialogStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -142,7 +135,6 @@ class DialogStateBuilder implements Builder<DialogState, DialogStateBuilder> {
 
   @override
   void replace(DialogState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$DialogState;
   }
 
@@ -156,17 +148,18 @@ class DialogStateBuilder implements Builder<DialogState, DialogStateBuilder> {
 
   _$DialogState _build() {
     final _$result = _$v ??
-        new _$DialogState._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'DialogState', 'title'),
-            description: BuiltValueNullFieldError.checkNotNull(
-                description, r'DialogState', 'description'),
-            positive: positive,
-            positiveTitle: positiveTitle,
-            negative: negative,
-            negativeTitle: negativeTitle,
-            reverseButtons: BuiltValueNullFieldError.checkNotNull(
-                reverseButtons, r'DialogState', 'reverseButtons'));
+        _$DialogState._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'DialogState', 'title'),
+          description: BuiltValueNullFieldError.checkNotNull(
+              description, r'DialogState', 'description'),
+          positive: positive,
+          positiveTitle: positiveTitle,
+          negative: negative,
+          negativeTitle: negativeTitle,
+          reverseButtons: BuiltValueNullFieldError.checkNotNull(
+              reverseButtons, r'DialogState', 'reverseButtons'),
+        );
     replace(_$result);
     return _$result;
   }

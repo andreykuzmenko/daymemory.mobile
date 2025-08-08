@@ -24,7 +24,7 @@ class _$SelectNotebookViewModel extends SelectNotebookViewModel {
 
   factory _$SelectNotebookViewModel(
           [void Function(SelectNotebookViewModelBuilder)? updates]) =>
-      (new SelectNotebookViewModelBuilder()..update(updates))._build();
+      (SelectNotebookViewModelBuilder()..update(updates))._build();
 
   _$SelectNotebookViewModel._(
       {this.selectedNotebookId,
@@ -34,21 +34,7 @@ class _$SelectNotebookViewModel extends SelectNotebookViewModel {
       required this.closeCommand,
       required this.newNotebookCommand,
       required this.selectNotebookCommand})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(newNotebookMenuOption,
-        r'SelectNotebookViewModel', 'newNotebookMenuOption');
-    BuiltValueNullFieldError.checkNotNull(
-        notebooks, r'SelectNotebookViewModel', 'notebooks');
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'SelectNotebookViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        closeCommand, r'SelectNotebookViewModel', 'closeCommand');
-    BuiltValueNullFieldError.checkNotNull(
-        newNotebookCommand, r'SelectNotebookViewModel', 'newNotebookCommand');
-    BuiltValueNullFieldError.checkNotNull(selectNotebookCommand,
-        r'SelectNotebookViewModel', 'selectNotebookCommand');
-  }
-
+      : super._();
   @override
   SelectNotebookViewModel rebuild(
           void Function(SelectNotebookViewModelBuilder) updates) =>
@@ -56,7 +42,7 @@ class _$SelectNotebookViewModel extends SelectNotebookViewModel {
 
   @override
   SelectNotebookViewModelBuilder toBuilder() =>
-      new SelectNotebookViewModelBuilder()..replace(this);
+      SelectNotebookViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -116,7 +102,7 @@ class SelectNotebookViewModelBuilder
 
   ListBuilder<NotebookDto>? _notebooks;
   ListBuilder<NotebookDto> get notebooks =>
-      _$this._notebooks ??= new ListBuilder<NotebookDto>();
+      _$this._notebooks ??= ListBuilder<NotebookDto>();
   set notebooks(ListBuilder<NotebookDto>? notebooks) =>
       _$this._notebooks = notebooks;
 
@@ -160,7 +146,6 @@ class SelectNotebookViewModelBuilder
 
   @override
   void replace(SelectNotebookViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SelectNotebookViewModel;
   }
 
@@ -176,32 +161,33 @@ class SelectNotebookViewModelBuilder
     _$SelectNotebookViewModel _$result;
     try {
       _$result = _$v ??
-          new _$SelectNotebookViewModel._(
-              selectedNotebookId: selectedNotebookId,
-              newNotebookMenuOption: BuiltValueNullFieldError.checkNotNull(
-                  newNotebookMenuOption,
-                  r'SelectNotebookViewModel',
-                  'newNotebookMenuOption'),
-              notebooks: notebooks.build(),
-              title: BuiltValueNullFieldError.checkNotNull(
-                  title, r'SelectNotebookViewModel', 'title'),
-              closeCommand: BuiltValueNullFieldError.checkNotNull(
-                  closeCommand, r'SelectNotebookViewModel', 'closeCommand'),
-              newNotebookCommand: BuiltValueNullFieldError.checkNotNull(
-                  newNotebookCommand,
-                  r'SelectNotebookViewModel',
-                  'newNotebookCommand'),
-              selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(
-                  selectNotebookCommand,
-                  r'SelectNotebookViewModel',
-                  'selectNotebookCommand'));
+          _$SelectNotebookViewModel._(
+            selectedNotebookId: selectedNotebookId,
+            newNotebookMenuOption: BuiltValueNullFieldError.checkNotNull(
+                newNotebookMenuOption,
+                r'SelectNotebookViewModel',
+                'newNotebookMenuOption'),
+            notebooks: notebooks.build(),
+            title: BuiltValueNullFieldError.checkNotNull(
+                title, r'SelectNotebookViewModel', 'title'),
+            closeCommand: BuiltValueNullFieldError.checkNotNull(
+                closeCommand, r'SelectNotebookViewModel', 'closeCommand'),
+            newNotebookCommand: BuiltValueNullFieldError.checkNotNull(
+                newNotebookCommand,
+                r'SelectNotebookViewModel',
+                'newNotebookCommand'),
+            selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(
+                selectNotebookCommand,
+                r'SelectNotebookViewModel',
+                'selectNotebookCommand'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'notebooks';
         notebooks.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'SelectNotebookViewModel', _$failedField, e.toString());
       }
       rethrow;

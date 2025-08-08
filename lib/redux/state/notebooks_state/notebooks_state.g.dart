@@ -11,19 +11,15 @@ class _$NotebooksState extends NotebooksState {
   final List<NotebookDto> items;
 
   factory _$NotebooksState([void Function(NotebooksStateBuilder)? updates]) =>
-      (new NotebooksStateBuilder()..update(updates))._build();
+      (NotebooksStateBuilder()..update(updates))._build();
 
-  _$NotebooksState._({required this.items}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(items, r'NotebooksState', 'items');
-  }
-
+  _$NotebooksState._({required this.items}) : super._();
   @override
   NotebooksState rebuild(void Function(NotebooksStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  NotebooksStateBuilder toBuilder() =>
-      new NotebooksStateBuilder()..replace(this);
+  NotebooksStateBuilder toBuilder() => NotebooksStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -67,7 +63,6 @@ class NotebooksStateBuilder
 
   @override
   void replace(NotebooksState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$NotebooksState;
   }
 
@@ -81,9 +76,10 @@ class NotebooksStateBuilder
 
   _$NotebooksState _build() {
     final _$result = _$v ??
-        new _$NotebooksState._(
-            items: BuiltValueNullFieldError.checkNotNull(
-                items, r'NotebooksState', 'items'));
+        _$NotebooksState._(
+          items: BuiltValueNullFieldError.checkNotNull(
+              items, r'NotebooksState', 'items'),
+        );
     replace(_$result);
     return _$result;
   }

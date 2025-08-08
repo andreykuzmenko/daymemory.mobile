@@ -3,7 +3,7 @@ import 'package:daymemory/redux/action/actions.dart';
 import 'package:daymemory/redux/action/settings_action.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
 import 'package:daymemory/widget/settings/encryption_key_settings_view_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 
 class EncryptionKeySettingsConverter extends ViewModelConverter<EncryptionKeySettingsViewModel> {
   final Function(dynamic) dispatch;

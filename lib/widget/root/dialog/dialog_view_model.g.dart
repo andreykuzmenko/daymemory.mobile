@@ -23,7 +23,7 @@ class _$DialogViewModel extends DialogViewModel {
   final bool reverseButtons;
 
   factory _$DialogViewModel([void Function(DialogViewModelBuilder)? updates]) =>
-      (new DialogViewModelBuilder()..update(updates))._build();
+      (DialogViewModelBuilder()..update(updates))._build();
 
   _$DialogViewModel._(
       {required this.title,
@@ -33,21 +33,13 @@ class _$DialogViewModel extends DialogViewModel {
       this.negative,
       this.negativeTitle,
       required this.reverseButtons})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, r'DialogViewModel', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'DialogViewModel', 'description');
-    BuiltValueNullFieldError.checkNotNull(
-        reverseButtons, r'DialogViewModel', 'reverseButtons');
-  }
-
+      : super._();
   @override
   DialogViewModel rebuild(void Function(DialogViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  DialogViewModelBuilder toBuilder() =>
-      new DialogViewModelBuilder()..replace(this);
+  DialogViewModelBuilder toBuilder() => DialogViewModelBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -144,7 +136,6 @@ class DialogViewModelBuilder
 
   @override
   void replace(DialogViewModel other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$DialogViewModel;
   }
 
@@ -158,17 +149,18 @@ class DialogViewModelBuilder
 
   _$DialogViewModel _build() {
     final _$result = _$v ??
-        new _$DialogViewModel._(
-            title: BuiltValueNullFieldError.checkNotNull(
-                title, r'DialogViewModel', 'title'),
-            description: BuiltValueNullFieldError.checkNotNull(
-                description, r'DialogViewModel', 'description'),
-            positive: positive,
-            positiveTitle: positiveTitle,
-            negative: negative,
-            negativeTitle: negativeTitle,
-            reverseButtons: BuiltValueNullFieldError.checkNotNull(
-                reverseButtons, r'DialogViewModel', 'reverseButtons'));
+        _$DialogViewModel._(
+          title: BuiltValueNullFieldError.checkNotNull(
+              title, r'DialogViewModel', 'title'),
+          description: BuiltValueNullFieldError.checkNotNull(
+              description, r'DialogViewModel', 'description'),
+          positive: positive,
+          positiveTitle: positiveTitle,
+          negative: negative,
+          negativeTitle: negativeTitle,
+          reverseButtons: BuiltValueNullFieldError.checkNotNull(
+              reverseButtons, r'DialogViewModel', 'reverseButtons'),
+        );
     replace(_$result);
     return _$result;
   }

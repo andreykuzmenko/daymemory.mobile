@@ -1,6 +1,6 @@
 import 'package:daymemory/services/navigation/context_service.dart';
 import 'package:daymemory/widget/common/function_holder.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:daymemory/l10n/app_localizations.dart';
 import '../../redux/action/actions.dart';
 import '../../redux/state/states.dart';
 

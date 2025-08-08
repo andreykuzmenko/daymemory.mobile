@@ -13,23 +13,17 @@ class _$TabsState extends TabsState {
   final bool isActiveTabClicked;
 
   factory _$TabsState([void Function(TabsStateBuilder)? updates]) =>
-      (new TabsStateBuilder()..update(updates))._build();
+      (TabsStateBuilder()..update(updates))._build();
 
   _$TabsState._(
       {required this.selectTabIndex, required this.isActiveTabClicked})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        selectTabIndex, r'TabsState', 'selectTabIndex');
-    BuiltValueNullFieldError.checkNotNull(
-        isActiveTabClicked, r'TabsState', 'isActiveTabClicked');
-  }
-
+      : super._();
   @override
   TabsState rebuild(void Function(TabsStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  TabsStateBuilder toBuilder() => new TabsStateBuilder()..replace(this);
+  TabsStateBuilder toBuilder() => TabsStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -84,7 +78,6 @@ class TabsStateBuilder implements Builder<TabsState, TabsStateBuilder> {
 
   @override
   void replace(TabsState other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$TabsState;
   }
 
@@ -98,11 +91,12 @@ class TabsStateBuilder implements Builder<TabsState, TabsStateBuilder> {
 
   _$TabsState _build() {
     final _$result = _$v ??
-        new _$TabsState._(
-            selectTabIndex: BuiltValueNullFieldError.checkNotNull(
-                selectTabIndex, r'TabsState', 'selectTabIndex'),
-            isActiveTabClicked: BuiltValueNullFieldError.checkNotNull(
-                isActiveTabClicked, r'TabsState', 'isActiveTabClicked'));
+        _$TabsState._(
+          selectTabIndex: BuiltValueNullFieldError.checkNotNull(
+              selectTabIndex, r'TabsState', 'selectTabIndex'),
+          isActiveTabClicked: BuiltValueNullFieldError.checkNotNull(
+              isActiveTabClicked, r'TabsState', 'isActiveTabClicked'),
+        );
     replace(_$result);
     return _$result;
   }
