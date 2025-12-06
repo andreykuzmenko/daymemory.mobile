@@ -1,4 +1,4 @@
-platform :osx, '10.15'
+platform :osx, '11.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -36,5 +36,28 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_macos_build_settings(target)
+    
+    # Fix preprocessor definition conflicts
+    target.build_configurations.each do |config|
+      # Clean up preprocessor definitions to avoid conflicts
+      if config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']
+        definitions = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']
+        if definitions.is_a?(Array)
+          # Remove any malformed definitions that combine multiple macros
+          cleaned_definitions = []
+          definitions.each do |defn|
+            defn_str = defn.to_s
+            # Skip definitions that incorrectly combine POD_CONFIGURATION_DEBUG with DEBUG=1
+            unless defn_str.match(/POD_CONFIGURATION_DEBUG.*DEBUG=1|DEBUG=1.*POD_CONFIGURATION_DEBUG/)
+              cleaned_definitions << defn
+            end
+          end
+          config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = cleaned_definitions
+        end
+      end
+      
+      # Ensure deployment target is set correctly
+      config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '11.0'
+    end
   end
 end
