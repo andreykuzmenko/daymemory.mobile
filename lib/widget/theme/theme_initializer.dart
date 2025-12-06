@@ -70,7 +70,7 @@ class DefaultThemeInitializer implements ITheme {
           color: themeColorOptions.textPrimaryColor,
         ),
       ),
-      bottomAppBarTheme: BottomAppBarTheme(
+      bottomAppBarTheme: BottomAppBarThemeData(
         color: themeColorOptions.backgroundSecondaryColor,
         elevation: 0,
       ),

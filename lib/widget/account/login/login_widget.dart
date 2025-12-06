@@ -1,3 +1,4 @@
+import 'package:daymemory/extensions/hex_color_extension.dart';
 import 'package:daymemory/widget/account/login/login_view_model.dart';
 import 'package:daymemory/widget/common/button/link_button.dart';
 import 'package:daymemory/widget/common/button/simple_bordered_button_widget.dart';
@@ -10,7 +11,6 @@ import 'package:daymemory/widget/theme/theme_colors_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -220,7 +220,7 @@ class _SocialButtons extends StatelessWidget {
               iconColor: Colors.white,
               click: viewModel.loginWithGoogle,
               textColor: Colors.white,
-              backgroundColor: HexColor("df4a32"),
+              backgroundColor: HexColor.fromHex("df4a32"),
             ),
           ),
           if (viewModel.showAppleIdButton)
