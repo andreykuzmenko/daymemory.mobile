@@ -12,14 +12,31 @@ class LocalAuthService implements ILocalAuthService {
   final LocalAuthentication _localAuth = LocalAuthentication();
 
   @override
-  Future<bool> get canAuthenticateWithBiometrics async => await _localAuth.isDeviceSupported() && await _localAuth.canCheckBiometrics && (await _localAuth.getAvailableBiometrics()).isNotEmpty;
+  Future<bool> get canAuthenticateWithBiometrics async {
+    final isSupported = await _localAuth.isDeviceSupported();
+    if (!isSupported) return false;
+    
+    final canCheck = await _localAuth.canCheckBiometrics;
+    if (!canCheck) return false;
+    
+    final availableBiometrics = await _localAuth.getAvailableBiometrics();
+    return availableBiometrics.isNotEmpty;
+  }
 
   @override
-  Future<bool> get isDeviceSupported => _localAuth.isDeviceSupported();
+  Future<bool> get isDeviceSupported async => await _localAuth.isDeviceSupported();
 
   @override
-  Future<bool> authenticate(String reason) async => _localAuth.authenticate(
+  Future<bool> authenticate(String reason) async {
+    try {
+      return await _localAuth.authenticate(
         localizedReason: reason,
-        options: const AuthenticationOptions(biometricOnly: true),
+        biometricOnly: true,
+        sensitiveTransaction: true,
+        persistAcrossBackgrounding: true,
       );
+    } catch (e) {
+      return false;
+    }
+  }
 }
