@@ -70,7 +70,7 @@ class DefaultThemeInitializer implements ITheme {
           color: themeColorOptions.textPrimaryColor,
         ),
       ),
-      bottomAppBarTheme: BottomAppBarTheme(
+      bottomAppBarTheme: BottomAppBarThemeData(
         color: themeColorOptions.backgroundSecondaryColor,
         elevation: 0,
       ),
@@ -247,7 +247,7 @@ class DefaultThemeInitializer implements ITheme {
       ),
       iconButtonTheme: IconButtonThemeData(
           style: ButtonStyle(
-        iconColor: MaterialStateColor.resolveWith(
+        iconColor: WidgetStateColor.resolveWith(
           (states) => themeColorOptions.textPrimaryColor,
         ),
       )),

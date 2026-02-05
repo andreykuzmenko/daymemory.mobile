@@ -63,7 +63,10 @@ class NotificationService {
       // },
     );
     final InitializationSettings initializationSettings = InitializationSettings(android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
-    flutterLocalNotificationsPlugin.initialize(initializationSettings, onDidReceiveNotificationResponse: onDidReceiveNotificationResponse);
+    await flutterLocalNotificationsPlugin.initialize(
+      settings: initializationSettings,
+      onDidReceiveNotificationResponse: onDidReceiveNotificationResponse,
+    );
 
     // final IOSInitializationSettings initializationSettingsIOS = IOSInitializationSettings(
     //   requestSoundPermission: false,
@@ -92,15 +95,14 @@ class NotificationService {
     var time = tz.TZDateTime.fromMillisecondsSinceEpoch(tz.local, dateTime.millisecondsSinceEpoch);
 
     await flutterLocalNotificationsPlugin.zonedSchedule(
-        id,
-        title,
-        text,
-        time,
-        NotificationDetails(
+        id: id,
+        title: title,
+        body: text,
+        scheduledDate: time,
+        notificationDetails: NotificationDetails(
           android: _androidNotificationDetails,
         ),
         androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-        //uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
         matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime);
   }
 
@@ -115,7 +117,7 @@ class NotificationService {
   }
 
   Future<void> cancelNotifications(int id) async {
-    await flutterLocalNotificationsPlugin.cancel(id);
+    await flutterLocalNotificationsPlugin.cancel(id: id);
   }
 
   Future<void> cancelAllNotifications() async {

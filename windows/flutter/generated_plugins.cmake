@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  clipboard
   connectivity_plus
   file_selector_windows
   firebase_core
@@ -19,7 +20,6 @@ list(APPEND FLUTTER_PLUGIN_LIST
   sqlite3_flutter_libs
   system_theme
   url_launcher_windows
-  volume_controller
   window_manager
 )
 

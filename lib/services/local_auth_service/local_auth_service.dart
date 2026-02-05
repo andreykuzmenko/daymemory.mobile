@@ -20,6 +20,5 @@ class LocalAuthService implements ILocalAuthService {
   @override
   Future<bool> authenticate(String reason) async => _localAuth.authenticate(
         localizedReason: reason,
-        options: const AuthenticationOptions(biometricOnly: true),
       );
 }
