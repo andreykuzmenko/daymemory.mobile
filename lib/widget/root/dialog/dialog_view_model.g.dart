@@ -25,15 +25,15 @@ class _$DialogViewModel extends DialogViewModel {
   factory _$DialogViewModel([void Function(DialogViewModelBuilder)? updates]) =>
       (DialogViewModelBuilder()..update(updates))._build();
 
-  _$DialogViewModel._(
-      {required this.title,
-      required this.description,
-      this.positive,
-      this.positiveTitle,
-      this.negative,
-      this.negativeTitle,
-      required this.reverseButtons})
-      : super._();
+  _$DialogViewModel._({
+    required this.title,
+    required this.description,
+    this.positive,
+    this.positiveTitle,
+    this.negative,
+    this.negativeTitle,
+    required this.reverseButtons,
+  }) : super._();
   @override
   DialogViewModel rebuild(void Function(DialogViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -148,18 +148,28 @@ class DialogViewModelBuilder
   DialogViewModel build() => _build();
 
   _$DialogViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DialogViewModel._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'DialogViewModel', 'title'),
+            title,
+            r'DialogViewModel',
+            'title',
+          ),
           description: BuiltValueNullFieldError.checkNotNull(
-              description, r'DialogViewModel', 'description'),
+            description,
+            r'DialogViewModel',
+            'description',
+          ),
           positive: positive,
           positiveTitle: positiveTitle,
           negative: negative,
           negativeTitle: negativeTitle,
           reverseButtons: BuiltValueNullFieldError.checkNotNull(
-              reverseButtons, r'DialogViewModel', 'reverseButtons'),
+            reverseButtons,
+            r'DialogViewModel',
+            'reverseButtons',
+          ),
         );
     replace(_$result);
     return _$result;

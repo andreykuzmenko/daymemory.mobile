@@ -37,9 +37,9 @@ class _$OnBoardingState extends OnBoardingState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'OnBoardingState')
-          ..add('currentPage', currentPage))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'OnBoardingState',
+    )..add('currentPage', currentPage)).toString();
   }
 }
 
@@ -76,10 +76,14 @@ class OnBoardingStateBuilder
   OnBoardingState build() => _build();
 
   _$OnBoardingState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OnBoardingState._(
           currentPage: BuiltValueNullFieldError.checkNotNull(
-              currentPage, r'OnBoardingState', 'currentPage'),
+            currentPage,
+            r'OnBoardingState',
+            'currentPage',
+          ),
         );
     replace(_$result);
     return _$result;

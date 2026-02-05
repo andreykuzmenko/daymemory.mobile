@@ -22,23 +22,23 @@ class _$SelectOptionViewModel extends SelectOptionViewModel {
   @override
   final FunctionHolder backCommand;
 
-  factory _$SelectOptionViewModel(
-          [void Function(SelectOptionViewModelBuilder)? updates]) =>
-      (SelectOptionViewModelBuilder()..update(updates))._build();
+  factory _$SelectOptionViewModel([
+    void Function(SelectOptionViewModelBuilder)? updates,
+  ]) => (SelectOptionViewModelBuilder()..update(updates))._build();
 
-  _$SelectOptionViewModel._(
-      {required this.title,
-      required this.selectedOptionId,
-      this.explanation,
-      required this.navType,
-      required this.options,
-      required this.optionSelectorCommand,
-      required this.backCommand})
-      : super._();
+  _$SelectOptionViewModel._({
+    required this.title,
+    required this.selectedOptionId,
+    this.explanation,
+    required this.navType,
+    required this.options,
+    required this.optionSelectorCommand,
+    required this.backCommand,
+  }) : super._();
   @override
   SelectOptionViewModel rebuild(
-          void Function(SelectOptionViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SelectOptionViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SelectOptionViewModelBuilder toBuilder() =>
@@ -114,8 +114,8 @@ class SelectOptionViewModelBuilder
   TypedFunctionHolder<String>? get optionSelectorCommand =>
       _$this._optionSelectorCommand;
   set optionSelectorCommand(
-          TypedFunctionHolder<String>? optionSelectorCommand) =>
-      _$this._optionSelectorCommand = optionSelectorCommand;
+    TypedFunctionHolder<String>? optionSelectorCommand,
+  ) => _$this._optionSelectorCommand = optionSelectorCommand;
 
   FunctionHolder? _backCommand;
   FunctionHolder? get backCommand => _$this._backCommand;
@@ -153,23 +153,40 @@ class SelectOptionViewModelBuilder
   SelectOptionViewModel build() => _build();
 
   _$SelectOptionViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SelectOptionViewModel._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'SelectOptionViewModel', 'title'),
+            title,
+            r'SelectOptionViewModel',
+            'title',
+          ),
           selectedOptionId: BuiltValueNullFieldError.checkNotNull(
-              selectedOptionId, r'SelectOptionViewModel', 'selectedOptionId'),
+            selectedOptionId,
+            r'SelectOptionViewModel',
+            'selectedOptionId',
+          ),
           explanation: explanation,
           navType: BuiltValueNullFieldError.checkNotNull(
-              navType, r'SelectOptionViewModel', 'navType'),
+            navType,
+            r'SelectOptionViewModel',
+            'navType',
+          ),
           options: BuiltValueNullFieldError.checkNotNull(
-              options, r'SelectOptionViewModel', 'options'),
+            options,
+            r'SelectOptionViewModel',
+            'options',
+          ),
           optionSelectorCommand: BuiltValueNullFieldError.checkNotNull(
-              optionSelectorCommand,
-              r'SelectOptionViewModel',
-              'optionSelectorCommand'),
+            optionSelectorCommand,
+            r'SelectOptionViewModel',
+            'optionSelectorCommand',
+          ),
           backCommand: BuiltValueNullFieldError.checkNotNull(
-              backCommand, r'SelectOptionViewModel', 'backCommand'),
+            backCommand,
+            r'SelectOptionViewModel',
+            'backCommand',
+          ),
         );
     replace(_$result);
     return _$result;

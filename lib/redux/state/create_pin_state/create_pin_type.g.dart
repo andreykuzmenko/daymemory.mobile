@@ -32,14 +32,15 @@ CreatePinType _$createPinTypeValueOf(String name) {
   }
 }
 
-final BuiltSet<CreatePinType> _$createPinTypeValues =
-    BuiltSet<CreatePinType>(const <CreatePinType>[
-  _$create,
-  _$confirm,
-  _$openCreate,
-  _$openConfirm,
-  _$finish,
-  _$noMatch,
-]);
+final BuiltSet<CreatePinType> _$createPinTypeValues = BuiltSet<CreatePinType>(
+  const <CreatePinType>[
+    _$create,
+    _$confirm,
+    _$openCreate,
+    _$openConfirm,
+    _$finish,
+    _$noMatch,
+  ],
+);
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

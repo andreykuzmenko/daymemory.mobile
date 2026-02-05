@@ -65,35 +65,35 @@ class _$SignupViewModel extends SignupViewModel {
   factory _$SignupViewModel([void Function(SignupViewModelBuilder)? updates]) =>
       (SignupViewModelBuilder()..update(updates))._build();
 
-  _$SignupViewModel._(
-      {required this.title,
-      required this.signButtonText,
-      required this.privacyPolicyLink,
-      required this.termsOfUseLink,
-      this.email,
-      this.password,
-      this.firstName,
-      this.lastName,
-      required this.emailLabel,
-      required this.emailPlaceholder,
-      required this.passwordLabel,
-      required this.passwordPlaceholder,
-      required this.firstNameLabel,
-      required this.firstNamePlaceholder,
-      required this.lastNameLabel,
-      required this.lastNamePlaceholder,
-      required this.requiredFiledValidator,
-      required this.shortPasswordValidator,
-      required this.invalidEmailValidator,
-      required this.emailRegex,
-      required this.termsOfUseLabel,
-      required this.privacyPolicyLabel,
-      required this.andSeparatorLabel,
-      required this.loadingMessage,
-      required this.backCommand,
-      this.signupWithCredentials,
-      required this.isLoading})
-      : super._();
+  _$SignupViewModel._({
+    required this.title,
+    required this.signButtonText,
+    required this.privacyPolicyLink,
+    required this.termsOfUseLink,
+    this.email,
+    this.password,
+    this.firstName,
+    this.lastName,
+    required this.emailLabel,
+    required this.emailPlaceholder,
+    required this.passwordLabel,
+    required this.passwordPlaceholder,
+    required this.firstNameLabel,
+    required this.firstNamePlaceholder,
+    required this.lastNameLabel,
+    required this.lastNamePlaceholder,
+    required this.requiredFiledValidator,
+    required this.shortPasswordValidator,
+    required this.invalidEmailValidator,
+    required this.emailRegex,
+    required this.termsOfUseLabel,
+    required this.privacyPolicyLabel,
+    required this.andSeparatorLabel,
+    required this.loadingMessage,
+    required this.backCommand,
+    this.signupWithCredentials,
+    required this.isLoading,
+  }) : super._();
   @override
   SignupViewModel rebuild(void Function(SignupViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -328,8 +328,8 @@ class SignupViewModelBuilder
   TypedFunctionHolder<SignupWithEmailData>? get signupWithCredentials =>
       _$this._signupWithCredentials;
   set signupWithCredentials(
-          TypedFunctionHolder<SignupWithEmailData>? signupWithCredentials) =>
-      _$this._signupWithCredentials = signupWithCredentials;
+    TypedFunctionHolder<SignupWithEmailData>? signupWithCredentials,
+  ) => _$this._signupWithCredentials = signupWithCredentials;
 
   bool? _isLoading;
   bool? get isLoading => _$this._isLoading;
@@ -386,63 +386,124 @@ class SignupViewModelBuilder
   SignupViewModel build() => _build();
 
   _$SignupViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SignupViewModel._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'SignupViewModel', 'title'),
+            title,
+            r'SignupViewModel',
+            'title',
+          ),
           signButtonText: BuiltValueNullFieldError.checkNotNull(
-              signButtonText, r'SignupViewModel', 'signButtonText'),
+            signButtonText,
+            r'SignupViewModel',
+            'signButtonText',
+          ),
           privacyPolicyLink: BuiltValueNullFieldError.checkNotNull(
-              privacyPolicyLink, r'SignupViewModel', 'privacyPolicyLink'),
+            privacyPolicyLink,
+            r'SignupViewModel',
+            'privacyPolicyLink',
+          ),
           termsOfUseLink: BuiltValueNullFieldError.checkNotNull(
-              termsOfUseLink, r'SignupViewModel', 'termsOfUseLink'),
+            termsOfUseLink,
+            r'SignupViewModel',
+            'termsOfUseLink',
+          ),
           email: email,
           password: password,
           firstName: firstName,
           lastName: lastName,
           emailLabel: BuiltValueNullFieldError.checkNotNull(
-              emailLabel, r'SignupViewModel', 'emailLabel'),
+            emailLabel,
+            r'SignupViewModel',
+            'emailLabel',
+          ),
           emailPlaceholder: BuiltValueNullFieldError.checkNotNull(
-              emailPlaceholder, r'SignupViewModel', 'emailPlaceholder'),
+            emailPlaceholder,
+            r'SignupViewModel',
+            'emailPlaceholder',
+          ),
           passwordLabel: BuiltValueNullFieldError.checkNotNull(
-              passwordLabel, r'SignupViewModel', 'passwordLabel'),
+            passwordLabel,
+            r'SignupViewModel',
+            'passwordLabel',
+          ),
           passwordPlaceholder: BuiltValueNullFieldError.checkNotNull(
-              passwordPlaceholder, r'SignupViewModel', 'passwordPlaceholder'),
+            passwordPlaceholder,
+            r'SignupViewModel',
+            'passwordPlaceholder',
+          ),
           firstNameLabel: BuiltValueNullFieldError.checkNotNull(
-              firstNameLabel, r'SignupViewModel', 'firstNameLabel'),
+            firstNameLabel,
+            r'SignupViewModel',
+            'firstNameLabel',
+          ),
           firstNamePlaceholder: BuiltValueNullFieldError.checkNotNull(
-              firstNamePlaceholder, r'SignupViewModel', 'firstNamePlaceholder'),
+            firstNamePlaceholder,
+            r'SignupViewModel',
+            'firstNamePlaceholder',
+          ),
           lastNameLabel: BuiltValueNullFieldError.checkNotNull(
-              lastNameLabel, r'SignupViewModel', 'lastNameLabel'),
+            lastNameLabel,
+            r'SignupViewModel',
+            'lastNameLabel',
+          ),
           lastNamePlaceholder: BuiltValueNullFieldError.checkNotNull(
-              lastNamePlaceholder, r'SignupViewModel', 'lastNamePlaceholder'),
+            lastNamePlaceholder,
+            r'SignupViewModel',
+            'lastNamePlaceholder',
+          ),
           requiredFiledValidator: BuiltValueNullFieldError.checkNotNull(
-              requiredFiledValidator,
-              r'SignupViewModel',
-              'requiredFiledValidator'),
+            requiredFiledValidator,
+            r'SignupViewModel',
+            'requiredFiledValidator',
+          ),
           shortPasswordValidator: BuiltValueNullFieldError.checkNotNull(
-              shortPasswordValidator,
-              r'SignupViewModel',
-              'shortPasswordValidator'),
+            shortPasswordValidator,
+            r'SignupViewModel',
+            'shortPasswordValidator',
+          ),
           invalidEmailValidator: BuiltValueNullFieldError.checkNotNull(
-              invalidEmailValidator,
-              r'SignupViewModel',
-              'invalidEmailValidator'),
+            invalidEmailValidator,
+            r'SignupViewModel',
+            'invalidEmailValidator',
+          ),
           emailRegex: BuiltValueNullFieldError.checkNotNull(
-              emailRegex, r'SignupViewModel', 'emailRegex'),
+            emailRegex,
+            r'SignupViewModel',
+            'emailRegex',
+          ),
           termsOfUseLabel: BuiltValueNullFieldError.checkNotNull(
-              termsOfUseLabel, r'SignupViewModel', 'termsOfUseLabel'),
+            termsOfUseLabel,
+            r'SignupViewModel',
+            'termsOfUseLabel',
+          ),
           privacyPolicyLabel: BuiltValueNullFieldError.checkNotNull(
-              privacyPolicyLabel, r'SignupViewModel', 'privacyPolicyLabel'),
+            privacyPolicyLabel,
+            r'SignupViewModel',
+            'privacyPolicyLabel',
+          ),
           andSeparatorLabel: BuiltValueNullFieldError.checkNotNull(
-              andSeparatorLabel, r'SignupViewModel', 'andSeparatorLabel'),
+            andSeparatorLabel,
+            r'SignupViewModel',
+            'andSeparatorLabel',
+          ),
           loadingMessage: BuiltValueNullFieldError.checkNotNull(
-              loadingMessage, r'SignupViewModel', 'loadingMessage'),
+            loadingMessage,
+            r'SignupViewModel',
+            'loadingMessage',
+          ),
           backCommand: BuiltValueNullFieldError.checkNotNull(
-              backCommand, r'SignupViewModel', 'backCommand'),
+            backCommand,
+            r'SignupViewModel',
+            'backCommand',
+          ),
           signupWithCredentials: signupWithCredentials,
           isLoading: BuiltValueNullFieldError.checkNotNull(
-              isLoading, r'SignupViewModel', 'isLoading'),
+            isLoading,
+            r'SignupViewModel',
+            'isLoading',
+          ),
         );
     replace(_$result);
     return _$result;

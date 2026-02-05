@@ -10,15 +10,15 @@ class _$BiometricAuthState extends BiometricAuthState {
   @override
   final AvailableBiometrics availableBiometrics;
 
-  factory _$BiometricAuthState(
-          [void Function(BiometricAuthStateBuilder)? updates]) =>
-      (BiometricAuthStateBuilder()..update(updates))._build();
+  factory _$BiometricAuthState([
+    void Function(BiometricAuthStateBuilder)? updates,
+  ]) => (BiometricAuthStateBuilder()..update(updates))._build();
 
   _$BiometricAuthState._({required this.availableBiometrics}) : super._();
   @override
   BiometricAuthState rebuild(
-          void Function(BiometricAuthStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BiometricAuthStateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BiometricAuthStateBuilder toBuilder() =>
@@ -41,9 +41,9 @@ class _$BiometricAuthState extends BiometricAuthState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'BiometricAuthState')
-          ..add('availableBiometrics', availableBiometrics))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'BiometricAuthState',
+    )..add('availableBiometrics', availableBiometrics)).toString();
   }
 }
 
@@ -81,12 +81,14 @@ class BiometricAuthStateBuilder
   BiometricAuthState build() => _build();
 
   _$BiometricAuthState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BiometricAuthState._(
           availableBiometrics: BuiltValueNullFieldError.checkNotNull(
-              availableBiometrics,
-              r'BiometricAuthState',
-              'availableBiometrics'),
+            availableBiometrics,
+            r'BiometricAuthState',
+            'availableBiometrics',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -23,11 +23,8 @@ JailbreakType _$jailbreakTypeValueOf(String name) {
   }
 }
 
-final BuiltSet<JailbreakType> _$jailbreakTypeValues =
-    BuiltSet<JailbreakType>(const <JailbreakType>[
-  _$validPhone,
-  _$invalidPhone,
-  _$unknown,
-]);
+final BuiltSet<JailbreakType> _$jailbreakTypeValues = BuiltSet<JailbreakType>(
+  const <JailbreakType>[_$validPhone, _$invalidPhone, _$unknown],
+);
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

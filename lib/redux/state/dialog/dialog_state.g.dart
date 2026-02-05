@@ -25,15 +25,15 @@ class _$DialogState extends DialogState {
   factory _$DialogState([void Function(DialogStateBuilder)? updates]) =>
       (DialogStateBuilder()..update(updates))._build();
 
-  _$DialogState._(
-      {required this.title,
-      required this.description,
-      this.positive,
-      this.positiveTitle,
-      this.negative,
-      this.negativeTitle,
-      required this.reverseButtons})
-      : super._();
+  _$DialogState._({
+    required this.title,
+    required this.description,
+    this.positive,
+    this.positiveTitle,
+    this.negative,
+    this.negativeTitle,
+    required this.reverseButtons,
+  }) : super._();
   @override
   DialogState rebuild(void Function(DialogStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -147,18 +147,28 @@ class DialogStateBuilder implements Builder<DialogState, DialogStateBuilder> {
   DialogState build() => _build();
 
   _$DialogState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DialogState._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'DialogState', 'title'),
+            title,
+            r'DialogState',
+            'title',
+          ),
           description: BuiltValueNullFieldError.checkNotNull(
-              description, r'DialogState', 'description'),
+            description,
+            r'DialogState',
+            'description',
+          ),
           positive: positive,
           positiveTitle: positiveTitle,
           negative: negative,
           negativeTitle: negativeTitle,
           reverseButtons: BuiltValueNullFieldError.checkNotNull(
-              reverseButtons, r'DialogState', 'reverseButtons'),
+            reverseButtons,
+            r'DialogState',
+            'reverseButtons',
+          ),
         );
     replace(_$result);
     return _$result;

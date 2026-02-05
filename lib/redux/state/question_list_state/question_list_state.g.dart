@@ -18,17 +18,17 @@ class _$QuestionListState extends QuestionListState {
   @override
   final bool isSaving;
 
-  factory _$QuestionListState(
-          [void Function(QuestionListStateBuilder)? updates]) =>
-      (QuestionListStateBuilder()..update(updates))._build();
+  factory _$QuestionListState([
+    void Function(QuestionListStateBuilder)? updates,
+  ]) => (QuestionListStateBuilder()..update(updates))._build();
 
-  _$QuestionListState._(
-      {this.questionListId,
-      required this.text,
-      required this.orderRank,
-      required this.questions,
-      required this.isSaving})
-      : super._();
+  _$QuestionListState._({
+    this.questionListId,
+    required this.text,
+    required this.orderRank,
+    required this.questions,
+    required this.isSaving,
+  }) : super._();
   @override
   QuestionListState rebuild(void Function(QuestionListStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -126,17 +126,30 @@ class QuestionListStateBuilder
   QuestionListState build() => _build();
 
   _$QuestionListState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$QuestionListState._(
           questionListId: questionListId,
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'QuestionListState', 'text'),
+            text,
+            r'QuestionListState',
+            'text',
+          ),
           orderRank: BuiltValueNullFieldError.checkNotNull(
-              orderRank, r'QuestionListState', 'orderRank'),
+            orderRank,
+            r'QuestionListState',
+            'orderRank',
+          ),
           questions: BuiltValueNullFieldError.checkNotNull(
-              questions, r'QuestionListState', 'questions'),
+            questions,
+            r'QuestionListState',
+            'questions',
+          ),
           isSaving: BuiltValueNullFieldError.checkNotNull(
-              isSaving, r'QuestionListState', 'isSaving'),
+            isSaving,
+            r'QuestionListState',
+            'isSaving',
+          ),
         );
     replace(_$result);
     return _$result;

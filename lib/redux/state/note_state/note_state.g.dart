@@ -31,18 +31,18 @@ class _$NoteState extends NoteState {
   factory _$NoteState([void Function(NoteStateBuilder)? updates]) =>
       (NoteStateBuilder()..update(updates))._build();
 
-  _$NoteState._(
-      {this.noteId,
-      this.notebookId,
-      this.text,
-      this.location,
-      required this.mediaFiles,
-      required this.tags,
-      required this.isImageDateUsed,
-      required this.hasChanged,
-      required this.isSaving,
-      required this.date})
-      : super._();
+  _$NoteState._({
+    this.noteId,
+    this.notebookId,
+    this.text,
+    this.location,
+    required this.mediaFiles,
+    required this.tags,
+    required this.isImageDateUsed,
+    required this.hasChanged,
+    required this.isSaving,
+    required this.date,
+  }) : super._();
   @override
   NoteState rebuild(void Function(NoteStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -182,7 +182,8 @@ class NoteStateBuilder implements Builder<NoteState, NoteStateBuilder> {
   _$NoteState _build() {
     _$NoteState _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NoteState._(
             noteId: noteId,
             notebookId: notebookId,
@@ -191,13 +192,25 @@ class NoteStateBuilder implements Builder<NoteState, NoteStateBuilder> {
             mediaFiles: mediaFiles.build(),
             tags: tags.build(),
             isImageDateUsed: BuiltValueNullFieldError.checkNotNull(
-                isImageDateUsed, r'NoteState', 'isImageDateUsed'),
+              isImageDateUsed,
+              r'NoteState',
+              'isImageDateUsed',
+            ),
             hasChanged: BuiltValueNullFieldError.checkNotNull(
-                hasChanged, r'NoteState', 'hasChanged'),
+              hasChanged,
+              r'NoteState',
+              'hasChanged',
+            ),
             isSaving: BuiltValueNullFieldError.checkNotNull(
-                isSaving, r'NoteState', 'isSaving'),
+              isSaving,
+              r'NoteState',
+              'isSaving',
+            ),
             date: BuiltValueNullFieldError.checkNotNull(
-                date, r'NoteState', 'date'),
+              date,
+              r'NoteState',
+              'date',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -208,7 +221,10 @@ class NoteStateBuilder implements Builder<NoteState, NoteStateBuilder> {
         tags.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NoteState', _$failedField, e.toString());
+          r'NoteState',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

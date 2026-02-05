@@ -18,21 +18,21 @@ class _$QuestionFieldViewModel extends QuestionFieldViewModel {
   @override
   final TypedFunctionHolder<String> textChangedCommand;
 
-  factory _$QuestionFieldViewModel(
-          [void Function(QuestionFieldViewModelBuilder)? updates]) =>
-      (QuestionFieldViewModelBuilder()..update(updates))._build();
+  factory _$QuestionFieldViewModel([
+    void Function(QuestionFieldViewModelBuilder)? updates,
+  ]) => (QuestionFieldViewModelBuilder()..update(updates))._build();
 
-  _$QuestionFieldViewModel._(
-      {required this.fieldId,
-      required this.text,
-      required this.placeholder,
-      this.deleteCommand,
-      required this.textChangedCommand})
-      : super._();
+  _$QuestionFieldViewModel._({
+    required this.fieldId,
+    required this.text,
+    required this.placeholder,
+    this.deleteCommand,
+    required this.textChangedCommand,
+  }) : super._();
   @override
   QuestionFieldViewModel rebuild(
-          void Function(QuestionFieldViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(QuestionFieldViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   QuestionFieldViewModelBuilder toBuilder() =>
@@ -129,19 +129,30 @@ class QuestionFieldViewModelBuilder
   QuestionFieldViewModel build() => _build();
 
   _$QuestionFieldViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$QuestionFieldViewModel._(
           fieldId: BuiltValueNullFieldError.checkNotNull(
-              fieldId, r'QuestionFieldViewModel', 'fieldId'),
+            fieldId,
+            r'QuestionFieldViewModel',
+            'fieldId',
+          ),
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'QuestionFieldViewModel', 'text'),
+            text,
+            r'QuestionFieldViewModel',
+            'text',
+          ),
           placeholder: BuiltValueNullFieldError.checkNotNull(
-              placeholder, r'QuestionFieldViewModel', 'placeholder'),
+            placeholder,
+            r'QuestionFieldViewModel',
+            'placeholder',
+          ),
           deleteCommand: deleteCommand,
           textChangedCommand: BuiltValueNullFieldError.checkNotNull(
-              textChangedCommand,
-              r'QuestionFieldViewModel',
-              'textChangedCommand'),
+            textChangedCommand,
+            r'QuestionFieldViewModel',
+            'textChangedCommand',
+          ),
         );
     replace(_$result);
     return _$result;

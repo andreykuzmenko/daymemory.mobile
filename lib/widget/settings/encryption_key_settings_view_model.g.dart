@@ -32,28 +32,28 @@ class _$EncryptionKeySettingsViewModel extends EncryptionKeySettingsViewModel {
   @override
   final FunctionHolder closeCommand;
 
-  factory _$EncryptionKeySettingsViewModel(
-          [void Function(EncryptionKeySettingsViewModelBuilder)? updates]) =>
-      (EncryptionKeySettingsViewModelBuilder()..update(updates))._build();
+  factory _$EncryptionKeySettingsViewModel([
+    void Function(EncryptionKeySettingsViewModelBuilder)? updates,
+  ]) => (EncryptionKeySettingsViewModelBuilder()..update(updates))._build();
 
-  _$EncryptionKeySettingsViewModel._(
-      {required this.title,
-      this.encryptionKeyValue,
-      required this.requiredFieldValidator,
-      required this.encryptionKeyPlaceholder,
-      required this.encryptionKeyExplanation,
-      required this.copyToClipboardOptionTitle,
-      required this.copyToClipboardCommand,
-      required this.isSaving,
-      required this.isEncryptionKeyLocked,
-      required this.doneButtonTitle,
-      required this.saveCommand,
-      required this.closeCommand})
-      : super._();
+  _$EncryptionKeySettingsViewModel._({
+    required this.title,
+    this.encryptionKeyValue,
+    required this.requiredFieldValidator,
+    required this.encryptionKeyPlaceholder,
+    required this.encryptionKeyExplanation,
+    required this.copyToClipboardOptionTitle,
+    required this.copyToClipboardCommand,
+    required this.isSaving,
+    required this.isEncryptionKeyLocked,
+    required this.doneButtonTitle,
+    required this.saveCommand,
+    required this.closeCommand,
+  }) : super._();
   @override
   EncryptionKeySettingsViewModel rebuild(
-          void Function(EncryptionKeySettingsViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EncryptionKeySettingsViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EncryptionKeySettingsViewModelBuilder toBuilder() =>
@@ -117,8 +117,10 @@ class _$EncryptionKeySettingsViewModel extends EncryptionKeySettingsViewModel {
 
 class EncryptionKeySettingsViewModelBuilder
     implements
-        Builder<EncryptionKeySettingsViewModel,
-            EncryptionKeySettingsViewModelBuilder> {
+        Builder<
+          EncryptionKeySettingsViewModel,
+          EncryptionKeySettingsViewModelBuilder
+        > {
   _$EncryptionKeySettingsViewModel? _$v;
 
   String? _title;
@@ -154,8 +156,8 @@ class EncryptionKeySettingsViewModelBuilder
   TypedFunctionHolder<String>? get copyToClipboardCommand =>
       _$this._copyToClipboardCommand;
   set copyToClipboardCommand(
-          TypedFunctionHolder<String>? copyToClipboardCommand) =>
-      _$this._copyToClipboardCommand = copyToClipboardCommand;
+    TypedFunctionHolder<String>? copyToClipboardCommand,
+  ) => _$this._copyToClipboardCommand = copyToClipboardCommand;
 
   bool? _isSaving;
   bool? get isSaving => _$this._isSaving;
@@ -217,45 +219,65 @@ class EncryptionKeySettingsViewModelBuilder
   EncryptionKeySettingsViewModel build() => _build();
 
   _$EncryptionKeySettingsViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EncryptionKeySettingsViewModel._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'EncryptionKeySettingsViewModel', 'title'),
+            title,
+            r'EncryptionKeySettingsViewModel',
+            'title',
+          ),
           encryptionKeyValue: encryptionKeyValue,
           requiredFieldValidator: BuiltValueNullFieldError.checkNotNull(
-              requiredFieldValidator,
-              r'EncryptionKeySettingsViewModel',
-              'requiredFieldValidator'),
+            requiredFieldValidator,
+            r'EncryptionKeySettingsViewModel',
+            'requiredFieldValidator',
+          ),
           encryptionKeyPlaceholder: BuiltValueNullFieldError.checkNotNull(
-              encryptionKeyPlaceholder,
-              r'EncryptionKeySettingsViewModel',
-              'encryptionKeyPlaceholder'),
+            encryptionKeyPlaceholder,
+            r'EncryptionKeySettingsViewModel',
+            'encryptionKeyPlaceholder',
+          ),
           encryptionKeyExplanation: BuiltValueNullFieldError.checkNotNull(
-              encryptionKeyExplanation,
-              r'EncryptionKeySettingsViewModel',
-              'encryptionKeyExplanation'),
+            encryptionKeyExplanation,
+            r'EncryptionKeySettingsViewModel',
+            'encryptionKeyExplanation',
+          ),
           copyToClipboardOptionTitle: BuiltValueNullFieldError.checkNotNull(
-              copyToClipboardOptionTitle,
-              r'EncryptionKeySettingsViewModel',
-              'copyToClipboardOptionTitle'),
+            copyToClipboardOptionTitle,
+            r'EncryptionKeySettingsViewModel',
+            'copyToClipboardOptionTitle',
+          ),
           copyToClipboardCommand: BuiltValueNullFieldError.checkNotNull(
-              copyToClipboardCommand,
-              r'EncryptionKeySettingsViewModel',
-              'copyToClipboardCommand'),
+            copyToClipboardCommand,
+            r'EncryptionKeySettingsViewModel',
+            'copyToClipboardCommand',
+          ),
           isSaving: BuiltValueNullFieldError.checkNotNull(
-              isSaving, r'EncryptionKeySettingsViewModel', 'isSaving'),
+            isSaving,
+            r'EncryptionKeySettingsViewModel',
+            'isSaving',
+          ),
           isEncryptionKeyLocked: BuiltValueNullFieldError.checkNotNull(
-              isEncryptionKeyLocked,
-              r'EncryptionKeySettingsViewModel',
-              'isEncryptionKeyLocked'),
+            isEncryptionKeyLocked,
+            r'EncryptionKeySettingsViewModel',
+            'isEncryptionKeyLocked',
+          ),
           doneButtonTitle: BuiltValueNullFieldError.checkNotNull(
-              doneButtonTitle,
-              r'EncryptionKeySettingsViewModel',
-              'doneButtonTitle'),
+            doneButtonTitle,
+            r'EncryptionKeySettingsViewModel',
+            'doneButtonTitle',
+          ),
           saveCommand: BuiltValueNullFieldError.checkNotNull(
-              saveCommand, r'EncryptionKeySettingsViewModel', 'saveCommand'),
+            saveCommand,
+            r'EncryptionKeySettingsViewModel',
+            'saveCommand',
+          ),
           closeCommand: BuiltValueNullFieldError.checkNotNull(
-              closeCommand, r'EncryptionKeySettingsViewModel', 'closeCommand'),
+            closeCommand,
+            r'EncryptionKeySettingsViewModel',
+            'closeCommand',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -19,12 +19,12 @@ class _$EnterPinState extends EnterPinState {
   factory _$EnterPinState([void Function(EnterPinStateBuilder)? updates]) =>
       (EnterPinStateBuilder()..update(updates))._build();
 
-  _$EnterPinState._(
-      {required this.enteredPin,
-      required this.selectedEnteredIndicators,
-      required this.pinEnterAttempts,
-      required this.isRetry})
-      : super._();
+  _$EnterPinState._({
+    required this.enteredPin,
+    required this.selectedEnteredIndicators,
+    required this.pinEnterAttempts,
+    required this.isRetry,
+  }) : super._();
   @override
   EnterPinState rebuild(void Function(EnterPinStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,18 +114,29 @@ class EnterPinStateBuilder
   EnterPinState build() => _build();
 
   _$EnterPinState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EnterPinState._(
           enteredPin: BuiltValueNullFieldError.checkNotNull(
-              enteredPin, r'EnterPinState', 'enteredPin'),
+            enteredPin,
+            r'EnterPinState',
+            'enteredPin',
+          ),
           selectedEnteredIndicators: BuiltValueNullFieldError.checkNotNull(
-              selectedEnteredIndicators,
-              r'EnterPinState',
-              'selectedEnteredIndicators'),
+            selectedEnteredIndicators,
+            r'EnterPinState',
+            'selectedEnteredIndicators',
+          ),
           pinEnterAttempts: BuiltValueNullFieldError.checkNotNull(
-              pinEnterAttempts, r'EnterPinState', 'pinEnterAttempts'),
+            pinEnterAttempts,
+            r'EnterPinState',
+            'pinEnterAttempts',
+          ),
           isRetry: BuiltValueNullFieldError.checkNotNull(
-              isRetry, r'EnterPinState', 'isRetry'),
+            isRetry,
+            r'EnterPinState',
+            'isRetry',
+          ),
         );
     replace(_$result);
     return _$result;

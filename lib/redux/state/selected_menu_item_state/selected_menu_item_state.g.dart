@@ -12,15 +12,15 @@ class _$SelectedMenuItemState extends SelectedMenuItemState {
   @override
   final String? title;
 
-  factory _$SelectedMenuItemState(
-          [void Function(SelectedMenuItemStateBuilder)? updates]) =>
-      (SelectedMenuItemStateBuilder()..update(updates))._build();
+  factory _$SelectedMenuItemState([
+    void Function(SelectedMenuItemStateBuilder)? updates,
+  ]) => (SelectedMenuItemStateBuilder()..update(updates))._build();
 
   _$SelectedMenuItemState._({this.itemId, this.title}) : super._();
   @override
   SelectedMenuItemState rebuild(
-          void Function(SelectedMenuItemStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SelectedMenuItemStateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SelectedMenuItemStateBuilder toBuilder() =>
@@ -90,11 +90,8 @@ class SelectedMenuItemStateBuilder
   SelectedMenuItemState build() => _build();
 
   _$SelectedMenuItemState _build() {
-    final _$result = _$v ??
-        _$SelectedMenuItemState._(
-          itemId: itemId,
-          title: title,
-        );
+    final _$result =
+        _$v ?? _$SelectedMenuItemState._(itemId: itemId, title: title);
     replace(_$result);
     return _$result;
   }

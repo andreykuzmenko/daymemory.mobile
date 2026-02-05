@@ -37,8 +37,9 @@ class _$TagsState extends TagsState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'TagsState')..add('tags', tags))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'TagsState',
+    )..add('tags', tags)).toString();
   }
 }
 
@@ -74,10 +75,14 @@ class TagsStateBuilder implements Builder<TagsState, TagsStateBuilder> {
   TagsState build() => _build();
 
   _$TagsState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TagsState._(
-          tags:
-              BuiltValueNullFieldError.checkNotNull(tags, r'TagsState', 'tags'),
+          tags: BuiltValueNullFieldError.checkNotNull(
+            tags,
+            r'TagsState',
+            'tags',
+          ),
         );
     replace(_$result);
     return _$result;

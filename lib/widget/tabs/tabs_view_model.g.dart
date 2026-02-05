@@ -21,13 +21,13 @@ class _$TabsViewModel extends TabsViewModel {
   factory _$TabsViewModel([void Function(TabsViewModelBuilder)? updates]) =>
       (TabsViewModelBuilder()..update(updates))._build();
 
-  _$TabsViewModel._(
-      {required this.tabSelectCommand,
-      required this.selectedTabIndex,
-      required this.tabTimeline,
-      required this.tabQuestions,
-      required this.isActiveTabClicked})
-      : super._();
+  _$TabsViewModel._({
+    required this.tabSelectCommand,
+    required this.selectedTabIndex,
+    required this.tabTimeline,
+    required this.tabQuestions,
+    required this.isActiveTabClicked,
+  }) : super._();
   @override
   TabsViewModel rebuild(void Function(TabsViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -126,18 +126,34 @@ class TabsViewModelBuilder
   TabsViewModel build() => _build();
 
   _$TabsViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TabsViewModel._(
           tabSelectCommand: BuiltValueNullFieldError.checkNotNull(
-              tabSelectCommand, r'TabsViewModel', 'tabSelectCommand'),
+            tabSelectCommand,
+            r'TabsViewModel',
+            'tabSelectCommand',
+          ),
           selectedTabIndex: BuiltValueNullFieldError.checkNotNull(
-              selectedTabIndex, r'TabsViewModel', 'selectedTabIndex'),
+            selectedTabIndex,
+            r'TabsViewModel',
+            'selectedTabIndex',
+          ),
           tabTimeline: BuiltValueNullFieldError.checkNotNull(
-              tabTimeline, r'TabsViewModel', 'tabTimeline'),
+            tabTimeline,
+            r'TabsViewModel',
+            'tabTimeline',
+          ),
           tabQuestions: BuiltValueNullFieldError.checkNotNull(
-              tabQuestions, r'TabsViewModel', 'tabQuestions'),
+            tabQuestions,
+            r'TabsViewModel',
+            'tabQuestions',
+          ),
           isActiveTabClicked: BuiltValueNullFieldError.checkNotNull(
-              isActiveTabClicked, r'TabsViewModel', 'isActiveTabClicked'),
+            isActiveTabClicked,
+            r'TabsViewModel',
+            'isActiveTabClicked',
+          ),
         );
     replace(_$result);
     return _$result;

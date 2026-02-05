@@ -17,9 +17,11 @@ class _$ReviewsState extends ReviewsState {
   factory _$ReviewsState([void Function(ReviewsStateBuilder)? updates]) =>
       (ReviewsStateBuilder()..update(updates))._build();
 
-  _$ReviewsState._(
-      {required this.items, required this.isLoading, this.lastLoadDate})
-      : super._();
+  _$ReviewsState._({
+    required this.items,
+    required this.isLoading,
+    this.lastLoadDate,
+  }) : super._();
   @override
   ReviewsState rebuild(void Function(ReviewsStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -100,12 +102,19 @@ class ReviewsStateBuilder
   ReviewsState build() => _build();
 
   _$ReviewsState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ReviewsState._(
           items: BuiltValueNullFieldError.checkNotNull(
-              items, r'ReviewsState', 'items'),
+            items,
+            r'ReviewsState',
+            'items',
+          ),
           isLoading: BuiltValueNullFieldError.checkNotNull(
-              isLoading, r'ReviewsState', 'isLoading'),
+            isLoading,
+            r'ReviewsState',
+            'isLoading',
+          ),
           lastLoadDate: lastLoadDate,
         );
     replace(_$result);

@@ -18,21 +18,21 @@ class _$BiometricAuthViewModel extends BiometricAuthViewModel {
   @override
   final String subTitle;
 
-  factory _$BiometricAuthViewModel(
-          [void Function(BiometricAuthViewModelBuilder)? updates]) =>
-      (BiometricAuthViewModelBuilder()..update(updates))._build();
+  factory _$BiometricAuthViewModel([
+    void Function(BiometricAuthViewModelBuilder)? updates,
+  ]) => (BiometricAuthViewModelBuilder()..update(updates))._build();
 
-  _$BiometricAuthViewModel._(
-      {required this.allowCommand,
-      required this.skipCommand,
-      required this.allowBiometricAuthTitle,
-      required this.skipTitle,
-      required this.subTitle})
-      : super._();
+  _$BiometricAuthViewModel._({
+    required this.allowCommand,
+    required this.skipCommand,
+    required this.allowBiometricAuthTitle,
+    required this.skipTitle,
+    required this.subTitle,
+  }) : super._();
   @override
   BiometricAuthViewModel rebuild(
-          void Function(BiometricAuthViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BiometricAuthViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BiometricAuthViewModelBuilder toBuilder() =>
@@ -129,20 +129,34 @@ class BiometricAuthViewModelBuilder
   BiometricAuthViewModel build() => _build();
 
   _$BiometricAuthViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BiometricAuthViewModel._(
           allowCommand: BuiltValueNullFieldError.checkNotNull(
-              allowCommand, r'BiometricAuthViewModel', 'allowCommand'),
+            allowCommand,
+            r'BiometricAuthViewModel',
+            'allowCommand',
+          ),
           skipCommand: BuiltValueNullFieldError.checkNotNull(
-              skipCommand, r'BiometricAuthViewModel', 'skipCommand'),
+            skipCommand,
+            r'BiometricAuthViewModel',
+            'skipCommand',
+          ),
           allowBiometricAuthTitle: BuiltValueNullFieldError.checkNotNull(
-              allowBiometricAuthTitle,
-              r'BiometricAuthViewModel',
-              'allowBiometricAuthTitle'),
+            allowBiometricAuthTitle,
+            r'BiometricAuthViewModel',
+            'allowBiometricAuthTitle',
+          ),
           skipTitle: BuiltValueNullFieldError.checkNotNull(
-              skipTitle, r'BiometricAuthViewModel', 'skipTitle'),
+            skipTitle,
+            r'BiometricAuthViewModel',
+            'skipTitle',
+          ),
           subTitle: BuiltValueNullFieldError.checkNotNull(
-              subTitle, r'BiometricAuthViewModel', 'subTitle'),
+            subTitle,
+            r'BiometricAuthViewModel',
+            'subTitle',
+          ),
         );
     replace(_$result);
     return _$result;

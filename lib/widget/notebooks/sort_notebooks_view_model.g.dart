@@ -22,23 +22,23 @@ class _$SortNotebooksViewModel extends SortNotebooksViewModel {
   @override
   final TypedFunctionHolder<ItemPositionDto> reorderCommand;
 
-  factory _$SortNotebooksViewModel(
-          [void Function(SortNotebooksViewModelBuilder)? updates]) =>
-      (SortNotebooksViewModelBuilder()..update(updates))._build();
+  factory _$SortNotebooksViewModel([
+    void Function(SortNotebooksViewModelBuilder)? updates,
+  ]) => (SortNotebooksViewModelBuilder()..update(updates))._build();
 
-  _$SortNotebooksViewModel._(
-      {required this.title,
-      required this.loadingTitle,
-      required this.notebooks,
-      required this.noNotebooks,
-      required this.showDragIcon,
-      this.backCommand,
-      required this.reorderCommand})
-      : super._();
+  _$SortNotebooksViewModel._({
+    required this.title,
+    required this.loadingTitle,
+    required this.notebooks,
+    required this.noNotebooks,
+    required this.showDragIcon,
+    this.backCommand,
+    required this.reorderCommand,
+  }) : super._();
   @override
   SortNotebooksViewModel rebuild(
-          void Function(SortNotebooksViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SortNotebooksViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SortNotebooksViewModelBuilder toBuilder() =>
@@ -151,21 +151,40 @@ class SortNotebooksViewModelBuilder
   SortNotebooksViewModel build() => _build();
 
   _$SortNotebooksViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SortNotebooksViewModel._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'SortNotebooksViewModel', 'title'),
+            title,
+            r'SortNotebooksViewModel',
+            'title',
+          ),
           loadingTitle: BuiltValueNullFieldError.checkNotNull(
-              loadingTitle, r'SortNotebooksViewModel', 'loadingTitle'),
+            loadingTitle,
+            r'SortNotebooksViewModel',
+            'loadingTitle',
+          ),
           notebooks: BuiltValueNullFieldError.checkNotNull(
-              notebooks, r'SortNotebooksViewModel', 'notebooks'),
+            notebooks,
+            r'SortNotebooksViewModel',
+            'notebooks',
+          ),
           noNotebooks: BuiltValueNullFieldError.checkNotNull(
-              noNotebooks, r'SortNotebooksViewModel', 'noNotebooks'),
+            noNotebooks,
+            r'SortNotebooksViewModel',
+            'noNotebooks',
+          ),
           showDragIcon: BuiltValueNullFieldError.checkNotNull(
-              showDragIcon, r'SortNotebooksViewModel', 'showDragIcon'),
+            showDragIcon,
+            r'SortNotebooksViewModel',
+            'showDragIcon',
+          ),
           backCommand: backCommand,
           reorderCommand: BuiltValueNullFieldError.checkNotNull(
-              reorderCommand, r'SortNotebooksViewModel', 'reorderCommand'),
+            reorderCommand,
+            r'SortNotebooksViewModel',
+            'reorderCommand',
+          ),
         );
     replace(_$result);
     return _$result;

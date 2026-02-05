@@ -32,28 +32,28 @@ class _$RestorePasswordViewModel extends RestorePasswordViewModel {
   @override
   final bool isLoading;
 
-  factory _$RestorePasswordViewModel(
-          [void Function(RestorePasswordViewModelBuilder)? updates]) =>
-      (RestorePasswordViewModelBuilder()..update(updates))._build();
+  factory _$RestorePasswordViewModel([
+    void Function(RestorePasswordViewModelBuilder)? updates,
+  ]) => (RestorePasswordViewModelBuilder()..update(updates))._build();
 
-  _$RestorePasswordViewModel._(
-      {required this.title,
-      required this.changePasswordButtonText,
-      required this.instructionText,
-      required this.passwordLabel,
-      required this.passwordPlaceholder,
-      required this.codeLabel,
-      required this.codePlaceholder,
-      required this.requiredFiledValidator,
-      required this.loadingMessage,
-      required this.backCommand,
-      this.changePassword,
-      required this.isLoading})
-      : super._();
+  _$RestorePasswordViewModel._({
+    required this.title,
+    required this.changePasswordButtonText,
+    required this.instructionText,
+    required this.passwordLabel,
+    required this.passwordPlaceholder,
+    required this.codeLabel,
+    required this.codePlaceholder,
+    required this.requiredFiledValidator,
+    required this.loadingMessage,
+    required this.backCommand,
+    this.changePassword,
+    required this.isLoading,
+  }) : super._();
   @override
   RestorePasswordViewModel rebuild(
-          void Function(RestorePasswordViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RestorePasswordViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RestorePasswordViewModelBuilder toBuilder() =>
@@ -172,8 +172,8 @@ class RestorePasswordViewModelBuilder
   TypedFunctionHolder<RestorePasswordData>? get changePassword =>
       _$this._changePassword;
   set changePassword(
-          TypedFunctionHolder<RestorePasswordData>? changePassword) =>
-      _$this._changePassword = changePassword;
+    TypedFunctionHolder<RestorePasswordData>? changePassword,
+  ) => _$this._changePassword = changePassword;
 
   bool? _isLoading;
   bool? get isLoading => _$this._isLoading;
@@ -215,37 +215,65 @@ class RestorePasswordViewModelBuilder
   RestorePasswordViewModel build() => _build();
 
   _$RestorePasswordViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RestorePasswordViewModel._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'RestorePasswordViewModel', 'title'),
+            title,
+            r'RestorePasswordViewModel',
+            'title',
+          ),
           changePasswordButtonText: BuiltValueNullFieldError.checkNotNull(
-              changePasswordButtonText,
-              r'RestorePasswordViewModel',
-              'changePasswordButtonText'),
+            changePasswordButtonText,
+            r'RestorePasswordViewModel',
+            'changePasswordButtonText',
+          ),
           instructionText: BuiltValueNullFieldError.checkNotNull(
-              instructionText, r'RestorePasswordViewModel', 'instructionText'),
+            instructionText,
+            r'RestorePasswordViewModel',
+            'instructionText',
+          ),
           passwordLabel: BuiltValueNullFieldError.checkNotNull(
-              passwordLabel, r'RestorePasswordViewModel', 'passwordLabel'),
+            passwordLabel,
+            r'RestorePasswordViewModel',
+            'passwordLabel',
+          ),
           passwordPlaceholder: BuiltValueNullFieldError.checkNotNull(
-              passwordPlaceholder,
-              r'RestorePasswordViewModel',
-              'passwordPlaceholder'),
+            passwordPlaceholder,
+            r'RestorePasswordViewModel',
+            'passwordPlaceholder',
+          ),
           codeLabel: BuiltValueNullFieldError.checkNotNull(
-              codeLabel, r'RestorePasswordViewModel', 'codeLabel'),
+            codeLabel,
+            r'RestorePasswordViewModel',
+            'codeLabel',
+          ),
           codePlaceholder: BuiltValueNullFieldError.checkNotNull(
-              codePlaceholder, r'RestorePasswordViewModel', 'codePlaceholder'),
+            codePlaceholder,
+            r'RestorePasswordViewModel',
+            'codePlaceholder',
+          ),
           requiredFiledValidator: BuiltValueNullFieldError.checkNotNull(
-              requiredFiledValidator,
-              r'RestorePasswordViewModel',
-              'requiredFiledValidator'),
+            requiredFiledValidator,
+            r'RestorePasswordViewModel',
+            'requiredFiledValidator',
+          ),
           loadingMessage: BuiltValueNullFieldError.checkNotNull(
-              loadingMessage, r'RestorePasswordViewModel', 'loadingMessage'),
+            loadingMessage,
+            r'RestorePasswordViewModel',
+            'loadingMessage',
+          ),
           backCommand: BuiltValueNullFieldError.checkNotNull(
-              backCommand, r'RestorePasswordViewModel', 'backCommand'),
+            backCommand,
+            r'RestorePasswordViewModel',
+            'backCommand',
+          ),
           changePassword: changePassword,
           isLoading: BuiltValueNullFieldError.checkNotNull(
-              isLoading, r'RestorePasswordViewModel', 'isLoading'),
+            isLoading,
+            r'RestorePasswordViewModel',
+            'isLoading',
+          ),
         );
     replace(_$result);
     return _$result;

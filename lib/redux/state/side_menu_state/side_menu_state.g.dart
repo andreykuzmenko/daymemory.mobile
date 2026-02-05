@@ -37,9 +37,9 @@ class _$SideMenuState extends SideMenuState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'SideMenuState')
-          ..add('selectedTag', selectedTag))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'SideMenuState',
+    )..add('selectedTag', selectedTag)).toString();
   }
 }
 
@@ -76,10 +76,7 @@ class SideMenuStateBuilder
   SideMenuState build() => _build();
 
   _$SideMenuState _build() {
-    final _$result = _$v ??
-        _$SideMenuState._(
-          selectedTag: selectedTag,
-        );
+    final _$result = _$v ?? _$SideMenuState._(selectedTag: selectedTag);
     replace(_$result);
     return _$result;
   }

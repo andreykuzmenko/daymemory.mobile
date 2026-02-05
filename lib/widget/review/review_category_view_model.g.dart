@@ -14,17 +14,19 @@ class _$ReviewCategoryViewModel extends ReviewCategoryViewModel {
   @override
   final List<NoteViewModel> notes;
 
-  factory _$ReviewCategoryViewModel(
-          [void Function(ReviewCategoryViewModelBuilder)? updates]) =>
-      (ReviewCategoryViewModelBuilder()..update(updates))._build();
+  factory _$ReviewCategoryViewModel([
+    void Function(ReviewCategoryViewModelBuilder)? updates,
+  ]) => (ReviewCategoryViewModelBuilder()..update(updates))._build();
 
-  _$ReviewCategoryViewModel._(
-      {required this.id, required this.title, required this.notes})
-      : super._();
+  _$ReviewCategoryViewModel._({
+    required this.id,
+    required this.title,
+    required this.notes,
+  }) : super._();
   @override
   ReviewCategoryViewModel rebuild(
-          void Function(ReviewCategoryViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReviewCategoryViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReviewCategoryViewModelBuilder toBuilder() =>
@@ -103,14 +105,24 @@ class ReviewCategoryViewModelBuilder
   ReviewCategoryViewModel build() => _build();
 
   _$ReviewCategoryViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ReviewCategoryViewModel._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'ReviewCategoryViewModel', 'id'),
+            id,
+            r'ReviewCategoryViewModel',
+            'id',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'ReviewCategoryViewModel', 'title'),
+            title,
+            r'ReviewCategoryViewModel',
+            'title',
+          ),
           notes: BuiltValueNullFieldError.checkNotNull(
-              notes, r'ReviewCategoryViewModel', 'notes'),
+            notes,
+            r'ReviewCategoryViewModel',
+            'notes',
+          ),
         );
     replace(_$result);
     return _$result;

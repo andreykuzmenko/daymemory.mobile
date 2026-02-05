@@ -38,31 +38,31 @@ class _$SyncSettingsViewModel extends SyncSettingsViewModel {
   @override
   final FunctionHolder backCommand;
 
-  factory _$SyncSettingsViewModel(
-          [void Function(SyncSettingsViewModelBuilder)? updates]) =>
-      (SyncSettingsViewModelBuilder()..update(updates))._build();
+  factory _$SyncSettingsViewModel([
+    void Function(SyncSettingsViewModelBuilder)? updates,
+  ]) => (SyncSettingsViewModelBuilder()..update(updates))._build();
 
-  _$SyncSettingsViewModel._(
-      {required this.title,
-      required this.syncOptionTitle,
-      required this.syncStatus,
-      required this.enableEncryptionOptionExplanation,
-      required this.enableEncryptionOptionTitle,
-      required this.encryptionCommand,
-      required this.isEncryptionEnabled,
-      required this.isSyncEnabled,
-      required this.isSyncing,
-      this.lastSyncStatusMessage,
-      required this.syncStateOptionTitle,
-      required this.syncStateExplanation,
-      required this.syncStateCommand,
-      required this.syncStartCommand,
-      required this.backCommand})
-      : super._();
+  _$SyncSettingsViewModel._({
+    required this.title,
+    required this.syncOptionTitle,
+    required this.syncStatus,
+    required this.enableEncryptionOptionExplanation,
+    required this.enableEncryptionOptionTitle,
+    required this.encryptionCommand,
+    required this.isEncryptionEnabled,
+    required this.isSyncEnabled,
+    required this.isSyncing,
+    this.lastSyncStatusMessage,
+    required this.syncStateOptionTitle,
+    required this.syncStateExplanation,
+    required this.syncStateCommand,
+    required this.syncStartCommand,
+    required this.backCommand,
+  }) : super._();
   @override
   SyncSettingsViewModel rebuild(
-          void Function(SyncSettingsViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SyncSettingsViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SyncSettingsViewModelBuilder toBuilder() =>
@@ -118,8 +118,10 @@ class _$SyncSettingsViewModel extends SyncSettingsViewModel {
           ..add('title', title)
           ..add('syncOptionTitle', syncOptionTitle)
           ..add('syncStatus', syncStatus)
-          ..add('enableEncryptionOptionExplanation',
-              enableEncryptionOptionExplanation)
+          ..add(
+            'enableEncryptionOptionExplanation',
+            enableEncryptionOptionExplanation,
+          )
           ..add('enableEncryptionOptionTitle', enableEncryptionOptionTitle)
           ..add('encryptionCommand', encryptionCommand)
           ..add('isEncryptionEnabled', isEncryptionEnabled)
@@ -156,9 +158,9 @@ class SyncSettingsViewModelBuilder
   String? get enableEncryptionOptionExplanation =>
       _$this._enableEncryptionOptionExplanation;
   set enableEncryptionOptionExplanation(
-          String? enableEncryptionOptionExplanation) =>
-      _$this._enableEncryptionOptionExplanation =
-          enableEncryptionOptionExplanation;
+    String? enableEncryptionOptionExplanation,
+  ) => _$this._enableEncryptionOptionExplanation =
+      enableEncryptionOptionExplanation;
 
   String? _enableEncryptionOptionTitle;
   String? get enableEncryptionOptionTitle =>
@@ -254,48 +256,81 @@ class SyncSettingsViewModelBuilder
   SyncSettingsViewModel build() => _build();
 
   _$SyncSettingsViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SyncSettingsViewModel._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'SyncSettingsViewModel', 'title'),
+            title,
+            r'SyncSettingsViewModel',
+            'title',
+          ),
           syncOptionTitle: BuiltValueNullFieldError.checkNotNull(
-              syncOptionTitle, r'SyncSettingsViewModel', 'syncOptionTitle'),
+            syncOptionTitle,
+            r'SyncSettingsViewModel',
+            'syncOptionTitle',
+          ),
           syncStatus: BuiltValueNullFieldError.checkNotNull(
-              syncStatus, r'SyncSettingsViewModel', 'syncStatus'),
+            syncStatus,
+            r'SyncSettingsViewModel',
+            'syncStatus',
+          ),
           enableEncryptionOptionExplanation:
               BuiltValueNullFieldError.checkNotNull(
-                  enableEncryptionOptionExplanation,
-                  r'SyncSettingsViewModel',
-                  'enableEncryptionOptionExplanation'),
+                enableEncryptionOptionExplanation,
+                r'SyncSettingsViewModel',
+                'enableEncryptionOptionExplanation',
+              ),
           enableEncryptionOptionTitle: BuiltValueNullFieldError.checkNotNull(
-              enableEncryptionOptionTitle,
-              r'SyncSettingsViewModel',
-              'enableEncryptionOptionTitle'),
+            enableEncryptionOptionTitle,
+            r'SyncSettingsViewModel',
+            'enableEncryptionOptionTitle',
+          ),
           encryptionCommand: BuiltValueNullFieldError.checkNotNull(
-              encryptionCommand, r'SyncSettingsViewModel', 'encryptionCommand'),
+            encryptionCommand,
+            r'SyncSettingsViewModel',
+            'encryptionCommand',
+          ),
           isEncryptionEnabled: BuiltValueNullFieldError.checkNotNull(
-              isEncryptionEnabled,
-              r'SyncSettingsViewModel',
-              'isEncryptionEnabled'),
+            isEncryptionEnabled,
+            r'SyncSettingsViewModel',
+            'isEncryptionEnabled',
+          ),
           isSyncEnabled: BuiltValueNullFieldError.checkNotNull(
-              isSyncEnabled, r'SyncSettingsViewModel', 'isSyncEnabled'),
+            isSyncEnabled,
+            r'SyncSettingsViewModel',
+            'isSyncEnabled',
+          ),
           isSyncing: BuiltValueNullFieldError.checkNotNull(
-              isSyncing, r'SyncSettingsViewModel', 'isSyncing'),
+            isSyncing,
+            r'SyncSettingsViewModel',
+            'isSyncing',
+          ),
           lastSyncStatusMessage: lastSyncStatusMessage,
           syncStateOptionTitle: BuiltValueNullFieldError.checkNotNull(
-              syncStateOptionTitle,
-              r'SyncSettingsViewModel',
-              'syncStateOptionTitle'),
+            syncStateOptionTitle,
+            r'SyncSettingsViewModel',
+            'syncStateOptionTitle',
+          ),
           syncStateExplanation: BuiltValueNullFieldError.checkNotNull(
-              syncStateExplanation,
-              r'SyncSettingsViewModel',
-              'syncStateExplanation'),
+            syncStateExplanation,
+            r'SyncSettingsViewModel',
+            'syncStateExplanation',
+          ),
           syncStateCommand: BuiltValueNullFieldError.checkNotNull(
-              syncStateCommand, r'SyncSettingsViewModel', 'syncStateCommand'),
+            syncStateCommand,
+            r'SyncSettingsViewModel',
+            'syncStateCommand',
+          ),
           syncStartCommand: BuiltValueNullFieldError.checkNotNull(
-              syncStartCommand, r'SyncSettingsViewModel', 'syncStartCommand'),
+            syncStartCommand,
+            r'SyncSettingsViewModel',
+            'syncStartCommand',
+          ),
           backCommand: BuiltValueNullFieldError.checkNotNull(
-              backCommand, r'SyncSettingsViewModel', 'backCommand'),
+            backCommand,
+            r'SyncSettingsViewModel',
+            'backCommand',
+          ),
         );
     replace(_$result);
     return _$result;

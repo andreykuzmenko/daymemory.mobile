@@ -19,12 +19,12 @@ class _$EditTagState extends EditTagState {
   factory _$EditTagState([void Function(EditTagStateBuilder)? updates]) =>
       (EditTagStateBuilder()..update(updates))._build();
 
-  _$EditTagState._(
-      {this.tagId,
-      required this.title,
-      required this.orderRank,
-      required this.isSaving})
-      : super._();
+  _$EditTagState._({
+    this.tagId,
+    required this.title,
+    required this.orderRank,
+    required this.isSaving,
+  }) : super._();
   @override
   EditTagState rebuild(void Function(EditTagStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -112,15 +112,25 @@ class EditTagStateBuilder
   EditTagState build() => _build();
 
   _$EditTagState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EditTagState._(
           tagId: tagId,
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'EditTagState', 'title'),
+            title,
+            r'EditTagState',
+            'title',
+          ),
           orderRank: BuiltValueNullFieldError.checkNotNull(
-              orderRank, r'EditTagState', 'orderRank'),
+            orderRank,
+            r'EditTagState',
+            'orderRank',
+          ),
           isSaving: BuiltValueNullFieldError.checkNotNull(
-              isSaving, r'EditTagState', 'isSaving'),
+            isSaving,
+            r'EditTagState',
+            'isSaving',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -28,22 +28,22 @@ class _$EditTagViewModel extends EditTagViewModel {
   @override
   final FunctionHolder closeCommand;
 
-  factory _$EditTagViewModel(
-          [void Function(EditTagViewModelBuilder)? updates]) =>
-      (EditTagViewModelBuilder()..update(updates))._build();
+  factory _$EditTagViewModel([
+    void Function(EditTagViewModelBuilder)? updates,
+  ]) => (EditTagViewModelBuilder()..update(updates))._build();
 
-  _$EditTagViewModel._(
-      {this.tagId,
-      this.tagTitle,
-      required this.title,
-      required this.titlePlaceholder,
-      required this.saveButtonTitle,
-      required this.requiredFieldValidator,
-      required this.isSaving,
-      required this.titleChangedCommand,
-      required this.saveCommand,
-      required this.closeCommand})
-      : super._();
+  _$EditTagViewModel._({
+    this.tagId,
+    this.tagTitle,
+    required this.title,
+    required this.titlePlaceholder,
+    required this.saveButtonTitle,
+    required this.requiredFieldValidator,
+    required this.isSaving,
+    required this.titleChangedCommand,
+    required this.saveCommand,
+    required this.closeCommand,
+  }) : super._();
   @override
   EditTagViewModel rebuild(void Function(EditTagViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -187,28 +187,51 @@ class EditTagViewModelBuilder
   EditTagViewModel build() => _build();
 
   _$EditTagViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EditTagViewModel._(
           tagId: tagId,
           tagTitle: tagTitle,
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'EditTagViewModel', 'title'),
+            title,
+            r'EditTagViewModel',
+            'title',
+          ),
           titlePlaceholder: BuiltValueNullFieldError.checkNotNull(
-              titlePlaceholder, r'EditTagViewModel', 'titlePlaceholder'),
+            titlePlaceholder,
+            r'EditTagViewModel',
+            'titlePlaceholder',
+          ),
           saveButtonTitle: BuiltValueNullFieldError.checkNotNull(
-              saveButtonTitle, r'EditTagViewModel', 'saveButtonTitle'),
+            saveButtonTitle,
+            r'EditTagViewModel',
+            'saveButtonTitle',
+          ),
           requiredFieldValidator: BuiltValueNullFieldError.checkNotNull(
-              requiredFieldValidator,
-              r'EditTagViewModel',
-              'requiredFieldValidator'),
+            requiredFieldValidator,
+            r'EditTagViewModel',
+            'requiredFieldValidator',
+          ),
           isSaving: BuiltValueNullFieldError.checkNotNull(
-              isSaving, r'EditTagViewModel', 'isSaving'),
+            isSaving,
+            r'EditTagViewModel',
+            'isSaving',
+          ),
           titleChangedCommand: BuiltValueNullFieldError.checkNotNull(
-              titleChangedCommand, r'EditTagViewModel', 'titleChangedCommand'),
+            titleChangedCommand,
+            r'EditTagViewModel',
+            'titleChangedCommand',
+          ),
           saveCommand: BuiltValueNullFieldError.checkNotNull(
-              saveCommand, r'EditTagViewModel', 'saveCommand'),
+            saveCommand,
+            r'EditTagViewModel',
+            'saveCommand',
+          ),
           closeCommand: BuiltValueNullFieldError.checkNotNull(
-              closeCommand, r'EditTagViewModel', 'closeCommand'),
+            closeCommand,
+            r'EditTagViewModel',
+            'closeCommand',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -24,24 +24,24 @@ class _$QuestionListsViewModel extends QuestionListsViewModel {
   @override
   final FunctionHolder newQuestionListCommand;
 
-  factory _$QuestionListsViewModel(
-          [void Function(QuestionListsViewModelBuilder)? updates]) =>
-      (QuestionListsViewModelBuilder()..update(updates))._build();
+  factory _$QuestionListsViewModel([
+    void Function(QuestionListsViewModelBuilder)? updates,
+  ]) => (QuestionListsViewModelBuilder()..update(updates))._build();
 
-  _$QuestionListsViewModel._(
-      {required this.isLoading,
-      required this.title,
-      required this.loadingTitle,
-      required this.questionLists,
-      required this.noQuestionLists,
-      required this.refreshCommand,
-      required this.reorderCommand,
-      required this.newQuestionListCommand})
-      : super._();
+  _$QuestionListsViewModel._({
+    required this.isLoading,
+    required this.title,
+    required this.loadingTitle,
+    required this.questionLists,
+    required this.noQuestionLists,
+    required this.refreshCommand,
+    required this.reorderCommand,
+    required this.newQuestionListCommand,
+  }) : super._();
   @override
   QuestionListsViewModel rebuild(
-          void Function(QuestionListsViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(QuestionListsViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   QuestionListsViewModelBuilder toBuilder() =>
@@ -168,25 +168,45 @@ class QuestionListsViewModelBuilder
   _$QuestionListsViewModel _build() {
     _$QuestionListsViewModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$QuestionListsViewModel._(
             isLoading: BuiltValueNullFieldError.checkNotNull(
-                isLoading, r'QuestionListsViewModel', 'isLoading'),
+              isLoading,
+              r'QuestionListsViewModel',
+              'isLoading',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'QuestionListsViewModel', 'title'),
+              title,
+              r'QuestionListsViewModel',
+              'title',
+            ),
             loadingTitle: BuiltValueNullFieldError.checkNotNull(
-                loadingTitle, r'QuestionListsViewModel', 'loadingTitle'),
+              loadingTitle,
+              r'QuestionListsViewModel',
+              'loadingTitle',
+            ),
             questionLists: questionLists.build(),
             noQuestionLists: BuiltValueNullFieldError.checkNotNull(
-                noQuestionLists, r'QuestionListsViewModel', 'noQuestionLists'),
+              noQuestionLists,
+              r'QuestionListsViewModel',
+              'noQuestionLists',
+            ),
             refreshCommand: BuiltValueNullFieldError.checkNotNull(
-                refreshCommand, r'QuestionListsViewModel', 'refreshCommand'),
+              refreshCommand,
+              r'QuestionListsViewModel',
+              'refreshCommand',
+            ),
             reorderCommand: BuiltValueNullFieldError.checkNotNull(
-                reorderCommand, r'QuestionListsViewModel', 'reorderCommand'),
+              reorderCommand,
+              r'QuestionListsViewModel',
+              'reorderCommand',
+            ),
             newQuestionListCommand: BuiltValueNullFieldError.checkNotNull(
-                newQuestionListCommand,
-                r'QuestionListsViewModel',
-                'newQuestionListCommand'),
+              newQuestionListCommand,
+              r'QuestionListsViewModel',
+              'newQuestionListCommand',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -195,7 +215,10 @@ class QuestionListsViewModelBuilder
         questionLists.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'QuestionListsViewModel', _$failedField, e.toString());
+          r'QuestionListsViewModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

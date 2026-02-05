@@ -12,16 +12,16 @@ class _$NoteImageGalleryState extends NoteImageGalleryState {
   @override
   final List<FileDto> images;
 
-  factory _$NoteImageGalleryState(
-          [void Function(NoteImageGalleryStateBuilder)? updates]) =>
-      (NoteImageGalleryStateBuilder()..update(updates))._build();
+  factory _$NoteImageGalleryState([
+    void Function(NoteImageGalleryStateBuilder)? updates,
+  ]) => (NoteImageGalleryStateBuilder()..update(updates))._build();
 
   _$NoteImageGalleryState._({required this.index, required this.images})
-      : super._();
+    : super._();
   @override
   NoteImageGalleryState rebuild(
-          void Function(NoteImageGalleryStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NoteImageGalleryStateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NoteImageGalleryStateBuilder toBuilder() =>
@@ -91,12 +91,19 @@ class NoteImageGalleryStateBuilder
   NoteImageGalleryState build() => _build();
 
   _$NoteImageGalleryState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NoteImageGalleryState._(
           index: BuiltValueNullFieldError.checkNotNull(
-              index, r'NoteImageGalleryState', 'index'),
+            index,
+            r'NoteImageGalleryState',
+            'index',
+          ),
           images: BuiltValueNullFieldError.checkNotNull(
-              images, r'NoteImageGalleryState', 'images'),
+            images,
+            r'NoteImageGalleryState',
+            'images',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -22,23 +22,23 @@ class _$SelectNotebookViewModel extends SelectNotebookViewModel {
   @override
   final TypedFunctionHolder<String> selectNotebookCommand;
 
-  factory _$SelectNotebookViewModel(
-          [void Function(SelectNotebookViewModelBuilder)? updates]) =>
-      (SelectNotebookViewModelBuilder()..update(updates))._build();
+  factory _$SelectNotebookViewModel([
+    void Function(SelectNotebookViewModelBuilder)? updates,
+  ]) => (SelectNotebookViewModelBuilder()..update(updates))._build();
 
-  _$SelectNotebookViewModel._(
-      {this.selectedNotebookId,
-      required this.newNotebookMenuOption,
-      required this.notebooks,
-      required this.title,
-      required this.closeCommand,
-      required this.newNotebookCommand,
-      required this.selectNotebookCommand})
-      : super._();
+  _$SelectNotebookViewModel._({
+    this.selectedNotebookId,
+    required this.newNotebookMenuOption,
+    required this.notebooks,
+    required this.title,
+    required this.closeCommand,
+    required this.newNotebookCommand,
+    required this.selectNotebookCommand,
+  }) : super._();
   @override
   SelectNotebookViewModel rebuild(
-          void Function(SelectNotebookViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SelectNotebookViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SelectNotebookViewModelBuilder toBuilder() =>
@@ -124,8 +124,8 @@ class SelectNotebookViewModelBuilder
   TypedFunctionHolder<String>? get selectNotebookCommand =>
       _$this._selectNotebookCommand;
   set selectNotebookCommand(
-          TypedFunctionHolder<String>? selectNotebookCommand) =>
-      _$this._selectNotebookCommand = selectNotebookCommand;
+    TypedFunctionHolder<String>? selectNotebookCommand,
+  ) => _$this._selectNotebookCommand = selectNotebookCommand;
 
   SelectNotebookViewModelBuilder();
 
@@ -160,26 +160,36 @@ class SelectNotebookViewModelBuilder
   _$SelectNotebookViewModel _build() {
     _$SelectNotebookViewModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SelectNotebookViewModel._(
             selectedNotebookId: selectedNotebookId,
             newNotebookMenuOption: BuiltValueNullFieldError.checkNotNull(
-                newNotebookMenuOption,
-                r'SelectNotebookViewModel',
-                'newNotebookMenuOption'),
+              newNotebookMenuOption,
+              r'SelectNotebookViewModel',
+              'newNotebookMenuOption',
+            ),
             notebooks: notebooks.build(),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SelectNotebookViewModel', 'title'),
+              title,
+              r'SelectNotebookViewModel',
+              'title',
+            ),
             closeCommand: BuiltValueNullFieldError.checkNotNull(
-                closeCommand, r'SelectNotebookViewModel', 'closeCommand'),
+              closeCommand,
+              r'SelectNotebookViewModel',
+              'closeCommand',
+            ),
             newNotebookCommand: BuiltValueNullFieldError.checkNotNull(
-                newNotebookCommand,
-                r'SelectNotebookViewModel',
-                'newNotebookCommand'),
+              newNotebookCommand,
+              r'SelectNotebookViewModel',
+              'newNotebookCommand',
+            ),
             selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(
-                selectNotebookCommand,
-                r'SelectNotebookViewModel',
-                'selectNotebookCommand'),
+              selectNotebookCommand,
+              r'SelectNotebookViewModel',
+              'selectNotebookCommand',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -188,7 +198,10 @@ class SelectNotebookViewModelBuilder
         notebooks.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SelectNotebookViewModel', _$failedField, e.toString());
+          r'SelectNotebookViewModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

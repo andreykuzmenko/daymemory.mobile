@@ -16,20 +16,20 @@ class _$AnswerQuestionState extends AnswerQuestionState {
   @override
   final int currentIndex;
 
-  factory _$AnswerQuestionState(
-          [void Function(AnswerQuestionStateBuilder)? updates]) =>
-      (AnswerQuestionStateBuilder()..update(updates))._build();
+  factory _$AnswerQuestionState([
+    void Function(AnswerQuestionStateBuilder)? updates,
+  ]) => (AnswerQuestionStateBuilder()..update(updates))._build();
 
-  _$AnswerQuestionState._(
-      {required this.answers,
-      required this.questions,
-      required this.questionListTitle,
-      required this.currentIndex})
-      : super._();
+  _$AnswerQuestionState._({
+    required this.answers,
+    required this.questions,
+    required this.questionListTitle,
+    required this.currentIndex,
+  }) : super._();
   @override
   AnswerQuestionState rebuild(
-          void Function(AnswerQuestionStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnswerQuestionStateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnswerQuestionStateBuilder toBuilder() =>
@@ -116,16 +116,29 @@ class AnswerQuestionStateBuilder
   AnswerQuestionState build() => _build();
 
   _$AnswerQuestionState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnswerQuestionState._(
           answers: BuiltValueNullFieldError.checkNotNull(
-              answers, r'AnswerQuestionState', 'answers'),
+            answers,
+            r'AnswerQuestionState',
+            'answers',
+          ),
           questions: BuiltValueNullFieldError.checkNotNull(
-              questions, r'AnswerQuestionState', 'questions'),
+            questions,
+            r'AnswerQuestionState',
+            'questions',
+          ),
           questionListTitle: BuiltValueNullFieldError.checkNotNull(
-              questionListTitle, r'AnswerQuestionState', 'questionListTitle'),
+            questionListTitle,
+            r'AnswerQuestionState',
+            'questionListTitle',
+          ),
           currentIndex: BuiltValueNullFieldError.checkNotNull(
-              currentIndex, r'AnswerQuestionState', 'currentIndex'),
+            currentIndex,
+            r'AnswerQuestionState',
+            'currentIndex',
+          ),
         );
     replace(_$result);
     return _$result;

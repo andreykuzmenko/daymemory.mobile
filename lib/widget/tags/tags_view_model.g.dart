@@ -29,17 +29,17 @@ class _$TagsViewModel extends TagsViewModel {
   factory _$TagsViewModel([void Function(TagsViewModelBuilder)? updates]) =>
       (TagsViewModelBuilder()..update(updates))._build();
 
-  _$TagsViewModel._(
-      {this.tagId,
-      required this.isSaving,
-      required this.title,
-      required this.addTagButton,
-      required this.items,
-      required this.addTagCommand,
-      required this.reorderCommand,
-      required this.saveCommand,
-      required this.closeCommand})
-      : super._();
+  _$TagsViewModel._({
+    this.tagId,
+    required this.isSaving,
+    required this.title,
+    required this.addTagButton,
+    required this.items,
+    required this.addTagCommand,
+    required this.reorderCommand,
+    required this.saveCommand,
+    required this.closeCommand,
+  }) : super._();
   @override
   TagsViewModel rebuild(void Function(TagsViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -175,24 +175,46 @@ class TagsViewModelBuilder
   _$TagsViewModel _build() {
     _$TagsViewModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TagsViewModel._(
             tagId: tagId,
             isSaving: BuiltValueNullFieldError.checkNotNull(
-                isSaving, r'TagsViewModel', 'isSaving'),
+              isSaving,
+              r'TagsViewModel',
+              'isSaving',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'TagsViewModel', 'title'),
+              title,
+              r'TagsViewModel',
+              'title',
+            ),
             addTagButton: BuiltValueNullFieldError.checkNotNull(
-                addTagButton, r'TagsViewModel', 'addTagButton'),
+              addTagButton,
+              r'TagsViewModel',
+              'addTagButton',
+            ),
             items: items.build(),
             addTagCommand: BuiltValueNullFieldError.checkNotNull(
-                addTagCommand, r'TagsViewModel', 'addTagCommand'),
+              addTagCommand,
+              r'TagsViewModel',
+              'addTagCommand',
+            ),
             reorderCommand: BuiltValueNullFieldError.checkNotNull(
-                reorderCommand, r'TagsViewModel', 'reorderCommand'),
+              reorderCommand,
+              r'TagsViewModel',
+              'reorderCommand',
+            ),
             saveCommand: BuiltValueNullFieldError.checkNotNull(
-                saveCommand, r'TagsViewModel', 'saveCommand'),
+              saveCommand,
+              r'TagsViewModel',
+              'saveCommand',
+            ),
             closeCommand: BuiltValueNullFieldError.checkNotNull(
-                closeCommand, r'TagsViewModel', 'closeCommand'),
+              closeCommand,
+              r'TagsViewModel',
+              'closeCommand',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -201,7 +223,10 @@ class TagsViewModelBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TagsViewModel', _$failedField, e.toString());
+          r'TagsViewModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

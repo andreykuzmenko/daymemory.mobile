@@ -30,27 +30,27 @@ class _$OnboardingViewModel extends OnboardingViewModel {
   @override
   final FunctionHolder skipCommand;
 
-  factory _$OnboardingViewModel(
-          [void Function(OnboardingViewModelBuilder)? updates]) =>
-      (OnboardingViewModelBuilder()..update(updates))._build();
+  factory _$OnboardingViewModel([
+    void Function(OnboardingViewModelBuilder)? updates,
+  ]) => (OnboardingViewModelBuilder()..update(updates))._build();
 
-  _$OnboardingViewModel._(
-      {required this.items,
-      required this.titles,
-      required this.subtitles,
-      required this.currentPage,
-      required this.isLastPage,
-      required this.skipTitle,
-      required this.getStartedTitle,
-      required this.nextTitle,
-      required this.nextPageCommand,
-      required this.getStartedCommand,
-      required this.skipCommand})
-      : super._();
+  _$OnboardingViewModel._({
+    required this.items,
+    required this.titles,
+    required this.subtitles,
+    required this.currentPage,
+    required this.isLastPage,
+    required this.skipTitle,
+    required this.getStartedTitle,
+    required this.nextTitle,
+    required this.nextPageCommand,
+    required this.getStartedCommand,
+    required this.skipCommand,
+  }) : super._();
   @override
   OnboardingViewModel rebuild(
-          void Function(OnboardingViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OnboardingViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OnboardingViewModelBuilder toBuilder() =>
@@ -200,27 +200,52 @@ class OnboardingViewModelBuilder
   _$OnboardingViewModel _build() {
     _$OnboardingViewModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OnboardingViewModel._(
             items: items.build(),
             titles: titles.build(),
             subtitles: subtitles.build(),
             currentPage: BuiltValueNullFieldError.checkNotNull(
-                currentPage, r'OnboardingViewModel', 'currentPage'),
+              currentPage,
+              r'OnboardingViewModel',
+              'currentPage',
+            ),
             isLastPage: BuiltValueNullFieldError.checkNotNull(
-                isLastPage, r'OnboardingViewModel', 'isLastPage'),
+              isLastPage,
+              r'OnboardingViewModel',
+              'isLastPage',
+            ),
             skipTitle: BuiltValueNullFieldError.checkNotNull(
-                skipTitle, r'OnboardingViewModel', 'skipTitle'),
+              skipTitle,
+              r'OnboardingViewModel',
+              'skipTitle',
+            ),
             getStartedTitle: BuiltValueNullFieldError.checkNotNull(
-                getStartedTitle, r'OnboardingViewModel', 'getStartedTitle'),
+              getStartedTitle,
+              r'OnboardingViewModel',
+              'getStartedTitle',
+            ),
             nextTitle: BuiltValueNullFieldError.checkNotNull(
-                nextTitle, r'OnboardingViewModel', 'nextTitle'),
+              nextTitle,
+              r'OnboardingViewModel',
+              'nextTitle',
+            ),
             nextPageCommand: BuiltValueNullFieldError.checkNotNull(
-                nextPageCommand, r'OnboardingViewModel', 'nextPageCommand'),
+              nextPageCommand,
+              r'OnboardingViewModel',
+              'nextPageCommand',
+            ),
             getStartedCommand: BuiltValueNullFieldError.checkNotNull(
-                getStartedCommand, r'OnboardingViewModel', 'getStartedCommand'),
+              getStartedCommand,
+              r'OnboardingViewModel',
+              'getStartedCommand',
+            ),
             skipCommand: BuiltValueNullFieldError.checkNotNull(
-                skipCommand, r'OnboardingViewModel', 'skipCommand'),
+              skipCommand,
+              r'OnboardingViewModel',
+              'skipCommand',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -233,7 +258,10 @@ class OnboardingViewModelBuilder
         subtitles.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OnboardingViewModel', _$failedField, e.toString());
+          r'OnboardingViewModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -18,21 +18,21 @@ class _$AnswerQuestionViewModel extends AnswerQuestionViewModel {
   @override
   final FunctionHolder closeCommand;
 
-  factory _$AnswerQuestionViewModel(
-          [void Function(AnswerQuestionViewModelBuilder)? updates]) =>
-      (AnswerQuestionViewModelBuilder()..update(updates))._build();
+  factory _$AnswerQuestionViewModel([
+    void Function(AnswerQuestionViewModelBuilder)? updates,
+  ]) => (AnswerQuestionViewModelBuilder()..update(updates))._build();
 
-  _$AnswerQuestionViewModel._(
-      {required this.title,
-      required this.isSaving,
-      required this.editViewModel,
-      required this.nextCommand,
-      required this.closeCommand})
-      : super._();
+  _$AnswerQuestionViewModel._({
+    required this.title,
+    required this.isSaving,
+    required this.editViewModel,
+    required this.nextCommand,
+    required this.closeCommand,
+  }) : super._();
   @override
   AnswerQuestionViewModel rebuild(
-          void Function(AnswerQuestionViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnswerQuestionViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnswerQuestionViewModelBuilder toBuilder() =>
@@ -133,17 +133,30 @@ class AnswerQuestionViewModelBuilder
   _$AnswerQuestionViewModel _build() {
     _$AnswerQuestionViewModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnswerQuestionViewModel._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'AnswerQuestionViewModel', 'title'),
+              title,
+              r'AnswerQuestionViewModel',
+              'title',
+            ),
             isSaving: BuiltValueNullFieldError.checkNotNull(
-                isSaving, r'AnswerQuestionViewModel', 'isSaving'),
+              isSaving,
+              r'AnswerQuestionViewModel',
+              'isSaving',
+            ),
             editViewModel: editViewModel.build(),
             nextCommand: BuiltValueNullFieldError.checkNotNull(
-                nextCommand, r'AnswerQuestionViewModel', 'nextCommand'),
+              nextCommand,
+              r'AnswerQuestionViewModel',
+              'nextCommand',
+            ),
             closeCommand: BuiltValueNullFieldError.checkNotNull(
-                closeCommand, r'AnswerQuestionViewModel', 'closeCommand'),
+              closeCommand,
+              r'AnswerQuestionViewModel',
+              'closeCommand',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -152,7 +165,10 @@ class AnswerQuestionViewModelBuilder
         editViewModel.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnswerQuestionViewModel', _$failedField, e.toString());
+          r'AnswerQuestionViewModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

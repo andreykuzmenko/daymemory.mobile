@@ -17,11 +17,11 @@ class _$DeviceState extends DeviceState {
   factory _$DeviceState([void Function(DeviceStateBuilder)? updates]) =>
       (DeviceStateBuilder()..update(updates))._build();
 
-  _$DeviceState._(
-      {required this.deviceType,
-      required this.size,
-      required this.deviceWidthType})
-      : super._();
+  _$DeviceState._({
+    required this.deviceType,
+    required this.size,
+    required this.deviceWidthType,
+  }) : super._();
   @override
   DeviceState rebuild(void Function(DeviceStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -101,14 +101,24 @@ class DeviceStateBuilder implements Builder<DeviceState, DeviceStateBuilder> {
   DeviceState build() => _build();
 
   _$DeviceState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DeviceState._(
           deviceType: BuiltValueNullFieldError.checkNotNull(
-              deviceType, r'DeviceState', 'deviceType'),
+            deviceType,
+            r'DeviceState',
+            'deviceType',
+          ),
           size: BuiltValueNullFieldError.checkNotNull(
-              size, r'DeviceState', 'size'),
+            size,
+            r'DeviceState',
+            'size',
+          ),
           deviceWidthType: BuiltValueNullFieldError.checkNotNull(
-              deviceWidthType, r'DeviceState', 'deviceWidthType'),
+            deviceWidthType,
+            r'DeviceState',
+            'deviceWidthType',
+          ),
         );
     replace(_$result);
     return _$result;

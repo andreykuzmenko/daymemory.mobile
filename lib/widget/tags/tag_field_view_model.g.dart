@@ -18,17 +18,17 @@ class _$TagFieldViewModel extends TagFieldViewModel {
   @override
   final TypedFunctionHolder<String> textChangedCommand;
 
-  factory _$TagFieldViewModel(
-          [void Function(TagFieldViewModelBuilder)? updates]) =>
-      (TagFieldViewModelBuilder()..update(updates))._build();
+  factory _$TagFieldViewModel([
+    void Function(TagFieldViewModelBuilder)? updates,
+  ]) => (TagFieldViewModelBuilder()..update(updates))._build();
 
-  _$TagFieldViewModel._(
-      {required this.fieldId,
-      required this.text,
-      required this.placeholder,
-      this.deleteCommand,
-      required this.textChangedCommand})
-      : super._();
+  _$TagFieldViewModel._({
+    required this.fieldId,
+    required this.text,
+    required this.placeholder,
+    this.deleteCommand,
+    required this.textChangedCommand,
+  }) : super._();
   @override
   TagFieldViewModel rebuild(void Function(TagFieldViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -128,17 +128,30 @@ class TagFieldViewModelBuilder
   TagFieldViewModel build() => _build();
 
   _$TagFieldViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TagFieldViewModel._(
           fieldId: BuiltValueNullFieldError.checkNotNull(
-              fieldId, r'TagFieldViewModel', 'fieldId'),
+            fieldId,
+            r'TagFieldViewModel',
+            'fieldId',
+          ),
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'TagFieldViewModel', 'text'),
+            text,
+            r'TagFieldViewModel',
+            'text',
+          ),
           placeholder: BuiltValueNullFieldError.checkNotNull(
-              placeholder, r'TagFieldViewModel', 'placeholder'),
+            placeholder,
+            r'TagFieldViewModel',
+            'placeholder',
+          ),
           deleteCommand: deleteCommand,
           textChangedCommand: BuiltValueNullFieldError.checkNotNull(
-              textChangedCommand, r'TagFieldViewModel', 'textChangedCommand'),
+            textChangedCommand,
+            r'TagFieldViewModel',
+            'textChangedCommand',
+          ),
         );
     replace(_$result);
     return _$result;

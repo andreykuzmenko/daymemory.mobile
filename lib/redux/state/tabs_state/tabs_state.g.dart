@@ -15,9 +15,10 @@ class _$TabsState extends TabsState {
   factory _$TabsState([void Function(TabsStateBuilder)? updates]) =>
       (TabsStateBuilder()..update(updates))._build();
 
-  _$TabsState._(
-      {required this.selectTabIndex, required this.isActiveTabClicked})
-      : super._();
+  _$TabsState._({
+    required this.selectTabIndex,
+    required this.isActiveTabClicked,
+  }) : super._();
   @override
   TabsState rebuild(void Function(TabsStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -90,12 +91,19 @@ class TabsStateBuilder implements Builder<TabsState, TabsStateBuilder> {
   TabsState build() => _build();
 
   _$TabsState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TabsState._(
           selectTabIndex: BuiltValueNullFieldError.checkNotNull(
-              selectTabIndex, r'TabsState', 'selectTabIndex'),
+            selectTabIndex,
+            r'TabsState',
+            'selectTabIndex',
+          ),
           isActiveTabClicked: BuiltValueNullFieldError.checkNotNull(
-              isActiveTabClicked, r'TabsState', 'isActiveTabClicked'),
+            isActiveTabClicked,
+            r'TabsState',
+            'isActiveTabClicked',
+          ),
         );
     replace(_$result);
     return _$result;

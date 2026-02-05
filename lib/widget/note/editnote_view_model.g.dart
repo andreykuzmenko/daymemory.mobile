@@ -58,37 +58,37 @@ class _$EditNoteViewModel extends EditNoteViewModel {
   @override
   final TypedFunctionHolder<DateTime> dateChangedCommand;
 
-  factory _$EditNoteViewModel(
-          [void Function(EditNoteViewModelBuilder)? updates]) =>
-      (EditNoteViewModelBuilder()..update(updates))._build();
+  factory _$EditNoteViewModel([
+    void Function(EditNoteViewModelBuilder)? updates,
+  ]) => (EditNoteViewModelBuilder()..update(updates))._build();
 
-  _$EditNoteViewModel._(
-      {this.noteId,
-      this.text,
-      required this.notebookTitle,
-      required this.notebookId,
-      this.questionText,
-      required this.textPlaceholder,
-      required this.doneButtonText,
-      required this.isSaving,
-      required this.hasChanged,
-      this.location,
-      required this.mediaFiles,
-      required this.tags,
-      required this.date,
-      required this.showToolbarOnTop,
-      required this.isVideoSupported,
-      required this.saveCommand,
-      required this.reorderCommand,
-      required this.optionsCommand,
-      required this.closeCommand,
-      this.deleteImageCommand,
-      this.selectImagesCommand,
-      this.selectVideoCommand,
-      required this.selectNotebookCommand,
-      required this.textChangedCommand,
-      required this.dateChangedCommand})
-      : super._();
+  _$EditNoteViewModel._({
+    this.noteId,
+    this.text,
+    required this.notebookTitle,
+    required this.notebookId,
+    this.questionText,
+    required this.textPlaceholder,
+    required this.doneButtonText,
+    required this.isSaving,
+    required this.hasChanged,
+    this.location,
+    required this.mediaFiles,
+    required this.tags,
+    required this.date,
+    required this.showToolbarOnTop,
+    required this.isVideoSupported,
+    required this.saveCommand,
+    required this.reorderCommand,
+    required this.optionsCommand,
+    required this.closeCommand,
+    this.deleteImageCommand,
+    this.selectImagesCommand,
+    this.selectVideoCommand,
+    required this.selectNotebookCommand,
+    required this.textChangedCommand,
+    required this.dateChangedCommand,
+  }) : super._();
   @override
   EditNoteViewModel rebuild(void Function(EditNoteViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -368,52 +368,102 @@ class EditNoteViewModelBuilder
   _$EditNoteViewModel _build() {
     _$EditNoteViewModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EditNoteViewModel._(
             noteId: noteId,
             text: text,
             notebookTitle: BuiltValueNullFieldError.checkNotNull(
-                notebookTitle, r'EditNoteViewModel', 'notebookTitle'),
+              notebookTitle,
+              r'EditNoteViewModel',
+              'notebookTitle',
+            ),
             notebookId: BuiltValueNullFieldError.checkNotNull(
-                notebookId, r'EditNoteViewModel', 'notebookId'),
+              notebookId,
+              r'EditNoteViewModel',
+              'notebookId',
+            ),
             questionText: questionText,
             textPlaceholder: BuiltValueNullFieldError.checkNotNull(
-                textPlaceholder, r'EditNoteViewModel', 'textPlaceholder'),
+              textPlaceholder,
+              r'EditNoteViewModel',
+              'textPlaceholder',
+            ),
             doneButtonText: BuiltValueNullFieldError.checkNotNull(
-                doneButtonText, r'EditNoteViewModel', 'doneButtonText'),
+              doneButtonText,
+              r'EditNoteViewModel',
+              'doneButtonText',
+            ),
             isSaving: BuiltValueNullFieldError.checkNotNull(
-                isSaving, r'EditNoteViewModel', 'isSaving'),
+              isSaving,
+              r'EditNoteViewModel',
+              'isSaving',
+            ),
             hasChanged: BuiltValueNullFieldError.checkNotNull(
-                hasChanged, r'EditNoteViewModel', 'hasChanged'),
+              hasChanged,
+              r'EditNoteViewModel',
+              'hasChanged',
+            ),
             location: location,
             mediaFiles: mediaFiles.build(),
             tags: BuiltValueNullFieldError.checkNotNull(
-                tags, r'EditNoteViewModel', 'tags'),
+              tags,
+              r'EditNoteViewModel',
+              'tags',
+            ),
             date: BuiltValueNullFieldError.checkNotNull(
-                date, r'EditNoteViewModel', 'date'),
+              date,
+              r'EditNoteViewModel',
+              'date',
+            ),
             showToolbarOnTop: BuiltValueNullFieldError.checkNotNull(
-                showToolbarOnTop, r'EditNoteViewModel', 'showToolbarOnTop'),
+              showToolbarOnTop,
+              r'EditNoteViewModel',
+              'showToolbarOnTop',
+            ),
             isVideoSupported: BuiltValueNullFieldError.checkNotNull(
-                isVideoSupported, r'EditNoteViewModel', 'isVideoSupported'),
+              isVideoSupported,
+              r'EditNoteViewModel',
+              'isVideoSupported',
+            ),
             saveCommand: BuiltValueNullFieldError.checkNotNull(
-                saveCommand, r'EditNoteViewModel', 'saveCommand'),
+              saveCommand,
+              r'EditNoteViewModel',
+              'saveCommand',
+            ),
             reorderCommand: BuiltValueNullFieldError.checkNotNull(
-                reorderCommand, r'EditNoteViewModel', 'reorderCommand'),
+              reorderCommand,
+              r'EditNoteViewModel',
+              'reorderCommand',
+            ),
             optionsCommand: BuiltValueNullFieldError.checkNotNull(
-                optionsCommand, r'EditNoteViewModel', 'optionsCommand'),
+              optionsCommand,
+              r'EditNoteViewModel',
+              'optionsCommand',
+            ),
             closeCommand: BuiltValueNullFieldError.checkNotNull(
-                closeCommand, r'EditNoteViewModel', 'closeCommand'),
+              closeCommand,
+              r'EditNoteViewModel',
+              'closeCommand',
+            ),
             deleteImageCommand: deleteImageCommand,
             selectImagesCommand: selectImagesCommand,
             selectVideoCommand: selectVideoCommand,
             selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(
-                selectNotebookCommand,
-                r'EditNoteViewModel',
-                'selectNotebookCommand'),
+              selectNotebookCommand,
+              r'EditNoteViewModel',
+              'selectNotebookCommand',
+            ),
             textChangedCommand: BuiltValueNullFieldError.checkNotNull(
-                textChangedCommand, r'EditNoteViewModel', 'textChangedCommand'),
+              textChangedCommand,
+              r'EditNoteViewModel',
+              'textChangedCommand',
+            ),
             dateChangedCommand: BuiltValueNullFieldError.checkNotNull(
-                dateChangedCommand, r'EditNoteViewModel', 'dateChangedCommand'),
+              dateChangedCommand,
+              r'EditNoteViewModel',
+              'dateChangedCommand',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -422,7 +472,10 @@ class EditNoteViewModelBuilder
         mediaFiles.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EditNoteViewModel', _$failedField, e.toString());
+          r'EditNoteViewModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

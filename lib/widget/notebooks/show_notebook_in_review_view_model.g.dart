@@ -16,20 +16,20 @@ class _$ShowNotebookInReviewViewModel extends ShowNotebookInReviewViewModel {
   @override
   final bool isEnabled;
 
-  factory _$ShowNotebookInReviewViewModel(
-          [void Function(ShowNotebookInReviewViewModelBuilder)? updates]) =>
-      (ShowNotebookInReviewViewModelBuilder()..update(updates))._build();
+  factory _$ShowNotebookInReviewViewModel([
+    void Function(ShowNotebookInReviewViewModelBuilder)? updates,
+  ]) => (ShowNotebookInReviewViewModelBuilder()..update(updates))._build();
 
-  _$ShowNotebookInReviewViewModel._(
-      {required this.switchShowInReviewCommand,
-      required this.notebookId,
-      required this.notebookTitle,
-      required this.isEnabled})
-      : super._();
+  _$ShowNotebookInReviewViewModel._({
+    required this.switchShowInReviewCommand,
+    required this.notebookId,
+    required this.notebookTitle,
+    required this.isEnabled,
+  }) : super._();
   @override
   ShowNotebookInReviewViewModel rebuild(
-          void Function(ShowNotebookInReviewViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ShowNotebookInReviewViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ShowNotebookInReviewViewModelBuilder toBuilder() =>
@@ -69,16 +69,18 @@ class _$ShowNotebookInReviewViewModel extends ShowNotebookInReviewViewModel {
 
 class ShowNotebookInReviewViewModelBuilder
     implements
-        Builder<ShowNotebookInReviewViewModel,
-            ShowNotebookInReviewViewModelBuilder> {
+        Builder<
+          ShowNotebookInReviewViewModel,
+          ShowNotebookInReviewViewModelBuilder
+        > {
   _$ShowNotebookInReviewViewModel? _$v;
 
   TypedFunctionHolder<bool>? _switchShowInReviewCommand;
   TypedFunctionHolder<bool>? get switchShowInReviewCommand =>
       _$this._switchShowInReviewCommand;
   set switchShowInReviewCommand(
-          TypedFunctionHolder<bool>? switchShowInReviewCommand) =>
-      _$this._switchShowInReviewCommand = switchShowInReviewCommand;
+    TypedFunctionHolder<bool>? switchShowInReviewCommand,
+  ) => _$this._switchShowInReviewCommand = switchShowInReviewCommand;
 
   String? _notebookId;
   String? get notebookId => _$this._notebookId;
@@ -121,18 +123,29 @@ class ShowNotebookInReviewViewModelBuilder
   ShowNotebookInReviewViewModel build() => _build();
 
   _$ShowNotebookInReviewViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ShowNotebookInReviewViewModel._(
           switchShowInReviewCommand: BuiltValueNullFieldError.checkNotNull(
-              switchShowInReviewCommand,
-              r'ShowNotebookInReviewViewModel',
-              'switchShowInReviewCommand'),
+            switchShowInReviewCommand,
+            r'ShowNotebookInReviewViewModel',
+            'switchShowInReviewCommand',
+          ),
           notebookId: BuiltValueNullFieldError.checkNotNull(
-              notebookId, r'ShowNotebookInReviewViewModel', 'notebookId'),
+            notebookId,
+            r'ShowNotebookInReviewViewModel',
+            'notebookId',
+          ),
           notebookTitle: BuiltValueNullFieldError.checkNotNull(
-              notebookTitle, r'ShowNotebookInReviewViewModel', 'notebookTitle'),
+            notebookTitle,
+            r'ShowNotebookInReviewViewModel',
+            'notebookTitle',
+          ),
           isEnabled: BuiltValueNullFieldError.checkNotNull(
-              isEnabled, r'ShowNotebookInReviewViewModel', 'isEnabled'),
+            isEnabled,
+            r'ShowNotebookInReviewViewModel',
+            'isEnabled',
+          ),
         );
     replace(_$result);
     return _$result;

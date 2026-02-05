@@ -148,7 +148,6 @@ dependencies:
   gal: ^2.3.2
 
 dependency_overrides:
-  analyzer: ^8.1.0
   i18n_extension: ^15.0.5
   meta: ^1.17.0
   gal_linux: ^0.1.2

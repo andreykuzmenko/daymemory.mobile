@@ -16,20 +16,20 @@ class _$NoteImageGalleryViewModel extends NoteImageGalleryViewModel {
   @override
   final FunctionHolder closeCommand;
 
-  factory _$NoteImageGalleryViewModel(
-          [void Function(NoteImageGalleryViewModelBuilder)? updates]) =>
-      (NoteImageGalleryViewModelBuilder()..update(updates))._build();
+  factory _$NoteImageGalleryViewModel([
+    void Function(NoteImageGalleryViewModelBuilder)? updates,
+  ]) => (NoteImageGalleryViewModelBuilder()..update(updates))._build();
 
-  _$NoteImageGalleryViewModel._(
-      {required this.images,
-      required this.index,
-      required this.showImageNavigation,
-      required this.closeCommand})
-      : super._();
+  _$NoteImageGalleryViewModel._({
+    required this.images,
+    required this.index,
+    required this.showImageNavigation,
+    required this.closeCommand,
+  }) : super._();
   @override
   NoteImageGalleryViewModel rebuild(
-          void Function(NoteImageGalleryViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NoteImageGalleryViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NoteImageGalleryViewModelBuilder toBuilder() =>
@@ -118,18 +118,29 @@ class NoteImageGalleryViewModelBuilder
   NoteImageGalleryViewModel build() => _build();
 
   _$NoteImageGalleryViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NoteImageGalleryViewModel._(
           images: BuiltValueNullFieldError.checkNotNull(
-              images, r'NoteImageGalleryViewModel', 'images'),
+            images,
+            r'NoteImageGalleryViewModel',
+            'images',
+          ),
           index: BuiltValueNullFieldError.checkNotNull(
-              index, r'NoteImageGalleryViewModel', 'index'),
+            index,
+            r'NoteImageGalleryViewModel',
+            'index',
+          ),
           showImageNavigation: BuiltValueNullFieldError.checkNotNull(
-              showImageNavigation,
-              r'NoteImageGalleryViewModel',
-              'showImageNavigation'),
+            showImageNavigation,
+            r'NoteImageGalleryViewModel',
+            'showImageNavigation',
+          ),
           closeCommand: BuiltValueNullFieldError.checkNotNull(
-              closeCommand, r'NoteImageGalleryViewModel', 'closeCommand'),
+            closeCommand,
+            r'NoteImageGalleryViewModel',
+            'closeCommand',
+          ),
         );
     replace(_$result);
     return _$result;

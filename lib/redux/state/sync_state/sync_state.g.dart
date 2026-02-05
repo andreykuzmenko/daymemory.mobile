@@ -19,12 +19,12 @@ class _$SyncState extends SyncState {
   factory _$SyncState([void Function(SyncStateBuilder)? updates]) =>
       (SyncStateBuilder()..update(updates))._build();
 
-  _$SyncState._(
-      {required this.isSyncing,
-      this.lastSyncDate,
-      this.hasLastSyncSucceeded,
-      this.syncStatus})
-      : super._();
+  _$SyncState._({
+    required this.isSyncing,
+    this.lastSyncDate,
+    this.hasLastSyncSucceeded,
+    this.syncStatus,
+  }) : super._();
   @override
   SyncState rebuild(void Function(SyncStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -113,10 +113,14 @@ class SyncStateBuilder implements Builder<SyncState, SyncStateBuilder> {
   SyncState build() => _build();
 
   _$SyncState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SyncState._(
           isSyncing: BuiltValueNullFieldError.checkNotNull(
-              isSyncing, r'SyncState', 'isSyncing'),
+            isSyncing,
+            r'SyncState',
+            'isSyncing',
+          ),
           lastSyncDate: lastSyncDate,
           hasLastSyncSucceeded: hasLastSyncSucceeded,
           syncStatus: syncStatus,

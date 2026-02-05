@@ -23,14 +23,14 @@ class _$AccountState extends AccountState {
   factory _$AccountState([void Function(AccountStateBuilder)? updates]) =>
       (AccountStateBuilder()..update(updates))._build();
 
-  _$AccountState._(
-      {required this.isAuthenticated,
-      required this.isEncryptionEnabled,
-      this.userEmail,
-      this.firstName,
-      this.lastName,
-      this.encryptedText})
-      : super._();
+  _$AccountState._({
+    required this.isAuthenticated,
+    required this.isEncryptionEnabled,
+    this.userEmail,
+    this.firstName,
+    this.lastName,
+    this.encryptedText,
+  }) : super._();
   @override
   AccountState rebuild(void Function(AccountStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -137,12 +137,19 @@ class AccountStateBuilder
   AccountState build() => _build();
 
   _$AccountState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AccountState._(
           isAuthenticated: BuiltValueNullFieldError.checkNotNull(
-              isAuthenticated, r'AccountState', 'isAuthenticated'),
+            isAuthenticated,
+            r'AccountState',
+            'isAuthenticated',
+          ),
           isEncryptionEnabled: BuiltValueNullFieldError.checkNotNull(
-              isEncryptionEnabled, r'AccountState', 'isEncryptionEnabled'),
+            isEncryptionEnabled,
+            r'AccountState',
+            'isEncryptionEnabled',
+          ),
           userEmail: userEmail,
           firstName: firstName,
           lastName: lastName,

@@ -20,18 +20,18 @@ class _$EditNotebookState extends EditNotebookState {
   @override
   final bool isSaving;
 
-  factory _$EditNotebookState(
-          [void Function(EditNotebookStateBuilder)? updates]) =>
-      (EditNotebookStateBuilder()..update(updates))._build();
+  factory _$EditNotebookState([
+    void Function(EditNotebookStateBuilder)? updates,
+  ]) => (EditNotebookStateBuilder()..update(updates))._build();
 
-  _$EditNotebookState._(
-      {this.notebookId,
-      required this.title,
-      required this.showInReview,
-      required this.orderRank,
-      required this.sortingType,
-      required this.isSaving})
-      : super._();
+  _$EditNotebookState._({
+    this.notebookId,
+    required this.title,
+    required this.showInReview,
+    required this.orderRank,
+    required this.sortingType,
+    required this.isSaving,
+  }) : super._();
   @override
   EditNotebookState rebuild(void Function(EditNotebookStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -137,19 +137,35 @@ class EditNotebookStateBuilder
   EditNotebookState build() => _build();
 
   _$EditNotebookState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EditNotebookState._(
           notebookId: notebookId,
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'EditNotebookState', 'title'),
+            title,
+            r'EditNotebookState',
+            'title',
+          ),
           showInReview: BuiltValueNullFieldError.checkNotNull(
-              showInReview, r'EditNotebookState', 'showInReview'),
+            showInReview,
+            r'EditNotebookState',
+            'showInReview',
+          ),
           orderRank: BuiltValueNullFieldError.checkNotNull(
-              orderRank, r'EditNotebookState', 'orderRank'),
+            orderRank,
+            r'EditNotebookState',
+            'orderRank',
+          ),
           sortingType: BuiltValueNullFieldError.checkNotNull(
-              sortingType, r'EditNotebookState', 'sortingType'),
+            sortingType,
+            r'EditNotebookState',
+            'sortingType',
+          ),
           isSaving: BuiltValueNullFieldError.checkNotNull(
-              isSaving, r'EditNotebookState', 'isSaving'),
+            isSaving,
+            r'EditNotebookState',
+            'isSaving',
+          ),
         );
     replace(_$result);
     return _$result;

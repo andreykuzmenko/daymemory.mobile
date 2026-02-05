@@ -34,29 +34,29 @@ class _$ConfigurationSettings extends ConfigurationSettings {
   @override
   final String mixPanelKey;
 
-  factory _$ConfigurationSettings(
-          [void Function(ConfigurationSettingsBuilder)? updates]) =>
-      (ConfigurationSettingsBuilder()..update(updates))._build();
+  factory _$ConfigurationSettings([
+    void Function(ConfigurationSettingsBuilder)? updates,
+  ]) => (ConfigurationSettingsBuilder()..update(updates))._build();
 
-  _$ConfigurationSettings._(
-      {required this.type,
-      required this.appName,
-      required this.apiUrl,
-      required this.privacyPolicyUrl,
-      required this.termsOfUseUrl,
-      required this.defaultFont,
-      required this.syncDataIntervalSeconds,
-      required this.fullscreenMinWidth,
-      required this.sideMenuWidth,
-      required this.emailValidator,
-      required this.devContactEmail,
-      required this.encryptedText,
-      required this.mixPanelKey})
-      : super._();
+  _$ConfigurationSettings._({
+    required this.type,
+    required this.appName,
+    required this.apiUrl,
+    required this.privacyPolicyUrl,
+    required this.termsOfUseUrl,
+    required this.defaultFont,
+    required this.syncDataIntervalSeconds,
+    required this.fullscreenMinWidth,
+    required this.sideMenuWidth,
+    required this.emailValidator,
+    required this.devContactEmail,
+    required this.encryptedText,
+    required this.mixPanelKey,
+  }) : super._();
   @override
   ConfigurationSettings rebuild(
-          void Function(ConfigurationSettingsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ConfigurationSettingsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ConfigurationSettingsBuilder toBuilder() =>
@@ -222,38 +222,74 @@ class ConfigurationSettingsBuilder
   ConfigurationSettings build() => _build();
 
   _$ConfigurationSettings _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ConfigurationSettings._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'ConfigurationSettings', 'type'),
+            type,
+            r'ConfigurationSettings',
+            'type',
+          ),
           appName: BuiltValueNullFieldError.checkNotNull(
-              appName, r'ConfigurationSettings', 'appName'),
+            appName,
+            r'ConfigurationSettings',
+            'appName',
+          ),
           apiUrl: BuiltValueNullFieldError.checkNotNull(
-              apiUrl, r'ConfigurationSettings', 'apiUrl'),
+            apiUrl,
+            r'ConfigurationSettings',
+            'apiUrl',
+          ),
           privacyPolicyUrl: BuiltValueNullFieldError.checkNotNull(
-              privacyPolicyUrl, r'ConfigurationSettings', 'privacyPolicyUrl'),
+            privacyPolicyUrl,
+            r'ConfigurationSettings',
+            'privacyPolicyUrl',
+          ),
           termsOfUseUrl: BuiltValueNullFieldError.checkNotNull(
-              termsOfUseUrl, r'ConfigurationSettings', 'termsOfUseUrl'),
+            termsOfUseUrl,
+            r'ConfigurationSettings',
+            'termsOfUseUrl',
+          ),
           defaultFont: BuiltValueNullFieldError.checkNotNull(
-              defaultFont, r'ConfigurationSettings', 'defaultFont'),
+            defaultFont,
+            r'ConfigurationSettings',
+            'defaultFont',
+          ),
           syncDataIntervalSeconds: BuiltValueNullFieldError.checkNotNull(
-              syncDataIntervalSeconds,
-              r'ConfigurationSettings',
-              'syncDataIntervalSeconds'),
+            syncDataIntervalSeconds,
+            r'ConfigurationSettings',
+            'syncDataIntervalSeconds',
+          ),
           fullscreenMinWidth: BuiltValueNullFieldError.checkNotNull(
-              fullscreenMinWidth,
-              r'ConfigurationSettings',
-              'fullscreenMinWidth'),
+            fullscreenMinWidth,
+            r'ConfigurationSettings',
+            'fullscreenMinWidth',
+          ),
           sideMenuWidth: BuiltValueNullFieldError.checkNotNull(
-              sideMenuWidth, r'ConfigurationSettings', 'sideMenuWidth'),
+            sideMenuWidth,
+            r'ConfigurationSettings',
+            'sideMenuWidth',
+          ),
           emailValidator: BuiltValueNullFieldError.checkNotNull(
-              emailValidator, r'ConfigurationSettings', 'emailValidator'),
+            emailValidator,
+            r'ConfigurationSettings',
+            'emailValidator',
+          ),
           devContactEmail: BuiltValueNullFieldError.checkNotNull(
-              devContactEmail, r'ConfigurationSettings', 'devContactEmail'),
+            devContactEmail,
+            r'ConfigurationSettings',
+            'devContactEmail',
+          ),
           encryptedText: BuiltValueNullFieldError.checkNotNull(
-              encryptedText, r'ConfigurationSettings', 'encryptedText'),
+            encryptedText,
+            r'ConfigurationSettings',
+            'encryptedText',
+          ),
           mixPanelKey: BuiltValueNullFieldError.checkNotNull(
-              mixPanelKey, r'ConfigurationSettings', 'mixPanelKey'),
+            mixPanelKey,
+            r'ConfigurationSettings',
+            'mixPanelKey',
+          ),
         );
     replace(_$result);
     return _$result;

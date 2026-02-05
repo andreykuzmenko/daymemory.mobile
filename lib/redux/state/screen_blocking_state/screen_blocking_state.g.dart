@@ -16,20 +16,20 @@ class _$ScreenBlockingState extends ScreenBlockingState {
   @override
   final DateTime? pausedDatetime;
 
-  factory _$ScreenBlockingState(
-          [void Function(ScreenBlockingStateBuilder)? updates]) =>
-      (ScreenBlockingStateBuilder()..update(updates))._build();
+  factory _$ScreenBlockingState([
+    void Function(ScreenBlockingStateBuilder)? updates,
+  ]) => (ScreenBlockingStateBuilder()..update(updates))._build();
 
-  _$ScreenBlockingState._(
-      {required this.isScreenBlockingActive,
-      required this.isTimerBlocking,
-      required this.isAppActive,
-      this.pausedDatetime})
-      : super._();
+  _$ScreenBlockingState._({
+    required this.isScreenBlockingActive,
+    required this.isTimerBlocking,
+    required this.isAppActive,
+    this.pausedDatetime,
+  }) : super._();
   @override
   ScreenBlockingState rebuild(
-          void Function(ScreenBlockingStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ScreenBlockingStateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ScreenBlockingStateBuilder toBuilder() =>
@@ -118,16 +118,24 @@ class ScreenBlockingStateBuilder
   ScreenBlockingState build() => _build();
 
   _$ScreenBlockingState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ScreenBlockingState._(
           isScreenBlockingActive: BuiltValueNullFieldError.checkNotNull(
-              isScreenBlockingActive,
-              r'ScreenBlockingState',
-              'isScreenBlockingActive'),
+            isScreenBlockingActive,
+            r'ScreenBlockingState',
+            'isScreenBlockingActive',
+          ),
           isTimerBlocking: BuiltValueNullFieldError.checkNotNull(
-              isTimerBlocking, r'ScreenBlockingState', 'isTimerBlocking'),
+            isTimerBlocking,
+            r'ScreenBlockingState',
+            'isTimerBlocking',
+          ),
           isAppActive: BuiltValueNullFieldError.checkNotNull(
-              isAppActive, r'ScreenBlockingState', 'isAppActive'),
+            isAppActive,
+            r'ScreenBlockingState',
+            'isAppActive',
+          ),
           pausedDatetime: pausedDatetime,
         );
     replace(_$result);

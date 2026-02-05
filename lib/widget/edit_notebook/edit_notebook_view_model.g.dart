@@ -40,32 +40,32 @@ class _$EditNotebookViewModel extends EditNotebookViewModel {
   @override
   final FunctionHolder deleteCommand;
 
-  factory _$EditNotebookViewModel(
-          [void Function(EditNotebookViewModelBuilder)? updates]) =>
-      (EditNotebookViewModelBuilder()..update(updates))._build();
+  factory _$EditNotebookViewModel([
+    void Function(EditNotebookViewModelBuilder)? updates,
+  ]) => (EditNotebookViewModelBuilder()..update(updates))._build();
 
-  _$EditNotebookViewModel._(
-      {this.notebookId,
-      this.notebookTitle,
-      required this.title,
-      required this.titlePlaceholder,
-      required this.doneButtonTitle,
-      required this.deleteButtonTitle,
-      required this.sortByOption,
-      required this.sortByOptionValue,
-      required this.selectSortingTypeCommand,
-      required this.saveButtonTitle,
-      required this.requiredFieldValidator,
-      required this.isSaving,
-      required this.titleChangedCommand,
-      required this.saveCommand,
-      required this.closeCommand,
-      required this.deleteCommand})
-      : super._();
+  _$EditNotebookViewModel._({
+    this.notebookId,
+    this.notebookTitle,
+    required this.title,
+    required this.titlePlaceholder,
+    required this.doneButtonTitle,
+    required this.deleteButtonTitle,
+    required this.sortByOption,
+    required this.sortByOptionValue,
+    required this.selectSortingTypeCommand,
+    required this.saveButtonTitle,
+    required this.requiredFieldValidator,
+    required this.isSaving,
+    required this.titleChangedCommand,
+    required this.saveCommand,
+    required this.closeCommand,
+    required this.deleteCommand,
+  }) : super._();
   @override
   EditNotebookViewModel rebuild(
-          void Function(EditNotebookViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EditNotebookViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EditNotebookViewModelBuilder toBuilder() =>
@@ -261,44 +261,81 @@ class EditNotebookViewModelBuilder
   EditNotebookViewModel build() => _build();
 
   _$EditNotebookViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EditNotebookViewModel._(
           notebookId: notebookId,
           notebookTitle: notebookTitle,
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'EditNotebookViewModel', 'title'),
+            title,
+            r'EditNotebookViewModel',
+            'title',
+          ),
           titlePlaceholder: BuiltValueNullFieldError.checkNotNull(
-              titlePlaceholder, r'EditNotebookViewModel', 'titlePlaceholder'),
+            titlePlaceholder,
+            r'EditNotebookViewModel',
+            'titlePlaceholder',
+          ),
           doneButtonTitle: BuiltValueNullFieldError.checkNotNull(
-              doneButtonTitle, r'EditNotebookViewModel', 'doneButtonTitle'),
+            doneButtonTitle,
+            r'EditNotebookViewModel',
+            'doneButtonTitle',
+          ),
           deleteButtonTitle: BuiltValueNullFieldError.checkNotNull(
-              deleteButtonTitle, r'EditNotebookViewModel', 'deleteButtonTitle'),
+            deleteButtonTitle,
+            r'EditNotebookViewModel',
+            'deleteButtonTitle',
+          ),
           sortByOption: BuiltValueNullFieldError.checkNotNull(
-              sortByOption, r'EditNotebookViewModel', 'sortByOption'),
+            sortByOption,
+            r'EditNotebookViewModel',
+            'sortByOption',
+          ),
           sortByOptionValue: BuiltValueNullFieldError.checkNotNull(
-              sortByOptionValue, r'EditNotebookViewModel', 'sortByOptionValue'),
+            sortByOptionValue,
+            r'EditNotebookViewModel',
+            'sortByOptionValue',
+          ),
           selectSortingTypeCommand: BuiltValueNullFieldError.checkNotNull(
-              selectSortingTypeCommand,
-              r'EditNotebookViewModel',
-              'selectSortingTypeCommand'),
+            selectSortingTypeCommand,
+            r'EditNotebookViewModel',
+            'selectSortingTypeCommand',
+          ),
           saveButtonTitle: BuiltValueNullFieldError.checkNotNull(
-              saveButtonTitle, r'EditNotebookViewModel', 'saveButtonTitle'),
+            saveButtonTitle,
+            r'EditNotebookViewModel',
+            'saveButtonTitle',
+          ),
           requiredFieldValidator: BuiltValueNullFieldError.checkNotNull(
-              requiredFieldValidator,
-              r'EditNotebookViewModel',
-              'requiredFieldValidator'),
+            requiredFieldValidator,
+            r'EditNotebookViewModel',
+            'requiredFieldValidator',
+          ),
           isSaving: BuiltValueNullFieldError.checkNotNull(
-              isSaving, r'EditNotebookViewModel', 'isSaving'),
+            isSaving,
+            r'EditNotebookViewModel',
+            'isSaving',
+          ),
           titleChangedCommand: BuiltValueNullFieldError.checkNotNull(
-              titleChangedCommand,
-              r'EditNotebookViewModel',
-              'titleChangedCommand'),
+            titleChangedCommand,
+            r'EditNotebookViewModel',
+            'titleChangedCommand',
+          ),
           saveCommand: BuiltValueNullFieldError.checkNotNull(
-              saveCommand, r'EditNotebookViewModel', 'saveCommand'),
+            saveCommand,
+            r'EditNotebookViewModel',
+            'saveCommand',
+          ),
           closeCommand: BuiltValueNullFieldError.checkNotNull(
-              closeCommand, r'EditNotebookViewModel', 'closeCommand'),
+            closeCommand,
+            r'EditNotebookViewModel',
+            'closeCommand',
+          ),
           deleteCommand: BuiltValueNullFieldError.checkNotNull(
-              deleteCommand, r'EditNotebookViewModel', 'deleteCommand'),
+            deleteCommand,
+            r'EditNotebookViewModel',
+            'deleteCommand',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -28,26 +28,26 @@ class _$QuestionListViewModel extends QuestionListViewModel {
   @override
   final FunctionHolder deleteQuestionListCommand;
 
-  factory _$QuestionListViewModel(
-          [void Function(QuestionListViewModelBuilder)? updates]) =>
-      (QuestionListViewModelBuilder()..update(updates))._build();
+  factory _$QuestionListViewModel([
+    void Function(QuestionListViewModelBuilder)? updates,
+  ]) => (QuestionListViewModelBuilder()..update(updates))._build();
 
-  _$QuestionListViewModel._(
-      {required this.questionListId,
-      required this.text,
-      required this.questions,
-      required this.orderRank,
-      required this.menuEdit,
-      required this.menuDelete,
-      required this.menuCancel,
-      required this.answerQuestionListCommand,
-      required this.editQuestionListCommand,
-      required this.deleteQuestionListCommand})
-      : super._();
+  _$QuestionListViewModel._({
+    required this.questionListId,
+    required this.text,
+    required this.questions,
+    required this.orderRank,
+    required this.menuEdit,
+    required this.menuDelete,
+    required this.menuCancel,
+    required this.answerQuestionListCommand,
+    required this.editQuestionListCommand,
+    required this.deleteQuestionListCommand,
+  }) : super._();
   @override
   QuestionListViewModel rebuild(
-          void Function(QuestionListViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(QuestionListViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   QuestionListViewModelBuilder toBuilder() =>
@@ -188,34 +188,59 @@ class QuestionListViewModelBuilder
   QuestionListViewModel build() => _build();
 
   _$QuestionListViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$QuestionListViewModel._(
           questionListId: BuiltValueNullFieldError.checkNotNull(
-              questionListId, r'QuestionListViewModel', 'questionListId'),
+            questionListId,
+            r'QuestionListViewModel',
+            'questionListId',
+          ),
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'QuestionListViewModel', 'text'),
+            text,
+            r'QuestionListViewModel',
+            'text',
+          ),
           questions: BuiltValueNullFieldError.checkNotNull(
-              questions, r'QuestionListViewModel', 'questions'),
+            questions,
+            r'QuestionListViewModel',
+            'questions',
+          ),
           orderRank: BuiltValueNullFieldError.checkNotNull(
-              orderRank, r'QuestionListViewModel', 'orderRank'),
+            orderRank,
+            r'QuestionListViewModel',
+            'orderRank',
+          ),
           menuEdit: BuiltValueNullFieldError.checkNotNull(
-              menuEdit, r'QuestionListViewModel', 'menuEdit'),
+            menuEdit,
+            r'QuestionListViewModel',
+            'menuEdit',
+          ),
           menuDelete: BuiltValueNullFieldError.checkNotNull(
-              menuDelete, r'QuestionListViewModel', 'menuDelete'),
+            menuDelete,
+            r'QuestionListViewModel',
+            'menuDelete',
+          ),
           menuCancel: BuiltValueNullFieldError.checkNotNull(
-              menuCancel, r'QuestionListViewModel', 'menuCancel'),
+            menuCancel,
+            r'QuestionListViewModel',
+            'menuCancel',
+          ),
           answerQuestionListCommand: BuiltValueNullFieldError.checkNotNull(
-              answerQuestionListCommand,
-              r'QuestionListViewModel',
-              'answerQuestionListCommand'),
+            answerQuestionListCommand,
+            r'QuestionListViewModel',
+            'answerQuestionListCommand',
+          ),
           editQuestionListCommand: BuiltValueNullFieldError.checkNotNull(
-              editQuestionListCommand,
-              r'QuestionListViewModel',
-              'editQuestionListCommand'),
+            editQuestionListCommand,
+            r'QuestionListViewModel',
+            'editQuestionListCommand',
+          ),
           deleteQuestionListCommand: BuiltValueNullFieldError.checkNotNull(
-              deleteQuestionListCommand,
-              r'QuestionListViewModel',
-              'deleteQuestionListCommand'),
+            deleteQuestionListCommand,
+            r'QuestionListViewModel',
+            'deleteQuestionListCommand',
+          ),
         );
     replace(_$result);
     return _$result;

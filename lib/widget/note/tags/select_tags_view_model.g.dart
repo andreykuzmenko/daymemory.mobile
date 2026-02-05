@@ -22,23 +22,23 @@ class _$SelectTagsViewModel extends SelectTagsViewModel {
   @override
   final TypedFunctionHolder<String> toogleTagCommand;
 
-  factory _$SelectTagsViewModel(
-          [void Function(SelectTagsViewModelBuilder)? updates]) =>
-      (SelectTagsViewModelBuilder()..update(updates))._build();
+  factory _$SelectTagsViewModel([
+    void Function(SelectTagsViewModelBuilder)? updates,
+  ]) => (SelectTagsViewModelBuilder()..update(updates))._build();
 
-  _$SelectTagsViewModel._(
-      {required this.selectedTags,
-      required this.newTagMenuOption,
-      required this.tags,
-      required this.title,
-      required this.closeCommand,
-      required this.newTagCommand,
-      required this.toogleTagCommand})
-      : super._();
+  _$SelectTagsViewModel._({
+    required this.selectedTags,
+    required this.newTagMenuOption,
+    required this.tags,
+    required this.title,
+    required this.closeCommand,
+    required this.newTagCommand,
+    required this.toogleTagCommand,
+  }) : super._();
   @override
   SelectTagsViewModel rebuild(
-          void Function(SelectTagsViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SelectTagsViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SelectTagsViewModelBuilder toBuilder() =>
@@ -155,21 +155,40 @@ class SelectTagsViewModelBuilder
   _$SelectTagsViewModel _build() {
     _$SelectTagsViewModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SelectTagsViewModel._(
             selectedTags: BuiltValueNullFieldError.checkNotNull(
-                selectedTags, r'SelectTagsViewModel', 'selectedTags'),
+              selectedTags,
+              r'SelectTagsViewModel',
+              'selectedTags',
+            ),
             newTagMenuOption: BuiltValueNullFieldError.checkNotNull(
-                newTagMenuOption, r'SelectTagsViewModel', 'newTagMenuOption'),
+              newTagMenuOption,
+              r'SelectTagsViewModel',
+              'newTagMenuOption',
+            ),
             tags: tags.build(),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SelectTagsViewModel', 'title'),
+              title,
+              r'SelectTagsViewModel',
+              'title',
+            ),
             closeCommand: BuiltValueNullFieldError.checkNotNull(
-                closeCommand, r'SelectTagsViewModel', 'closeCommand'),
+              closeCommand,
+              r'SelectTagsViewModel',
+              'closeCommand',
+            ),
             newTagCommand: BuiltValueNullFieldError.checkNotNull(
-                newTagCommand, r'SelectTagsViewModel', 'newTagCommand'),
+              newTagCommand,
+              r'SelectTagsViewModel',
+              'newTagCommand',
+            ),
             toogleTagCommand: BuiltValueNullFieldError.checkNotNull(
-                toogleTagCommand, r'SelectTagsViewModel', 'toogleTagCommand'),
+              toogleTagCommand,
+              r'SelectTagsViewModel',
+              'toogleTagCommand',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -178,7 +197,10 @@ class SelectTagsViewModelBuilder
         tags.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SelectTagsViewModel', _$failedField, e.toString());
+          r'SelectTagsViewModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

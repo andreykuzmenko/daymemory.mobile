@@ -37,21 +37,21 @@ class _$SettingsState extends SettingsState {
   factory _$SettingsState([void Function(SettingsStateBuilder)? updates]) =>
       (SettingsStateBuilder()..update(updates))._build();
 
-  _$SettingsState._(
-      {required this.isLocationSavingEnabled,
-      required this.isBiometricEnabled,
-      required this.isBiometricActive,
-      required this.isBiometricAvailable,
-      required this.isPasscodeEnabled,
-      required this.themeMode,
-      required this.reviewSettings,
-      required this.language,
-      required this.passcodeRequireAfterSeconds,
-      this.encryptionKey,
-      required this.isSyncEnabled,
-      required this.isEncryptionKeyLocked,
-      required this.availableLanguages})
-      : super._();
+  _$SettingsState._({
+    required this.isLocationSavingEnabled,
+    required this.isBiometricEnabled,
+    required this.isBiometricActive,
+    required this.isBiometricAvailable,
+    required this.isPasscodeEnabled,
+    required this.themeMode,
+    required this.reviewSettings,
+    required this.language,
+    required this.passcodeRequireAfterSeconds,
+    this.encryptionKey,
+    required this.isSyncEnabled,
+    required this.isEncryptionKeyLocked,
+    required this.availableLanguages,
+  }) : super._();
   @override
   SettingsState rebuild(void Function(SettingsStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -222,37 +222,70 @@ class SettingsStateBuilder
   SettingsState build() => _build();
 
   _$SettingsState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SettingsState._(
           isLocationSavingEnabled: BuiltValueNullFieldError.checkNotNull(
-              isLocationSavingEnabled,
-              r'SettingsState',
-              'isLocationSavingEnabled'),
+            isLocationSavingEnabled,
+            r'SettingsState',
+            'isLocationSavingEnabled',
+          ),
           isBiometricEnabled: BuiltValueNullFieldError.checkNotNull(
-              isBiometricEnabled, r'SettingsState', 'isBiometricEnabled'),
+            isBiometricEnabled,
+            r'SettingsState',
+            'isBiometricEnabled',
+          ),
           isBiometricActive: BuiltValueNullFieldError.checkNotNull(
-              isBiometricActive, r'SettingsState', 'isBiometricActive'),
+            isBiometricActive,
+            r'SettingsState',
+            'isBiometricActive',
+          ),
           isBiometricAvailable: BuiltValueNullFieldError.checkNotNull(
-              isBiometricAvailable, r'SettingsState', 'isBiometricAvailable'),
+            isBiometricAvailable,
+            r'SettingsState',
+            'isBiometricAvailable',
+          ),
           isPasscodeEnabled: BuiltValueNullFieldError.checkNotNull(
-              isPasscodeEnabled, r'SettingsState', 'isPasscodeEnabled'),
+            isPasscodeEnabled,
+            r'SettingsState',
+            'isPasscodeEnabled',
+          ),
           themeMode: BuiltValueNullFieldError.checkNotNull(
-              themeMode, r'SettingsState', 'themeMode'),
+            themeMode,
+            r'SettingsState',
+            'themeMode',
+          ),
           reviewSettings: BuiltValueNullFieldError.checkNotNull(
-              reviewSettings, r'SettingsState', 'reviewSettings'),
+            reviewSettings,
+            r'SettingsState',
+            'reviewSettings',
+          ),
           language: BuiltValueNullFieldError.checkNotNull(
-              language, r'SettingsState', 'language'),
+            language,
+            r'SettingsState',
+            'language',
+          ),
           passcodeRequireAfterSeconds: BuiltValueNullFieldError.checkNotNull(
-              passcodeRequireAfterSeconds,
-              r'SettingsState',
-              'passcodeRequireAfterSeconds'),
+            passcodeRequireAfterSeconds,
+            r'SettingsState',
+            'passcodeRequireAfterSeconds',
+          ),
           encryptionKey: encryptionKey,
           isSyncEnabled: BuiltValueNullFieldError.checkNotNull(
-              isSyncEnabled, r'SettingsState', 'isSyncEnabled'),
+            isSyncEnabled,
+            r'SettingsState',
+            'isSyncEnabled',
+          ),
           isEncryptionKeyLocked: BuiltValueNullFieldError.checkNotNull(
-              isEncryptionKeyLocked, r'SettingsState', 'isEncryptionKeyLocked'),
+            isEncryptionKeyLocked,
+            r'SettingsState',
+            'isEncryptionKeyLocked',
+          ),
           availableLanguages: BuiltValueNullFieldError.checkNotNull(
-              availableLanguages, r'SettingsState', 'availableLanguages'),
+            availableLanguages,
+            r'SettingsState',
+            'availableLanguages',
+          ),
         );
     replace(_$result);
     return _$result;

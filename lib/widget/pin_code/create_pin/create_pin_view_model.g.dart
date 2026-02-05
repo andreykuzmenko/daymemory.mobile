@@ -30,27 +30,27 @@ class _$CreatePinViewModel extends CreatePinViewModel {
   @override
   final FunctionHolder successCommand;
 
-  factory _$CreatePinViewModel(
-          [void Function(CreatePinViewModelBuilder)? updates]) =>
-      (CreatePinViewModelBuilder()..update(updates))._build();
+  factory _$CreatePinViewModel([
+    void Function(CreatePinViewModelBuilder)? updates,
+  ]) => (CreatePinViewModelBuilder()..update(updates))._build();
 
-  _$CreatePinViewModel._(
-      {required this.selectedEnteredIndicators,
-      required this.selectedConfirmedIndicators,
-      required this.enteredPin,
-      required this.confirmedPin,
-      required this.createPinType,
-      required this.titles,
-      required this.typingCommand,
-      required this.clearCommand,
-      required this.backCommand,
-      required this.clearConfirmedPinCommand,
-      required this.successCommand})
-      : super._();
+  _$CreatePinViewModel._({
+    required this.selectedEnteredIndicators,
+    required this.selectedConfirmedIndicators,
+    required this.enteredPin,
+    required this.confirmedPin,
+    required this.createPinType,
+    required this.titles,
+    required this.typingCommand,
+    required this.clearCommand,
+    required this.backCommand,
+    required this.clearConfirmedPinCommand,
+    required this.successCommand,
+  }) : super._();
   @override
   CreatePinViewModel rebuild(
-          void Function(CreatePinViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CreatePinViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CreatePinViewModelBuilder toBuilder() =>
@@ -201,36 +201,64 @@ class CreatePinViewModelBuilder
   CreatePinViewModel build() => _build();
 
   _$CreatePinViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CreatePinViewModel._(
           selectedEnteredIndicators: BuiltValueNullFieldError.checkNotNull(
-              selectedEnteredIndicators,
-              r'CreatePinViewModel',
-              'selectedEnteredIndicators'),
+            selectedEnteredIndicators,
+            r'CreatePinViewModel',
+            'selectedEnteredIndicators',
+          ),
           selectedConfirmedIndicators: BuiltValueNullFieldError.checkNotNull(
-              selectedConfirmedIndicators,
-              r'CreatePinViewModel',
-              'selectedConfirmedIndicators'),
+            selectedConfirmedIndicators,
+            r'CreatePinViewModel',
+            'selectedConfirmedIndicators',
+          ),
           enteredPin: BuiltValueNullFieldError.checkNotNull(
-              enteredPin, r'CreatePinViewModel', 'enteredPin'),
+            enteredPin,
+            r'CreatePinViewModel',
+            'enteredPin',
+          ),
           confirmedPin: BuiltValueNullFieldError.checkNotNull(
-              confirmedPin, r'CreatePinViewModel', 'confirmedPin'),
+            confirmedPin,
+            r'CreatePinViewModel',
+            'confirmedPin',
+          ),
           createPinType: BuiltValueNullFieldError.checkNotNull(
-              createPinType, r'CreatePinViewModel', 'createPinType'),
+            createPinType,
+            r'CreatePinViewModel',
+            'createPinType',
+          ),
           titles: BuiltValueNullFieldError.checkNotNull(
-              titles, r'CreatePinViewModel', 'titles'),
+            titles,
+            r'CreatePinViewModel',
+            'titles',
+          ),
           typingCommand: BuiltValueNullFieldError.checkNotNull(
-              typingCommand, r'CreatePinViewModel', 'typingCommand'),
+            typingCommand,
+            r'CreatePinViewModel',
+            'typingCommand',
+          ),
           clearCommand: BuiltValueNullFieldError.checkNotNull(
-              clearCommand, r'CreatePinViewModel', 'clearCommand'),
+            clearCommand,
+            r'CreatePinViewModel',
+            'clearCommand',
+          ),
           backCommand: BuiltValueNullFieldError.checkNotNull(
-              backCommand, r'CreatePinViewModel', 'backCommand'),
+            backCommand,
+            r'CreatePinViewModel',
+            'backCommand',
+          ),
           clearConfirmedPinCommand: BuiltValueNullFieldError.checkNotNull(
-              clearConfirmedPinCommand,
-              r'CreatePinViewModel',
-              'clearConfirmedPinCommand'),
+            clearConfirmedPinCommand,
+            r'CreatePinViewModel',
+            'clearConfirmedPinCommand',
+          ),
           successCommand: BuiltValueNullFieldError.checkNotNull(
-              successCommand, r'CreatePinViewModel', 'successCommand'),
+            successCommand,
+            r'CreatePinViewModel',
+            'successCommand',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -27,16 +27,16 @@ class _$NotesState extends NotesState {
   factory _$NotesState([void Function(NotesStateBuilder)? updates]) =>
       (NotesStateBuilder()..update(updates))._build();
 
-  _$NotesState._(
-      {required this.isLoading,
-      required this.hasLoadedAll,
-      required this.isLoadingMore,
-      this.lastItemDateTime,
-      required this.sortingType,
-      required this.notes,
-      this.notebookId,
-      this.tag})
-      : super._();
+  _$NotesState._({
+    required this.isLoading,
+    required this.hasLoadedAll,
+    required this.isLoadingMore,
+    this.lastItemDateTime,
+    required this.sortingType,
+    required this.notes,
+    this.notebookId,
+    this.tag,
+  }) : super._();
   @override
   NotesState rebuild(void Function(NotesStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -158,19 +158,35 @@ class NotesStateBuilder implements Builder<NotesState, NotesStateBuilder> {
   NotesState build() => _build();
 
   _$NotesState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NotesState._(
           isLoading: BuiltValueNullFieldError.checkNotNull(
-              isLoading, r'NotesState', 'isLoading'),
+            isLoading,
+            r'NotesState',
+            'isLoading',
+          ),
           hasLoadedAll: BuiltValueNullFieldError.checkNotNull(
-              hasLoadedAll, r'NotesState', 'hasLoadedAll'),
+            hasLoadedAll,
+            r'NotesState',
+            'hasLoadedAll',
+          ),
           isLoadingMore: BuiltValueNullFieldError.checkNotNull(
-              isLoadingMore, r'NotesState', 'isLoadingMore'),
+            isLoadingMore,
+            r'NotesState',
+            'isLoadingMore',
+          ),
           lastItemDateTime: lastItemDateTime,
           sortingType: BuiltValueNullFieldError.checkNotNull(
-              sortingType, r'NotesState', 'sortingType'),
+            sortingType,
+            r'NotesState',
+            'sortingType',
+          ),
           notes: BuiltValueNullFieldError.checkNotNull(
-              notes, r'NotesState', 'notes'),
+            notes,
+            r'NotesState',
+            'notes',
+          ),
           notebookId: notebookId,
           tag: tag,
         );

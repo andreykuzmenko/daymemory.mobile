@@ -65,35 +65,35 @@ class _$AppState extends AppState {
   factory _$AppState([void Function(AppStateBuilder)? updates]) =>
       (AppStateBuilder()..update(updates))._build();
 
-  _$AppState._(
-      {required this.screenBlockingState,
-      required this.onBoardingState,
-      required this.deviceState,
-      required this.sideMenuState,
-      required this.notesState,
-      required this.noteImageGalleryState,
-      required this.notebooksState,
-      required this.editNotebookState,
-      required this.editTagState,
-      required this.selectedMenuItemState,
-      required this.reviewsState,
-      required this.questionListsState,
-      required this.questionListState,
-      required this.answerQuestionState,
-      required this.noteState,
-      required this.tagsState,
-      required this.createPinState,
-      required this.enterPinState,
-      required this.biometricsState,
-      required this.settingsState,
-      required this.syncState,
-      required this.loginState,
-      required this.tabsState,
-      required this.editTagsState,
-      required this.accountState,
-      required this.jailbreakType,
-      this.dialogsState})
-      : super._();
+  _$AppState._({
+    required this.screenBlockingState,
+    required this.onBoardingState,
+    required this.deviceState,
+    required this.sideMenuState,
+    required this.notesState,
+    required this.noteImageGalleryState,
+    required this.notebooksState,
+    required this.editNotebookState,
+    required this.editTagState,
+    required this.selectedMenuItemState,
+    required this.reviewsState,
+    required this.questionListsState,
+    required this.questionListState,
+    required this.answerQuestionState,
+    required this.noteState,
+    required this.tagsState,
+    required this.createPinState,
+    required this.enterPinState,
+    required this.biometricsState,
+    required this.settingsState,
+    required this.syncState,
+    required this.loginState,
+    required this.tabsState,
+    required this.editTagsState,
+    required this.accountState,
+    required this.jailbreakType,
+    this.dialogsState,
+  }) : super._();
   @override
   AppState rebuild(void Function(AppStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -239,8 +239,8 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   NoteImageGalleryStateBuilder get noteImageGalleryState =>
       _$this._noteImageGalleryState ??= NoteImageGalleryStateBuilder();
   set noteImageGalleryState(
-          NoteImageGalleryStateBuilder? noteImageGalleryState) =>
-      _$this._noteImageGalleryState = noteImageGalleryState;
+    NoteImageGalleryStateBuilder? noteImageGalleryState,
+  ) => _$this._noteImageGalleryState = noteImageGalleryState;
 
   NotebooksStateBuilder? _notebooksState;
   NotebooksStateBuilder get notebooksState =>
@@ -264,8 +264,8 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   SelectedMenuItemStateBuilder get selectedMenuItemState =>
       _$this._selectedMenuItemState ??= SelectedMenuItemStateBuilder();
   set selectedMenuItemState(
-          SelectedMenuItemStateBuilder? selectedMenuItemState) =>
-      _$this._selectedMenuItemState = selectedMenuItemState;
+    SelectedMenuItemStateBuilder? selectedMenuItemState,
+  ) => _$this._selectedMenuItemState = selectedMenuItemState;
 
   ReviewsStateBuilder? _reviewsState;
   ReviewsStateBuilder get reviewsState =>
@@ -413,7 +413,8 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState _build() {
     _$AppState _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AppState._(
             screenBlockingState: screenBlockingState.build(),
             onBoardingState: onBoardingState.build(),
@@ -441,7 +442,10 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
             editTagsState: editTagsState.build(),
             accountState: accountState.build(),
             jailbreakType: BuiltValueNullFieldError.checkNotNull(
-                jailbreakType, r'AppState', 'jailbreakType'),
+              jailbreakType,
+              r'AppState',
+              'jailbreakType',
+            ),
             dialogsState: _dialogsState?.build(),
           );
     } catch (_) {
@@ -502,7 +506,10 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         _dialogsState?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AppState', _$failedField, e.toString());
+          r'AppState',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

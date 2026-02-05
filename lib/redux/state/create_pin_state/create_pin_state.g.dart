@@ -21,13 +21,13 @@ class _$CreatePinState extends CreatePinState {
   factory _$CreatePinState([void Function(CreatePinStateBuilder)? updates]) =>
       (CreatePinStateBuilder()..update(updates))._build();
 
-  _$CreatePinState._(
-      {required this.enteredPin,
-      required this.confirmedPin,
-      required this.isRetryPin,
-      required this.selectedEnteredIndicators,
-      required this.selectedConfirmedIndicators})
-      : super._();
+  _$CreatePinState._({
+    required this.enteredPin,
+    required this.confirmedPin,
+    required this.isRetryPin,
+    required this.selectedEnteredIndicators,
+    required this.selectedConfirmedIndicators,
+  }) : super._();
   @override
   CreatePinState rebuild(void Function(CreatePinStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -125,22 +125,34 @@ class CreatePinStateBuilder
   CreatePinState build() => _build();
 
   _$CreatePinState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CreatePinState._(
           enteredPin: BuiltValueNullFieldError.checkNotNull(
-              enteredPin, r'CreatePinState', 'enteredPin'),
+            enteredPin,
+            r'CreatePinState',
+            'enteredPin',
+          ),
           confirmedPin: BuiltValueNullFieldError.checkNotNull(
-              confirmedPin, r'CreatePinState', 'confirmedPin'),
+            confirmedPin,
+            r'CreatePinState',
+            'confirmedPin',
+          ),
           isRetryPin: BuiltValueNullFieldError.checkNotNull(
-              isRetryPin, r'CreatePinState', 'isRetryPin'),
+            isRetryPin,
+            r'CreatePinState',
+            'isRetryPin',
+          ),
           selectedEnteredIndicators: BuiltValueNullFieldError.checkNotNull(
-              selectedEnteredIndicators,
-              r'CreatePinState',
-              'selectedEnteredIndicators'),
+            selectedEnteredIndicators,
+            r'CreatePinState',
+            'selectedEnteredIndicators',
+          ),
           selectedConfirmedIndicators: BuiltValueNullFieldError.checkNotNull(
-              selectedConfirmedIndicators,
-              r'CreatePinState',
-              'selectedConfirmedIndicators'),
+            selectedConfirmedIndicators,
+            r'CreatePinState',
+            'selectedConfirmedIndicators',
+          ),
         );
     replace(_$result);
     return _$result;

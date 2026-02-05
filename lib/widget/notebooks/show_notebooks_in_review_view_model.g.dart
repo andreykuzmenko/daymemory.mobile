@@ -16,20 +16,20 @@ class _$ShowNotebooksInReviewViewModel extends ShowNotebooksInReviewViewModel {
   @override
   final FunctionHolder? backCommand;
 
-  factory _$ShowNotebooksInReviewViewModel(
-          [void Function(ShowNotebooksInReviewViewModelBuilder)? updates]) =>
-      (ShowNotebooksInReviewViewModelBuilder()..update(updates))._build();
+  factory _$ShowNotebooksInReviewViewModel([
+    void Function(ShowNotebooksInReviewViewModelBuilder)? updates,
+  ]) => (ShowNotebooksInReviewViewModelBuilder()..update(updates))._build();
 
-  _$ShowNotebooksInReviewViewModel._(
-      {required this.title,
-      required this.notebooks,
-      required this.noNotebooks,
-      this.backCommand})
-      : super._();
+  _$ShowNotebooksInReviewViewModel._({
+    required this.title,
+    required this.notebooks,
+    required this.noNotebooks,
+    this.backCommand,
+  }) : super._();
   @override
   ShowNotebooksInReviewViewModel rebuild(
-          void Function(ShowNotebooksInReviewViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ShowNotebooksInReviewViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ShowNotebooksInReviewViewModelBuilder toBuilder() =>
@@ -69,8 +69,10 @@ class _$ShowNotebooksInReviewViewModel extends ShowNotebooksInReviewViewModel {
 
 class ShowNotebooksInReviewViewModelBuilder
     implements
-        Builder<ShowNotebooksInReviewViewModel,
-            ShowNotebooksInReviewViewModelBuilder> {
+        Builder<
+          ShowNotebooksInReviewViewModel,
+          ShowNotebooksInReviewViewModelBuilder
+        > {
   _$ShowNotebooksInReviewViewModel? _$v;
 
   String? _title;
@@ -119,14 +121,24 @@ class ShowNotebooksInReviewViewModelBuilder
   ShowNotebooksInReviewViewModel build() => _build();
 
   _$ShowNotebooksInReviewViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ShowNotebooksInReviewViewModel._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'ShowNotebooksInReviewViewModel', 'title'),
+            title,
+            r'ShowNotebooksInReviewViewModel',
+            'title',
+          ),
           notebooks: BuiltValueNullFieldError.checkNotNull(
-              notebooks, r'ShowNotebooksInReviewViewModel', 'notebooks'),
+            notebooks,
+            r'ShowNotebooksInReviewViewModel',
+            'notebooks',
+          ),
           noNotebooks: BuiltValueNullFieldError.checkNotNull(
-              noNotebooks, r'ShowNotebooksInReviewViewModel', 'noNotebooks'),
+            noNotebooks,
+            r'ShowNotebooksInReviewViewModel',
+            'noNotebooks',
+          ),
           backCommand: backCommand,
         );
     replace(_$result);

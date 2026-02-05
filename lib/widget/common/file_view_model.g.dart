@@ -21,13 +21,13 @@ class _$FileViewModel extends FileViewModel {
   factory _$FileViewModel([void Function(FileViewModelBuilder)? updates]) =>
       (FileViewModelBuilder()..update(updates))._build();
 
-  _$FileViewModel._(
-      {required this.id,
-      required this.filePath,
-      required this.fileType,
-      required this.height,
-      required this.width})
-      : super._();
+  _$FileViewModel._({
+    required this.id,
+    required this.filePath,
+    required this.fileType,
+    required this.height,
+    required this.width,
+  }) : super._();
   @override
   FileViewModel rebuild(void Function(FileViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -123,17 +123,30 @@ class FileViewModelBuilder
   FileViewModel build() => _build();
 
   _$FileViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FileViewModel._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'FileViewModel', 'id'),
           filePath: BuiltValueNullFieldError.checkNotNull(
-              filePath, r'FileViewModel', 'filePath'),
+            filePath,
+            r'FileViewModel',
+            'filePath',
+          ),
           fileType: BuiltValueNullFieldError.checkNotNull(
-              fileType, r'FileViewModel', 'fileType'),
+            fileType,
+            r'FileViewModel',
+            'fileType',
+          ),
           height: BuiltValueNullFieldError.checkNotNull(
-              height, r'FileViewModel', 'height'),
+            height,
+            r'FileViewModel',
+            'height',
+          ),
           width: BuiltValueNullFieldError.checkNotNull(
-              width, r'FileViewModel', 'width'),
+            width,
+            r'FileViewModel',
+            'width',
+          ),
         );
     replace(_$result);
     return _$result;

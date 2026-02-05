@@ -44,34 +44,34 @@ class _$NoteOptionsViewModel extends NoteOptionsViewModel {
   @override
   final FunctionHolder selectTagsCommand;
 
-  factory _$NoteOptionsViewModel(
-          [void Function(NoteOptionsViewModelBuilder)? updates]) =>
-      (NoteOptionsViewModelBuilder()..update(updates))._build();
+  factory _$NoteOptionsViewModel([
+    void Function(NoteOptionsViewModelBuilder)? updates,
+  ]) => (NoteOptionsViewModelBuilder()..update(updates))._build();
 
-  _$NoteOptionsViewModel._(
-      {this.notebookTitle,
-      this.notebookId,
-      required this.notebookLabel,
-      required this.tagsLabel,
-      required this.tagsValue,
-      required this.dateLabel,
-      required this.locationLabel,
-      required this.nolocationText,
-      required this.title,
-      this.location,
-      required this.notebooks,
-      required this.tags,
-      required this.date,
-      required this.formatedDate,
-      required this.closeCommand,
-      required this.changeDateCommand,
-      required this.selectNotebookCommand,
-      required this.selectTagsCommand})
-      : super._();
+  _$NoteOptionsViewModel._({
+    this.notebookTitle,
+    this.notebookId,
+    required this.notebookLabel,
+    required this.tagsLabel,
+    required this.tagsValue,
+    required this.dateLabel,
+    required this.locationLabel,
+    required this.nolocationText,
+    required this.title,
+    this.location,
+    required this.notebooks,
+    required this.tags,
+    required this.date,
+    required this.formatedDate,
+    required this.closeCommand,
+    required this.changeDateCommand,
+    required this.selectNotebookCommand,
+    required this.selectTagsCommand,
+  }) : super._();
   @override
   NoteOptionsViewModel rebuild(
-          void Function(NoteOptionsViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NoteOptionsViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NoteOptionsViewModelBuilder toBuilder() =>
@@ -282,46 +282,83 @@ class NoteOptionsViewModelBuilder
   _$NoteOptionsViewModel _build() {
     _$NoteOptionsViewModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NoteOptionsViewModel._(
             notebookTitle: notebookTitle,
             notebookId: notebookId,
             notebookLabel: BuiltValueNullFieldError.checkNotNull(
-                notebookLabel, r'NoteOptionsViewModel', 'notebookLabel'),
+              notebookLabel,
+              r'NoteOptionsViewModel',
+              'notebookLabel',
+            ),
             tagsLabel: BuiltValueNullFieldError.checkNotNull(
-                tagsLabel, r'NoteOptionsViewModel', 'tagsLabel'),
+              tagsLabel,
+              r'NoteOptionsViewModel',
+              'tagsLabel',
+            ),
             tagsValue: BuiltValueNullFieldError.checkNotNull(
-                tagsValue, r'NoteOptionsViewModel', 'tagsValue'),
+              tagsValue,
+              r'NoteOptionsViewModel',
+              'tagsValue',
+            ),
             dateLabel: BuiltValueNullFieldError.checkNotNull(
-                dateLabel, r'NoteOptionsViewModel', 'dateLabel'),
+              dateLabel,
+              r'NoteOptionsViewModel',
+              'dateLabel',
+            ),
             locationLabel: BuiltValueNullFieldError.checkNotNull(
-                locationLabel, r'NoteOptionsViewModel', 'locationLabel'),
+              locationLabel,
+              r'NoteOptionsViewModel',
+              'locationLabel',
+            ),
             nolocationText: BuiltValueNullFieldError.checkNotNull(
-                nolocationText, r'NoteOptionsViewModel', 'nolocationText'),
+              nolocationText,
+              r'NoteOptionsViewModel',
+              'nolocationText',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'NoteOptionsViewModel', 'title'),
+              title,
+              r'NoteOptionsViewModel',
+              'title',
+            ),
             location: location,
             notebooks: notebooks.build(),
             tags: BuiltValueNullFieldError.checkNotNull(
-                tags, r'NoteOptionsViewModel', 'tags'),
+              tags,
+              r'NoteOptionsViewModel',
+              'tags',
+            ),
             date: BuiltValueNullFieldError.checkNotNull(
-                date, r'NoteOptionsViewModel', 'date'),
+              date,
+              r'NoteOptionsViewModel',
+              'date',
+            ),
             formatedDate: BuiltValueNullFieldError.checkNotNull(
-                formatedDate, r'NoteOptionsViewModel', 'formatedDate'),
+              formatedDate,
+              r'NoteOptionsViewModel',
+              'formatedDate',
+            ),
             closeCommand: BuiltValueNullFieldError.checkNotNull(
-                closeCommand, r'NoteOptionsViewModel', 'closeCommand'),
+              closeCommand,
+              r'NoteOptionsViewModel',
+              'closeCommand',
+            ),
             changeDateCommand: BuiltValueNullFieldError.checkNotNull(
-                changeDateCommand,
-                r'NoteOptionsViewModel',
-                'changeDateCommand'),
+              changeDateCommand,
+              r'NoteOptionsViewModel',
+              'changeDateCommand',
+            ),
             selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(
-                selectNotebookCommand,
-                r'NoteOptionsViewModel',
-                'selectNotebookCommand'),
+              selectNotebookCommand,
+              r'NoteOptionsViewModel',
+              'selectNotebookCommand',
+            ),
             selectTagsCommand: BuiltValueNullFieldError.checkNotNull(
-                selectTagsCommand,
-                r'NoteOptionsViewModel',
-                'selectTagsCommand'),
+              selectTagsCommand,
+              r'NoteOptionsViewModel',
+              'selectTagsCommand',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -330,7 +367,10 @@ class NoteOptionsViewModelBuilder
         notebooks.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NoteOptionsViewModel', _$failedField, e.toString());
+          r'NoteOptionsViewModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

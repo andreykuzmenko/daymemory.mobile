@@ -23,14 +23,14 @@ class _$ReviewViewModel extends ReviewViewModel {
   factory _$ReviewViewModel([void Function(ReviewViewModelBuilder)? updates]) =>
       (ReviewViewModelBuilder()..update(updates))._build();
 
-  _$ReviewViewModel._(
-      {required this.isLoading,
-      required this.title,
-      required this.loadingTitle,
-      required this.noItems,
-      required this.items,
-      required this.showDrawerMenu})
-      : super._();
+  _$ReviewViewModel._({
+    required this.isLoading,
+    required this.title,
+    required this.loadingTitle,
+    required this.noItems,
+    required this.items,
+    required this.showDrawerMenu,
+  }) : super._();
   @override
   ReviewViewModel rebuild(void Function(ReviewViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -135,20 +135,39 @@ class ReviewViewModelBuilder
   ReviewViewModel build() => _build();
 
   _$ReviewViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ReviewViewModel._(
           isLoading: BuiltValueNullFieldError.checkNotNull(
-              isLoading, r'ReviewViewModel', 'isLoading'),
+            isLoading,
+            r'ReviewViewModel',
+            'isLoading',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'ReviewViewModel', 'title'),
+            title,
+            r'ReviewViewModel',
+            'title',
+          ),
           loadingTitle: BuiltValueNullFieldError.checkNotNull(
-              loadingTitle, r'ReviewViewModel', 'loadingTitle'),
+            loadingTitle,
+            r'ReviewViewModel',
+            'loadingTitle',
+          ),
           noItems: BuiltValueNullFieldError.checkNotNull(
-              noItems, r'ReviewViewModel', 'noItems'),
+            noItems,
+            r'ReviewViewModel',
+            'noItems',
+          ),
           items: BuiltValueNullFieldError.checkNotNull(
-              items, r'ReviewViewModel', 'items'),
+            items,
+            r'ReviewViewModel',
+            'items',
+          ),
           showDrawerMenu: BuiltValueNullFieldError.checkNotNull(
-              showDrawerMenu, r'ReviewViewModel', 'showDrawerMenu'),
+            showDrawerMenu,
+            r'ReviewViewModel',
+            'showDrawerMenu',
+          ),
         );
     replace(_$result);
     return _$result;

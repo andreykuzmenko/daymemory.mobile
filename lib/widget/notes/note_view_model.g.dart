@@ -45,25 +45,25 @@ class _$NoteViewModel extends NoteViewModel {
   factory _$NoteViewModel([void Function(NoteViewModelBuilder)? updates]) =>
       (NoteViewModelBuilder()..update(updates))._build();
 
-  _$NoteViewModel._(
-      {required this.noteId,
-      required this.text,
-      required this.displayDate,
-      required this.tags,
-      this.notebookName,
-      this.location,
-      required this.mediaFiles,
-      required this.isFullscreen,
-      required this.menuEdit,
-      required this.menuDelete,
-      required this.menuCancel,
-      required this.showContextMenu,
-      required this.showMoreText,
-      required this.openNoteCommand,
-      required this.openGalleryCommand,
-      required this.openTagCommand,
-      required this.deleteNoteCommand})
-      : super._();
+  _$NoteViewModel._({
+    required this.noteId,
+    required this.text,
+    required this.displayDate,
+    required this.tags,
+    this.notebookName,
+    this.location,
+    required this.mediaFiles,
+    required this.isFullscreen,
+    required this.menuEdit,
+    required this.menuDelete,
+    required this.menuCancel,
+    required this.showContextMenu,
+    required this.showMoreText,
+    required this.openNoteCommand,
+    required this.openGalleryCommand,
+    required this.openTagCommand,
+    required this.deleteNoteCommand,
+  }) : super._();
   @override
   NoteViewModel rebuild(void Function(NoteViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -262,40 +262,86 @@ class NoteViewModelBuilder
   NoteViewModel build() => _build();
 
   _$NoteViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NoteViewModel._(
           noteId: BuiltValueNullFieldError.checkNotNull(
-              noteId, r'NoteViewModel', 'noteId'),
+            noteId,
+            r'NoteViewModel',
+            'noteId',
+          ),
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'NoteViewModel', 'text'),
+            text,
+            r'NoteViewModel',
+            'text',
+          ),
           displayDate: BuiltValueNullFieldError.checkNotNull(
-              displayDate, r'NoteViewModel', 'displayDate'),
+            displayDate,
+            r'NoteViewModel',
+            'displayDate',
+          ),
           tags: BuiltValueNullFieldError.checkNotNull(
-              tags, r'NoteViewModel', 'tags'),
+            tags,
+            r'NoteViewModel',
+            'tags',
+          ),
           notebookName: notebookName,
           location: location,
           mediaFiles: BuiltValueNullFieldError.checkNotNull(
-              mediaFiles, r'NoteViewModel', 'mediaFiles'),
+            mediaFiles,
+            r'NoteViewModel',
+            'mediaFiles',
+          ),
           isFullscreen: BuiltValueNullFieldError.checkNotNull(
-              isFullscreen, r'NoteViewModel', 'isFullscreen'),
+            isFullscreen,
+            r'NoteViewModel',
+            'isFullscreen',
+          ),
           menuEdit: BuiltValueNullFieldError.checkNotNull(
-              menuEdit, r'NoteViewModel', 'menuEdit'),
+            menuEdit,
+            r'NoteViewModel',
+            'menuEdit',
+          ),
           menuDelete: BuiltValueNullFieldError.checkNotNull(
-              menuDelete, r'NoteViewModel', 'menuDelete'),
+            menuDelete,
+            r'NoteViewModel',
+            'menuDelete',
+          ),
           menuCancel: BuiltValueNullFieldError.checkNotNull(
-              menuCancel, r'NoteViewModel', 'menuCancel'),
+            menuCancel,
+            r'NoteViewModel',
+            'menuCancel',
+          ),
           showContextMenu: BuiltValueNullFieldError.checkNotNull(
-              showContextMenu, r'NoteViewModel', 'showContextMenu'),
+            showContextMenu,
+            r'NoteViewModel',
+            'showContextMenu',
+          ),
           showMoreText: BuiltValueNullFieldError.checkNotNull(
-              showMoreText, r'NoteViewModel', 'showMoreText'),
+            showMoreText,
+            r'NoteViewModel',
+            'showMoreText',
+          ),
           openNoteCommand: BuiltValueNullFieldError.checkNotNull(
-              openNoteCommand, r'NoteViewModel', 'openNoteCommand'),
+            openNoteCommand,
+            r'NoteViewModel',
+            'openNoteCommand',
+          ),
           openGalleryCommand: BuiltValueNullFieldError.checkNotNull(
-              openGalleryCommand, r'NoteViewModel', 'openGalleryCommand'),
+            openGalleryCommand,
+            r'NoteViewModel',
+            'openGalleryCommand',
+          ),
           openTagCommand: BuiltValueNullFieldError.checkNotNull(
-              openTagCommand, r'NoteViewModel', 'openTagCommand'),
+            openTagCommand,
+            r'NoteViewModel',
+            'openTagCommand',
+          ),
           deleteNoteCommand: BuiltValueNullFieldError.checkNotNull(
-              deleteNoteCommand, r'NoteViewModel', 'deleteNoteCommand'),
+            deleteNoteCommand,
+            r'NoteViewModel',
+            'deleteNoteCommand',
+          ),
         );
     replace(_$result);
     return _$result;

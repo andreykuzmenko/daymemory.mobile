@@ -12,16 +12,16 @@ class _$QuestionListsState extends QuestionListsState {
   @override
   final List<QuestionListDto> questionLists;
 
-  factory _$QuestionListsState(
-          [void Function(QuestionListsStateBuilder)? updates]) =>
-      (QuestionListsStateBuilder()..update(updates))._build();
+  factory _$QuestionListsState([
+    void Function(QuestionListsStateBuilder)? updates,
+  ]) => (QuestionListsStateBuilder()..update(updates))._build();
 
   _$QuestionListsState._({required this.isLoading, required this.questionLists})
-      : super._();
+    : super._();
   @override
   QuestionListsState rebuild(
-          void Function(QuestionListsStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(QuestionListsStateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   QuestionListsStateBuilder toBuilder() =>
@@ -92,12 +92,19 @@ class QuestionListsStateBuilder
   QuestionListsState build() => _build();
 
   _$QuestionListsState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$QuestionListsState._(
           isLoading: BuiltValueNullFieldError.checkNotNull(
-              isLoading, r'QuestionListsState', 'isLoading'),
+            isLoading,
+            r'QuestionListsState',
+            'isLoading',
+          ),
           questionLists: BuiltValueNullFieldError.checkNotNull(
-              questionLists, r'QuestionListsState', 'questionLists'),
+            questionLists,
+            r'QuestionListsState',
+            'questionLists',
+          ),
         );
     replace(_$result);
     return _$result;

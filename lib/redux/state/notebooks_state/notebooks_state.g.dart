@@ -37,8 +37,9 @@ class _$NotebooksState extends NotebooksState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'NotebooksState')..add('items', items))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'NotebooksState',
+    )..add('items', items)).toString();
   }
 }
 
@@ -75,10 +76,14 @@ class NotebooksStateBuilder
   NotebooksState build() => _build();
 
   _$NotebooksState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NotebooksState._(
           items: BuiltValueNullFieldError.checkNotNull(
-              items, r'NotebooksState', 'items'),
+            items,
+            r'NotebooksState',
+            'items',
+          ),
         );
     replace(_$result);
     return _$result;

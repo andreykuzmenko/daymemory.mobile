@@ -24,24 +24,24 @@ class _$QuestionListEditViewModel extends QuestionListEditViewModel {
   @override
   final FunctionHolder closeCommand;
 
-  factory _$QuestionListEditViewModel(
-          [void Function(QuestionListEditViewModelBuilder)? updates]) =>
-      (QuestionListEditViewModelBuilder()..update(updates))._build();
+  factory _$QuestionListEditViewModel([
+    void Function(QuestionListEditViewModelBuilder)? updates,
+  ]) => (QuestionListEditViewModelBuilder()..update(updates))._build();
 
-  _$QuestionListEditViewModel._(
-      {this.questionListId,
-      required this.isSaving,
-      required this.questionList,
-      required this.questions,
-      required this.addQuestionCommand,
-      required this.reorderCommand,
-      required this.saveCommand,
-      required this.closeCommand})
-      : super._();
+  _$QuestionListEditViewModel._({
+    this.questionListId,
+    required this.isSaving,
+    required this.questionList,
+    required this.questions,
+    required this.addQuestionCommand,
+    required this.reorderCommand,
+    required this.saveCommand,
+    required this.closeCommand,
+  }) : super._();
   @override
   QuestionListEditViewModel rebuild(
-          void Function(QuestionListEditViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(QuestionListEditViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   QuestionListEditViewModelBuilder toBuilder() =>
@@ -172,23 +172,37 @@ class QuestionListEditViewModelBuilder
   _$QuestionListEditViewModel _build() {
     _$QuestionListEditViewModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$QuestionListEditViewModel._(
             questionListId: questionListId,
             isSaving: BuiltValueNullFieldError.checkNotNull(
-                isSaving, r'QuestionListEditViewModel', 'isSaving'),
+              isSaving,
+              r'QuestionListEditViewModel',
+              'isSaving',
+            ),
             questionList: questionList.build(),
             questions: questions.build(),
             addQuestionCommand: BuiltValueNullFieldError.checkNotNull(
-                addQuestionCommand,
-                r'QuestionListEditViewModel',
-                'addQuestionCommand'),
+              addQuestionCommand,
+              r'QuestionListEditViewModel',
+              'addQuestionCommand',
+            ),
             reorderCommand: BuiltValueNullFieldError.checkNotNull(
-                reorderCommand, r'QuestionListEditViewModel', 'reorderCommand'),
+              reorderCommand,
+              r'QuestionListEditViewModel',
+              'reorderCommand',
+            ),
             saveCommand: BuiltValueNullFieldError.checkNotNull(
-                saveCommand, r'QuestionListEditViewModel', 'saveCommand'),
+              saveCommand,
+              r'QuestionListEditViewModel',
+              'saveCommand',
+            ),
             closeCommand: BuiltValueNullFieldError.checkNotNull(
-                closeCommand, r'QuestionListEditViewModel', 'closeCommand'),
+              closeCommand,
+              r'QuestionListEditViewModel',
+              'closeCommand',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -199,7 +213,10 @@ class QuestionListEditViewModelBuilder
         questions.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'QuestionListEditViewModel', _$failedField, e.toString());
+          r'QuestionListEditViewModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

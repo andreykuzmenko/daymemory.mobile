@@ -26,25 +26,25 @@ class _$AccountSettingsViewModel extends AccountSettingsViewModel {
   @override
   final FunctionHolder backCommand;
 
-  factory _$AccountSettingsViewModel(
-          [void Function(AccountSettingsViewModelBuilder)? updates]) =>
-      (AccountSettingsViewModelBuilder()..update(updates))._build();
+  factory _$AccountSettingsViewModel([
+    void Function(AccountSettingsViewModelBuilder)? updates,
+  ]) => (AccountSettingsViewModelBuilder()..update(updates))._build();
 
-  _$AccountSettingsViewModel._(
-      {required this.title,
-      required this.nameOptionTitle,
-      required this.nameOptionValue,
-      required this.emailOptionTitle,
-      required this.emailOptionValue,
-      required this.logoutOptionTitle,
-      required this.accountExplanation,
-      required this.logoutCommand,
-      required this.backCommand})
-      : super._();
+  _$AccountSettingsViewModel._({
+    required this.title,
+    required this.nameOptionTitle,
+    required this.nameOptionValue,
+    required this.emailOptionTitle,
+    required this.emailOptionValue,
+    required this.logoutOptionTitle,
+    required this.accountExplanation,
+    required this.logoutCommand,
+    required this.backCommand,
+  }) : super._();
   @override
   AccountSettingsViewModel rebuild(
-          void Function(AccountSettingsViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AccountSettingsViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AccountSettingsViewModelBuilder toBuilder() =>
@@ -179,34 +179,54 @@ class AccountSettingsViewModelBuilder
   AccountSettingsViewModel build() => _build();
 
   _$AccountSettingsViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AccountSettingsViewModel._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'AccountSettingsViewModel', 'title'),
+            title,
+            r'AccountSettingsViewModel',
+            'title',
+          ),
           nameOptionTitle: BuiltValueNullFieldError.checkNotNull(
-              nameOptionTitle, r'AccountSettingsViewModel', 'nameOptionTitle'),
+            nameOptionTitle,
+            r'AccountSettingsViewModel',
+            'nameOptionTitle',
+          ),
           nameOptionValue: BuiltValueNullFieldError.checkNotNull(
-              nameOptionValue, r'AccountSettingsViewModel', 'nameOptionValue'),
+            nameOptionValue,
+            r'AccountSettingsViewModel',
+            'nameOptionValue',
+          ),
           emailOptionTitle: BuiltValueNullFieldError.checkNotNull(
-              emailOptionTitle,
-              r'AccountSettingsViewModel',
-              'emailOptionTitle'),
+            emailOptionTitle,
+            r'AccountSettingsViewModel',
+            'emailOptionTitle',
+          ),
           emailOptionValue: BuiltValueNullFieldError.checkNotNull(
-              emailOptionValue,
-              r'AccountSettingsViewModel',
-              'emailOptionValue'),
+            emailOptionValue,
+            r'AccountSettingsViewModel',
+            'emailOptionValue',
+          ),
           logoutOptionTitle: BuiltValueNullFieldError.checkNotNull(
-              logoutOptionTitle,
-              r'AccountSettingsViewModel',
-              'logoutOptionTitle'),
+            logoutOptionTitle,
+            r'AccountSettingsViewModel',
+            'logoutOptionTitle',
+          ),
           accountExplanation: BuiltValueNullFieldError.checkNotNull(
-              accountExplanation,
-              r'AccountSettingsViewModel',
-              'accountExplanation'),
+            accountExplanation,
+            r'AccountSettingsViewModel',
+            'accountExplanation',
+          ),
           logoutCommand: BuiltValueNullFieldError.checkNotNull(
-              logoutCommand, r'AccountSettingsViewModel', 'logoutCommand'),
+            logoutCommand,
+            r'AccountSettingsViewModel',
+            'logoutCommand',
+          ),
           backCommand: BuiltValueNullFieldError.checkNotNull(
-              backCommand, r'AccountSettingsViewModel', 'backCommand'),
+            backCommand,
+            r'AccountSettingsViewModel',
+            'backCommand',
+          ),
         );
     replace(_$result);
     return _$result;

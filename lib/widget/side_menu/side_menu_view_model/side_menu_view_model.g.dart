@@ -34,25 +34,25 @@ class _$SideMenuViewModel extends SideMenuViewModel {
   @override
   final FunctionHolder sortNotebooksCommand;
 
-  factory _$SideMenuViewModel(
-          [void Function(SideMenuViewModelBuilder)? updates]) =>
-      (SideMenuViewModelBuilder()..update(updates))._build();
+  factory _$SideMenuViewModel([
+    void Function(SideMenuViewModelBuilder)? updates,
+  ]) => (SideMenuViewModelBuilder()..update(updates))._build();
 
-  _$SideMenuViewModel._(
-      {required this.selectNotebookCommand,
-      required this.newNotebookCommand,
-      this.selectedNotebookId,
-      required this.items,
-      required this.isDesktop,
-      required this.hasError,
-      required this.settingsMenuOption,
-      required this.newNotebookMenuOption,
-      required this.reviewMemoriesMenuOption,
-      required this.notebooksMenuOption,
-      required this.settingsMenuCommand,
-      required this.reviewMemoriesCommand,
-      required this.sortNotebooksCommand})
-      : super._();
+  _$SideMenuViewModel._({
+    required this.selectNotebookCommand,
+    required this.newNotebookCommand,
+    this.selectedNotebookId,
+    required this.items,
+    required this.isDesktop,
+    required this.hasError,
+    required this.settingsMenuOption,
+    required this.newNotebookMenuOption,
+    required this.reviewMemoriesMenuOption,
+    required this.notebooksMenuOption,
+    required this.settingsMenuCommand,
+    required this.reviewMemoriesCommand,
+    required this.sortNotebooksCommand,
+  }) : super._();
   @override
   SideMenuViewModel rebuild(void Function(SideMenuViewModelBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -128,8 +128,8 @@ class SideMenuViewModelBuilder
   TypedFunctionHolder<NotebookDto>? get selectNotebookCommand =>
       _$this._selectNotebookCommand;
   set selectNotebookCommand(
-          TypedFunctionHolder<NotebookDto>? selectNotebookCommand) =>
-      _$this._selectNotebookCommand = selectNotebookCommand;
+    TypedFunctionHolder<NotebookDto>? selectNotebookCommand,
+  ) => _$this._selectNotebookCommand = selectNotebookCommand;
 
   FunctionHolder? _newNotebookCommand;
   FunctionHolder? get newNotebookCommand => _$this._newNotebookCommand;
@@ -225,43 +225,70 @@ class SideMenuViewModelBuilder
   SideMenuViewModel build() => _build();
 
   _$SideMenuViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SideMenuViewModel._(
           selectNotebookCommand: BuiltValueNullFieldError.checkNotNull(
-              selectNotebookCommand,
-              r'SideMenuViewModel',
-              'selectNotebookCommand'),
+            selectNotebookCommand,
+            r'SideMenuViewModel',
+            'selectNotebookCommand',
+          ),
           newNotebookCommand: BuiltValueNullFieldError.checkNotNull(
-              newNotebookCommand, r'SideMenuViewModel', 'newNotebookCommand'),
+            newNotebookCommand,
+            r'SideMenuViewModel',
+            'newNotebookCommand',
+          ),
           selectedNotebookId: selectedNotebookId,
           items: BuiltValueNullFieldError.checkNotNull(
-              items, r'SideMenuViewModel', 'items'),
+            items,
+            r'SideMenuViewModel',
+            'items',
+          ),
           isDesktop: BuiltValueNullFieldError.checkNotNull(
-              isDesktop, r'SideMenuViewModel', 'isDesktop'),
+            isDesktop,
+            r'SideMenuViewModel',
+            'isDesktop',
+          ),
           hasError: BuiltValueNullFieldError.checkNotNull(
-              hasError, r'SideMenuViewModel', 'hasError'),
+            hasError,
+            r'SideMenuViewModel',
+            'hasError',
+          ),
           settingsMenuOption: BuiltValueNullFieldError.checkNotNull(
-              settingsMenuOption, r'SideMenuViewModel', 'settingsMenuOption'),
+            settingsMenuOption,
+            r'SideMenuViewModel',
+            'settingsMenuOption',
+          ),
           newNotebookMenuOption: BuiltValueNullFieldError.checkNotNull(
-              newNotebookMenuOption,
-              r'SideMenuViewModel',
-              'newNotebookMenuOption'),
+            newNotebookMenuOption,
+            r'SideMenuViewModel',
+            'newNotebookMenuOption',
+          ),
           reviewMemoriesMenuOption: BuiltValueNullFieldError.checkNotNull(
-              reviewMemoriesMenuOption,
-              r'SideMenuViewModel',
-              'reviewMemoriesMenuOption'),
+            reviewMemoriesMenuOption,
+            r'SideMenuViewModel',
+            'reviewMemoriesMenuOption',
+          ),
           notebooksMenuOption: BuiltValueNullFieldError.checkNotNull(
-              notebooksMenuOption, r'SideMenuViewModel', 'notebooksMenuOption'),
+            notebooksMenuOption,
+            r'SideMenuViewModel',
+            'notebooksMenuOption',
+          ),
           settingsMenuCommand: BuiltValueNullFieldError.checkNotNull(
-              settingsMenuCommand, r'SideMenuViewModel', 'settingsMenuCommand'),
+            settingsMenuCommand,
+            r'SideMenuViewModel',
+            'settingsMenuCommand',
+          ),
           reviewMemoriesCommand: BuiltValueNullFieldError.checkNotNull(
-              reviewMemoriesCommand,
-              r'SideMenuViewModel',
-              'reviewMemoriesCommand'),
+            reviewMemoriesCommand,
+            r'SideMenuViewModel',
+            'reviewMemoriesCommand',
+          ),
           sortNotebooksCommand: BuiltValueNullFieldError.checkNotNull(
-              sortNotebooksCommand,
-              r'SideMenuViewModel',
-              'sortNotebooksCommand'),
+            sortNotebooksCommand,
+            r'SideMenuViewModel',
+            'sortNotebooksCommand',
+          ),
         );
     replace(_$result);
     return _$result;

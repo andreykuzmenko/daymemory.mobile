@@ -6,8 +6,9 @@ part of 'available_biometrics.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const AvailableBiometrics _$faceAndFinger =
-    const AvailableBiometrics._('faceOrFinger');
+const AvailableBiometrics _$faceAndFinger = const AvailableBiometrics._(
+  'faceOrFinger',
+);
 const AvailableBiometrics _$unknown = const AvailableBiometrics._('unknown');
 
 AvailableBiometrics _$availableBiometricsValueOf(String name) {
@@ -23,8 +24,8 @@ AvailableBiometrics _$availableBiometricsValueOf(String name) {
 
 final BuiltSet<AvailableBiometrics> _$availableBiometricsValues =
     BuiltSet<AvailableBiometrics>(const <AvailableBiometrics>[
-  _$faceAndFinger,
-  _$unknown,
-]);
+      _$faceAndFinger,
+      _$unknown,
+    ]);
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

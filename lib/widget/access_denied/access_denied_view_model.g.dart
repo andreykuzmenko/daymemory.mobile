@@ -16,20 +16,20 @@ class _$AccessDeniedViewModel extends AccessDeniedViewModel {
   @override
   final FunctionHolder? buttonCommand;
 
-  factory _$AccessDeniedViewModel(
-          [void Function(AccessDeniedViewModelBuilder)? updates]) =>
-      (AccessDeniedViewModelBuilder()..update(updates))._build();
+  factory _$AccessDeniedViewModel([
+    void Function(AccessDeniedViewModelBuilder)? updates,
+  ]) => (AccessDeniedViewModelBuilder()..update(updates))._build();
 
-  _$AccessDeniedViewModel._(
-      {required this.title,
-      required this.message,
-      this.buttonTitle,
-      this.buttonCommand})
-      : super._();
+  _$AccessDeniedViewModel._({
+    required this.title,
+    required this.message,
+    this.buttonTitle,
+    this.buttonCommand,
+  }) : super._();
   @override
   AccessDeniedViewModel rebuild(
-          void Function(AccessDeniedViewModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AccessDeniedViewModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AccessDeniedViewModelBuilder toBuilder() =>
@@ -116,12 +116,19 @@ class AccessDeniedViewModelBuilder
   AccessDeniedViewModel build() => _build();
 
   _$AccessDeniedViewModel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AccessDeniedViewModel._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'AccessDeniedViewModel', 'title'),
+            title,
+            r'AccessDeniedViewModel',
+            'title',
+          ),
           message: BuiltValueNullFieldError.checkNotNull(
-              message, r'AccessDeniedViewModel', 'message'),
+            message,
+            r'AccessDeniedViewModel',
+            'message',
+          ),
           buttonTitle: buttonTitle,
           buttonCommand: buttonCommand,
         );

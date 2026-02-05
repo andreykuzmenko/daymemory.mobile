@@ -86,11 +86,15 @@ class LoginStateBuilder implements Builder<LoginState, LoginStateBuilder> {
   LoginState build() => _build();
 
   _$LoginState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LoginState._(
           email: email,
           isSending: BuiltValueNullFieldError.checkNotNull(
-              isSending, r'LoginState', 'isSending'),
+            isSending,
+            r'LoginState',
+            'isSending',
+          ),
         );
     replace(_$result);
     return _$result;

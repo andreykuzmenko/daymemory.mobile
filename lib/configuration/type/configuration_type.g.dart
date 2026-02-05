@@ -6,10 +6,12 @@ part of 'configuration_type.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ConfigurationType _$daymemoryProd =
-    const ConfigurationType._('daymemoryProd');
-const ConfigurationType _$daymemoryDesktop =
-    const ConfigurationType._('daymemoryDesktop');
+const ConfigurationType _$daymemoryProd = const ConfigurationType._(
+  'daymemoryProd',
+);
+const ConfigurationType _$daymemoryDesktop = const ConfigurationType._(
+  'daymemoryDesktop',
+);
 
 ConfigurationType _$configurationTypeValueOf(String name) {
   switch (name) {
@@ -24,8 +26,8 @@ ConfigurationType _$configurationTypeValueOf(String name) {
 
 final BuiltSet<ConfigurationType> _$configurationTypeValues =
     BuiltSet<ConfigurationType>(const <ConfigurationType>[
-  _$daymemoryProd,
-  _$daymemoryDesktop,
-]);
+      _$daymemoryProd,
+      _$daymemoryDesktop,
+    ]);
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint
