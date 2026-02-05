@@ -40,6 +40,7 @@ class RootState<T extends RootAppWidget> extends State<T> with WidgetsBindingObs
     dispatch(initialInstruction);
 
     Future.delayed(Duration.zero, () {
+      if (!mounted) return;
       var screenWidth = (View.of(context).physicalSize.width / View.of(context).devicePixelRatio);
       var screenHeight = (View.of(context).physicalSize.height / View.of(context).devicePixelRatio);
       var size = Size(screenWidth, screenHeight);
@@ -93,7 +94,7 @@ class RootState<T extends RootAppWidget> extends State<T> with WidgetsBindingObs
             child: Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              color: Colors.grey.shade200.withOpacity(0.5),
+              color: Colors.grey.shade200.withValues(alpha: 0.5),
             ),
           ),
       ],
@@ -190,8 +191,8 @@ class WillPopScopeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      onPopInvoked: (didPop) {
+      return PopScope(
+      onPopInvokedWithResult: (didPop, result) {
         command?.call();
       },
       child: Navigator(

@@ -19,7 +19,7 @@ class EncryptionKeySettingsConnector extends PageConnector<EncryptionKeySettings
       locale: AppLocalizations.of(context)!,
       encryptionKey: state.settingsState.encryptionKey,
       isSaving: false,
-      isEncryptionKeyLocked: state.settingsState.isEncryptionKeyLocked,
+      isEncryptionKeyLocked: false,// state.settingsState.isEncryptionKeyLocked,
     );
     return converter;
   }

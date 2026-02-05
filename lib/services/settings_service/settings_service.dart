@@ -162,7 +162,14 @@ class SettingsService implements ISettingsService, IAsyncServiceInitializer<ISet
   @override
   Future<ISettingsService> init() async {
     _prefs = await SharedPreferences.getInstance();
-    _storage = const FlutterSecureStorage();
+    _storage = const FlutterSecureStorage(
+      aOptions: AndroidOptions(
+        encryptedSharedPreferences: true,
+      ),
+      // mOptions: MacOsOptions(
+      //   groupId: 'com.daymemory',
+      // ),
+    );
     return this;
   }
 
