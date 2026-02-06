@@ -24,6 +24,18 @@ rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
     project.evaluationDependsOn(':app')
+    
+    // Fix for flutter_jailbreak_detection plugin missing namespace
+    // The namespace must be set before the android plugin configures variants
+    if (project.name == 'flutter_jailbreak_detection') {
+        project.afterEvaluate {
+            if (project.plugins.hasPlugin('com.android.library') && project.hasProperty('android')) {
+                // Set namespace for flutter_jailbreak_detection plugin
+                // The namespace matches the package name from AndroidManifest.xml
+                project.android.namespace = 'com.it_nomads.flutter_jailbreak_detection'
+            }
+        }
+    }
 }
 
 tasks.register("clean", Delete) {
