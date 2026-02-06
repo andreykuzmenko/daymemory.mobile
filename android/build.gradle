@@ -36,6 +36,29 @@ subprojects {
             }
         }
     }
+    
+    // Ensure all subprojects use consistent JVM target to avoid compatibility issues
+    project.afterEvaluate {
+        if (project.hasProperty('android')) {
+            android {
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_17
+                    targetCompatibility JavaVersion.VERSION_17
+                }
+            }
+        }
+        // Set Kotlin JVM target for all Kotlin compilation tasks
+        try {
+            def kotlinCompileClass = Class.forName('org.jetbrains.kotlin.gradle.tasks.KotlinCompile')
+            project.tasks.withType(kotlinCompileClass).configureEach {
+                kotlinOptions {
+                    jvmTarget = '17'
+                }
+            }
+        } catch (ClassNotFoundException e) {
+            // Kotlin plugin not present, skip
+        }
+    }
 }
 
 tasks.register("clean", Delete) {
