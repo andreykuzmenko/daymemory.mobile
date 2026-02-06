@@ -1,0 +1,25 @@
+// Gradle init script to handle network issues and improve repository configuration
+// This helps prevent "Tag mismatch!" errors from corrupted downloads
+
+gradle.projectsLoaded {
+    rootProject.allprojects {
+        repositories {
+            all { repo ->
+                // Configure Google Maven repository with better metadata handling
+                if (repo.metaClass.hasProperty(repo, 'url')) {
+                    def url = repo.url.toString()
+                    if (url.contains('dl.google.com') || url.contains('android/maven2')) {
+                        if (repo.metaClass.hasProperty(repo, 'metadataSources')) {
+                            repo.metadataSources {
+                                mavenPom()
+                                artifact()
+                                ignoreGradleMetadataRedirection()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -42,5 +42,9 @@ lane :verify do
 end
 
 lane :build do |options|
+    # Clear Gradle cache to avoid "Tag mismatch!" errors from corrupted downloads
+    # This is especially important in CI/CD environments with network issues
+    sh_on_root(command: "cd android && ./gradlew clean || true")
+    
     sh_on_root(command: "flutter build #{options[:type]} --release --build-number=#{options[:buildNumber]} --suppress-analytics --flavor #{options[:flavor]} -t #{options[:main]} --obfuscate --split-debug-info=build/app/outputs/symbols")
 end
