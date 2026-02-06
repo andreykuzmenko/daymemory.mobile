@@ -37,6 +37,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
+    namespace "net.daymemory"
     compileSdk 35
     ndkVersion flutter.ndkVersion
 
