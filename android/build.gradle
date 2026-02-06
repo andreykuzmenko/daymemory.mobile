@@ -25,14 +25,44 @@ subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
     project.evaluationDependsOn(':app')
     
-    // Fix for flutter_jailbreak_detection plugin missing namespace
+    // Fix for flutter_jailbreak_detection plugin missing namespace and deprecated package attribute
     // The namespace must be set before the android plugin configures variants
     if (project.name == 'flutter_jailbreak_detection') {
         def configureNamespace = {
             if (project.plugins.hasPlugin('com.android.library') && project.hasProperty('android')) {
                 // Set namespace for flutter_jailbreak_detection plugin
                 // The namespace matches the package name from AndroidManifest.xml
-                project.android.namespace = 'com.it_nomads.flutter_jailbreak_detection'
+                project.android.namespace = 'appmire.be.flutterjailbreakdetection'
+                
+                // Remove the deprecated package attribute from source AndroidManifest.xml before processing
+                def manifestFile = project.file('src/main/AndroidManifest.xml')
+                if (manifestFile.exists()) {
+                    def manifestContent = manifestFile.text
+                    // Remove package attribute from manifest if it exists
+                    if (manifestContent.contains('package=')) {
+                        manifestContent = manifestContent.replaceAll(/package="[^"]*"/, '')
+                        manifestFile.text = manifestContent
+                    }
+                }
+                
+                // Also configure manifest processing tasks to remove package attribute
+                project.android.libraryVariants.all { variant ->
+                    variant.outputs.all { output ->
+                        def processManifest = output.processManifest
+                        if (processManifest != null) {
+                            processManifest.doFirst {
+                                def sourceManifest = project.file('src/main/AndroidManifest.xml')
+                                if (sourceManifest.exists()) {
+                                    def manifestContent = sourceManifest.text
+                                    if (manifestContent.contains('package=')) {
+                                        manifestContent = manifestContent.replaceAll(/package="[^"]*"/, '')
+                                        sourceManifest.text = manifestContent
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         
