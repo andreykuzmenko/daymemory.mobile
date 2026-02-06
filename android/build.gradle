@@ -28,17 +28,24 @@ subprojects {
     // Fix for flutter_jailbreak_detection plugin missing namespace
     // The namespace must be set before the android plugin configures variants
     if (project.name == 'flutter_jailbreak_detection') {
-        project.afterEvaluate {
+        def configureNamespace = {
             if (project.plugins.hasPlugin('com.android.library') && project.hasProperty('android')) {
                 // Set namespace for flutter_jailbreak_detection plugin
                 // The namespace matches the package name from AndroidManifest.xml
                 project.android.namespace = 'com.it_nomads.flutter_jailbreak_detection'
             }
         }
+        
+        // Check if project is already evaluated, if so execute directly, otherwise use afterEvaluate
+        if (project.state.executed) {
+            configureNamespace()
+        } else {
+            project.afterEvaluate(configureNamespace)
+        }
     }
     
     // Ensure all subprojects use consistent JVM target to avoid compatibility issues
-    project.afterEvaluate {
+    def configureJvmTarget = {
         if (project.hasProperty('android')) {
             android {
                 compileOptions {
@@ -58,6 +65,13 @@ subprojects {
         } catch (ClassNotFoundException e) {
             // Kotlin plugin not present, skip
         }
+    }
+    
+    // Check if project is already evaluated, if so execute directly, otherwise use afterEvaluate
+    if (project.state.executed) {
+        configureJvmTarget()
+    } else {
+        project.afterEvaluate(configureJvmTarget)
     }
 }
 
