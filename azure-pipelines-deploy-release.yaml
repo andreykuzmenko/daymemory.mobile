@@ -166,6 +166,13 @@ jobs:
     - bash: |
         export PATH=`pwd`/flutter/bin:$PATH
         cd android && \
+        ./gradlew clean --no-daemon || true
+        rm -rf ~/.gradle/caches/ || true
+      displayName: 'Clean Gradle Cache'
+
+    - bash: |
+        export PATH=`pwd`/flutter/bin:$PATH
+        cd android && \
         bundle exec fastlane deploy_google_play_internal \
         buildNumber:$(Build.BuildId) \
         flavor:dayMemoryProd \
